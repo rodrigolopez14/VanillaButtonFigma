@@ -25,13 +25,15 @@ export const PURCHASE_OPTION = "purchase";
 export const ACTIVE_OPTION = "active";
 export const INACTIVE_OPTION = "inactive"
 // showarrow options 
-export const SHOWARROW_OPTION = true;
+export const SHOWARROW_OPTION = "show";
 //size options 
 export const BIG_OPTION = "big";
 export const SMALL_OPTION = "small";
-// icon options
-export const CALENDAR_ICON_OPTION = "calendar";
-export const DELETE_ICON_OPTION = "delete";
+// icon default option
+export const NO_ICON_OPTION = "nothing";
+// children default value
+export const CHILDREN_DEFAULT_OPTION = "This is a button";
+
 
 
 
@@ -67,13 +69,13 @@ ATTRIBUTES.push({
 })
 ATTRIBUTES.push({
     attributeName: ICON_ATTRIBUTE,
-    defaultValue : null,
+    defaultValue : NO_ICON_OPTION,
     proccessValue: (value) => {return   value}
 
 })
 ATTRIBUTES.push({
     attributeName: CHILDREN_ATTRIBUTE,
-    defaultValue : "",
+    defaultValue : CHILDREN_DEFAULT_OPTION,
     proccessValue: (value) => {return   value}
 
 })

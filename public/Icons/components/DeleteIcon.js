@@ -1,4 +1,4 @@
-export default class vanillaSvgdDeleteIcon extends HTMLElement {
+export default class SvgdDeleteIcon extends HTMLElement {
     constructor() 
     {
         super();
@@ -25,5 +25,5 @@ export default class vanillaSvgdDeleteIcon extends HTMLElement {
       }
 }
 var customElementName = "delete-icon"
-customElements.define(customElementName, class extends vanillaSvgdDeleteIcon {});
+customElements.define(customElementName, class extends SvgdDeleteIcon {});
 export const DELETE_ICON = customElementName;

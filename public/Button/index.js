@@ -1,6 +1,4 @@
-import {NAV_ARROW_ICON} from "../Icons/navArrow.js"
-import {DELETE_ICON} from "../Icons//deleteIcon.js"
-import {CALENDAR_ICON} from "../Icons/calendarIcon.js"
+
 import {MODE_ATTRIBUTE, 
         SIZE_ATTRIBUTE, 
         THEME_ATTRIBUTE,
@@ -16,14 +14,15 @@ import {BUTTON_OPTION,
         ACTIVE_OPTION, 
         PRIMARY_OPTION, 
         SHOWARROW_OPTION, 
-        CALENDAR_ICON_OPTION, 
-        DELETE_ICON_OPTION} from "./constants.js"
+        NO_ICON_OPTION} from "./constants.js"
 import { ATTRIBUTES } from "./constants.js"
 import {loadFonts} from "../Fonts/index.js"
 import {addStyle, 
         BUTTON_CLASSNAME, 
         ICON_CLASSNAME, 
         ICONARROW_CLASSNAME} from "./styles.js"
+import Icons from "../Icons/index.js"
+import {NAV_ARROW_ICON_OPTION} from "../Icons/constants.js"
 
 //console.log(ATTRIBUTES)
 
@@ -50,22 +49,11 @@ class vanillaButton extends HTMLElement {
         const button = document.createElement('button')
         button.className = BUTTON_CLASSNAME
         button.addEventListener("click",attributes[ONCLICK_ATTRIBUTE])
-        if (attributes[ICON_ATTRIBUTE]!== null)
+        if (attributes[ICON_ATTRIBUTE]!== NO_ICON_OPTION)
         {
             const iconParent = document.createElement('div')
             iconParent.className = ICON_CLASSNAME
-            var iconChild
-            switch (attributes[ICON_ATTRIBUTE]) 
-            {
-                case CALENDAR_ICON_OPTION:
-                    iconChild = document.createElement(CALENDAR_ICON)
-                    break;
-                case DELETE_ICON_OPTION:
-                    iconChild = document.createElement(DELETE_ICON)
-                    break;
-                default:
-                    break;
-            }
+            const iconChild = document.createElement(Icons[attributes[ICON_ATTRIBUTE]])
             iconParent.appendChild(iconChild)
             button.appendChild(iconParent)
         }
@@ -75,7 +63,7 @@ class vanillaButton extends HTMLElement {
         {
             const iconArrowParent = document.createElement('div')
             iconArrowParent.className = ICONARROW_CLASSNAME
-            const iconArrowChild=document.createElement(NAV_ARROW_ICON)
+            const iconArrowChild=document.createElement(Icons[NAV_ARROW_ICON_OPTION])
             iconArrowParent.appendChild(iconArrowChild)
             button.appendChild(iconArrowParent)
         }
@@ -83,6 +71,6 @@ class vanillaButton extends HTMLElement {
       }
 }
 loadFonts()
-var customElementName = "custom-button"
+var customElementName = "seat-button"
 customElements.define(customElementName, class extends vanillaButton {});
 export const SEAT_BUTTON = customElementName;

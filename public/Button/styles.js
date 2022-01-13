@@ -170,7 +170,7 @@ ${BUTTON_CLASS}
 }
 ${BUTTON_CLASS} path 
 {
-    fill: 190f14;
+    fill: #190f14;
 } 
 ${BUTTON_CLASS}:hover 
 {

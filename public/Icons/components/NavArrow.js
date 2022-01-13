@@ -1,4 +1,4 @@
-export default class vanillaSvgNavArrow extends HTMLElement {
+export default class SvgNavArrow extends HTMLElement {
     constructor() 
     {
         super();
@@ -25,5 +25,5 @@ export default class vanillaSvgNavArrow extends HTMLElement {
       }
 }
 var customElementName = "nav-arrow-icon"
-customElements.define(customElementName, class extends vanillaSvgNavArrow {});
+customElements.define(customElementName, class extends SvgNavArrow {});
 export const NAV_ARROW_ICON = customElementName;
