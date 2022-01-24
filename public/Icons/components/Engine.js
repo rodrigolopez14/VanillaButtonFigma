@@ -3,7 +3,13 @@ export default class SvgEngine extends HTMLElement {
                 {
                     super();
                 }
-                connectedCallback() {
+                
+connectedCallback() {
+var colorFill = "#190F14"
+if (this.getAttribute('color'))
+{
+  colorFill = this.getAttribute('color')
+} 
                     var xmlns = "http://www.w3.org/2000/svg";
             
                     var svgElem = document.createElementNS(xmlns, "svg");
@@ -22,7 +28,7 @@ export default class SvgEngine extends HTMLElement {
             
                     var path2 = document.createElementNS(xmlns, "path");
                     path2.setAttributeNS(null, 'd', 'M10.357 7.003v1.57h3.56v1.646h2.592l1.627 2.418h1.443V10.22h2.362v7.984h-2.386v-2.416h-1.646v3.192h-.8v-3.992h3.246v2.416h.786v-6.384h-.762v2.418h-2.667l-1.63-2.418h-2.965V9.373H6.755V11H5.139v4.787h2.373l.928 2.392h7.31v.8H7.892l-.928-2.392H4.34v-2.728H2.963v2.765h-.8v-6.33h.8v2.765h1.376V10.2h1.616V8.573h3.602v-1.57h.8zm3.574-.811v.8H5.987v-.8h7.944z');
-                    path2.setAttributeNS(null, 'fill','#190F14')
+                    path2.setAttributeNS(null, 'fill',colorFill)
                     
                     svgElem.appendChild(g);
                     g.appendChild(path2);

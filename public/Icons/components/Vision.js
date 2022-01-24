@@ -3,7 +3,13 @@ export default class SvgVision extends HTMLElement {
                 {
                     super();
                 }
-                connectedCallback() {
+                
+connectedCallback() {
+var colorFill = "#190F14"
+if (this.getAttribute('color'))
+{
+  colorFill = this.getAttribute('color')
+} 
                     var xmlns = "http://www.w3.org/2000/svg";
             
                     var svgElem = document.createElementNS(xmlns, "svg");
@@ -22,7 +28,7 @@ export default class SvgVision extends HTMLElement {
             
                     var path2 = document.createElementNS(xmlns, "path");
                     path2.setAttributeNS(null, 'd', 'M20.949 3.239v14.088a3.574 3.574 0 01-3.571 3.566H3.195v-1.102h14.183a2.469 2.469 0 002.469-2.464V4.34H6.857A2.472 2.472 0 004.39 6.809v10.4H3.287v-10.4a3.574 3.574 0 013.57-3.57H20.95zm-5.665 5L11.438 15.9h-1.183l-1.29-5.08h1.14l.888 3.512 3.06-6.095h1.231z');
-                    path2.setAttributeNS(null, 'fill','#190F14')
+                    path2.setAttributeNS(null, 'fill',colorFill)
                     
                     svgElem.appendChild(g);
                     g.appendChild(path2);

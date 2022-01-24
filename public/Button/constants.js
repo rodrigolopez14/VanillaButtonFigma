@@ -1,75 +1,89 @@
-
-
-
 // attributeNames
-export const MODE_ATTRIBUTE = "mode";
-export const SIZE_ATTRIBUTE = "size";
-export const THEME_ATTRIBUTE = "theme";
-export const TYPE_ATTRIBUTE = "type";
-export const ACTIVE_ATTRIBUTE = "active";
+export const HIERARCHY_ATTRIBUTE = "hierarchy";
+export const DEVICE_ATTRIBUTE = "device";
+export const COLOR_ATTRIBUTE = "color";
+export const STATE_ATTRIBUTE = "state";
+export const LINE_ATTRIBUTE = "line";
 export const ICON_ATTRIBUTE = "icon";
+export const ICON_SELECTION_ATTRIBUTE = "iconSelection"
+export const PURCHASE_HIERARCHY_ATTRIBUTE = "purchaseHierarchy"
 export const CHILDREN_ATTRIBUTE = "children";
-export const SHOWARROW_ATTRIBUTE = "showArrow";
 export const ONCLICK_ATTRIBUTE = "onClick";
-// mode options
-export const BUTTON_OPTION = "button";
-export const LINK_OPTION = "link";
-//type options
+// hierarchy options
 export const PRIMARY_OPTION = "primary";
 export const SECONDARY_OPTION = "secondary";
-// theme options
-export const DARK_OPTION = "dark";
-export const LIGHT_OPTION = "light";
+export const TERTIARY_OPTION = "tertiary";
+export const GHOST_OPTION = "ghost";
 export const PURCHASE_OPTION = "purchase";
-//active options
-export const ACTIVE_OPTION = "active";
-export const INACTIVE_OPTION = "inactive"
-// showarrow options 
-export const SHOWARROW_OPTION = "show";
-//size options 
-export const BIG_OPTION = "big";
+export const HYPERLINK_OPTION = "hyperlink";
+//device options 
+export const DESKTOP_OPTION = "desktop";
+export const TABLET_MOBILE_OPTION = "tablet&mobile";
 export const SMALL_OPTION = "small";
-// icon default option
-export const NO_ICON_OPTION = "nothing";
+// color options
+export const BLACK_OPTION = "black";
+export const WHITE_OPTION = "white";
+//state options
+export const NORMAL_OPTION = "normal";
+export const HOVER_OPTION = "hover";
+export const DISABLED_OPTION = "disabled";
+//line options
+export const TITLE_OPTION = "title";
+export const PARAGRAPH_OPTION = "paragraph"
+// icon option
+export const ON_OPTION = "on";
+export const OFF_OPTION = "off";
+// purchase-hierarchy options 
+export const PRIMARY_PURCHASE_HIERARCHY_OPTION = "primary";
+export const SECONDARY_PURCHASE_HIERARCHY_OPTION = "secondary";
+export const TERTIARY_PURCHASE_HIERARCHY_OPTION = "tertiary";
 // children default value
-export const CHILDREN_DEFAULT_OPTION = "This is a button";
+export const CHILDREN_DEFAULT_OPTION = "Call to action";
+//icon selection default value
+export const ICON_DEFAULT = "nothing"
 
 
 
 
 const ATTRIBUTES = [];
 ATTRIBUTES.push({
-    attributeName: MODE_ATTRIBUTE,
-    defaultValue: BUTTON_OPTION,
+    attributeName: HIERARCHY_ATTRIBUTE,
+    defaultValue: null,
     proccessValue: (value) => {return   value}
 })
 ATTRIBUTES.push({
-    attributeName: SIZE_ATTRIBUTE,
-    defaultValue : BIG_OPTION,
-    proccessValue: (value) => {return   value}
-
-})
-ATTRIBUTES.push({
-    attributeName: THEME_ATTRIBUTE,
-    defaultValue : DARK_OPTION,
+    attributeName: DEVICE_ATTRIBUTE,
+    defaultValue : null,
     proccessValue: (value) => {return   value}
 
 })
 ATTRIBUTES.push({
-    attributeName: TYPE_ATTRIBUTE,
-    defaultValue : PRIMARY_OPTION,
+    attributeName: COLOR_ATTRIBUTE,
+    defaultValue : null,
     proccessValue: (value) => {return   value}
 
 })
 ATTRIBUTES.push({
-    attributeName: ACTIVE_ATTRIBUTE,
-    defaultValue : ACTIVE_OPTION,
+    attributeName: STATE_ATTRIBUTE,
+    defaultValue : null,
+    proccessValue: (value) => {return   value}
+
+})
+ATTRIBUTES.push({
+    attributeName: LINE_ATTRIBUTE,
+    defaultValue : null,
     proccessValue: (value) => {return   value}
 
 })
 ATTRIBUTES.push({
     attributeName: ICON_ATTRIBUTE,
-    defaultValue : NO_ICON_OPTION,
+    defaultValue : OFF_OPTION,
+    proccessValue: (value) => {return   value}
+
+})
+ATTRIBUTES.push({
+    attributeName: ICON_SELECTION_ATTRIBUTE,
+    defaultValue : ICON_DEFAULT,
     proccessValue: (value) => {return   value}
 
 })
@@ -80,8 +94,8 @@ ATTRIBUTES.push({
 
 })
 ATTRIBUTES.push({
-    attributeName: SHOWARROW_ATTRIBUTE,
-    defaultValue: SHOWARROW_OPTION,
+    attributeName: PURCHASE_HIERARCHY_ATTRIBUTE,
+    defaultValue: null,
     proccessValue: (value) => {return   value}
 
 })
@@ -93,3 +107,13 @@ ATTRIBUTES.push({
 })
 
 export {ATTRIBUTES};
+
+//  Defining constants for events 
+export const HOVER_BUTTON_EVENT = 'hoverButton'
+
+//array of events
+const EVENTS_OF_COMPONENT = []
+
+EVENTS_OF_COMPONENT.push(HOVER_BUTTON_EVENT)
+
+export {EVENTS_OF_COMPONENT}

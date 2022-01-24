@@ -3,7 +3,13 @@ export default class SvgNavi extends HTMLElement {
                 {
                     super();
                 }
-                connectedCallback() {
+                
+connectedCallback() {
+var colorFill = "#190F14"
+if (this.getAttribute('color'))
+{
+  colorFill = this.getAttribute('color')
+} 
                     var xmlns = "http://www.w3.org/2000/svg";
             
                     var svgElem = document.createElementNS(xmlns, "svg");
@@ -22,7 +28,7 @@ export default class SvgNavi extends HTMLElement {
             
                     var path2 = document.createElementNS(xmlns, "path");
                     path2.setAttributeNS(null, 'd', 'M8.899 8.92L4 20.67l9.27-3.5-.812-.809-6.591 2.485 3.611-8.612 6.103 6.09L20.716 4 8.899 8.92zm6.304 5.55L10.213 9.5l8.556-3.567-3.566 8.539z');
-                    path2.setAttributeNS(null, 'fill','#190F14')
+                    path2.setAttributeNS(null, 'fill',colorFill)
                     
                     svgElem.appendChild(g);
                     g.appendChild(path2);

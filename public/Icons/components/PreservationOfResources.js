@@ -3,7 +3,13 @@ export default class SvgPreservationOfResources extends HTMLElement {
                 {
                     super();
                 }
-                connectedCallback() {
+                
+connectedCallback() {
+var colorFill = "#190F14"
+if (this.getAttribute('color'))
+{
+  colorFill = this.getAttribute('color')
+} 
                     var xmlns = "http://www.w3.org/2000/svg";
             
                     var svgElem = document.createElementNS(xmlns, "svg");
@@ -22,7 +28,7 @@ export default class SvgPreservationOfResources extends HTMLElement {
             
                     var path2 = document.createElementNS(xmlns, "path");
                     path2.setAttributeNS(null, 'd', 'M16.915 11.817V9.224L11.61 2 6.76 8.525l-.024.03a2.783 2.783 0 00-.448 1.496v1.766H2l.597.824 4.508 6.101h3.993v2.966h1.017V9.441h-1.017v8.284H7.62l-3.606-4.891h3.291V10.05c0-.33.092-.653.268-.932l4.02-5.424 4.305 5.86v3.279h3.305l-2.996 4.068c-.385.52-.994.825-1.64.823v1.017c.969.001 1.881-.46 2.457-1.24l4.18-5.685h-4.289z');
-                    path2.setAttributeNS(null, 'fill','#190F14')
+                    path2.setAttributeNS(null, 'fill',colorFill)
                     
                     svgElem.appendChild(g);
                     g.appendChild(path2);

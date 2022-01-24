@@ -3,7 +3,13 @@ export default class SvgIconRetro extends HTMLElement {
                 {
                     super();
                 }
-                connectedCallback() {
+                
+connectedCallback() {
+var colorFill = "#190F14"
+if (this.getAttribute('color'))
+{
+  colorFill = this.getAttribute('color')
+} 
                     var xmlns = "http://www.w3.org/2000/svg";
             
                     var svgElem = document.createElementNS(xmlns, "svg");
@@ -22,7 +28,7 @@ export default class SvgIconRetro extends HTMLElement {
             
                     var path2 = document.createElementNS(xmlns, "path");
                     path2.setAttributeNS(null, 'd', 'M12.341 10.423V6h-.984v4.423h-6.54A2.82 2.82 0 002 13.239v3.086h.984v-3.086a1.836 1.836 0 011.832-1.832h15.899v2.101c0 1.011-.819 1.831-1.83 1.833H4.98v.984h6.377V17.8h.984v-1.475h6.557a2.816 2.816 0 002.813-2.817v-3.085h-9.37z');
-                    path2.setAttributeNS(null, 'fill','#190F14')
+                    path2.setAttributeNS(null, 'fill',colorFill)
                     
                     svgElem.appendChild(g);
                     g.appendChild(path2);

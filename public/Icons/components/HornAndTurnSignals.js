@@ -3,7 +3,13 @@ export default class SvgHornAndTurnSignals extends HTMLElement {
                 {
                     super();
                 }
-                connectedCallback() {
+                
+connectedCallback() {
+var colorFill = "#190F14"
+if (this.getAttribute('color'))
+{
+  colorFill = this.getAttribute('color')
+} 
                     var xmlns = "http://www.w3.org/2000/svg";
             
                     var svgElem = document.createElementNS(xmlns, "svg");
@@ -22,7 +28,7 @@ export default class SvgHornAndTurnSignals extends HTMLElement {
             
                     var path2 = document.createElementNS(xmlns, "path");
                     path2.setAttributeNS(null, 'd', 'M15.87 7.231l5.235 4.361-5.236 4.361v-2.605h-1.765v-.878h2.643v1.61l2.986-2.488-2.986-2.488v1.607H12.34v2.637H7.955v2.605l-5.236-4.36L7.955 7.23v2.6h1.783v.877h-2.66V9.104l-2.99 2.488 2.99 2.488v-1.61h4.383V9.833h4.408V7.231zm-13.544 6.26l.564.672-1.367 1.148-.565-.672 1.368-1.148zm19.167-.002l1.367 1.147-.564.673-1.368-1.148.565-.672zm2.317-2.377v.878h-1.786v-.878h1.786zm-22.013 0v.878H.012v-.878h1.785zM22.267 7.8l.565.673-1.368 1.148-.564-.673L22.267 7.8zM1.531 7.79l1.367 1.148-.564.672L.966 8.463l.565-.673z');
-                    path2.setAttributeNS(null, 'fill','#190F14')
+                    path2.setAttributeNS(null, 'fill',colorFill)
                     
                     svgElem.appendChild(g);
                     g.appendChild(path2);

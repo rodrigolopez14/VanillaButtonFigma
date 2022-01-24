@@ -3,7 +3,13 @@ export default class SvgNavArrow extends HTMLElement {
     {
         super();
     }
-    connectedCallback() {
+    
+connectedCallback() {
+var colorFill = "#190F14"
+if (this.getAttribute('color'))
+{
+  colorFill = this.getAttribute('color')
+} 
         var xmlns = "http://www.w3.org/2000/svg";
 
         var svgElem = document.createElementNS(xmlns, "svg");
@@ -17,7 +23,7 @@ export default class SvgNavArrow extends HTMLElement {
 
         var path = document.createElementNS(xmlns, "path");
         path.setAttributeNS(null, 'd', 'M4.66971 5.9997L3.64017 4.94287L0.151868 1.54997C-0.0194247 1.40052 -0.0622478 1.16567 0.109045 1.01622L0.944096 0.142643C1.11539 -0.0281582 1.30809 -0.0495083 1.45797 0.0999428L6.57177 5.09232C6.85012 5.34852 7 5.66877 7 6.01038C7 6.33063 6.85012 6.65088 6.57177 6.90708L1.45797 11.8995C1.30809 12.0489 1.11539 12.0293 0.944096 11.8568L0.109045 10.9832C-0.0622478 10.8337 -0.0194247 10.5989 0.151868 10.4494L3.64017 7.05653L4.66971 5.9997Z');
-        path.setAttributeNS(null, 'fill','#190F14')
+        path.setAttributeNS(null, 'fill',colorFill)
 
         svgElem.appendChild(g);
         g.appendChild(path);

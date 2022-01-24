@@ -3,7 +3,13 @@ export default class SvgLuggageStorage extends HTMLElement {
                 {
                     super();
                 }
-                connectedCallback() {
+                
+connectedCallback() {
+var colorFill = "#190F14"
+if (this.getAttribute('color'))
+{
+  colorFill = this.getAttribute('color')
+} 
                     var xmlns = "http://www.w3.org/2000/svg";
             
                     var svgElem = document.createElementNS(xmlns, "svg");
@@ -22,7 +28,7 @@ export default class SvgLuggageStorage extends HTMLElement {
             
                     var path2 = document.createElementNS(xmlns, "path");
                     path2.setAttributeNS(null, 'd', 'M16.326 6.653V4h-6.33a2.551 2.551 0 00-2.549 2.551v.096H5.585a2.551 2.551 0 00-2.548 2.551v8.07h.931v-8.07a1.62 1.62 0 011.617-1.62h.99v11.43H3v.931h15.185c1.408 0 2.55-1.14 2.551-2.548V6.653h-4.41zm-7.948-.096a1.62 1.62 0 011.617-1.626h5.4v1.716H8.378v-.09zm-.872 1.027h8.77v11.424h-8.77V7.584zm12.3 9.807a1.62 1.62 0 01-1.62 1.617h-.978V7.584h2.597v9.807z');
-                    path2.setAttributeNS(null, 'fill','#190F14')
+                    path2.setAttributeNS(null, 'fill',colorFill)
                     
                     svgElem.appendChild(g);
                     g.appendChild(path2);

@@ -3,7 +3,13 @@ export default class SvgTiredness extends HTMLElement {
                 {
                     super();
                 }
-                connectedCallback() {
+                
+connectedCallback() {
+var colorFill = "#190F14"
+if (this.getAttribute('color'))
+{
+  colorFill = this.getAttribute('color')
+} 
                     var xmlns = "http://www.w3.org/2000/svg";
             
                     var svgElem = document.createElementNS(xmlns, "svg");
@@ -22,7 +28,7 @@ export default class SvgTiredness extends HTMLElement {
             
                     var path2 = document.createElementNS(xmlns, "path");
                     path2.setAttributeNS(null, 'd', 'M18.06 8.946l-.53 3.093h.637a1.246 1.246 0 011.251 1.246v4.11h-3.094l-.68 3.374h-.847l.172-.843.664-3.367h2.93v-3.277c0-.22-.178-.4-.4-.402h-1.636l.531-3.09H5.207l2.168 10.124h5.856l-.172.844H6.7L4.169 8.946h13.89zm-6.238-5.89v4.652h-.844V3.056h.844zM8.455 4.744v2.964h-.844V4.744h.844zm6.742-.05v3.014h-.844V4.693h.844z');
-                    path2.setAttributeNS(null, 'fill','#190F14')
+                    path2.setAttributeNS(null, 'fill',colorFill)
                     
                     svgElem.appendChild(g);
                     g.appendChild(path2);

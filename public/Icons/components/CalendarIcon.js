@@ -3,7 +3,13 @@ export default class SvgCalendarIcon extends HTMLElement {
     {
         super();
     }
-    connectedCallback() {
+    
+connectedCallback() {
+var colorFill = "#190F14"
+if (this.getAttribute('color'))
+{
+  colorFill = this.getAttribute('color')
+} 
         var xmlns = "http://www.w3.org/2000/svg";
 
         var svgElem = document.createElementNS(xmlns, "svg");
@@ -22,7 +28,7 @@ export default class SvgCalendarIcon extends HTMLElement {
 
         var path2 = document.createElementNS(xmlns, "path");
         path2.setAttributeNS(null, 'd', "M5,2V1A1,1,0,0,1,7,1V2h6V1a1,1,0,0,1,2,0V2h2a3,3,0,0,1,3,3V18.84a3,3,0,0,1-3,3H3a3,3,0,0,1-3-3V5A3,3,0,0,1,3,2ZM5,4H3A1,1,0,0,0,2,5v3H18V5a1,1,0,0,0-1-1H15V5a1,1,0,0,1-2,0V4H7V5A1,1,0,0,1,5,5ZM18,9.92H2v8.92a1,1,0,0,0,1,1H17a1,1,0,0,0,1-1Z");
-        path2.setAttributeNS(null, 'fill','#190F14')
+        path2.setAttributeNS(null, 'fill',colorFill)
         
         svgElem.appendChild(g);
         g.appendChild(path2);

@@ -3,7 +3,13 @@ export default class SvgMail extends HTMLElement {
                 {
                     super();
                 }
-                connectedCallback() {
+                
+connectedCallback() {
+var colorFill = "#190F14"
+if (this.getAttribute('color'))
+{
+  colorFill = this.getAttribute('color')
+} 
                     var xmlns = "http://www.w3.org/2000/svg";
             
                     var svgElem = document.createElementNS(xmlns, "svg");
@@ -22,7 +28,7 @@ export default class SvgMail extends HTMLElement {
             
                     var path2 = document.createElementNS(xmlns, "path");
                     path2.setAttributeNS(null, 'd', 'M3 6.918l8.91 7.072 8.22-6.704v8.663c0 .612-.48 1.102-1.08 1.102H3.9V8.878H3V18h16.02c1.08 0 1.98-.888 1.98-2.02V6H3v.918zm1.65 0h14.49l-7.23 5.878-7.26-5.878z');
-                    path2.setAttributeNS(null, 'fill','#190F14')
+                    path2.setAttributeNS(null, 'fill',colorFill)
                     
                     svgElem.appendChild(g);
                     g.appendChild(path2);

@@ -3,7 +3,13 @@ export default class SvgBg extends HTMLElement {
     {
         super();
     }
-    connectedCallback() {
+    
+connectedCallback() {
+var colorFill = "#190F14"
+if (this.getAttribute('color'))
+{
+  colorFill = this.getAttribute('color')
+} 
         var xmlns = "http://www.w3.org/2000/svg";
 
         var svgElem = document.createElementNS(xmlns, "svg");

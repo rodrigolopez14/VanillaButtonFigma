@@ -3,7 +3,13 @@ export default class SvgNewsletter extends HTMLElement {
                 {
                     super();
                 }
-                connectedCallback() {
+                
+connectedCallback() {
+var colorFill = "#190F14"
+if (this.getAttribute('color'))
+{
+  colorFill = this.getAttribute('color')
+} 
                     var xmlns = "http://www.w3.org/2000/svg";
             
                     var svgElem = document.createElementNS(xmlns, "svg");
@@ -22,7 +28,7 @@ export default class SvgNewsletter extends HTMLElement {
             
                     var path2 = document.createElementNS(xmlns, "path");
                     path2.setAttributeNS(null, 'd', 'M1 7v.822h5.196l8.076 6.43 7.63-6.085v7.875a1.014 1.014 0 01-1.01 1.011H6.82V9.601H1.841v.835h4.158v1.593H2.707v.82H6v1.59H3.523v.835h2.476V17.9H20.88c1.01 0 1.83-.82 1.83-1.83V7H1zm6.536.822h13.45l-6.725 5.363-6.725-5.363z');
-                    path2.setAttributeNS(null, 'fill','#190F14')
+                    path2.setAttributeNS(null, 'fill',colorFill)
                     
                     svgElem.appendChild(g);
                     g.appendChild(path2);

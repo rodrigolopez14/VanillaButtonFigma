@@ -3,7 +3,13 @@ export default class SvgSound extends HTMLElement {
                 {
                     super();
                 }
-                connectedCallback() {
+                
+connectedCallback() {
+var colorFill = "#190F14"
+if (this.getAttribute('color'))
+{
+  colorFill = this.getAttribute('color')
+} 
                     var xmlns = "http://www.w3.org/2000/svg";
             
                     var svgElem = document.createElementNS(xmlns, "svg");
@@ -22,7 +28,7 @@ export default class SvgSound extends HTMLElement {
             
                     var path2 = document.createElementNS(xmlns, "path");
                     path2.setAttributeNS(null, 'd', 'M4 4v15.686l7.059-3.027v-1.02L4.94 18.262V5.443l8.041 3.552v6.588h2.563a3.51 3.51 0 003.508-3.505V8.22h-5.5L4 4zm9.923 5.16h4.188v2.918a2.57 2.57 0 01-2.566 2.57h-1.622V9.16z');
-                    path2.setAttributeNS(null, 'fill','#190F14')
+                    path2.setAttributeNS(null, 'fill',colorFill)
                     
                     svgElem.appendChild(g);
                     g.appendChild(path2);

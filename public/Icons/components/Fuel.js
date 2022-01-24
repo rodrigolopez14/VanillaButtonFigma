@@ -3,7 +3,13 @@ export default class SvgFuel extends HTMLElement {
                 {
                     super();
                 }
-                connectedCallback() {
+                
+connectedCallback() {
+var colorFill = "#190F14"
+if (this.getAttribute('color'))
+{
+  colorFill = this.getAttribute('color')
+} 
                     var xmlns = "http://www.w3.org/2000/svg";
             
                     var svgElem = document.createElementNS(xmlns, "svg");
@@ -22,7 +28,7 @@ export default class SvgFuel extends HTMLElement {
             
                     var path2 = document.createElementNS(xmlns, "path");
                     path2.setAttributeNS(null, 'd', 'M21.834 19.943L7.852 5.946a3.228 3.228 0 00-4.566 0L2 7.23l.652.653 1.286-1.284a2.31 2.31 0 013.262 0l2.243 2.24-2.988 2.985 4.923 4.923a2.034 2.034 0 002.88 0l.465-.464-.655-.647-.465.465a1.11 1.11 0 01-1.575 0l-4.265-4.277 2.332-2.341 5.379 5.39 5.055 5.071h1.305z');
-                    path2.setAttributeNS(null, 'fill','#190F14')
+                    path2.setAttributeNS(null, 'fill',colorFill)
                     
                     svgElem.appendChild(g);
                     g.appendChild(path2);

@@ -4,6 +4,11 @@ export default class SvgAdaptativeChassis extends HTMLElement {
         super();
     }
     connectedCallback() {
+        var colorFill = '#190F14'
+        if (this.getAttribute('color'))
+        {
+            colorFill = this.getAttribute('color')
+        } 
         var xmlns = "http://www.w3.org/2000/svg";
 
         var svgElem = document.createElementNS(xmlns, "svg");
@@ -22,7 +27,7 @@ export default class SvgAdaptativeChassis extends HTMLElement {
 
         var path2 = document.createElementNS(xmlns, "path");
         path2.setAttributeNS(null, 'd', "M8.244 15.512v2.117h7.411v-2.117h3.177v5.294h-3.177v-2.118H8.244v2.118H5.067v-5.294h3.177zm-1.06 1.059H6.127v3.176h1.059v-3.176zm10.589 0h-1.059v3.176h1.059v-3.176zM8.243 3.33V5.45h7.412V3.332h3.173v5.294h-3.176V6.508h-3.124v8.944H11.47V6.508H8.244v2.118H5.067V3.332h3.177zm-1.058 1.06h-1.06v3.176h1.06V4.391zm10.588 0h-1.059v3.176h1.059V4.391z");
-        path2.setAttributeNS(null, 'fill','#190F14')
+        path2.setAttributeNS(null, 'fill',colorFill)
         
         svgElem.appendChild(g);
         g.appendChild(path2);

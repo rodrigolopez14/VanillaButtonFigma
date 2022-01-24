@@ -3,7 +3,13 @@ export default class SvgSuccessIconAnimated extends HTMLElement {
                 {
                     super();
                 }
-                connectedCallback() {
+                
+connectedCallback() {
+var colorFill = "#190F14"
+if (this.getAttribute('color'))
+{
+  colorFill = this.getAttribute('color')
+} 
                     var xmlns = "http://www.w3.org/2000/svg";
             
                     var svgElem = document.createElementNS(xmlns, "svg");
@@ -17,7 +23,7 @@ export default class SvgSuccessIconAnimated extends HTMLElement {
 
                     var stop1 = document.createElementNS(xmlns, "stop");
                     stop1.setAttributeNS(null, "offset", "0");
-                    stop1.setAttributeNS(null, "stop-color", "#190F14");
+                    stop1.setAttributeNS(null, "stop-color", colorFill);
                     var animate1 = document.createElementNS(xmlns, "animate");
                     animate1.setAttributeNS(null, "dur", "0.15s");
                     animate1.setAttributeNS(null, "attributeName", "offset");
