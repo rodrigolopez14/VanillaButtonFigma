@@ -1,5 +1,5 @@
-import StylesPrimary from "./styles/primaryStyles.js"
-import {EVENTS_OF_COMPONENT} from "./constants.js"
+import StylesPrimary from "./primaryStyles.js"
+import {EVENTS_OF_COMPONENT, DEFAULT_EVENT} from "../constants.js"
 //EN ESTE ARCHIVO SE CONSTRUYE UN ARBOL PARA DAR LOS ESTILOS A DISTINTOS COMPONENTES
 class  TreeStyle {
     constructor (value)
@@ -77,18 +77,18 @@ StylesPrimary.forEach(style => {tree.addStyle( style.path , style.style)})
 
 
 export const setStyle = (stylesAttributes) => {
-   var keys = Object.keys(stylesAttributes)
+   const keys = Object.keys(stylesAttributes)
     keys.forEach (key => {
         if (stylesAttributes[key] === null) delete stylesAttributes[key]; 
     })
-   var styles = tree.getStyle(stylesAttributes)
+   const styles = tree.getStyle(stylesAttributes)
    return styles;
 
 }
 
 export const processStyle = (element, styleObject, events= EVENTS_OF_COMPONENT) => {
     const styles = {}
-    styles ['default'] = []
+    styles [DEFAULT_EVENT] = []
     for (var i=0; i<events.length;i++)
     {
         styles[events[i]] = []
@@ -102,7 +102,7 @@ export const processStyle = (element, styleObject, events= EVENTS_OF_COMPONENT) 
                 var indexCopy = i
                 return () => element.style[keys[indexCopy]]=styleObject[keys[indexCopy]]
             }
-            styles['default'].push(assignStyleDefault())
+            styles[DEFAULT_EVENT].push(assignStyleDefault())
         }
         else if (events.includes(keys[i]))
         {

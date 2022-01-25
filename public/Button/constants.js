@@ -25,7 +25,6 @@ export const BLACK_OPTION = "black";
 export const WHITE_OPTION = "white";
 //state options
 export const NORMAL_OPTION = "normal";
-export const HOVER_OPTION = "hover";
 export const DISABLED_OPTION = "disabled";
 //line options
 export const TITLE_OPTION = "title";
@@ -108,7 +107,14 @@ ATTRIBUTES.push({
 
 export {ATTRIBUTES};
 
+//Definining names of subcomponents of component. This is used to identify the style to assign that subcomponent
+export const BUTTON_SUBCOMPONENT = 'button'
+export const ICON_SUBCOMPONENT = 'icon'
+export const ICONARROW_SUBCOMPONENT = 'icon Arrow'
+export const TEXT_SUBCOMPONENT = 'textButton'
+
 //  Defining constants for events 
+export const DEFAULT_EVENT = 'default'
 export const HOVER_BUTTON_EVENT = 'hoverButton'
 
 //array of events

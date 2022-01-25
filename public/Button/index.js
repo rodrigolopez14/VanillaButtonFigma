@@ -9,11 +9,12 @@ import {HIERARCHY_ATTRIBUTE,
         PURCHASE_HIERARCHY_ATTRIBUTE,
         CHILDREN_ATTRIBUTE,
         ONCLICK_ATTRIBUTE} from "./constants.js"
-import {NORMAL_OPTION,HOVER_OPTION,TERTIARY_OPTION, PURCHASE_OPTION, TERTIARY_PURCHASE_HIERARCHY_OPTION, ON_OPTION, ICON_DEFAULT} from "./constants.js"
+import {TERTIARY_OPTION, PURCHASE_OPTION, TERTIARY_PURCHASE_HIERARCHY_OPTION, ON_OPTION, ICON_DEFAULT} from "./constants.js"
 import { ATTRIBUTES } from "./constants.js"
-import { HOVER_BUTTON_EVENT } from "./constants.js"
+import { DEFAULT_EVENT, HOVER_BUTTON_EVENT } from "./constants.js"
+import { BUTTON_SUBCOMPONENT, ICON_SUBCOMPONENT, TEXT_SUBCOMPONENT, ICONARROW_SUBCOMPONENT } from "./constants.js"
 import {loadFonts} from "../Fonts/index.js"
-import {setStyle, processStyle} from "./styles.js"
+import {setStyle, processStyle} from "./styles/index.js"
 import Icons from "../Icons/index.js"
 import {NAV_ARROW_ICON_OPTION} from "../Icons/constants.js"
 loadFonts()
@@ -39,8 +40,8 @@ class vanillaButton extends HTMLElement {
         const styles = setStyle(styleAttributes)
 
         const button = document.createElement('button')
-        const stylesProccessedButton = processStyle(button,styles['button'])
-        const onMouseOutButtonStyles = stylesProccessedButton['default']
+        const stylesProccessedButton = processStyle(button,styles[BUTTON_SUBCOMPONENT])
+        const onMouseOutButtonStyles = stylesProccessedButton[DEFAULT_EVENT]
         const onMouseOverButtonStyles = stylesProccessedButton[HOVER_BUTTON_EVENT]
         
         button.addEventListener("click",attributes[ONCLICK_ATTRIBUTE])
@@ -48,29 +49,29 @@ class vanillaButton extends HTMLElement {
         {
             const iconParent = document.createElement('div')
             const iconChild = document.createElement(Icons[attributes[ICON_SELECTION_ATTRIBUTE]])
-            const stylesProccessedIcon = processStyle (iconParent, styles['icon'])
-            onMouseOutButtonStyles.push(...stylesProccessedIcon['default'])
+            const stylesProccessedIcon = processStyle (iconParent, styles[ICON_SUBCOMPONENT])
+            onMouseOutButtonStyles.push(...stylesProccessedIcon[DEFAULT_EVENT])
             onMouseOverButtonStyles.push(...stylesProccessedIcon[HOVER_BUTTON_EVENT])
-            if (styles['icon'].color) iconChild.setAttribute('color',styles['icon'].color)
+            if (styles[ICON_SUBCOMPONENT].color) iconChild.setAttribute('color',styles[ICON_SUBCOMPONENT].color)
             iconParent.appendChild(iconChild)
             button.appendChild(iconParent)
         }
         
         const textNode = document.createTextNode(attributes[CHILDREN_ATTRIBUTE])
         const textButton = document.createElement('div')
-        const stylesProccessedText = processStyle(textButton,styles['textButton'])
-        onMouseOutButtonStyles.push(...stylesProccessedText['default'])
+        const stylesProccessedText = processStyle(textButton,styles[TEXT_SUBCOMPONENT])
+        onMouseOutButtonStyles.push(...stylesProccessedText[DEFAULT_EVENT])
         onMouseOverButtonStyles.push(...stylesProccessedText[HOVER_BUTTON_EVENT])
         textButton.appendChild(textNode)
         button.appendChild(textButton)
         if (attributes[HIERARCHY_ATTRIBUTE] === TERTIARY_OPTION || (attributes [HIERARCHY_ATTRIBUTE] === PURCHASE_OPTION && attributes[PURCHASE_HIERARCHY_ATTRIBUTE] === TERTIARY_PURCHASE_HIERARCHY_OPTION))
         {
             const iconArrowParent = document.createElement('div')
-            const stylesProccessedIconArrow = processStyle (iconArrowParent, styles['iconArrow'])
-            onMouseOutButtonStyles.push(...stylesProccessedIconArrow['default'])
+            const stylesProccessedIconArrow = processStyle (iconArrowParent, styles[ICONARROW_SUBCOMPONENT])
+            onMouseOutButtonStyles.push(...stylesProccessedIconArrow[DEFAULT_EVENT])
             onMouseOverButtonStyles.push(...stylesProccessedIconArrow[HOVER_BUTTON_EVENT])
             const iconArrowChild = document.createElement(Icons[NAV_ARROW_ICON_OPTION])
-            if (styles['iconArrow'].color) iconArrowChild.setAttribute('color',styles['iconArrow'].color)
+            if (styles[ICONARROW_SUBCOMPONENT].color) iconArrowChild.setAttribute('color',styles[ICONARROW_SUBCOMPONENT].color)
             iconArrowParent.appendChild(iconArrowChild)
             button.appendChild(iconArrowParent)
         }

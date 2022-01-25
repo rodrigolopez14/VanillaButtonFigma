@@ -15,6 +15,12 @@ import {PRIMARY_OPTION,
     ON_OPTION,
     OFF_OPTION,} from "../constants.js"
 
+
+import {BUTTON_SUBCOMPONENT,
+        ICON_SUBCOMPONENT,
+        ICONARROW_SUBCOMPONENT,
+        TEXT_SUBCOMPONENT } from "../constants.js"
+
 import {HOVER_BUTTON_EVENT} from "../constants.js"
 const Styles = []
 //*----------------STYLING BUTTONS ------------------------*/
@@ -23,7 +29,7 @@ const Styles = []
 
 //* PRIMARY DESKTOP BLACK NORMAL OFFICON */
 const Style1 = {}
-Style1 ['button'] = {
+Style1 [BUTTON_SUBCOMPONENT] = {
     
     transition: "0.2s all ease-in-out",
     boxShadow: "inset 0 0 0 2px transparent",
@@ -39,10 +45,10 @@ Style1 ['button'] = {
     boxSizing: "border-box",
     
 }
-Style1['button'][HOVER_BUTTON_EVENT] = {
+Style1[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
     background: "#443C40",
 }
-Style1['textButton'] = {
+Style1[TEXT_SUBCOMPONENT] = {
     position: "static",
     fontFamily: "SEATBCN",
     fontStyle: "normal",
@@ -73,7 +79,7 @@ Styles.push({style: Style1, path: Style1Path})
 //* PRIMARY DESKTOP BLACK NORMAL ONICON *//
 const Style2 = {}
 
-Style2 ['button'] = {
+Style2 [BUTTON_SUBCOMPONENT] = {
     transition: "0.2s all ease-in-out",
     position: "relative",
     display: "flex",
@@ -87,10 +93,10 @@ Style2 ['button'] = {
     boxShadow: "none",
     boxSizing: "border-box",
 }
-Style2['button'][HOVER_BUTTON_EVENT] = {
+Style2[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
     background: "#443C40",
 }
-Style2['textButton'] = {
+Style2[TEXT_SUBCOMPONENT] = {
     position: "static",
     fontFamily: "SEATBCN",
     fontStyle: "normal",
@@ -106,7 +112,7 @@ Style2['textButton'] = {
     margin: "0px 10px",
     lineHeight: "20px",
 }
-Style2['icon'] ={
+Style2[ICON_SUBCOMPONENT] ={
     color: "#ECE9E1",
 }
 const Style2Path = {}
@@ -124,7 +130,7 @@ Styles.push({style: Style2, path: Style2Path})
 //*----------------NEW BUTTON ------------------------*/
 //* PRIMARY DESKTOP BLACK DISABLED OFFICON *//
 const Style3 = {}
-Style3 ['button'] = {
+Style3 [BUTTON_SUBCOMPONENT] = {
     transition: "0.2s all ease-in-out",
     position: "relative",
     display: "flex",
@@ -139,7 +145,7 @@ Style3 ['button'] = {
     boxShadow: "none",
     boxSizing: "border-box", 
 }
-Style3['textButton'] = {
+Style3[TEXT_SUBCOMPONENT] = {
     position: "static",
     fontFamily: "SEATBCN",
     fontStyle: "normal",
@@ -168,7 +174,7 @@ Styles.push({style: Style3, path: Style3Path})
 //* PRIMARY DESKTOP BLACK DISABLED ONICON *//
 const Style4 = {}
 
-Style4 ['button'] = {
+Style4 [BUTTON_SUBCOMPONENT] = {
     
     transition: "0.2s all ease-in-out",
     position: "relative",
@@ -185,7 +191,7 @@ Style4 ['button'] = {
     boxSizing: "border-box",
     
 }
-Style4['textButton'] = {
+Style4[TEXT_SUBCOMPONENT] = {
     position: "static",
     fontFamily: "SEATBCN",
     fontStyle: "normal",
@@ -201,7 +207,7 @@ Style4['textButton'] = {
     margin: "0px 10px",
     lineHeight: "20px",
 }
-Style4['icon'] ={
+Style4[ICON_SUBCOMPONENT] ={
     color: "#6F696C",
 }
 const Style4Path = {}
@@ -217,7 +223,7 @@ Styles.push({path:Style4Path, style: Style4})
 
 //* PRIMARY TABLET&MOBILE BLACK NORMAL OFFICON */
 const Style5 = {}
-Style5 ['button'] = {
+Style5 [BUTTON_SUBCOMPONENT] = {
 
     transition: "0.2s all ease-in-out",
     boxShadow: "inset 0 0 0 2px transparent",
@@ -233,10 +239,10 @@ Style5 ['button'] = {
     boxSizing: "border-box",
     
 }
-Style5['button'][HOVER_BUTTON_EVENT] = {
+Style5[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
     background: "#443C40",
 }
-Style5['textButton'] = {
+Style5[TEXT_SUBCOMPONENT] = {
     position: "static",
     fontFamily: "SEATBCN",
     fontStyle: "normal",
@@ -265,7 +271,7 @@ Styles.push({path:Style5Path, style: Style5})
 const Style6 = {}
 /* Auto layout */
 
-Style6 ['button'] = {    
+Style6 [BUTTON_SUBCOMPONENT] = {    
     transition: "0.2s all ease-in-out",
     position: "relative",
     display: "flex",
@@ -280,10 +286,10 @@ Style6 ['button'] = {
     boxSizing: "border-box",
     
 }
-Style6['button'][HOVER_BUTTON_EVENT] = {
+Style6[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
     background: "#443C40",
 }
-Style6['textButton'] = {
+Style6[TEXT_SUBCOMPONENT] = {
 
     fontSize: "14px",
     margin: "0px 8px",
@@ -294,7 +300,7 @@ Style6['textButton'] = {
     color: "#ECE9E1",
     
 }
-Style6['icon'] ={
+Style6[ICON_SUBCOMPONENT] ={
     color: "#ECE9E1",
 }
 const Style6Path = {}
@@ -310,7 +316,7 @@ Styles.push({path:Style6Path, style: Style6})
 const Style7 = {}
 
 
-Style7 ['button'] = {
+Style7 [BUTTON_SUBCOMPONENT] = {
 
     
     transition: "0.2s all ease-in-out",
@@ -328,7 +334,7 @@ Style7 ['button'] = {
     boxSizing: "border-box",
     
 }
-Style7['textButton'] = {
+Style7[TEXT_SUBCOMPONENT] = {
     position: "static",
     fontFamily: "SEATBCN",
     fontStyle: "normal",
@@ -356,7 +362,7 @@ Styles.push({path:Style7Path, style: Style7})
 //* PRIMARY DESKTOP BLACK DISABLED ONICON //
 const Style8 = {}
 
-Style8 ['button'] = {
+Style8 [BUTTON_SUBCOMPONENT] = {
     
     transition: "0.2s all ease-in-out",
     position: "relative",
@@ -373,7 +379,7 @@ Style8 ['button'] = {
     boxSizing: "border-box",
     
 }
-Style8['textButton'] = {
+Style8[TEXT_SUBCOMPONENT] = {
     
     position: "static",
     fontFamily: "SEATBCN",
@@ -385,7 +391,7 @@ Style8['textButton'] = {
     margin: "0px 10px",
     lineHeight: "16px",
 }
-Style8['icon'] ={
+Style8[ICON_SUBCOMPONENT] ={
     color: "#6F696C",
 }
 const Style8Path = {}
@@ -402,7 +408,7 @@ Styles.push({path:Style8Path, style: Style8})
 
 //* PRIMARY TABLET&MOBILE BLACK NORMAL OFFICON */
 const Style9 = {}
-Style9 ['button'] = {
+Style9 [BUTTON_SUBCOMPONENT] = {
 
     transition: "0.2s all ease-in-out",
     boxShadow: "inset 0 0 0 2px transparent",
@@ -418,10 +424,10 @@ Style9 ['button'] = {
     boxSizing: "border-box",
     
 }
-Style9['button'][HOVER_BUTTON_EVENT] = {
+Style9[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
     background: "#443C40",
 }
-Style9['textButton'] = {
+Style9[TEXT_SUBCOMPONENT] = {
 
     fontFamily: "SEATBCN",
     fontStyle: "normal",
@@ -447,7 +453,7 @@ Styles.push({path:Style9Path, style: Style9})
 const Style10 = {}
 /* Auto layout */
 
-Style10 ['button'] = {    
+Style10 [BUTTON_SUBCOMPONENT] = {    
 
     transition: "0.2s all ease-in-out",
     position: "relative",
@@ -463,10 +469,10 @@ Style10 ['button'] = {
     boxSizing: "border-box",
     
 }
-Style10['button'][HOVER_BUTTON_EVENT] = {
+Style10[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
     background: "#443C40",
 }
-Style10['textButton'] = {
+Style10[TEXT_SUBCOMPONENT] = {
 
     fontSize: "14px",
     margin: "0px 8px",
@@ -477,7 +483,7 @@ Style10['textButton'] = {
     color: "#ECE9E1",
     
 }
-Style10['icon'] ={
+Style10[ICON_SUBCOMPONENT] ={
     color: "#ECE9E1",
 }
 const Style10Path = {}
@@ -493,7 +499,7 @@ Styles.push({path:Style10Path, style: Style10})
 const Style11 = {}
 
 
-Style11 ['button'] = {
+Style11 [BUTTON_SUBCOMPONENT] = {
 
     
     transition: "0.2s all ease-in-out",
@@ -511,7 +517,7 @@ Style11 ['button'] = {
     boxSizing: "border-box",
     
 }
-Style11['textButton'] = {
+Style11[TEXT_SUBCOMPONENT] = {
     position: "static",
     fontFamily: "SEATBCN",
     fontStyle: "normal",
@@ -537,7 +543,7 @@ Styles.push({path:Style11Path, style: Style11})
 //* PRIMARY DESKTOP BLACK DISABLED ONICON *//
 const Style12 = {}
 
-Style12 ['button'] = {
+Style12 [BUTTON_SUBCOMPONENT] = {
     
     transition: "0.2s all ease-in-out",
     position: "relative",
@@ -555,7 +561,7 @@ Style12 ['button'] = {
     boxSizing: "border-box",
     
 }
-Style12['textButton'] = {
+Style12[TEXT_SUBCOMPONENT] = {
     
     position: "static",
     fontFamily: "SEATBCN",
@@ -567,7 +573,7 @@ Style12['textButton'] = {
     margin: "0px 10px",
     lineHeight: "16px",
 }
-Style12['icon'] ={
+Style12[ICON_SUBCOMPONENT] ={
     color: "#6F696C",
 }
 const Style12Path = {}
@@ -582,7 +588,7 @@ Styles.push({path:Style12Path, style: Style12})
 
 //* PRIMARY DESKTOP WHITE NORMAL OFFICON */
 const Style13 = {}
-Style13 ['button'] = {
+Style13 [BUTTON_SUBCOMPONENT] = {
     
     transition: "0.2s all ease-in-out",
     boxShadow: "inset 0 0 0 2px transparent",
@@ -598,10 +604,10 @@ Style13 ['button'] = {
     boxSizing: "border-box",
     
 }
-Style13['button'][HOVER_BUTTON_EVENT] = {
+Style13[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
     background: "#F2F1ED",
 }
-Style13['textButton'] = {
+Style13[TEXT_SUBCOMPONENT] = {
     position: "static",
     fontFamily: "SEATBCN",
     fontStyle: "normal",
@@ -629,7 +635,7 @@ Styles.push({path:Style13Path, style: Style13})
 //* PRIMARY DESKTOP WHITE NORMAL ONICON *//
 const Style14 = {}
 
-Style14 ['button'] = {
+Style14 [BUTTON_SUBCOMPONENT] = {
     
     transition: "0.2s all ease-in-out",
     position: "relative",
@@ -645,10 +651,10 @@ Style14 ['button'] = {
     boxSizing: "border-box",
     
 }
-Style14['button'][HOVER_BUTTON_EVENT] = {
+Style14[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
     background: "#F2F1ED",
 }
-Style14['textButton'] = {
+Style14[TEXT_SUBCOMPONENT] = {
     position: "static",
     fontFamily: "SEATBCN",
     fontStyle: "normal",
@@ -664,7 +670,7 @@ Style14['textButton'] = {
     margin: "0px 10px",
     lineHeight: "20px",
 }
-Style14['icon'] ={
+Style14[ICON_SUBCOMPONENT] ={
     color: "#190F14",
 }
 const Style14Path = {}
@@ -682,7 +688,7 @@ const Style15 = {}
 
 /* Interactive/02 Secondary/01 Enabled */
 
-Style15 ['button'] = {
+Style15 [BUTTON_SUBCOMPONENT] = {
     
     transition: "0.2s all ease-in-out",
     position: "relative",
@@ -699,7 +705,7 @@ Style15 ['button'] = {
     boxSizing: "border-box",
     
 }
-Style15['textButton'] = {
+Style15[TEXT_SUBCOMPONENT] = {
     position: "static",
     fontFamily: "SEATBCN",
     fontStyle: "normal",
@@ -728,7 +734,7 @@ Styles.push({path:Style15Path, style: Style15})
 //* PRIMARY DESKTOP WHITE DISABLED ONICON *//
 const Style16 = {}
 
-Style16 ['button'] = {
+Style16 [BUTTON_SUBCOMPONENT] = {
     
     transition: "0.2s all ease-in-out",
     position: "relative",
@@ -745,7 +751,7 @@ Style16 ['button'] = {
     boxSizing: "border-box",
     
 }
-Style16['textButton'] = {
+Style16[TEXT_SUBCOMPONENT] = {
     position: "static",
     fontFamily: "SEATBCN",
     fontStyle: "normal",
@@ -761,7 +767,7 @@ Style16['textButton'] = {
     margin: "0px 10px",
     lineHeight: "20px",
 }
-Style16['icon'] ={
+Style16[ICON_SUBCOMPONENT] ={
     color: "#190F14",
 }
 const Style16Path = {}
@@ -777,7 +783,7 @@ Styles.push({path:Style16Path, style: Style16})
 
 //* PRIMARY TABLET&MOBILE WHITE NORMAL OFFICON */
 const Style17 = {}
-Style17 ['button'] = {
+Style17 [BUTTON_SUBCOMPONENT] = {
 
     transition: "0.2s all ease-in-out",
     boxShadow: "inset 0 0 0 2px transparent",
@@ -793,10 +799,10 @@ Style17 ['button'] = {
     boxSizing: "border-box",
     
 }
-Style17['button'][HOVER_BUTTON_EVENT] = {
+Style17[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
     background: "#F2F1ED",
 }
-Style17['textButton'] = {
+Style17[TEXT_SUBCOMPONENT] = {
     position: "static",
     fontFamily: "SEATBCN",
     fontStyle: "normal",
@@ -825,7 +831,7 @@ Styles.push({path:Style17Path, style: Style17})
 const Style18 = {}
 /* Auto layout */
 
-Style18 ['button'] = {    
+Style18 [BUTTON_SUBCOMPONENT] = {    
     transition: "0.2s all ease-in-out",
     position: "relative",
     display: "flex",
@@ -840,10 +846,10 @@ Style18 ['button'] = {
     boxSizing: "border-box",
     
 }
-Style18['button'][HOVER_BUTTON_EVENT] = {
+Style18[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
     background: "#F2F1ED",
 }
-Style18['textButton'] = {
+Style18[TEXT_SUBCOMPONENT] = {
 
     fontSize: "14px",
     margin: "0px 8px",
@@ -854,7 +860,7 @@ Style18['textButton'] = {
     color: "#190F14",
     
 }
-Style18['icon'] ={
+Style18[ICON_SUBCOMPONENT] ={
     color: "#190F14",
 }
 const Style18Path = {}
@@ -870,7 +876,7 @@ Styles.push({path:Style18Path, style: Style18})
 const Style19 = {}
 
 
-Style19 ['button'] = {
+Style19 [BUTTON_SUBCOMPONENT] = {
 
     
     transition: "0.2s all ease-in-out",
@@ -888,7 +894,7 @@ Style19 ['button'] = {
     boxSizing: "border-box",
     
 }
-Style19['textButton'] = {
+Style19[TEXT_SUBCOMPONENT] = {
     position: "static",
     fontFamily: "SEATBCN",
     fontStyle: "normal",
@@ -916,7 +922,7 @@ Styles.push({path:Style19Path, style: Style19})
 //* PRIMARY TABLET&MOBILE WHITE DISABLED ONICON //
 const Style20 = {}
 
-Style20 ['button'] = {
+Style20 [BUTTON_SUBCOMPONENT] = {
     
     transition: "0.2s all ease-in-out",
     position: "relative",
@@ -933,7 +939,7 @@ Style20 ['button'] = {
     boxSizing: "border-box",
     
 }
-Style20['textButton'] = {
+Style20[TEXT_SUBCOMPONENT] = {
     
     position: "static",
     fontFamily: "SEATBCN",
@@ -945,7 +951,7 @@ Style20['textButton'] = {
     margin: "0px 10px",
     lineHeight: "16px",
 }
-Style20['icon'] ={
+Style20[ICON_SUBCOMPONENT] ={
     color: "#190F14",
 }
 const Style20Path = {}
@@ -962,7 +968,7 @@ Styles.push({path:Style20Path, style: Style20})
 
 //* PRIMARY SMALL WHITE NORMAL OFFICON */
 const Style21 = {}
-Style21 ['button'] = {
+Style21 [BUTTON_SUBCOMPONENT] = {
 
     transition: "0.2s all ease-in-out",
     boxShadow: "inset 0 0 0 2px transparent",
@@ -978,10 +984,10 @@ Style21 ['button'] = {
     boxSizing: "border-box",
     
 }
-Style21['button'][HOVER_BUTTON_EVENT] = {
+Style21[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
     background: "#F2F1ED",
 }
-Style21['textButton'] = {
+Style21[TEXT_SUBCOMPONENT] = {
 
     fontFamily: "SEATBCN",
     fontStyle: "normal",
@@ -1008,7 +1014,7 @@ Styles.push({path:Style21Path, style: Style21})
 const Style22 = {}
 /* Auto layout */
 
-Style22 ['button'] = {    
+Style22 [BUTTON_SUBCOMPONENT] = {    
 
     transition: "0.2s all ease-in-out",
     position: "relative",
@@ -1024,10 +1030,10 @@ Style22 ['button'] = {
     boxSizing: "border-box",
     
 }
-Style22['button'][HOVER_BUTTON_EVENT] = {
+Style22[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
     background: "#F2F1ED",
 }
-Style22['textButton'] = {
+Style22[TEXT_SUBCOMPONENT] = {
 
     fontSize: "14px",
     margin: "0px 8px",
@@ -1038,7 +1044,7 @@ Style22['textButton'] = {
     color: "#190F14",
     
 }
-Style22['icon'] ={
+Style22[ICON_SUBCOMPONENT] ={
     color: "#190F14",
 }
 const Style22Path = {}
@@ -1054,7 +1060,7 @@ Styles.push({path:Style22Path, style: Style22})
 const Style23 = {}
 
 
-Style23 ['button'] = {
+Style23 [BUTTON_SUBCOMPONENT] = {
 
     
     transition: "0.2s all ease-in-out",
@@ -1072,7 +1078,7 @@ Style23 ['button'] = {
     boxSizing: "border-box",
     
 }
-Style23['textButton'] = {
+Style23[TEXT_SUBCOMPONENT] = {
     position: "static",
     fontFamily: "SEATBCN",
     fontStyle: "normal",
@@ -1098,7 +1104,7 @@ Styles.push({path:Style23Path, style: Style23})
 //* PRIMARY DESKTOP WHITE DISABLED ONICON *//
 const Style24 = {}
 
-Style24 ['button'] = {
+Style24 [BUTTON_SUBCOMPONENT] = {
     
     transition: "0.2s all ease-in-out",
     position: "relative",
@@ -1116,7 +1122,7 @@ Style24 ['button'] = {
     boxSizing: "border-box",
     
 }
-Style24['textButton'] = {
+Style24[TEXT_SUBCOMPONENT] = {
     
     position: "static",
     fontFamily: "SEATBCN",
@@ -1128,7 +1134,7 @@ Style24['textButton'] = {
     margin: "0px 10px",
     lineHeight: "16px",
 }
-Style24['icon'] ={
+Style24[ICON_SUBCOMPONENT] ={
     color: "#190F14",
 }
 const Style24Path = {}
