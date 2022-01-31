@@ -5,9 +5,124 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Web Component</title>
+    <script  type="module" src="./Accordion/avoidSlots.js"></script>
+    <script  type="module" src="./Button/index.js"></script>
+    <script  type="module" src="./Accordion/index.js"></script>
+    <style>
+      .h1custom  {
+        color: #058;
+        font-size: 1em;
+        margin-bottom: .3em;
+        text-align: center;
+        
+      }
+    </style>
   </head>
   <body>
+
+    <seat-accordion title="hey yoy" size="smallest" color="white">
+      <div >
+        <h1 class= "h1custom">
+          no deberia verlo
+        </h1>
+        <h1>
+          sjdkdf
+        </h1>
+        <h1>
+          HELLO
+        </h1>
+      </div>
+      
+      
+    </seat-accordion>
+    <seat-accordion title="hey yoy" size="small" color="white">
+      <div >
+        <h1 class= "h1custom">
+          no deberia verlo
+        </h1>
+        <h1>
+          sjdkdf
+        </h1>
+        <h1>
+          HELLO
+        </h1>
+      </div>
+      
+      
+    </seat-accordion>
+    <seat-accordion size="small" color="white">
+      <div>
+        <h1 class= "h1custom">
+          NOQUE
+        </h1>
+        <h1>
+          sjdkdf
+        </h1>
+        <h1>
+          HELLO
+        </h1>
+        <h1>
+          no deberia verlo
+        </h1>
+        <h1>
+          sjdkdf
+        </h1>
+        <h1>
+          HELLO
+        </h1>
+        <h1 class= "h1custom">
+          no deberia verlo
+        </h1>
+        <h1>
+          sjdkdf
+        </h1>
+        <h1>
+          HELLO
+        </h1>
+        <h1>
+          no deberia verlo
+        </h1>
+        <h1>
+          sjdkdf
+        </h1>
+        <h1>
+          HELLO
+        </h1>
+        <h1>
+          no deberia verlo
+        </h1>
+        <h1>
+          sjdkdf
+        </h1>
+        <h1>
+          HELLO
+        </h1>
+      </div>
+      
+      
+    </seat-accordion>
+
+    <seat-accordion color="white">
+      <div >
+        <h1>
+          no deberia verlo
+        </h1>
+        <h1>
+          sjdkdf
+        </h1>
+        <h1>
+          HELLO
+        </h1>
+        <h1>Desktop</h1>
+        <seat-button hierarchy="primary" device="desktop" color="black" state="normal"  onclick = " function yes ()  {alert(new Date())}"></seat-button>
    
+        <seat-button hierarchy="primary" device="desktop" color="black" state="normal" icon= "on" iconSelection="" onclick = " function yes ()  {alert(new Date())}"></seat-button>
+        <br>
+      </div>
+      
+      
+    </seat-accordion>
+    
     <h1>--PRIMARY</h1>
     <h1>-BLACK</h1>
     <h1>Desktop</h1>
@@ -67,6 +182,6 @@
     <br>    
     <div>HE</div>
 
-    <script  type="module" src="./Button/index.js"></script>
+    
   </body>
 </html>
