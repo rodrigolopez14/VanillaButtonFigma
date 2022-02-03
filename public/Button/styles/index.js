@@ -4,7 +4,7 @@ import {EVENTS_OF_COMPONENT, DEFAULT_EVENT} from "../constants.js"
 class  TreeStyle {
     constructor (value)
     {
-       this.value  =  value;
+       this.value = value;
        this. childrenProperty = null;
        this.children = []
        this.style = null
