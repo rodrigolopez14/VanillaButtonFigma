@@ -15,7 +15,10 @@ import { DEFAULT_EVENT, HOVER_BUTTON_EVENT } from "./constants.js"
 import { BUTTON_SUBCOMPONENT, ICON_SUBCOMPONENT, TEXT_SUBCOMPONENT, ICONARROW_SUBCOMPONENT } from "./constants.js"
 import {loadFonts} from "../Fonts/index.js"
 import {setStyle, processStyle} from "./styles/index.js"
-import Icons from "../Icons/index.js"
+
+import {ICON} from "../Icons/index.js"
+import {ICON_SELECTION_ATTRIBUTE as ICON_SELECTION_ATTRIBUTE_FOR_COMPONENT} from "../Icons/constants.js"
+import { ICON_COLOR_ATTRIBUTE } from "../Icons/constants.js"
 import {NAV_ARROW_ICON_OPTION} from "../Icons/constants.js"
 loadFonts()
 
@@ -48,11 +51,12 @@ class vanillaButton extends HTMLElement {
         if (attributes[ICON_ATTRIBUTE] === ON_OPTION && attributes[ICON_SELECTION_ATTRIBUTE] !== ICON_DEFAULT)
         {
             const iconParent = document.createElement('div')
-            const iconChild = document.createElement(Icons[attributes[ICON_SELECTION_ATTRIBUTE]])
+            const iconChild = document.createElement(ICON)
+            iconChild.setAttribute(ICON_SELECTION_ATTRIBUTE_FOR_COMPONENT, attributes[ICON_SELECTION_ATTRIBUTE])
             const stylesProccessedIcon = processStyle (iconParent, styles[ICON_SUBCOMPONENT])
             onMouseOutButtonStyles.push(...stylesProccessedIcon[DEFAULT_EVENT])
             onMouseOverButtonStyles.push(...stylesProccessedIcon[HOVER_BUTTON_EVENT])
-            if (styles[ICON_SUBCOMPONENT].color) iconChild.setAttribute('color',styles[ICON_SUBCOMPONENT].color)
+            if (styles[ICON_SUBCOMPONENT].color) iconChild.setAttribute(ICON_COLOR_ATTRIBUTE,styles[ICON_SUBCOMPONENT].color)
             iconParent.appendChild(iconChild)
             button.appendChild(iconParent)
         }
