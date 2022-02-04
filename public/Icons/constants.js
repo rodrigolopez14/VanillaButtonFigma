@@ -11,6 +11,9 @@ export const WIDTH_DEFAULT = '1em';
 export const HEIGHT_DEFAULT = '1em';
 export const DURATION_DEFAULT = '0.50';
 
+
+
+
 export const ICON_DEFAULT = 'default';
 export const ABS_ICON_OPTION = 'abs'
 export const ADAPTATIVE_CHASSIS_ICON_OPTION = 'adaptative chassis'
@@ -160,10 +163,6 @@ export const WIRELESS_CONNECTION_ICON_OPTION = 'wireless connection'
 export const XPERIENCE_ICON_OPTION = 'xperience'
 export const XPERIENCE4_DRIVE_ICON_OPTION = 'xperience4 drive'
 
-export const ICON_PATH_ATTRIBUTE = 'path'
-export const ICON_VIEWBOX_ATTRIBUTE = 'viewbox'
-export const ICON_COMPONENT_ATTRIBUTE = 'component'
-
 const ICON_ATTRIBUTES = [];
 ICON_ATTRIBUTES.push({
     attributeName: ICON_COLOR_ATTRIBUTE,
@@ -198,6 +197,13 @@ ICON_ATTRIBUTES.push({
 
 export {ICON_ATTRIBUTES};
 
+
+export const PARTICULAR_ICON_PATH_ATTRIBUTE = 'path'
+export const PARTICULAR_ICON_VIEWBOX_ATTRIBUTE = 'viewbox'
+export const PARTICULAR_ICON_COMPONENT_ATTRIBUTE = 'component'
+
 export const REGULAR_ICONS_COMPONENT = 'regular icons component'
 export const ANIMATED_ICONS_COMPONENT = 'animated icons component'
+
+export const NAME_OF_COMPONENT = 'seat-icons'
 
