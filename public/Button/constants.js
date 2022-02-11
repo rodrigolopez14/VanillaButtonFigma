@@ -109,7 +109,9 @@ export {ATTRIBUTES};
 
 //Definining names of subcomponents of component. This is used to identify the style to assign that subcomponent
 export const BUTTON_SUBCOMPONENT = 'button'
+export const ICON_CONTAINER_SUBCOMPONENT = 'icon container'
 export const ICON_SUBCOMPONENT = 'icon'
+export const ICONARROW_CONTAINER_SUBCOMPONENT = 'icon Arrow container'
 export const ICONARROW_SUBCOMPONENT = 'icon Arrow'
 export const TEXT_SUBCOMPONENT = 'textButton'
 
@@ -123,3 +125,11 @@ const EVENTS_OF_COMPONENT = []
 EVENTS_OF_COMPONENT.push(HOVER_BUTTON_EVENT)
 
 export {EVENTS_OF_COMPONENT}
+
+// components variants of buttons
+export const REGULAR_BUTTON_VARIANT = 'regular button'
+export const REGULAR_BUTTON_ICON_VARIANT = 'regular button icon'
+export const ARROW_BUTTON_VARIANT = 'arrow button'
+export const ARROW_BUTTON_ICON_VARIANT = 'arrow button icon'
+
+export const NAME_OF_COMPONENT = 'seat-button'

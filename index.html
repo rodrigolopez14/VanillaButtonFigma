@@ -5,186 +5,101 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Web Component</title>
-    <script  type="module" src="./Accordion/avoidSlots.js"></script>
     <script  type="module" src="./Button/index.js"></script>
-    <script  type="module" src="./Accordion/index.js"></script>
-    <script  type="module" src="./Icons/index.js"></script>
     <style>
-      .h1custom  {
-        color: #058;
-        font-size: 1em;
-        margin-bottom: .3em;
-        text-align: center;
-        
+      .hey {
+        background-color: black;
+        padding: 20px;
+      }
+      .h1black {
+        color: white
       }
     </style>
   </head>
   <body>
-    <seat-icons > </seat-icons>
-    <seat-icons iconSelection ='success icon animated' height="400px" width="400px"> </seat-icons>
-    <seat-icons iconSelection ='abs' color='#124'  height="400px" width="400px"> </seat-icons>
-    <seat-accordion title="hey yoy" size="smallest" color="white">
-      <div >
-        <h1 class= "h1custom">
-          no deberia verlo
-        </h1>
-        <h1>
-          sjdkdf
-        </h1>
-        <h1>
-          HELLO
-        </h1>
-      </div>
-      
-      
-    </seat-accordion>
-    <seat-accordion title="hey yoy" size="small" color="white">
-      <div >
-        <h1 class= "h1custom">
-          no deberia verlo
-        </h1>
-        <h1>
-          sjdkdf
-        </h1>
-        <h1>
-          HELLO
-        </h1>
-      </div>
-      
-      
-    </seat-accordion>
-    <seat-accordion size="small" color="white">
-      <div>
-        <h1 class= "h1custom">
-          NOQUE
-        </h1>
-        <h1>
-          sjdkdf
-        </h1>
-        <h1>
-          HELLO
-        </h1>
-        <h1>
-          no deberia verlo
-        </h1>
-        <h1>
-          sjdkdf
-        </h1>
-        <h1>
-          HELLO
-        </h1>
-        <h1 class= "h1custom">
-          no deberia verlo
-        </h1>
-        <h1>
-          sjdkdf
-        </h1>
-        <h1>
-          HELLO
-        </h1>
-        <h1>
-          no deberia verlo
-        </h1>
-        <h1>
-          sjdkdf
-        </h1>
-        <h1>
-          HELLO
-        </h1>
-        <h1>
-          no deberia verlo
-        </h1>
-        <h1>
-          sjdkdf
-        </h1>
-        <h1>
-          HELLO
-        </h1>
-      </div>
-      
-      
-    </seat-accordion>
-
-    <seat-accordion color="white">
-      <div >
-        <h1>
-          no deberia verlo
-        </h1>
-        <h1>
-          sjdkdf
-        </h1>
-        <h1>
-          HELLO
-        </h1>
-        <h1>Desktop</h1>
-        <seat-button hierarchy="primary" device="desktop" color="black" state="normal"  onclick = " function yes ()  {alert(new Date())}"></seat-button>
-   
-        <seat-button hierarchy="primary" device="desktop" color="black" state="normal" icon= "on" iconSelection="" onclick = " function yes ()  {alert(new Date())}"></seat-button>
-        <br>
-      </div>
-      
-      
-    </seat-accordion>
     
-    <h1>--PRIMARY</h1>
-    <h1>-BLACK</h1>
+    <h1>--PURCHASE </h1>
+    <h1>-PRIMARY</h1>
     <h1>Desktop</h1>
-    <seat-button hierarchy="primary" device="desktop" color="black" state="normal"  onclick = " function yes ()  {alert(new Date())}"></seat-button>
+    <seat-button hierarchy="purchase"  device="desktop" purchaseHierarchy="primary" state="normal"  onclick = " function yes ()  {alert(new Date())}"></seat-button>
     <br>
-    <seat-button hierarchy="primary" device="desktop" color="black" state="normal" icon= "on" iconSelection="calendar" onclick = " function yes ()  {alert(new Date())}"></seat-button>
+    <seat-button hierarchy="purchase"  device="desktop" purchaseHierarchy="primary" state="normal" icon="on" iconSelection="calendar" onclick = " function yes ()  {alert(new Date())}"></seat-button>
     <br>
-    <seat-button hierarchy="primary" device="desktop" color="black" state="disabled"  onclick = " function yes ()  {alert(new Date())}"></seat-button>
+    <seat-button hierarchy="purchase"  device="desktop" purchaseHierarchy="primary" state="disabled"  onclick = " function yes ()  {alert(new Date())}"></seat-button>
     <br>
-    <seat-button hierarchy="primary" device="desktop" color="black" state="disabled" icon= "on" iconSelection="calendar" onclick = " function yes ()  {alert(new Date())}"></seat-button>
+    <seat-button hierarchy="purchase"  device="desktop" purchaseHierarchy="primary" state="disabled" icon="on" iconSelection="calendar" onclick = " function yes ()  {alert(new Date())}"></seat-button>
     <br>
     <h1>Tablet&Mobile</h1>
-    <seat-button hierarchy="primary" device="tablet&mobile" color="black" state="normal"  onclick = " function yes ()  {alert(new Date())}"></seat-button>
+    <seat-button hierarchy="purchase"  device="tablet&mobile" purchaseHierarchy="primary" state="normal"  onclick = " function yes ()  {alert(new Date())}"></seat-button>
     <br>
-    <seat-button hierarchy="primary" device="tablet&mobile" color="black" state="normal" icon= "on" iconSelection="success icon animated" onclick = " function yes ()  {alert(new Date())}"></seat-button>
+    <seat-button hierarchy="purchase"  device="tablet&mobile" purchaseHierarchy="primary" state="normal" icon="on" iconSelection="calendar" onclick = " function yes ()  {alert(new Date())}"></seat-button>
     <br>
-    <seat-button hierarchy="primary" device="tablet&mobile" color="black" state="disabled"  onclick = " function yes ()  {alert(new Date())}"></seat-button>
+    <seat-button hierarchy="purchase"  device="tablet&mobile" purchaseHierarchy="primary" state="disabled"  onclick = " function yes ()  {alert(new Date())}"></seat-button>
     <br>
-    <seat-button hierarchy="primary" device="tablet&mobile" color="black" state="disabled" icon= "on" iconSelection="success icon animated" onclick = " function yes ()  {alert(new Date())}"></seat-button>
+    <seat-button hierarchy="purchase"  device="tablet&mobile" purchaseHierarchy="primary" state="disabled" icon="on" iconSelection="calendar" onclick = " function yes ()  {alert(new Date())}"></seat-button>
     <br>
+    
     <h1>Small</h1>
-    <seat-button hierarchy="primary" device="small" color="black" state="normal"  onclick = " function yes ()  {alert(new Date())}"></seat-button>
+    <seat-button hierarchy="purchase"  device="small" purchaseHierarchy="primary" state="normal"  onclick = " function yes ()  {alert(new Date())}"></seat-button>
     <br>
-    <seat-button hierarchy="primary" device="small" color="black" state="normal" icon= "on" iconSelection="success icon animated" onclick = " function yes ()  {alert(new Date())}"></seat-button>
+    <seat-button hierarchy="purchase"  device="small" purchaseHierarchy="primary" state="normal" icon="on" iconSelection="calendar" onclick = " function yes ()  {alert(new Date())}"></seat-button>
     <br>
-    <seat-button hierarchy="primary" device="small" color="black" state="disabled"  onclick = " function yes ()  {alert(new Date())}"></seat-button>
+    <seat-button hierarchy="purchase"  device="small" purchaseHierarchy="primary" state="disabled"  onclick = " function yes ()  {alert(new Date())}"></seat-button>
     <br>
-    <seat-button hierarchy="primary" device="small" color="black" state="disabled" icon= "on" iconSelection="success icon animated" onclick = " function yes ()  {alert(new Date())}"></seat-button>
+    <seat-button hierarchy="purchase"  device="small" purchaseHierarchy="primary" state="disabled" icon="on" iconSelection="calendar" onclick = " function yes ()  {alert(new Date())}"></seat-button>
     <br>
-    <h1>-WHITE</h1>
-    <h1>Desktop</h1>
-    <seat-button hierarchy="primary" device="desktop" color="white" state="normal"  onclick = " function yes ()  {alert(new Date())}"></seat-button>
+    
+    <div >
+    <h1 >-SECONDARY</h1>
+    <h1 >Desktop</h1>
+    <seat-button hierarchy="purchase"  device="desktop" purchaseHierarchy="secondary" state="normal"  onclick = " function yes ()  {alert(new Date())}"></seat-button>
     <br>
-    <seat-button hierarchy="primary" device="desktop" color="white" state="normal" icon= "on" iconSelection="calendar" onclick = " function yes ()  {alert(new Date())}"></seat-button>
+    <seat-button hierarchy="purchase"  device="desktop" purchaseHierarchy="secondary" state="normal" icon="on" iconSelection="calendar" onclick = " function yes ()  {alert(new Date())}"></seat-button>
     <br>
-    <seat-button hierarchy="primary" device="desktop" color="white" state="disabled"  onclick = " function yes ()  {alert(new Date())}"></seat-button>
+    <seat-button hierarchy="purchase"  device="desktop" purchaseHierarchy="secondary" state="disabled"  onclick = " function yes ()  {alert(new Date())}"></seat-button>
     <br>
-    <seat-button hierarchy="primary" device="desktop" color="white" state="disabled" icon= "on" iconSelection="calendar" onclick = " function yes ()  {alert(new Date())}"></seat-button>
+    <seat-button hierarchy="purchase"  device="desktop" purchaseHierarchy="secondary" state="disabled" icon="on" iconSelection="calendar" onclick = " function yes ()  {alert(new Date())}"></seat-button>
     <br>
     <h1>Tablet&Mobile</h1>
-    <seat-button hierarchy="primary" device="tablet&mobile" color="white" state="normal"  onclick = " function yes ()  {alert(new Date())}"></seat-button>
+    <seat-button hierarchy="purchase"  device="tablet&mobile" purchaseHierarchy="secondary" state="normal"  onclick = " function yes ()  {alert(new Date())}"></seat-button>
     <br>
-    <seat-button hierarchy="primary" device="tablet&mobile" color="white" state="normal" icon= "on" iconSelection="success icon animated" onclick = " function yes ()  {alert(new Date())}"></seat-button>
+    <seat-button hierarchy="purchase"  device="tablet&mobile" purchaseHierarchy="secondary" state="normal" icon="on" iconSelection="calendar" onclick = " function yes ()  {alert(new Date())}"></seat-button>
     <br>
-    <seat-button hierarchy="primary" device="tablet&mobile" color="white" state="disabled"  onclick = " function yes ()  {alert(new Date())}"></seat-button>
+    <seat-button hierarchy="purchase"  device="tablet&mobile" purchaseHierarchy="secondary" state="disabled"  onclick = " function yes ()  {alert(new Date())}"></seat-button>
     <br>
-    <seat-button hierarchy="primary" device="tablet&mobile" color="white" state="disabled" icon= "on" iconSelection="success icon animated" onclick = " function yes ()  {alert(new Date())}"></seat-button>
+    <seat-button hierarchy="purchase"  device="tablet&mobile" purchaseHierarchy="secondary" state="disabled" icon="on" iconSelection="calendar" onclick = " function yes ()  {alert(new Date())}"></seat-button>
     <br>
+    
     <h1>Small</h1>
-    <seat-button hierarchy="primary" device="small" color="white" state="normal"  onclick = " function yes ()  {alert(new Date())}"></seat-button>
+    <seat-button hierarchy="purchase"  device="small" purchaseHierarchy="secondary" state="normal"  onclick = " function yes ()  {alert(new Date())}"></seat-button>
     <br>
-    <seat-button hierarchy="primary" device="small" color="white" state="normal" icon= "on" iconSelection="success icon animated" onclick = " function yes ()  {alert(new Date())}"></seat-button>
+    <seat-button hierarchy="purchase"  device="small" purchaseHierarchy="secondary" state="normal" icon="on" iconSelection="calendar" onclick = " function yes ()  {alert(new Date())}"></seat-button>
     <br>
-    <seat-button hierarchy="primary" device="small" color="white" state="disabled"  onclick = " function yes ()  {alert(new Date())}"></seat-button>
+    <seat-button hierarchy="purchase"  device="small" purchaseHierarchy="secondary" state="disabled"  onclick = " function yes ()  {alert(new Date())}"></seat-button>
     <br>
-    <seat-button hierarchy="primary" device="small" color="white" state="disabled" icon= "on" iconSelection="success icon animated" onclick = " function yes ()  {alert(new Date())}"></seat-button>
+    <seat-button hierarchy="purchase"  device="small" purchaseHierarchy="secondary" state="disabled" icon="on" iconSelection="calendar" onclick = " function yes ()  {alert(new Date())}"></seat-button>
+    <br>
     <br>    
     <div>HE</div>
+    </div>
+    <h1 >-TERTIARY</h1>
+    <h1 >Desktop</h1>
+    <seat-button hierarchy="purchase"  device="desktop" purchaseHierarchy="tertiary" state="normal"  onclick = " function yes ()  {alert(new Date())}"></seat-button>
+    <br>
+    <seat-button hierarchy="purchase"  device="desktop" purchaseHierarchy="tertiary" state="normal" icon="on" iconSelection="calendar" onclick = " function yes ()  {alert(new Date())}"></seat-button>
+    <br>
+    <seat-button hierarchy="purchase"  device="desktop" purchaseHierarchy="tertiary" state="disabled"  onclick = " function yes ()  {alert(new Date())}"></seat-button>
+    <br>
+    <seat-button hierarchy="purchase"  device="desktop" purchaseHierarchy="tertiary" state="disabled" icon="on" iconSelection="calendar" onclick = " function yes ()  {alert(new Date())}"></seat-button>
+    <br>
 
-    
+    <seat-button hierarchy="purchase"  device="tablet&mobile" purchaseHierarchy="tertiary" state="normal"  onclick = " function yes ()  {alert(new Date())}"></seat-button>
+    <br>
+    <seat-button hierarchy="purchase"  device="tablet&mobile" purchaseHierarchy="tertiary" state="normal" icon="on" iconSelection="calendar" onclick = " function yes ()  {alert(new Date())}"></seat-button>
+    <br>
+    <seat-button hierarchy="purchase"  device="tablet&mobile" purchaseHierarchy="tertiary" state="disabled"  onclick = " function yes ()  {alert(new Date())}"></seat-button>
+    <br>
+    <seat-button hierarchy="purchase"  device="tablet&mobile" purchaseHierarchy="tertiary" state="disabled" icon="on" iconSelection="calendar" onclick = " function yes ()  {alert(new Date())}"></seat-button>
+    <br>
   </body>
 </html>

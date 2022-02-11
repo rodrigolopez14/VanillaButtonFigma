@@ -1,59 +1,55 @@
 
 import {HIERARCHY_ATTRIBUTE, 
-    DEVICE_ATTRIBUTE, 
-    COLOR_ATTRIBUTE,
-    STATE_ATTRIBUTE,
-    LINE_ATTRIBUTE,
-    ICON_ATTRIBUTE,
-    PURCHASE_HIERARCHY_ATTRIBUTE} from "../constants.js"
+        DEVICE_ATTRIBUTE, 
+        COLOR_ATTRIBUTE,
+        STATE_ATTRIBUTE,
+        ICON_ATTRIBUTE} from "../constants.js"
 import {SECONDARY_OPTION,
-    TERTIARY_OPTION,
-    GHOST_OPTION,
-    PURCHASE_OPTION,
-    HYPERLINK_OPTION,
-    DESKTOP_OPTION,
-    TABLET_MOBILE_OPTION,
-    SMALL_OPTION,
-    BLACK_OPTION,
-    WHITE_OPTION,
-    NORMAL_OPTION,
-    DISABLED_OPTION,
-    TITLE_OPTION,
-    PARAGRAPH_OPTION,
-    ON_OPTION,
-    OFF_OPTION,
-    PRIMARY_PURCHASE_HIERARCHY_OPTION,
-    SECONDARY_PURCHASE_HIERARCHY_OPTION,
-    TERTIARY_PURCHASE_HIERARCHY_OPTION} from "../constants.js"
-
+        DESKTOP_OPTION,
+        TABLET_MOBILE_OPTION,
+        SMALL_OPTION,
+        BLACK_OPTION,
+        WHITE_OPTION,
+        NORMAL_OPTION,
+        DISABLED_OPTION,
+        ON_OPTION,
+        OFF_OPTION,} from "../constants.js"
+import {BUTTON_SUBCOMPONENT,
+        ICON_SUBCOMPONENT,
+        ICON_CONTAINER_SUBCOMPONENT,
+        TEXT_SUBCOMPONENT } from "../constants.js"
 import {HOVER_BUTTON_EVENT} from "../constants.js"
-const Styles = []
+import {REGULAR_BUTTON_ICON_VARIANT, REGULAR_BUTTON_VARIANT} from "../constants.js"
+import {PATH_STYLE,
+        STYLE_OBJECT,
+        COMPONENT_VARIANT_KEY} from "./constants.js"
+const secondaryStyles = []
 //*----------------STYLING BUTTONS ------------------------*/
 
 //*----------------NEW BUTTON ------------------------*/
 
 //* PRIMARY DESKTOP BLACK NORMAL OFFICON */
 const Style1 = {}
-Style1 ['button'] = {
+Style1 [BUTTON_SUBCOMPONENT] = {
     
-    transition: "0.2s all ease-in-out",
+    transition: "0.1s all ease-in-out",
     boxShadow: "inset 0 0 0 2px transparent",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
     width: "230px",
     height: "46px", 
-    background: "#190F14",
-    border: "none",
+    background: "transparent",
+    border: "1px solid #190F14",
     borderRadius: "2px",
     boxShadow: "none",
     boxSizing: "border-box",
     
 }
-Style1['button'][HOVER_BUTTON_EVENT] = {
-    background: "#443C40",
+Style1[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
+    border: "2px solid #190F14",
 }
-Style1['textButton'] = {
+Style1[TEXT_SUBCOMPONENT] = {
     position: "static",
     fontFamily: "SEATBCN",
     fontStyle: "normal",
@@ -62,11 +58,10 @@ Style1['textButton'] = {
     display: "flex",
     alignItems: "center",
     textAlign: "center",
-    color: "#ECE9E1",
+    color: "#190F14",
     flex: "none",
     order: "0",
     flexGrow: "0",
-    margin: "0px 10px",
     lineHeight: "20px",
 }
 const Style1Path = {}
@@ -76,32 +71,35 @@ Style1Path[COLOR_ATTRIBUTE] = BLACK_OPTION
 Style1Path [STATE_ATTRIBUTE] = NORMAL_OPTION
 Style1Path[ICON_ATTRIBUTE] = OFF_OPTION 
 
+const styleWrapper1 = {}
+styleWrapper1[STYLE_OBJECT] = {...Style1}
+styleWrapper1[COMPONENT_VARIANT_KEY] = REGULAR_BUTTON_VARIANT
+styleWrapper1[PATH_STYLE] = Style1Path
+secondaryStyles.push(styleWrapper1)
 
-
-Styles.push({style: Style1, path: Style1Path})
 
 //*----------------NEW BUTTON ------------------------*/
 //* PRIMARY DESKTOP BLACK NORMAL ONICON *//
 const Style2 = {}
 
-Style2 ['button'] = {
-    transition: "0.2s all ease-in-out",
-    position: "relative",
+Style2 [BUTTON_SUBCOMPONENT] = {
+    transition: "0.1s all ease-in-out",
+    boxShadow: "inset 0 0 0 2px transparent",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
     width: "230px",
     height: "48px", 
-    background: "#190F14",
-    border: "none",
+    background: "transparent",
+    border: "1px solid #190F14",
     borderRadius: "2px",
     boxShadow: "none",
     boxSizing: "border-box",
 }
-Style2['button'][HOVER_BUTTON_EVENT] = {
-    background: "#443C40",
+Style2[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
+    border: "2px solid #190F14",
 }
-Style2['textButton'] = {
+Style2[TEXT_SUBCOMPONENT] = {
     position: "static",
     fontFamily: "SEATBCN",
     fontStyle: "normal",
@@ -110,15 +108,25 @@ Style2['textButton'] = {
     display: "flex",
     alignItems: "center",
     textAlign: "center",
-    color: "#ECE9E1",
+    color: "#190F14",
     flex: "none",
     order: "0",
     flexGrow: "0",
-    margin: "0px 10px",
     lineHeight: "20px",
+    margin: "0px 8px",
 }
-Style2['icon'] ={
-    color: "#ECE9E1",
+Style2[ICON_CONTAINER_SUBCOMPONENT] ={
+    color: "#190F14",
+    width: "24px",
+    height: "24px",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+}
+Style2[ICON_SUBCOMPONENT] = {
+    color: "#190F14",
+    width: "13.5px",
+    height: "13.5px",
 }
 const Style2Path = {}
 Style2Path[HIERARCHY_ATTRIBUTE] = SECONDARY_OPTION
@@ -127,16 +135,16 @@ Style2Path[COLOR_ATTRIBUTE] = BLACK_OPTION
 Style2Path [STATE_ATTRIBUTE] = NORMAL_OPTION
 Style2Path[ICON_ATTRIBUTE] = ON_OPTION 
 
-
-Styles.push({style: Style2, path: Style2Path})
-
-
-
+const styleWrapper2 = {}
+styleWrapper2[STYLE_OBJECT] = {...Style2}
+styleWrapper2[COMPONENT_VARIANT_KEY] = REGULAR_BUTTON_ICON_VARIANT
+styleWrapper2[PATH_STYLE] = Style2Path
+secondaryStyles.push(styleWrapper2)
 //*----------------NEW BUTTON ------------------------*/
 //* PRIMARY DESKTOP BLACK DISABLED OFFICON *//
 const Style3 = {}
-Style3 ['button'] = {
-    transition: "0.2s all ease-in-out",
+Style3 [BUTTON_SUBCOMPONENT] = {
+    transition: "0.1s all ease-in-out",
     position: "relative",
     display: "flex",
     flexDirection: "row",
@@ -144,13 +152,13 @@ Style3 ['button'] = {
     alignItems: "center",
     width: "230px",
     height: "48px", 
-    background: "#D1CFD0",
-    border: "none",
+    background: "transparent",
+    border: "1px solid #D1CFD0",
     borderRadius: "2px",
     boxShadow: "none",
     boxSizing: "border-box", 
 }
-Style3['textButton'] = {
+Style3[TEXT_SUBCOMPONENT] = {
     position: "static",
     fontFamily: "SEATBCN",
     fontStyle: "normal",
@@ -159,11 +167,10 @@ Style3['textButton'] = {
     display: "flex",
     alignItems: "center",
     textAlign: "center",
-    color: "#747468",
+    color: "#D1CFD0",
     flex: "none",
     order: "0",
     flexGrow: "0",
-    margin: "0px 10px",
     lineHeight: "20px",
 }
 const Style3Path = {}
@@ -173,15 +180,18 @@ Style3Path[COLOR_ATTRIBUTE] = BLACK_OPTION
 Style3Path [STATE_ATTRIBUTE] = DISABLED_OPTION
 Style3Path[ICON_ATTRIBUTE] = OFF_OPTION 
 
-Styles.push({style: Style3, path: Style3Path})
-
+const styleWrapper3 = {}
+styleWrapper3[STYLE_OBJECT] = {...Style3}
+styleWrapper3[COMPONENT_VARIANT_KEY] = REGULAR_BUTTON_VARIANT
+styleWrapper3[PATH_STYLE] = Style3Path
+secondaryStyles.push(styleWrapper3)
 //*----------------NEW BUTTON ------------------------*/
 //* PRIMARY DESKTOP BLACK DISABLED ONICON *//
 const Style4 = {}
 
-Style4 ['button'] = {
+Style4 [BUTTON_SUBCOMPONENT] = {
     
-    transition: "0.2s all ease-in-out",
+    transition: "0.1s all ease-in-out",
     position: "relative",
     display: "flex",
     flexDirection: "row",
@@ -189,14 +199,14 @@ Style4 ['button'] = {
     alignItems: "center",
     width: "230px",
     height: "48px", 
-    background: "#D1CFD0",
-    border: "none",
+    background: "transparent",
+    border: "1px solid #D1CFD0",
     borderRadius: "2px",
     boxShadow: "none",
     boxSizing: "border-box",
     
 }
-Style4['textButton'] = {
+Style4[TEXT_SUBCOMPONENT] = {
     position: "static",
     fontFamily: "SEATBCN",
     fontStyle: "normal",
@@ -205,15 +215,25 @@ Style4['textButton'] = {
     display: "flex",
     alignItems: "center",
     textAlign: "center",
-    color: "#747468",
+    color: "#D1CFD0",
     flex: "none",
     order: "0",
     flexGrow: "0",
-    margin: "0px 10px",
     lineHeight: "20px",
+    margin: "0px 8px",
 }
-Style4['icon'] ={
-    color: "#6F696C",
+Style4[ICON_CONTAINER_SUBCOMPONENT] ={
+    color: "#D1CFD0",
+    width: "24px",
+    height: "24px",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+}
+Style4[ICON_SUBCOMPONENT] = {
+    color: "#D1CFD0",
+    width: "13.5px",
+    height: "13.5px",
 }
 const Style4Path = {}
 Style4Path[HIERARCHY_ATTRIBUTE] = SECONDARY_OPTION
@@ -221,33 +241,36 @@ Style4Path[DEVICE_ATTRIBUTE] = DESKTOP_OPTION
 Style4Path[COLOR_ATTRIBUTE] = BLACK_OPTION
 Style4Path [STATE_ATTRIBUTE] = DISABLED_OPTION
 Style4Path[ICON_ATTRIBUTE] = ON_OPTION 
-Styles.push({path:Style4Path, style: Style4})
 
+const styleWrapper4 = {}
+styleWrapper4[STYLE_OBJECT] = {...Style4}
+styleWrapper4[COMPONENT_VARIANT_KEY] = REGULAR_BUTTON_ICON_VARIANT
+styleWrapper4[PATH_STYLE] = Style4Path
+secondaryStyles.push(styleWrapper4)
 //*---------TABLET AND MOBILE *-----------------------//
 //*----------------NEW BUTTON ------------------------*/
-
-//* PRIMARY TABLET&MOBILE BLACK NORMAL OFFICON */
+//* SECONDARY TABLET&MOBILE BLACK NORMAL OFFICON *//
 const Style5 = {}
-Style5 ['button'] = {
-
-    transition: "0.2s all ease-in-out",
+Style5 [BUTTON_SUBCOMPONENT] = {
+    
+    transition: "0.1s all ease-in-out",
     boxShadow: "inset 0 0 0 2px transparent",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
     width: "230px",
     height: "38px", 
-    background: "#190F14",
-    border: "none",
+    background: "transparent",
+    border: "1px solid #190F14",
     borderRadius: "2px",
     boxShadow: "none",
     boxSizing: "border-box",
     
 }
-Style5['button'][HOVER_BUTTON_EVENT] = {
-    background: "#443C40",
+Style5[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
+    border: "2px solid #190F14",
 }
-Style5['textButton'] = {
+Style5[TEXT_SUBCOMPONENT] = {
     position: "static",
     fontFamily: "SEATBCN",
     fontStyle: "normal",
@@ -256,11 +279,10 @@ Style5['textButton'] = {
     display: "flex",
     alignItems: "center",
     textAlign: "center",
-    color: "#ECE9E1",
+    color: "#190F14",
     flex: "none",
     order: "0",
     flexGrow: "0",
-    margin: "0px 10px",
     lineHeight: "16px",
 }
 const Style5Path = {}
@@ -269,44 +291,63 @@ Style5Path[DEVICE_ATTRIBUTE] = TABLET_MOBILE_OPTION
 Style5Path[COLOR_ATTRIBUTE] = BLACK_OPTION
 Style5Path [STATE_ATTRIBUTE] = NORMAL_OPTION
 Style5Path[ICON_ATTRIBUTE] = OFF_OPTION 
-Styles.push({path:Style5Path, style: Style5})
+
+const styleWrapper5 = {}
+styleWrapper5[STYLE_OBJECT] = {...Style5}
+styleWrapper5[COMPONENT_VARIANT_KEY] = REGULAR_BUTTON_VARIANT
+styleWrapper5[PATH_STYLE] = Style5Path
+secondaryStyles.push(styleWrapper5)
+
 
 //*----------------NEW BUTTON ------------------------*/
-//* PRIMARY TABLET&MOBILE BLACK NORMAL ONICON *//
+//* SECONDARY TABLET&MOBILE BLACK NORMAL ONICON *//
 const Style6 = {}
-/* Auto layout */
 
-Style6 ['button'] = {    
-    transition: "0.2s all ease-in-out",
-    position: "relative",
+Style6 [BUTTON_SUBCOMPONENT] = {
+    transition: "0.1s all ease-in-out",
+    boxShadow: "inset 0 0 0 2px transparent",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
     width: "230px",
     height: "40px", 
-    background: "#190F14",
-    border: "none",
+    background: "transparent",
+    border: "1px solid #190F14",
     borderRadius: "2px",
     boxShadow: "none",
     boxSizing: "border-box",
-    
 }
-Style6['button'][HOVER_BUTTON_EVENT] = {
-    background: "#443C40",
+Style6[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
+    border: "2px solid #190F14",
 }
-Style6['textButton'] = {
-
-    fontSize: "14px",
-    margin: "0px 8px",
-    lineHeight: "16px",
+Style6[TEXT_SUBCOMPONENT] = {
+    position: "static",
     fontFamily: "SEATBCN",
     fontStyle: "normal",
     fontWeight: "bold",
-    color: "#ECE9E1",
-    
+    fontSize: "14px",
+    display: "flex",
+    alignItems: "center",
+    textAlign: "center",
+    color: "#190F14",
+    flex: "none",
+    order: "0",
+    flexGrow: "0",
+    lineHeight: "16px",
+    margin: "0px 8px",
 }
-Style6['icon'] ={
-    color: "#ECE9E1",
+Style6[ICON_CONTAINER_SUBCOMPONENT] ={
+    color: "#190F14",
+    width: "24px",
+    height: "24px",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+}
+Style6[ICON_SUBCOMPONENT] = {
+    color: "#190F14",
+    width: "13.5px",
+    height: "13.5px",
 }
 const Style6Path = {}
 Style6Path[HIERARCHY_ATTRIBUTE] = SECONDARY_OPTION
@@ -314,17 +355,17 @@ Style6Path[DEVICE_ATTRIBUTE] = TABLET_MOBILE_OPTION
 Style6Path[COLOR_ATTRIBUTE] = BLACK_OPTION
 Style6Path [STATE_ATTRIBUTE] = NORMAL_OPTION
 Style6Path[ICON_ATTRIBUTE] = ON_OPTION 
-Styles.push({path:Style6Path, style: Style6})
 
+const styleWrapper6 = {}
+styleWrapper6[STYLE_OBJECT] = {...Style6}
+styleWrapper6[COMPONENT_VARIANT_KEY] = REGULAR_BUTTON_ICON_VARIANT
+styleWrapper6[PATH_STYLE] = Style6Path
+secondaryStyles.push(styleWrapper6)
 //*----------------NEW BUTTON ------------------------*/
-//* PRIMARY TABLET&MOBILE BLACK DISABLED OFFICON *//
+//* SECONDARY TABLET&MOBILE BLACK DISABLED OFFICON *//
 const Style7 = {}
-
-
-Style7 ['button'] = {
-
-    
-    transition: "0.2s all ease-in-out",
+Style7 [BUTTON_SUBCOMPONENT] = {
+    transition: "0.1s all ease-in-out",
     position: "relative",
     display: "flex",
     flexDirection: "row",
@@ -332,14 +373,13 @@ Style7 ['button'] = {
     alignItems: "center",
     width: "230px",
     height: "38px", 
-    background: "#D1CFD0",
-    border: "none",
+    background: "transparent",
+    border: "1px solid #D1CFD0",
     borderRadius: "2px",
     boxShadow: "none",
-    boxSizing: "border-box",
-    
+    boxSizing: "border-box", 
 }
-Style7['textButton'] = {
+Style7[TEXT_SUBCOMPONENT] = {
     position: "static",
     fontFamily: "SEATBCN",
     fontStyle: "normal",
@@ -348,56 +388,73 @@ Style7['textButton'] = {
     display: "flex",
     alignItems: "center",
     textAlign: "center",
-    color: "#747468",
-    margin: "0px 10px",
+    color: "#D1CFD0",
+    flex: "none",
+    order: "0",
+    flexGrow: "0",
     lineHeight: "16px",
 }
-
 const Style7Path = {}
 Style7Path[HIERARCHY_ATTRIBUTE] = SECONDARY_OPTION
 Style7Path[DEVICE_ATTRIBUTE] = TABLET_MOBILE_OPTION
 Style7Path[COLOR_ATTRIBUTE] = BLACK_OPTION
 Style7Path [STATE_ATTRIBUTE] = DISABLED_OPTION
 Style7Path[ICON_ATTRIBUTE] = OFF_OPTION 
-Styles.push({path:Style7Path, style: Style7})
 
-
-
+const styleWrapper7 = {}
+styleWrapper7[STYLE_OBJECT] = {...Style7}
+styleWrapper7[COMPONENT_VARIANT_KEY] = REGULAR_BUTTON_VARIANT
+styleWrapper7[PATH_STYLE] = Style7Path
+secondaryStyles.push(styleWrapper7)
 //*----------------NEW BUTTON ------------------------*/
-//* PRIMARY DESKTOP BLACK DISABLED ONICON //
+//* SECONDARY TABLET&MOBILE BLACK DISABLED ONICON *//
 const Style8 = {}
 
-Style8 ['button'] = {
+Style8 [BUTTON_SUBCOMPONENT] = {
     
-    transition: "0.2s all ease-in-out",
+    transition: "0.1s all ease-in-out",
     position: "relative",
     display: "flex",
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
     width: "230px",
-    height: "38px", 
-    background: "#D1CFD0",
-    border: "none",
+    height: "40px", 
+    background: "transparent",
+    border: "1px solid #D1CFD0",
     borderRadius: "2px",
     boxShadow: "none",
     boxSizing: "border-box",
     
 }
-Style8['textButton'] = {
-    
+Style8[TEXT_SUBCOMPONENT] = {
     position: "static",
     fontFamily: "SEATBCN",
     fontStyle: "normal",
     fontWeight: "bold",
     fontSize: "14px",
+    display: "flex",
+    alignItems: "center",
     textAlign: "center",
-    color: "#747468",
-    margin: "0px 10px",
+    color: "#D1CFD0",
+    flex: "none",
+    order: "0",
+    flexGrow: "0",
     lineHeight: "16px",
+    margin: "0px 8px",
 }
-Style8['icon'] ={
-    color: "#6F696C",
+Style8[ICON_CONTAINER_SUBCOMPONENT] ={
+    color: "#D1CFD0",
+    width: "24px",
+    height: "24px",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+}
+Style8[ICON_SUBCOMPONENT] = {
+    color: "#D1CFD0",
+    width: "13.5px",
+    height: "13.5px",
 }
 const Style8Path = {}
 Style8Path[HIERARCHY_ATTRIBUTE] = SECONDARY_OPTION
@@ -405,44 +462,50 @@ Style8Path[DEVICE_ATTRIBUTE] = TABLET_MOBILE_OPTION
 Style8Path[COLOR_ATTRIBUTE] = BLACK_OPTION
 Style8Path [STATE_ATTRIBUTE] = DISABLED_OPTION
 Style8Path[ICON_ATTRIBUTE] = ON_OPTION 
-Styles.push({path:Style8Path, style: Style8})
 
-
+const styleWrapper8 = {}
+styleWrapper8[STYLE_OBJECT] = {...Style8}
+styleWrapper8[COMPONENT_VARIANT_KEY] = REGULAR_BUTTON_ICON_VARIANT
+styleWrapper8[PATH_STYLE] = Style8Path
+secondaryStyles.push(styleWrapper8)
 //*---------SMALL-----------------------//
 //*----------------NEW BUTTON ------------------------*/
 
-//* PRIMARY TABLET&MOBILE BLACK NORMAL OFFICON */
+//*----------------NEW BUTTON ------------------------*/
+//* SECONDARY SMALL BLACK NORMAL OFFICON *//
 const Style9 = {}
-Style9 ['button'] = {
-
-    transition: "0.2s all ease-in-out",
+Style9 [BUTTON_SUBCOMPONENT] = {
+    
+    transition: "0.1s all ease-in-out",
     boxShadow: "inset 0 0 0 2px transparent",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
     width: "230px",
     height: "30px", 
-    background: "#190F14",
-    border: "none",
+    background: "transparent",
+    border: "1px solid #190F14",
     borderRadius: "2px",
     boxShadow: "none",
     boxSizing: "border-box",
     
 }
-Style9['button'][HOVER_BUTTON_EVENT] = {
-    background: "#443C40",
+Style9[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
+    border: "2px solid #190F14",
 }
-Style9['textButton'] = {
-
+Style9[TEXT_SUBCOMPONENT] = {
+    position: "static",
     fontFamily: "SEATBCN",
     fontStyle: "normal",
     fontWeight: "bold",
     fontSize: "14px",
+    display: "flex",
     alignItems: "center",
     textAlign: "center",
-    color: "#ECE9E1",
+    color: "#190F14",
     flex: "none",
-    margin: "0px 10px",
+    order: "0",
+    flexGrow: "0",
     lineHeight: "16px",
 }
 const Style9Path = {}
@@ -451,45 +514,63 @@ Style9Path[DEVICE_ATTRIBUTE] = SMALL_OPTION
 Style9Path[COLOR_ATTRIBUTE] = BLACK_OPTION
 Style9Path [STATE_ATTRIBUTE] = NORMAL_OPTION
 Style9Path[ICON_ATTRIBUTE] = OFF_OPTION 
-Styles.push({path:Style9Path, style: Style9})
+
+const styleWrapper9 = {}
+styleWrapper9[STYLE_OBJECT] = {...Style9}
+styleWrapper9[COMPONENT_VARIANT_KEY] = REGULAR_BUTTON_VARIANT
+styleWrapper9[PATH_STYLE] = Style9Path
+secondaryStyles.push(styleWrapper9)
+
 
 //*----------------NEW BUTTON ------------------------*/
-//* PRIMARY SMALL BLACK NORMAL ONICON *//
+//* SECONDARY SMALL BLACK NORMAL ONICON *//
 const Style10 = {}
-/* Auto layout */
 
-Style10 ['button'] = {    
-
-    transition: "0.2s all ease-in-out",
-    position: "relative",
+Style10 [BUTTON_SUBCOMPONENT] = {
+    transition: "0.1s all ease-in-out",
+    boxShadow: "inset 0 0 0 2px transparent",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
     width: "230px",
     height: "32px", 
-    background: "#190F14",
-    border: "none",
+    background: "transparent",
+    border: "1px solid #190F14",
     borderRadius: "2px",
     boxShadow: "none",
     boxSizing: "border-box",
-    
 }
-Style10['button'][HOVER_BUTTON_EVENT] = {
-    background: "#443C40",
+Style10[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
+    border: "2px solid #190F14",
 }
-Style10['textButton'] = {
-
-    fontSize: "14px",
-    margin: "0px 8px",
-    lineHeight: "16px",
+Style10[TEXT_SUBCOMPONENT] = {
+    position: "static",
     fontFamily: "SEATBCN",
     fontStyle: "normal",
     fontWeight: "bold",
-    color: "#ECE9E1",
-    
+    fontSize: "14px",
+    display: "flex",
+    alignItems: "center",
+    textAlign: "center",
+    color: "#190F14",
+    flex: "none",
+    order: "0",
+    flexGrow: "0",
+    lineHeight: "16px",
+    margin: "0px 8px",
 }
-Style10['icon'] ={
-    color: "#ECE9E1",
+Style10[ICON_CONTAINER_SUBCOMPONENT] ={
+    color: "#190F14",
+    width: "20px",
+    height: "20px",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+}
+Style10[ICON_SUBCOMPONENT] = {
+    color: "#190F14",
+    width: "11.25px",
+    height: "11.25px",
 }
 const Style10Path = {}
 Style10Path[HIERARCHY_ATTRIBUTE] = SECONDARY_OPTION
@@ -497,17 +578,17 @@ Style10Path[DEVICE_ATTRIBUTE] = SMALL_OPTION
 Style10Path[COLOR_ATTRIBUTE] = BLACK_OPTION
 Style10Path [STATE_ATTRIBUTE] = NORMAL_OPTION
 Style10Path[ICON_ATTRIBUTE] = ON_OPTION 
-Styles.push({path:Style10Path, style: Style10})
 
+const styleWrapper10 = {}
+styleWrapper10[STYLE_OBJECT] = {...Style10}
+styleWrapper10[COMPONENT_VARIANT_KEY] = REGULAR_BUTTON_ICON_VARIANT
+styleWrapper10[PATH_STYLE] = Style10Path
+secondaryStyles.push(styleWrapper10)
 //*----------------NEW BUTTON ------------------------*/
-//* PRIMARY SMALL BLACK DISABLED OFFICON *//
+//* SECONDARY SMALL BLACK DISABLED OFFICON *//
 const Style11 = {}
-
-
-Style11 ['button'] = {
-
-    
-    transition: "0.2s all ease-in-out",
+Style11 [BUTTON_SUBCOMPONENT] = {
+    transition: "0.1s all ease-in-out",
     position: "relative",
     display: "flex",
     flexDirection: "row",
@@ -515,14 +596,13 @@ Style11 ['button'] = {
     alignItems: "center",
     width: "230px",
     height: "30px", 
-    background: "#D1CFD0",
-    border: "none",
+    background: "transparent",
+    border: "1px solid #D1CFD0",
     borderRadius: "2px",
     boxShadow: "none",
-    boxSizing: "border-box",
-    
+    boxSizing: "border-box", 
 }
-Style11['textButton'] = {
+Style11[TEXT_SUBCOMPONENT] = {
     position: "static",
     fontFamily: "SEATBCN",
     fontStyle: "normal",
@@ -531,55 +611,73 @@ Style11['textButton'] = {
     display: "flex",
     alignItems: "center",
     textAlign: "center",
-    color: "#747468",
-    margin: "0px 10px",
+    color: "#D1CFD0",
+    flex: "none",
+    order: "0",
+    flexGrow: "0",
     lineHeight: "16px",
 }
-
 const Style11Path = {}
 Style11Path[HIERARCHY_ATTRIBUTE] = SECONDARY_OPTION
 Style11Path[DEVICE_ATTRIBUTE] = SMALL_OPTION
 Style11Path[COLOR_ATTRIBUTE] = BLACK_OPTION
 Style11Path [STATE_ATTRIBUTE] = DISABLED_OPTION
 Style11Path[ICON_ATTRIBUTE] = OFF_OPTION 
-Styles.push({path:Style11Path, style: Style11})
 
+const styleWrapper11 = {}
+styleWrapper11[STYLE_OBJECT] = {...Style11}
+styleWrapper11[COMPONENT_VARIANT_KEY] = REGULAR_BUTTON_VARIANT
+styleWrapper11[PATH_STYLE] = Style11Path
+secondaryStyles.push(styleWrapper11)
 //*----------------NEW BUTTON ------------------------*/
-//* PRIMARY DESKTOP BLACK DISABLED ONICON *//
+//* SECONDARY SMALL BLACK DISABLED ONICON *//
 const Style12 = {}
 
-Style12 ['button'] = {
+Style12 [BUTTON_SUBCOMPONENT] = {
     
-    transition: "0.2s all ease-in-out",
+    transition: "0.1s all ease-in-out",
     position: "relative",
     display: "flex",
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
-    
     width: "230px",
     height: "32px", 
-    background: "#D1CFD0",
-    border: "none",
+    background: "transparent",
+    border: "1px solid #D1CFD0",
     borderRadius: "2px",
     boxShadow: "none",
     boxSizing: "border-box",
     
 }
-Style12['textButton'] = {
-    
+Style12[TEXT_SUBCOMPONENT] = {
     position: "static",
     fontFamily: "SEATBCN",
     fontStyle: "normal",
     fontWeight: "bold",
     fontSize: "14px",
+    display: "flex",
+    alignItems: "center",
     textAlign: "center",
-    color: "#747468",
-    margin: "0px 10px",
+    color: "#D1CFD0",
+    flex: "none",
+    order: "0",
+    flexGrow: "0",
     lineHeight: "16px",
+    margin: "0px 8px",
 }
-Style12['icon'] ={
-    color: "#6F696C",
+Style12[ICON_CONTAINER_SUBCOMPONENT] ={
+    color: "#D1CFD0",
+    width: "20px",
+    height: "20px",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+}
+Style12[ICON_SUBCOMPONENT] = {
+    color: "#D1CFD0",
+    width: "11.25px",
+    height: "11.25px",
 }
 const Style12Path = {}
 Style12Path[HIERARCHY_ATTRIBUTE] = SECONDARY_OPTION
@@ -587,32 +685,36 @@ Style12Path[DEVICE_ATTRIBUTE] = SMALL_OPTION
 Style12Path[COLOR_ATTRIBUTE] = BLACK_OPTION
 Style12Path [STATE_ATTRIBUTE] = DISABLED_OPTION
 Style12Path[ICON_ATTRIBUTE] = ON_OPTION 
-Styles.push({path:Style12Path, style: Style12})
 
+const styleWrapper12 = {}
+styleWrapper12[STYLE_OBJECT] = {...Style12}
+styleWrapper12[COMPONENT_VARIANT_KEY] = REGULAR_BUTTON_ICON_VARIANT
+styleWrapper12[PATH_STYLE] = Style12Path
+secondaryStyles.push(styleWrapper12)
 //*----------------NEW BUTTON ------------------------*/
 
 //* PRIMARY DESKTOP WHITE NORMAL OFFICON */
 const Style13 = {}
-Style13 ['button'] = {
+Style13 [BUTTON_SUBCOMPONENT] = {
     
-    transition: "0.2s all ease-in-out",
+    transition: "0.1s all ease-in-out",
     boxShadow: "inset 0 0 0 2px transparent",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
     width: "230px",
     height: "46px", 
-    background: "#ECE9E1",
-    border: "none",
+    background: "#2E2A2B",
+    border: "1px solid #ECE9E1",
     borderRadius: "2px",
     boxShadow: "none",
     boxSizing: "border-box",
     
 }
-Style13['button'][HOVER_BUTTON_EVENT] = {
-    background: "#F2F1ED",
+Style13[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
+    border: "2px solid #ECE9E1",
 }
-Style13['textButton'] = {
+Style13[TEXT_SUBCOMPONENT] = {
     position: "static",
     fontFamily: "SEATBCN",
     fontStyle: "normal",
@@ -621,11 +723,10 @@ Style13['textButton'] = {
     display: "flex",
     alignItems: "center",
     textAlign: "center",
-    color: "#190F14",
+    color: "#ECE9E1",
     flex: "none",
     order: "0",
     flexGrow: "0",
-    margin: "0px 10px",
     lineHeight: "20px",
 }
 const Style13Path = {}
@@ -634,32 +735,36 @@ Style13Path[DEVICE_ATTRIBUTE] = DESKTOP_OPTION
 Style13Path[COLOR_ATTRIBUTE] = WHITE_OPTION
 Style13Path [STATE_ATTRIBUTE] = NORMAL_OPTION
 Style13Path[ICON_ATTRIBUTE] = OFF_OPTION 
-Styles.push({path:Style13Path, style: Style13})
 
+const styleWrapper13 = {}
+styleWrapper13[STYLE_OBJECT] = {...Style13}
+styleWrapper13[COMPONENT_VARIANT_KEY] = REGULAR_BUTTON_VARIANT
+styleWrapper13[PATH_STYLE] = Style13Path
+secondaryStyles.push(styleWrapper13)
 //*----------------NEW BUTTON ------------------------*/
 //* PRIMARY DESKTOP WHITE NORMAL ONICON *//
 const Style14 = {}
 
-Style14 ['button'] = {
+Style14 [BUTTON_SUBCOMPONENT] = {
     
-    transition: "0.2s all ease-in-out",
+    transition: "0.1s all ease-in-out",
     position: "relative",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
     width: "230px",
     height: "48px", 
-    background: "#ECE9E1",
-    border: "none",
+    background: "#2E2A2B",
+    border: "1px solid #ECE9E1",
     borderRadius: "2px",
     boxShadow: "none",
     boxSizing: "border-box",
     
 }
-Style14['button'][HOVER_BUTTON_EVENT] = {
-    background: "#F2F1ED",
+Style14[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
+    border: "2px solid #ECE9E1",
 }
-Style14['textButton'] = {
+Style14[TEXT_SUBCOMPONENT] = {
     position: "static",
     fontFamily: "SEATBCN",
     fontStyle: "normal",
@@ -668,15 +773,25 @@ Style14['textButton'] = {
     display: "flex",
     alignItems: "center",
     textAlign: "center",
-    color: "#190F14",
+    color: "#ECE9E1",
     flex: "none",
     order: "0",
     flexGrow: "0",
-    margin: "0px 10px",
     lineHeight: "20px",
+    margin: "0px 8px",
 }
-Style14['icon'] ={
-    color: "#190F14",
+Style14[ICON_CONTAINER_SUBCOMPONENT] ={
+    color: "#ECE9E1",
+    width: "24px",
+    height: "24px",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+}
+Style14[ICON_SUBCOMPONENT] = {
+    color: "#ECE9E1",
+    width: "13.5px",
+    height: "13.5px",
 }
 const Style14Path = {}
 Style14Path[HIERARCHY_ATTRIBUTE] = SECONDARY_OPTION
@@ -684,8 +799,13 @@ Style14Path[DEVICE_ATTRIBUTE] = DESKTOP_OPTION
 Style14Path[COLOR_ATTRIBUTE] = WHITE_OPTION
 Style14Path [STATE_ATTRIBUTE] = NORMAL_OPTION
 Style14Path[ICON_ATTRIBUTE] = ON_OPTION 
-Styles.push({path:Style14Path, style: Style14})
 
+
+const styleWrapper14 = {}
+styleWrapper14[STYLE_OBJECT] = {...Style14}
+styleWrapper14[COMPONENT_VARIANT_KEY] = REGULAR_BUTTON_ICON_VARIANT
+styleWrapper14[PATH_STYLE] = Style14Path
+secondaryStyles.push(styleWrapper14)
 //*----------------NEW BUTTON ------------------------*/
 //* PRIMARY DESKTOP WHITE DISABLED OFFICON *//
 const Style15 = {}
@@ -693,9 +813,9 @@ const Style15 = {}
 
 /* Interactive/02 Secondary/01 Enabled */
 
-Style15 ['button'] = {
+Style15 [BUTTON_SUBCOMPONENT] = {
     
-    transition: "0.2s all ease-in-out",
+    transition: "0.1s all ease-in-out",
     position: "relative",
     display: "flex",
     flexDirection: "row",
@@ -703,14 +823,14 @@ Style15 ['button'] = {
     alignItems: "center",
     width: "230px",
     height: "48px", 
-    background: "#6F696C",
-    border: "none",
+    background: "#2E2A2B",
+    border: "1px solid #6F696C",
     borderRadius: "2px",
     boxShadow: "none",
     boxSizing: "border-box",
     
 }
-Style15['textButton'] = {
+Style15[TEXT_SUBCOMPONENT] = {
     position: "static",
     fontFamily: "SEATBCN",
     fontStyle: "normal",
@@ -719,11 +839,11 @@ Style15['textButton'] = {
     display: "flex",
     alignItems: "center",
     textAlign: "center",
-    color: "#190F14",
+    color: "#D1CFD0",
+    opacity: "0.4",
     flex: "none",
     order: "0",
     flexGrow: "0",
-    margin: "0px 10px",
     lineHeight: "20px",
 }
 
@@ -733,15 +853,19 @@ Style15Path[DEVICE_ATTRIBUTE] = DESKTOP_OPTION
 Style15Path[COLOR_ATTRIBUTE] = WHITE_OPTION
 Style15Path [STATE_ATTRIBUTE] = DISABLED_OPTION
 Style15Path[ICON_ATTRIBUTE] = OFF_OPTION 
-Styles.push({path:Style15Path, style: Style15})
 
+const styleWrapper15 = {}
+styleWrapper15[STYLE_OBJECT] = {...Style15}
+styleWrapper15[COMPONENT_VARIANT_KEY] = REGULAR_BUTTON_VARIANT
+styleWrapper15[PATH_STYLE] = Style15Path
+secondaryStyles.push(styleWrapper15)
 //*----------------NEW BUTTON ------------------------*/
 //* PRIMARY DESKTOP WHITE DISABLED ONICON *//
 const Style16 = {}
 
-Style16 ['button'] = {
+Style16 [BUTTON_SUBCOMPONENT] = {
     
-    transition: "0.2s all ease-in-out",
+    transition: "0.1s all ease-in-out",
     position: "relative",
     display: "flex",
     flexDirection: "row",
@@ -749,14 +873,14 @@ Style16 ['button'] = {
     alignItems: "center",
     width: "230px",
     height: "48px", 
-    background: "#6F696C",
-    border: "none",
+    background: "#2E2A2B",
+    border: "1px solid #6F696C",
     borderRadius: "2px",
     boxShadow: "none",
     boxSizing: "border-box",
     
 }
-Style16['textButton'] = {
+Style16[TEXT_SUBCOMPONENT] = {
     position: "static",
     fontFamily: "SEATBCN",
     fontStyle: "normal",
@@ -765,15 +889,27 @@ Style16['textButton'] = {
     display: "flex",
     alignItems: "center",
     textAlign: "center",
-    color: "#190F14",
+    color: "#D1CFD0",
+    opacity: "0.4",
     flex: "none",
     order: "0",
     flexGrow: "0",
-    margin: "0px 10px",
     lineHeight: "20px",
+    margin: "0px 8px",
 }
-Style16['icon'] ={
-    color: "#190F14",
+Style16[ICON_CONTAINER_SUBCOMPONENT] ={
+    color: "#D1CFD0",
+    opacity: "0.4",
+    width: "24px",
+    height: "24px",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+}
+Style16[ICON_SUBCOMPONENT] = {
+    color: "#D1CFD0",
+    width: "13.5px",
+    height: "13.5px",
 }
 const Style16Path = {}
 Style16Path[HIERARCHY_ATTRIBUTE] = SECONDARY_OPTION
@@ -781,33 +917,40 @@ Style16Path[DEVICE_ATTRIBUTE] = DESKTOP_OPTION
 Style16Path[COLOR_ATTRIBUTE] = WHITE_OPTION
 Style16Path [STATE_ATTRIBUTE] = DISABLED_OPTION
 Style16Path[ICON_ATTRIBUTE] = ON_OPTION 
-Styles.push({path:Style16Path, style: Style16})
+
+const styleWrapper16 = {}
+styleWrapper16[STYLE_OBJECT] = {...Style16}
+styleWrapper16[COMPONENT_VARIANT_KEY] = REGULAR_BUTTON_ICON_VARIANT
+styleWrapper16[PATH_STYLE] = Style16Path
+secondaryStyles.push(styleWrapper16)
 
 //*---------TABLET AND MOBILE *-----------------------//
 //*----------------NEW BUTTON ------------------------*/
 
-//* PRIMARY TABLET&MOBILE WHITE NORMAL OFFICON */
-const Style17 = {}
-Style17 ['button'] = {
+//*----------------NEW BUTTON ------------------------*/
 
-    transition: "0.2s all ease-in-out",
+//* PRIMARY DESKTOP WHITE NORMAL OFFICON */
+const Style17 = {}
+Style17 [BUTTON_SUBCOMPONENT] = {
+    
+    transition: "0.1s all ease-in-out",
     boxShadow: "inset 0 0 0 2px transparent",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
     width: "230px",
     height: "38px", 
-    background: "#ECE9E1",
-    border: "none",
+    background: "#2E2A2B",
+    border: "1px solid #ECE9E1",
     borderRadius: "2px",
     boxShadow: "none",
     boxSizing: "border-box",
     
 }
-Style17['button'][HOVER_BUTTON_EVENT] = {
-    background: "#F2F1ED",
+Style17[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
+    border: "2px solid #ECE9E1",
 }
-Style17['textButton'] = {
+Style17[TEXT_SUBCOMPONENT] = {
     position: "static",
     fontFamily: "SEATBCN",
     fontStyle: "normal",
@@ -816,11 +959,10 @@ Style17['textButton'] = {
     display: "flex",
     alignItems: "center",
     textAlign: "center",
-    color: "#190F14",
+    color: "#ECE9E1",
     flex: "none",
     order: "0",
     flexGrow: "0",
-    margin: "0px 10px",
     lineHeight: "16px",
 }
 const Style17Path = {}
@@ -829,77 +971,36 @@ Style17Path[DEVICE_ATTRIBUTE] = TABLET_MOBILE_OPTION
 Style17Path[COLOR_ATTRIBUTE] = WHITE_OPTION
 Style17Path [STATE_ATTRIBUTE] = NORMAL_OPTION
 Style17Path[ICON_ATTRIBUTE] = OFF_OPTION 
-Styles.push({path:Style17Path, style: Style17})
 
+const styleWrapper17 = {}
+styleWrapper17[STYLE_OBJECT] = {...Style17}
+styleWrapper17[COMPONENT_VARIANT_KEY] = REGULAR_BUTTON_VARIANT
+styleWrapper17[PATH_STYLE] = Style17Path
+secondaryStyles.push(styleWrapper17)
 //*----------------NEW BUTTON ------------------------*/
-//* PRIMARY TABLET&MOBILE WHITE NORMAL ONICON *//
+//* PRIMARY DESKTOP WHITE NORMAL ONICON *//
 const Style18 = {}
-/* Auto layout */
 
-Style18 ['button'] = {    
-    transition: "0.2s all ease-in-out",
+Style18 [BUTTON_SUBCOMPONENT] = {
+    
+    transition: "0.1s all ease-in-out",
     position: "relative",
     display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    width: "230px",
-    height: "40px", 
-    background: "#ECE9E1",
-    border: "none",
-    borderRadius: "2px",
-    boxShadow: "none",
-    boxSizing: "border-box",
-    
-}
-Style18['button'][HOVER_BUTTON_EVENT] = {
-    background: "#F2F1ED",
-}
-Style18['textButton'] = {
-
-    fontSize: "14px",
-    margin: "0px 8px",
-    lineHeight: "16px",
-    fontFamily: "SEATBCN",
-    fontStyle: "normal",
-    fontWeight: "bold",
-    color: "#190F14",
-    
-}
-Style18['icon'] ={
-    color: "#190F14",
-}
-const Style18Path = {}
-Style18Path[HIERARCHY_ATTRIBUTE] = SECONDARY_OPTION
-Style18Path[DEVICE_ATTRIBUTE] = TABLET_MOBILE_OPTION
-Style18Path[COLOR_ATTRIBUTE] = WHITE_OPTION
-Style18Path [STATE_ATTRIBUTE] = NORMAL_OPTION
-Style18Path[ICON_ATTRIBUTE] = ON_OPTION 
-Styles.push({path:Style18Path, style: Style18})
-
-//*----------------NEW BUTTON ------------------------*/
-//* PRIMARY TABLET&MOBILE WHITE DISABLED OFFICON *//
-const Style19 = {}
-
-
-Style19 ['button'] = {
-
-    
-    transition: "0.2s all ease-in-out",
-    position: "relative",
-    display: "flex",
-    flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
     width: "230px",
     height: "38px", 
-    background: "#6F696C",
-    border: "none",
+    background: "#2E2A2B",
+    border: "1px solid #ECE9E1",
     borderRadius: "2px",
     boxShadow: "none",
     boxSizing: "border-box",
     
 }
-Style19['textButton'] = {
+Style18[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
+    border: "2px solid #ECE9E1",
+}
+Style18[TEXT_SUBCOMPONENT] = {
     position: "static",
     fontFamily: "SEATBCN",
     fontStyle: "normal",
@@ -908,8 +1009,77 @@ Style19['textButton'] = {
     display: "flex",
     alignItems: "center",
     textAlign: "center",
-    color: "#190F14",
-    margin: "0px 10px",
+    color: "#ECE9E1",
+    flex: "none",
+    order: "0",
+    flexGrow: "0",
+    lineHeight: "16px",
+    margin: "0px 8px",
+}
+Style18[ICON_CONTAINER_SUBCOMPONENT] ={
+    color: "#ECE9E1",
+    width: "24px",
+    height: "24px",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+}
+Style18[ICON_SUBCOMPONENT] = {
+    color: "#ECE9E1",
+    width: "13.5px",
+    height: "13.5px",
+}
+const Style18Path = {}
+Style18Path[HIERARCHY_ATTRIBUTE] = SECONDARY_OPTION
+Style18Path[DEVICE_ATTRIBUTE] = TABLET_MOBILE_OPTION
+Style18Path[COLOR_ATTRIBUTE] = WHITE_OPTION
+Style18Path [STATE_ATTRIBUTE] = NORMAL_OPTION
+Style18Path[ICON_ATTRIBUTE] = ON_OPTION 
+
+
+const styleWrapper18 = {}
+styleWrapper18[STYLE_OBJECT] = {...Style18}
+styleWrapper18[COMPONENT_VARIANT_KEY] = REGULAR_BUTTON_ICON_VARIANT
+styleWrapper18[PATH_STYLE] = Style18Path
+secondaryStyles.push(styleWrapper18)
+//*----------------NEW BUTTON ------------------------*/
+//* PRIMARY DESKTOP WHITE DISABLED OFFICON *//
+const Style19 = {}
+
+
+/* Interactive/02 Secondary/01 Enabled */
+
+Style19 [BUTTON_SUBCOMPONENT] = {
+    
+    transition: "0.1s all ease-in-out",
+    position: "relative",
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    width: "230px",
+    height: "38px", 
+    background: "#2E2A2B",
+    border: "1px solid #6F696C",
+    borderRadius: "2px",
+    boxShadow: "none",
+    boxSizing: "border-box",
+    
+}
+Style19[TEXT_SUBCOMPONENT] = {
+    position: "static",
+    fontFamily: "SEATBCN",
+    fontStyle: "normal",
+    fontWeight: "bold",
+    fontSize: "14px",
+    display: "flex",
+    alignItems: "center",
+    textAlign: "center",
+    color: "#D1CFD0",
+    opacity: "0.4",
+    flex: "none",
+    order: "0",
+    flexGrow: "0",
     lineHeight: "16px",
 }
 
@@ -919,17 +1089,19 @@ Style19Path[DEVICE_ATTRIBUTE] = TABLET_MOBILE_OPTION
 Style19Path[COLOR_ATTRIBUTE] = WHITE_OPTION
 Style19Path [STATE_ATTRIBUTE] = DISABLED_OPTION
 Style19Path[ICON_ATTRIBUTE] = OFF_OPTION 
-Styles.push({path:Style19Path, style: Style19})
 
-
-
+const styleWrapper19 = {}
+styleWrapper19[STYLE_OBJECT] = {...Style19}
+styleWrapper19[COMPONENT_VARIANT_KEY] = REGULAR_BUTTON_VARIANT
+styleWrapper19[PATH_STYLE] = Style19Path
+secondaryStyles.push(styleWrapper19)
 //*----------------NEW BUTTON ------------------------*/
-//* PRIMARY TABLET&MOBILE WHITE DISABLED ONICON //
+//* PRIMARY DESKTOP WHITE DISABLED ONICON *//
 const Style20 = {}
 
-Style20 ['button'] = {
+Style20 [BUTTON_SUBCOMPONENT] = {
     
-    transition: "0.2s all ease-in-out",
+    transition: "0.1s all ease-in-out",
     position: "relative",
     display: "flex",
     flexDirection: "row",
@@ -937,27 +1109,43 @@ Style20 ['button'] = {
     alignItems: "center",
     width: "230px",
     height: "38px", 
-    background: "#6F696C",
-    border: "none",
+    background: "#2E2A2B",
+    border: "1px solid #6F696C",
     borderRadius: "2px",
     boxShadow: "none",
     boxSizing: "border-box",
     
 }
-Style20['textButton'] = {
-    
+Style20[TEXT_SUBCOMPONENT] = {
     position: "static",
     fontFamily: "SEATBCN",
     fontStyle: "normal",
     fontWeight: "bold",
     fontSize: "14px",
+    display: "flex",
+    alignItems: "center",
     textAlign: "center",
-    color: "#190F14",
-    margin: "0px 10px",
+    color: "#D1CFD0",
+    opacity: "0.4",
+    flex: "none",
+    order: "0",
+    flexGrow: "0",
     lineHeight: "16px",
+    margin: "0px 8px",
 }
-Style20['icon'] ={
-    color: "#190F14",
+Style20[ICON_CONTAINER_SUBCOMPONENT] ={
+    color: "#D1CFD0",
+    opacity: "0.4",
+    width: "24px",
+    height: "24px",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+}
+Style20[ICON_SUBCOMPONENT] = {
+    color: "#D1CFD0",
+    width: "13.5px",
+    height: "13.5px",
 }
 const Style20Path = {}
 Style20Path[HIERARCHY_ATTRIBUTE] = SECONDARY_OPTION
@@ -965,44 +1153,50 @@ Style20Path[DEVICE_ATTRIBUTE] = TABLET_MOBILE_OPTION
 Style20Path[COLOR_ATTRIBUTE] = WHITE_OPTION
 Style20Path [STATE_ATTRIBUTE] = DISABLED_OPTION
 Style20Path[ICON_ATTRIBUTE] = ON_OPTION 
-Styles.push({path:Style20Path, style: Style20})
 
-
+const styleWrapper20 = {}
+styleWrapper20[STYLE_OBJECT] = {...Style20}
+styleWrapper20[COMPONENT_VARIANT_KEY] = REGULAR_BUTTON_ICON_VARIANT
+styleWrapper20[PATH_STYLE] = Style20Path
+secondaryStyles.push(styleWrapper20)
 //*---------SMALL-----------------------//
 //*----------------NEW BUTTON ------------------------*/
 
 //* PRIMARY SMALL WHITE NORMAL OFFICON */
-const Style21 = {}
-Style21 ['button'] = {
 
-    transition: "0.2s all ease-in-out",
+const Style21 = {}
+Style21 [BUTTON_SUBCOMPONENT] = {
+    
+    transition: "0.1s all ease-in-out",
     boxShadow: "inset 0 0 0 2px transparent",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
     width: "230px",
-    height: "30px", 
-    background: "#ECE9E1",
-    border: "none",
+    height: "32px", 
+    background: "#2E2A2B",
+    border: "1px solid #ECE9E1",
     borderRadius: "2px",
     boxShadow: "none",
     boxSizing: "border-box",
     
 }
-Style21['button'][HOVER_BUTTON_EVENT] = {
-    background: "#F2F1ED",
+Style21[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
+    border: "2px solid #ECE9E1",
 }
-Style21['textButton'] = {
-
+Style21[TEXT_SUBCOMPONENT] = {
+    position: "static",
     fontFamily: "SEATBCN",
     fontStyle: "normal",
     fontWeight: "bold",
     fontSize: "14px",
+    display: "flex",
     alignItems: "center",
     textAlign: "center",
-    color: "#190F14",
+    color: "#ECE9E1",
     flex: "none",
-    margin: "0px 10px",
+    order: "0",
+    flexGrow: "0",
     lineHeight: "16px",
 }
 const Style21Path = {}
@@ -1011,79 +1205,36 @@ Style21Path[DEVICE_ATTRIBUTE] = SMALL_OPTION
 Style21Path[COLOR_ATTRIBUTE] = WHITE_OPTION
 Style21Path [STATE_ATTRIBUTE] = NORMAL_OPTION
 Style21Path[ICON_ATTRIBUTE] = OFF_OPTION 
-Styles.push({path:Style21Path, style: Style21})
 
-
+const styleWrapper21 = {}
+styleWrapper21[STYLE_OBJECT] = {...Style21}
+styleWrapper21[COMPONENT_VARIANT_KEY] = REGULAR_BUTTON_VARIANT
+styleWrapper21[PATH_STYLE] = Style21Path
+secondaryStyles.push(styleWrapper21)
 //*----------------NEW BUTTON ------------------------*/
-//* PRIMARY SMALL WHITE NORMAL ONICON *//
+//* PRIMARY DESKTOP WHITE NORMAL ONICON *//
 const Style22 = {}
-/* Auto layout */
 
-Style22 ['button'] = {    
-
-    transition: "0.2s all ease-in-out",
+Style22 [BUTTON_SUBCOMPONENT] = {
+    
+    transition: "0.1s all ease-in-out",
     position: "relative",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
     width: "230px",
     height: "32px", 
-    background: "#ECE9E1",
-    border: "none",
+    background: "#2E2A2B",
+    border: "1px solid #ECE9E1",
     borderRadius: "2px",
     boxShadow: "none",
     boxSizing: "border-box",
     
 }
-Style22['button'][HOVER_BUTTON_EVENT] = {
-    background: "#F2F1ED",
+Style22[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
+    border: "2px solid #ECE9E1",
 }
-Style22['textButton'] = {
-
-    fontSize: "14px",
-    margin: "0px 8px",
-    lineHeight: "16px",
-    fontFamily: "SEATBCN",
-    fontStyle: "normal",
-    fontWeight: "bold",
-    color: "#190F14",
-    
-}
-Style22['icon'] ={
-    color: "#190F14",
-}
-const Style22Path = {}
-Style22Path[HIERARCHY_ATTRIBUTE] = SECONDARY_OPTION
-Style22Path[DEVICE_ATTRIBUTE] = SMALL_OPTION
-Style22Path[COLOR_ATTRIBUTE] = WHITE_OPTION
-Style22Path [STATE_ATTRIBUTE] = NORMAL_OPTION
-Style22Path[ICON_ATTRIBUTE] = ON_OPTION 
-Styles.push({path:Style22Path, style: Style22})
-
-//*----------------NEW BUTTON ------------------------*/
-//* PRIMARY SMALL WHITE DISABLED OFFICON *//
-const Style23 = {}
-
-
-Style23 ['button'] = {
-
-    
-    transition: "0.2s all ease-in-out",
-    position: "relative",
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
-    width: "230px",
-    height: "30px", 
-    background: "#6F696C",
-    border: "none",
-    borderRadius: "2px",
-    boxShadow: "none",
-    boxSizing: "border-box",
-    
-}
-Style23['textButton'] = {
+Style22[TEXT_SUBCOMPONENT] = {
     position: "static",
     fontFamily: "SEATBCN",
     fontStyle: "normal",
@@ -1092,8 +1243,77 @@ Style23['textButton'] = {
     display: "flex",
     alignItems: "center",
     textAlign: "center",
-    color: "#190F14",
-    margin: "0px 10px",
+    color: "#ECE9E1",
+    flex: "none",
+    order: "0",
+    flexGrow: "0",
+    lineHeight: "16px",
+    margin: "0px 8px",
+}
+Style22[ICON_CONTAINER_SUBCOMPONENT] ={
+    color: "#ECE9E1",
+    width: "20px",
+    height: "20px",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+}
+Style22[ICON_SUBCOMPONENT] = {
+    color: "#ECE9E1",
+    width: "11.25px",
+    height: "11.25px",
+}
+const Style22Path = {}
+Style22Path[HIERARCHY_ATTRIBUTE] = SECONDARY_OPTION
+Style22Path[DEVICE_ATTRIBUTE] = SMALL_OPTION
+Style22Path[COLOR_ATTRIBUTE] = WHITE_OPTION
+Style22Path [STATE_ATTRIBUTE] = NORMAL_OPTION
+Style22Path[ICON_ATTRIBUTE] = ON_OPTION 
+
+
+const styleWrapper22 = {}
+styleWrapper22[STYLE_OBJECT] = {...Style22}
+styleWrapper22[COMPONENT_VARIANT_KEY] = REGULAR_BUTTON_ICON_VARIANT
+styleWrapper22[PATH_STYLE] = Style22Path
+secondaryStyles.push(styleWrapper22)
+//*----------------NEW BUTTON ------------------------*/
+//* PRIMARY DESKTOP WHITE DISABLED OFFICON *//
+const Style23 = {}
+
+
+/* Interactive/02 Secondary/01 Enabled */
+
+Style23 [BUTTON_SUBCOMPONENT] = {
+    
+    transition: "0.1s all ease-in-out",
+    position: "relative",
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    width: "230px",
+    height: "32px", 
+    background: "#2E2A2B",
+    border: "1px solid #6F696C",
+    borderRadius: "2px",
+    boxShadow: "none",
+    boxSizing: "border-box",
+    
+}
+Style23[TEXT_SUBCOMPONENT] = {
+    position: "static",
+    fontFamily: "SEATBCN",
+    fontStyle: "normal",
+    fontWeight: "bold",
+    fontSize: "14px",
+    display: "flex",
+    alignItems: "center",
+    textAlign: "center",
+    color: "#D1CFD0",
+    opacity: "0.4",
+    flex: "none",
+    order: "0",
+    flexGrow: "0",
     lineHeight: "16px",
 }
 
@@ -1103,44 +1323,63 @@ Style23Path[DEVICE_ATTRIBUTE] = SMALL_OPTION
 Style23Path[COLOR_ATTRIBUTE] = WHITE_OPTION
 Style23Path [STATE_ATTRIBUTE] = DISABLED_OPTION
 Style23Path[ICON_ATTRIBUTE] = OFF_OPTION 
-Styles.push({path:Style23Path, style: Style23})
 
+const styleWrapper23 = {}
+styleWrapper23[STYLE_OBJECT] = {...Style23}
+styleWrapper23[COMPONENT_VARIANT_KEY] = REGULAR_BUTTON_VARIANT
+styleWrapper23[PATH_STYLE] = Style23Path
+secondaryStyles.push(styleWrapper23)
 //*----------------NEW BUTTON ------------------------*/
 //* PRIMARY DESKTOP WHITE DISABLED ONICON *//
 const Style24 = {}
 
-Style24 ['button'] = {
+Style24 [BUTTON_SUBCOMPONENT] = {
     
-    transition: "0.2s all ease-in-out",
+    transition: "0.1s all ease-in-out",
     position: "relative",
     display: "flex",
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
-    
     width: "230px",
     height: "32px", 
-    background: "#6F696C",
-    border: "none",
+    background: "#2E2A2B",
+    border: "1px solid #6F696C",
     borderRadius: "2px",
     boxShadow: "none",
     boxSizing: "border-box",
     
 }
-Style24['textButton'] = {
-    
+Style24[TEXT_SUBCOMPONENT] = {
     position: "static",
     fontFamily: "SEATBCN",
     fontStyle: "normal",
     fontWeight: "bold",
     fontSize: "14px",
+    display: "flex",
+    alignItems: "center",
     textAlign: "center",
-    color: "#190F14",
-    margin: "0px 10px",
+    color: "#D1CFD0",
+    opacity: "0.4",
+    flex: "none",
+    order: "0",
+    flexGrow: "0",
     lineHeight: "16px",
+    margin: "0px 8px",
 }
-Style24['icon'] ={
-    color: "#190F14",
+Style24[ICON_CONTAINER_SUBCOMPONENT] ={
+    color: "#D1CFD0",
+    opacity: "0.4",
+    width: "20px",
+    height: "20px",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+}
+Style24[ICON_SUBCOMPONENT] = {
+    color: "#D1CFD0",
+    width: "11.25px",
+    height: "11.25px",
 }
 const Style24Path = {}
 Style24Path[HIERARCHY_ATTRIBUTE] = SECONDARY_OPTION
@@ -1148,6 +1387,11 @@ Style24Path[DEVICE_ATTRIBUTE] = SMALL_OPTION
 Style24Path[COLOR_ATTRIBUTE] = WHITE_OPTION
 Style24Path [STATE_ATTRIBUTE] = DISABLED_OPTION
 Style24Path[ICON_ATTRIBUTE] = ON_OPTION 
-Styles.push({path:Style24Path, style: Style24})
 
-export default Styles;
+const styleWrapper24 = {}
+styleWrapper24[STYLE_OBJECT] = {...Style24}
+styleWrapper24[COMPONENT_VARIANT_KEY] = REGULAR_BUTTON_ICON_VARIANT
+styleWrapper24[PATH_STYLE] = Style24Path
+secondaryStyles.push(styleWrapper24)
+
+export  {secondaryStyles};

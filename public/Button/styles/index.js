@@ -1,20 +1,29 @@
-import StylesPrimary from "./primaryStyles.js"
 import {EVENTS_OF_COMPONENT, DEFAULT_EVENT} from "../constants.js"
+import {REGULAR_BUTTON_VARIANT} from "../constants.js"
+import {PATH_STYLE,STYLE_KEY,COMPONENT_VARIANT_KEY} from "./constants.js"
+import {allStylesKeysAndPaths,allStylesObjects} from "./allStyles.js"
 //EN ESTE ARCHIVO SE CONSTRUYE UN ARBOL PARA DAR LOS ESTILOS A DISTINTOS COMPONENTES
-class  TreeStyle {
+class  TreeComponent {
     constructor (value)
     {
        this.value = value;
        this. childrenProperty = null;
        this.children = []
        this.style = null
+       this.variant = null
     }
     
-    getStyle (path) 
+    getKeys (path) 
     {
         
         const keys = Object.keys(path)
-        if (keys.length === 0) return this.style
+        if (keys.length === 0) 
+        {
+            const keysReturn = {}
+            keysReturn[STYLE_KEY] = this.style
+            keysReturn[COMPONENT_VARIANT_KEY] = this.variant
+            return keysReturn
+        }
 
         const indexProperty = keys.indexOf(this.childrenProperty)
         if (indexProperty === -1) return null;
@@ -24,23 +33,27 @@ class  TreeStyle {
             if (childFiltered.length === 0) return null;
             const subPath = {...path}
             delete subPath[keys[indexProperty]];
-            return childFiltered[0].getStyle(subPath)
+            return childFiltered[0].getKeys(subPath)
         }
     }
-    addStyle (path, style) 
+    addKeys (path, style, variant = REGULAR_BUTTON_VARIANT) 
     {
         const keys = Object.keys(path)
         if (keys.length === 0) return
         
         if (this.childrenProperty === null)
         {
-            const child = new TreeStyle (path[keys[0]])
+            const child = new TreeComponent (path[keys[0]])
             this.childrenProperty = keys [0]
             this.children.push(child)
             const subPath = {...path}
             delete subPath[keys[0]];
-            child.addStyle(subPath,style)
-            if (keys.length === 1) child.style=style
+            child.addKeys(subPath,style, variant)
+            if (keys.length === 1)
+            {
+                child.style=style
+                child.variant=variant
+            } 
         }
         else 
         {
@@ -52,18 +65,22 @@ class  TreeStyle {
                 const indexChildren = allChildrenValues.indexOf(path[keys[indexProperty]]);
                 if (indexChildren === -1) 
                 {
-                    const newChild = new TreeStyle (path[keys[indexProperty]])
+                    const newChild = new TreeComponent (path[keys[indexProperty]])
                     this.children.push(newChild)
                     const subPathChild = {...path}
                     delete subPathChild[keys[indexProperty]];
-                    newChild.addStyle(subPathChild,style)
-                    if (keys.length === 1) newChild.style=style
+                    newChild.addKeys(subPathChild,style, variant)
+                    if (keys.length === 1) 
+                    {
+                        newChild.style=style
+                        newChild.variant=variant   
+                    }
                 }
                 else 
                 {
                     const subPath = {...path}
                     delete subPath[keys[indexProperty]];
-                    this.children[indexChildren].addStyle(subPath,style)
+                    this.children[indexChildren].addKeys(subPath,style, variant)
 
                 }
             }
@@ -71,19 +88,20 @@ class  TreeStyle {
     }
 }
 
-const tree = new TreeStyle ("root")
+const tree = new TreeComponent ("root")
+allStylesKeysAndPaths.forEach(style => {tree.addKeys( style[PATH_STYLE] , style[STYLE_KEY], style[COMPONENT_VARIANT_KEY])})
 
-StylesPrimary.forEach(style => {tree.addStyle( style.path , style.style)})
-
-
-export const setStyle = (stylesAttributes) => {
-   const keys = Object.keys(stylesAttributes)
+export const setKeys = (keysAttributes) => {
+   const keys = Object.keys(keysAttributes)
     keys.forEach (key => {
-        if (stylesAttributes[key] === null) delete stylesAttributes[key]; 
+        if (keysAttributes[key] === null) delete keysAttributes[key]; 
     })
-   const styles = tree.getStyle(stylesAttributes)
-   return styles;
+   const keysToReturn = tree.getKeys(keysAttributes)
+   return keysToReturn;
 
+}
+export const setStyle = (styleKey) => {
+    return allStylesObjects[styleKey]
 }
 
 export const processStyle = (element, styleObject, events= EVENTS_OF_COMPONENT) => {
