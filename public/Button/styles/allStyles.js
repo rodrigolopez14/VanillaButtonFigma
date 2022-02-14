@@ -1,6 +1,9 @@
 import {primaryStyles} from "./primaryStyles.js"
 import {secondaryStyles} from "./secondaryStyles.js"
 import {purchaseStyles} from "./purchaseStyles.js"
+import {tertiaryStyles} from "./tertiaryStyles.js"
+import {ghostStyles} from "./ghostStyles.js"
+import {hyperlinkStyles} from "./hyperlinkStyles.js"
 import {PATH_STYLE,
         STYLE_KEY,
         STYLE_OBJECT,
@@ -12,6 +15,9 @@ const allStyles = []
 allStyles.push(...primaryStyles)
 allStyles.push(...secondaryStyles)
 allStyles.push(...purchaseStyles)
+allStyles.push(...tertiaryStyles)
+allStyles.push(...ghostStyles)
+allStyles.push(...hyperlinkStyles)
 
 for (var i=0; i<allStyles.length;i++)
 {
