@@ -10,7 +10,6 @@ import {HYPERLINK_OPTION,
     WHITE_OPTION,
     TITLE_OPTION,
     PARAGRAPH_OPTION,
-    DISABLED_OPTION,
     OFF_OPTION} from "../constants.js"
 import {BUTTON_SUBCOMPONENT,
         TEXT_SUBCOMPONENT } from "../constants.js"
