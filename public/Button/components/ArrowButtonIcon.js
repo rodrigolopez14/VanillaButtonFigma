@@ -28,6 +28,11 @@ export const arrowButtonIcon = function (attributes,styleKey)
     iconChild.setAttribute(ICON_COLOR_ATTRIBUTE, styles[ICON_SUBCOMPONENT].color)
     iconChild.setAttribute(ICON_HEIGHT_ATTRIBUTE, styles[ICON_SUBCOMPONENT].height)
     iconChild.setAttribute(ICON_WIDTH_ATTRIBUTE, styles[ICON_SUBCOMPONENT].width)
+    if (styles[ICON_SUBCOMPONENT].hasOwnProperty(HOVER_BUTTON_EVENT))
+    {
+        onMouseOverButtonStyles.push(()=> iconChild.setAttribute(ICON_COLOR_ATTRIBUTE, styles[ICON_SUBCOMPONENT][HOVER_BUTTON_EVENT].color))
+        onMouseOutButtonStyles.push(()=> iconChild.setAttribute(ICON_COLOR_ATTRIBUTE, styles[ICON_SUBCOMPONENT].color))
+    }
     iconParent.appendChild(iconChild)
     button.appendChild(iconParent)    
     const textNode = document.createTextNode(attributes[CHILDREN_ATTRIBUTE])
@@ -46,6 +51,11 @@ export const arrowButtonIcon = function (attributes,styleKey)
     iconArrowChild.setAttribute(ICON_COLOR_ATTRIBUTE, styles[ICONARROW_SUBCOMPONENT].color)
     iconArrowChild.setAttribute(ICON_HEIGHT_ATTRIBUTE, styles[ICONARROW_SUBCOMPONENT].height)
     iconArrowChild.setAttribute(ICON_WIDTH_ATTRIBUTE, styles[ICONARROW_SUBCOMPONENT].width)
+    if (styles[ICONARROW_SUBCOMPONENT].hasOwnProperty(HOVER_BUTTON_EVENT))
+    {
+        onMouseOverButtonStyles.push(()=> iconArrowChild.setAttribute(ICON_COLOR_ATTRIBUTE, styles[ICONARROW_SUBCOMPONENT][HOVER_BUTTON_EVENT].color))
+        onMouseOutButtonStyles.push(()=> iconArrowChild.setAttribute(ICON_COLOR_ATTRIBUTE, styles[ICONARROW_SUBCOMPONENT].color))
+    }
     iconArrowParent.appendChild(iconArrowChild)
     button.appendChild(iconArrowParent)
     onMouseOutButtonStyles.forEach( (style)=> style())

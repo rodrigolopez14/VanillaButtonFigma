@@ -33,6 +33,12 @@ export const arrowButton = function (attributes,styleKey)
     const iconArrowChild = document.createElement(ICON)
     iconArrowChild.setAttribute(ICON_SELECTION_ATTRIBUTE_FOR_COMPONENT, NAV_ARROW_ICON_OPTION)
     iconArrowChild.setAttribute(ICON_COLOR_ATTRIBUTE, styles[ICONARROW_SUBCOMPONENT].color)
+    if (styles[ICONARROW_SUBCOMPONENT].hasOwnProperty(HOVER_BUTTON_EVENT))
+    {
+        onMouseOverButtonStyles.push(()=> iconArrowChild.setAttribute(ICON_COLOR_ATTRIBUTE, styles[ICONARROW_SUBCOMPONENT][HOVER_BUTTON_EVENT].color))
+        onMouseOutButtonStyles.push(()=> iconArrowChild.setAttribute(ICON_COLOR_ATTRIBUTE, styles[ICONARROW_SUBCOMPONENT].color))
+    }
+    
     iconArrowChild.setAttribute(ICON_HEIGHT_ATTRIBUTE, styles[ICONARROW_SUBCOMPONENT].height)
     iconArrowChild.setAttribute(ICON_WIDTH_ATTRIBUTE, styles[ICONARROW_SUBCOMPONENT].width)
     iconArrowParent.appendChild(iconArrowChild)

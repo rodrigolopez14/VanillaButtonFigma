@@ -1378,8 +1378,8 @@ purchaseStyles.push(styleWrapper24)
 
 const Style25 = {}
 Style25 [BUTTON_SUBCOMPONENT] = {
-
-transition: "12s all ease-in-out",
+margin: "0px",
+transition: "0.5s all ease-in-out",
 boxShadow: "inset 0 0 0 2px transparent",
 display: "flex",
 justifyContent: "center",
@@ -1390,10 +1390,9 @@ background: "transparent",
 border: "none",
 }
 Style25[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
-    width: "138px",
+    width: "142px",
 }
 Style25[TEXT_SUBCOMPONENT] = {
-transition: "0.5s all ease-in-out",
 position: "static",
 fontFamily: "SEATBCN",
 fontStyle: "normal",
@@ -1409,9 +1408,11 @@ flexGrow: "0",
 lineHeight: "20px",
 margin: "0px 2px",
 }
+
 Style25[TEXT_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
-    margin: "0px 8px",
+    color: '#EEA786',
 }
+
 Style25[ICONARROW_CONTAINER_SUBCOMPONENT] = {
 transition: "0.5s all ease-in-out",
 color: "#EA5D1A",
@@ -1427,10 +1428,14 @@ Style25[ICONARROW_CONTAINER_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
     margin: "0px 8px",
 }
 Style25[ICONARROW_SUBCOMPONENT] = {
+    transition: "0.5s all ease-in-out",
     color: "#EA5D1A",
     width: "5.83px",
     height: "10px",
     }
+Style25[ICONARROW_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
+    color: '#EEA786',
+}
     
 const Style25Path = {}
 Style25Path[HIERARCHY_ATTRIBUTE] = PURCHASE_OPTION
@@ -1448,7 +1453,7 @@ purchaseStyles.push(styleWrapper25)
 const Style26 = {}
 Style26 [BUTTON_SUBCOMPONENT] = {
 
-transition: "12s all ease-in-out",
+transition: "0.5s all ease-in-out",
 boxShadow: "inset 0 0 0 2px transparent",
 display: "flex",
 justifyContent: "center",
@@ -1463,7 +1468,6 @@ Style26[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
     width: "166px",
 }
 Style26[TEXT_SUBCOMPONENT] = {
-transition: "0.5s all ease-in-out",
 position: "static",
 fontFamily: "SEATBCN",
 fontStyle: "normal",
@@ -1480,7 +1484,7 @@ lineHeight: "20px",
 margin: "0px 2px 0px 8px",
 }
 Style26[TEXT_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
-    margin: "0px 8px 0px 8px",
+    color: '#EEA786',
 }
 Style26[ICON_CONTAINER_SUBCOMPONENT] ={
     transition: "0.5s all ease-in-out",
@@ -1496,6 +1500,10 @@ Style26[ICON_SUBCOMPONENT] = {
     width: "11.25px",
     height: "11.25px",
 }
+Style26[ICON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
+    color: '#EEA786',
+}
+
 Style26[ICONARROW_CONTAINER_SUBCOMPONENT] = {
 transition: "0.5s all ease-in-out",
 color: "#EA5D1A",
@@ -1514,7 +1522,9 @@ Style26[ICONARROW_SUBCOMPONENT] = {
     width: "5.83px",
     height: "10px",
     }
-    
+Style26[ICONARROW_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
+    color: '#EEA786',
+}
 const Style26Path = {}
 Style26Path[HIERARCHY_ATTRIBUTE] = PURCHASE_OPTION
 Style26Path[PURCHASE_HIERARCHY_ATTRIBUTE] = TERTIARY_PURCHASE_HIERARCHY_OPTION
@@ -1531,7 +1541,7 @@ purchaseStyles.push(styleWrapper26)
 const Style27 = {}
 Style27 [BUTTON_SUBCOMPONENT] = {
 
-transition: "12s all ease-in-out",
+transition: "0.5s all ease-in-out",
 boxShadow: "inset 0 0 0 2px transparent",
 display: "flex",
 justifyContent: "center",
@@ -1591,7 +1601,7 @@ purchaseStyles.push(styleWrapper27)
 const Style28 = {}
 Style28 [BUTTON_SUBCOMPONENT] = {
 
-transition: "12s all ease-in-out",
+transition: "0.5s all ease-in-out",
 boxShadow: "inset 0 0 0 2px transparent",
 display: "flex",
 justifyContent: "center",
@@ -1669,7 +1679,7 @@ purchaseStyles.push(styleWrapper28)
 const Style29 = {}
 Style29 [BUTTON_SUBCOMPONENT] = {
 
-transition: "12s all ease-in-out",
+transition: "0.5s all ease-in-out",
 boxShadow: "inset 0 0 0 2px transparent",
 display: "flex",
 justifyContent: "center",
@@ -1683,7 +1693,6 @@ Style29[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
     width: "124px",
 }
 Style29[TEXT_SUBCOMPONENT] = {
-transition: "0.5s all ease-in-out",
 position: "static",
 fontFamily: "SEATBCN",
 fontStyle: "normal",
@@ -1700,7 +1709,7 @@ lineHeight: "16px",
 margin: "0px 2px 0px 0px",
 }
 Style29[TEXT_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
-    margin: "0px 8px 0px 0px",
+    color: '#EEA786',
 }
 Style29[ICONARROW_CONTAINER_SUBCOMPONENT] = {
 transition: "0.5s all ease-in-out",
@@ -1721,6 +1730,9 @@ Style29[ICONARROW_SUBCOMPONENT] = {
     width: "5.83px",
     height: "10px",
     }
+Style29[ICONARROW_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
+    color: '#EEA786',
+}
 
 const Style29Path = {}
 Style29Path[HIERARCHY_ATTRIBUTE] = PURCHASE_OPTION
@@ -1738,7 +1750,7 @@ purchaseStyles.push(styleWrapper29)
 const Style30 = {}
 Style30 [BUTTON_SUBCOMPONENT] = {
 
-transition: "12s all ease-in-out",
+transition: "0.5s all ease-in-out",
 boxShadow: "inset 0 0 0 2px transparent",
 display: "flex",
 justifyContent: "center",
@@ -1753,7 +1765,6 @@ Style30[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
     width: "152px",
 }
 Style30[TEXT_SUBCOMPONENT] = {
-transition: "0.5s all ease-in-out",
 position: "static",
 fontFamily: "SEATBCN",
 fontStyle: "normal",
@@ -1770,7 +1781,7 @@ lineHeight: "16px",
 margin: "0px 2px 0px 8px",
 }
 Style30[TEXT_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
-    margin: "0px 8px 0px 8px",
+    color: '#EEA786',
 }
 Style30[ICON_CONTAINER_SUBCOMPONENT] ={
     transition: "0.5s all ease-in-out",
@@ -1785,6 +1796,9 @@ Style30[ICON_SUBCOMPONENT] = {
     color: "#EA5D1A",
     width: "11.25px",
     height: "11.25px",
+}
+Style30[ICON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
+    color: '#EEA786',
 }
 Style30[ICONARROW_CONTAINER_SUBCOMPONENT] = {
 transition: "0.5s all ease-in-out",
@@ -1803,7 +1817,10 @@ Style30[ICONARROW_SUBCOMPONENT] = {
     color: "#EA5D1A",
     width: "5.83px",
     height: "10px",
-    }
+}
+Style30[ICONARROW_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
+    color: '#EEA786',
+}
     
 const Style30Path = {}
 Style30Path[HIERARCHY_ATTRIBUTE] = PURCHASE_OPTION
@@ -1821,7 +1838,7 @@ purchaseStyles.push(styleWrapper30)
 const Style31 = {}
 Style31 [BUTTON_SUBCOMPONENT] = {
 
-transition: "12s all ease-in-out",
+transition: "0.5s all ease-in-out",
 boxShadow: "inset 0 0 0 2px transparent",
 display: "flex",
 justifyContent: "center",
@@ -1881,7 +1898,7 @@ purchaseStyles.push(styleWrapper31)
 const Style32 = {}
 Style32 [BUTTON_SUBCOMPONENT] = {
 
-transition: "12s all ease-in-out",
+transition: "0.5s all ease-in-out",
 boxShadow: "inset 0 0 0 2px transparent",
 display: "flex",
 justifyContent: "center",
