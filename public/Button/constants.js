@@ -5,8 +5,8 @@ export const COLOR_ATTRIBUTE = "color";
 export const STATE_ATTRIBUTE = "state";
 export const LINE_ATTRIBUTE = "line";
 export const ICON_ATTRIBUTE = "icon";
-export const ICON_SELECTION_ATTRIBUTE = "iconSelection"
-export const PURCHASE_HIERARCHY_ATTRIBUTE = "purchaseHierarchy"
+export const ICON_SELECTION_ATTRIBUTE = "iconSelection";
+export const PURCHASE_HIERARCHY_ATTRIBUTE = "purchaseHierarchy";
 export const CHILDREN_ATTRIBUTE = "children";
 export const ONCLICK_ATTRIBUTE = "onClick";
 // hierarchy options

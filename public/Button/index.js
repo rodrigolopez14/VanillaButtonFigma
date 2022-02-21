@@ -4,9 +4,9 @@ import {ICON_SELECTION_ATTRIBUTE,
 import {ATTRIBUTES} from "./constants.js"
 import {loadFonts} from "../Fonts/index.js"
 import {setKeys} from "./styles/index.js"
-import {COMPONENTS} from "./components/index.js"
+import {COMPONENTS} from "./variants/index.js"
 import {NAME_OF_COMPONENT} from "./constants.js"
-import {COMPONENT_VARIANT_KEY,STYLE_KEY} from "./styles/constants.js"
+import {COMPONENT_VARIANT_KEY,STYLE_KEY} from "../commonMethodsAndConstants/Styles/commonConstants.js"
 loadFonts()
 
 class vanillaButton extends HTMLElement {

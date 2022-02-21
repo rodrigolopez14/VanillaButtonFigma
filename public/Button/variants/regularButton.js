@@ -1,6 +1,5 @@
 
-import {ICON_SELECTION_ATTRIBUTE,
-        CHILDREN_ATTRIBUTE,
+import {CHILDREN_ATTRIBUTE,
         ONCLICK_ATTRIBUTE} from "../constants.js"
 import {DEFAULT_EVENT, HOVER_BUTTON_EVENT} from "../constants.js"
 import {BUTTON_SUBCOMPONENT, TEXT_SUBCOMPONENT} from "../constants.js"

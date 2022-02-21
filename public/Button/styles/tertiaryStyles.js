@@ -22,7 +22,7 @@ import {HOVER_BUTTON_EVENT} from "../constants.js"
 import {ARROW_BUTTON_VARIANT, ARROW_BUTTON_ICON_VARIANT} from "../constants.js"
 import {PATH_STYLE,
     STYLE_OBJECT,
-    COMPONENT_VARIANT_KEY} from "./constants.js"
+    COMPONENT_VARIANT_KEY} from "../../commonMethodsAndConstants/Styles/commonConstants.js"
 const tertiaryStyles = []
 
 const Style1 = {}

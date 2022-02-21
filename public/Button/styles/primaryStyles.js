@@ -20,7 +20,7 @@ import {BUTTON_SUBCOMPONENT,
         TEXT_SUBCOMPONENT } from "../constants.js"
 import {HOVER_BUTTON_EVENT} from "../constants.js"
 import {REGULAR_BUTTON_ICON_VARIANT, REGULAR_BUTTON_VARIANT} from "../constants.js"
-import {PATH_STYLE,STYLE_OBJECT,COMPONENT_VARIANT_KEY} from "./constants.js"
+import {PATH_STYLE,STYLE_OBJECT,COMPONENT_VARIANT_KEY} from "../../commonMethodsAndConstants/Styles/commonConstants.js"
 const primaryStyles = []
 //*----------------STYLING BUTTONS ------------------------*/
 

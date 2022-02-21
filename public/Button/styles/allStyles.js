@@ -7,7 +7,7 @@ import {hyperlinkStyles} from "./hyperlinkStyles.js"
 import {PATH_STYLE,
         STYLE_KEY,
         STYLE_OBJECT,
-        COMPONENT_VARIANT_KEY} from "./constants.js"
+        COMPONENT_VARIANT_KEY} from "../../commonMethodsAndConstants/Styles/commonConstants.js"
 const allStylesObjects = {}
 const allStylesKeysAndPaths = []
 

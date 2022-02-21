@@ -3,7 +3,7 @@ import { ICON_ATTRIBUTES,
 import {ICON_WIDTH_ATTRIBUTE,ICON_HEIGHT_ATTRIBUTE, ICON_COLOR_ATTRIBUTE} from "./constants.js"
 import { PARTICULAR_ICON_COMPONENT_ATTRIBUTE } from './constants.js';
 import {NAME_OF_COMPONENT} from './constants.js'
-import components from './components/index.js'
+import components from './variants/index.js'
 import icons from './allIcons.js'
 export  class SvgIconSeat extends HTMLElement {
     constructor() 
@@ -29,7 +29,7 @@ export  class SvgIconSeat extends HTMLElement {
         this.innerHTML=`${svgEl.outerHTML}`
         this.style.width = attributes[ICON_WIDTH_ATTRIBUTE]
         this.style.height = attributes [ICON_HEIGHT_ATTRIBUTE] 
-      }
+    }
 }
 customElements.define(NAME_OF_COMPONENT, class extends SvgIconSeat {});
 export const ICON = NAME_OF_COMPONENT;

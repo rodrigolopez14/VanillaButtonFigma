@@ -1,4 +1,4 @@
-const URL_FOLDERS_FONTS= "http://cdn.jsdelivr.net/gh/rodrigolopez14/VanillaButtonFigma/public/Fonts";
+const URL_FOLDERS_FONTS= "https://cdn.jsdelivr.net/gh/rodrigolopez14/VanillaButtonFigma/public/Fonts";
 
 const FONTS = []
 FONTS.push({
