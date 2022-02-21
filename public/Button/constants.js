@@ -18,7 +18,7 @@ export const PURCHASE_OPTION = "purchase";
 export const HYPERLINK_OPTION = "hyperlink";
 //device options 
 export const DESKTOP_OPTION = "desktop";
-export const TABLET_MOBILE_OPTION = "tablet&mobile";
+export const TABLET_MOBILE_OPTION = "tabletAndMobile";
 export const SMALL_OPTION = "small";
 // color options
 export const BLACK_OPTION = "black";
