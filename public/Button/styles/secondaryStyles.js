@@ -1,28 +1,29 @@
 
 import {HIERARCHY_ATTRIBUTE, 
-        DEVICE_ATTRIBUTE, 
-        COLOR_ATTRIBUTE,
-        STATE_ATTRIBUTE,
-        ICON_ATTRIBUTE} from "../constants.js"
+    SIZE_ATTRIBUTE, 
+    COLOR_ATTRIBUTE,
+    STATE_ATTRIBUTE,
+    ICON_ATTRIBUTE} from "../constants.js"
 import {SECONDARY_OPTION,
-        DESKTOP_OPTION,
-        TABLET_MOBILE_OPTION,
-        SMALL_OPTION,
-        BLACK_OPTION,
-        WHITE_OPTION,
-        NORMAL_OPTION,
-        DISABLED_OPTION,
-        ON_OPTION,
-        OFF_OPTION,} from "../constants.js"
+    LARGE_OPTION,
+    MEDIUM_OPTION,
+    SMALL_OPTION,
+    BLACK_OPTION,
+    WHITE_OPTION,
+    NORMAL_OPTION,
+    DISABLED_OPTION,
+    ON_OPTION,
+    OFF_OPTION,} from "../constants.js"
 import {BUTTON_SUBCOMPONENT,
-        ICON_SUBCOMPONENT,
-        ICON_CONTAINER_SUBCOMPONENT,
-        TEXT_SUBCOMPONENT } from "../constants.js"
+    ICON_SUBCOMPONENT,
+    ICON_CONTAINER_SUBCOMPONENT,
+    TEXT_SUBCOMPONENT } from "../constants.js"
 import {HOVER_BUTTON_EVENT} from "../constants.js"
 import {REGULAR_BUTTON_ICON_VARIANT, REGULAR_BUTTON_VARIANT} from "../constants.js"
 import {PATH_STYLE,
-        STYLE_OBJECT,
-        COMPONENT_VARIANT_KEY} from "../../commonMethodsAndConstants/Styles/commonConstants.js"
+    STYLE_OBJECT,
+    COMPONENT_VARIANT_KEY} from "../../commonMethodsAndConstants/Styles/commonConstants.js"
+import { SIZE_STYLES } from "./commonStyles.js"
 const secondaryStyles = []
 //*----------------STYLING BUTTONS ------------------------*/
 
@@ -31,42 +32,35 @@ const secondaryStyles = []
 //* PRIMARY DESKTOP BLACK NORMAL OFFICON */
 const Style1 = {}
 Style1 [BUTTON_SUBCOMPONENT] = {
-    
-    transition: "0.1s all ease-in-out",
-    boxShadow: "inset 0 0 0 2px transparent",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    width: "230px",
-    height: "46px", 
-    background: "transparent",
-    border: "1px solid #190F14",
-    borderRadius: "2px",
-    boxShadow: "none",
-    boxSizing: "border-box",
-    
+
+transition: "0.1s all ease-in-out",
+boxShadow: "inset 0 0 0 2px transparent",
+display: "flex",
+justifyContent: "center",
+alignItems: "center",
+height: "46px", 
+background: "transparent",
+border: "1px solid #190F14",
+borderRadius: "2px",
+boxShadow: "none",
+...SIZE_STYLES[LARGE_OPTION][REGULAR_BUTTON_VARIANT][BUTTON_SUBCOMPONENT]
+
 }
 Style1[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
-    border: "2px solid #190F14",
+border: "2px solid #190F14",
 }
 Style1[TEXT_SUBCOMPONENT] = {
-    position: "static",
-    fontFamily: "SEATBCN",
-    fontStyle: "normal",
-    fontWeight: "bold",
-    fontSize: "16px",
-    display: "flex",
-    alignItems: "center",
-    textAlign: "center",
-    color: "#190F14",
-    flex: "none",
-    order: "0",
-    flexGrow: "0",
-    lineHeight: "20px",
+position: "static",
+fontFamily: "SEATBCN",
+fontStyle: "normal",
+fontWeight: "bold",
+fontSize: "16px",
+color: "#190F14",
+...SIZE_STYLES[LARGE_OPTION][REGULAR_BUTTON_VARIANT][TEXT_SUBCOMPONENT]
 }
 const Style1Path = {}
 Style1Path[HIERARCHY_ATTRIBUTE] = SECONDARY_OPTION
-Style1Path[DEVICE_ATTRIBUTE] = DESKTOP_OPTION
+Style1Path[SIZE_ATTRIBUTE] = LARGE_OPTION
 Style1Path[COLOR_ATTRIBUTE] = BLACK_OPTION
 Style1Path [STATE_ATTRIBUTE] = NORMAL_OPTION
 Style1Path[ICON_ATTRIBUTE] = OFF_OPTION 
@@ -83,54 +77,46 @@ secondaryStyles.push(styleWrapper1)
 const Style2 = {}
 
 Style2 [BUTTON_SUBCOMPONENT] = {
-    transition: "0.1s all ease-in-out",
-    boxShadow: "inset 0 0 0 2px transparent",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    width: "230px",
-    height: "48px", 
-    background: "transparent",
-    border: "1px solid #190F14",
-    borderRadius: "2px",
-    boxShadow: "none",
-    boxSizing: "border-box",
+transition: "0.1s all ease-in-out",
+boxShadow: "inset 0 0 0 2px transparent",
+display: "flex",
+justifyContent: "center",
+alignItems: "center",
+height: "48px", 
+background: "transparent",
+border: "1px solid #190F14",
+borderRadius: "2px",
+boxShadow: "none",
+...SIZE_STYLES[LARGE_OPTION][REGULAR_BUTTON_ICON_VARIANT][BUTTON_SUBCOMPONENT]
 }
 Style2[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
-    border: "2px solid #190F14",
+border: "2px solid #190F14",
 }
 Style2[TEXT_SUBCOMPONENT] = {
-    position: "static",
-    fontFamily: "SEATBCN",
-    fontStyle: "normal",
-    fontWeight: "bold",
-    fontSize: "16px",
-    display: "flex",
-    alignItems: "center",
-    textAlign: "center",
-    color: "#190F14",
-    flex: "none",
-    order: "0",
-    flexGrow: "0",
-    lineHeight: "20px",
-    margin: "0px 8px",
+position: "static",
+fontFamily: "SEATBCN",
+fontStyle: "normal",
+fontWeight: "bold",
+fontSize: "16px",
+color: "#190F14",
+...SIZE_STYLES[LARGE_OPTION][REGULAR_BUTTON_ICON_VARIANT][TEXT_SUBCOMPONENT]
 }
 Style2[ICON_CONTAINER_SUBCOMPONENT] ={
-    color: "#190F14",
-    width: "24px",
-    height: "24px",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
+color: "#190F14",
+width: "24px",
+height: "24px",
+display: "flex",
+justifyContent: "center",
+alignItems: "center",
 }
 Style2[ICON_SUBCOMPONENT] = {
-    color: "#190F14",
-    width: "13.5px",
-    height: "13.5px",
+color: "#190F14",
+width: "13.5px",
+height: "13.5px",
 }
 const Style2Path = {}
 Style2Path[HIERARCHY_ATTRIBUTE] = SECONDARY_OPTION
-Style2Path[DEVICE_ATTRIBUTE] = DESKTOP_OPTION
+Style2Path[SIZE_ATTRIBUTE] = LARGE_OPTION
 Style2Path[COLOR_ATTRIBUTE] = BLACK_OPTION
 Style2Path [STATE_ATTRIBUTE] = NORMAL_OPTION
 Style2Path[ICON_ATTRIBUTE] = ON_OPTION 
@@ -144,38 +130,31 @@ secondaryStyles.push(styleWrapper2)
 //* PRIMARY DESKTOP BLACK DISABLED OFFICON *//
 const Style3 = {}
 Style3 [BUTTON_SUBCOMPONENT] = {
-    transition: "0.1s all ease-in-out",
-    position: "relative",
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
-    width: "230px",
-    height: "48px", 
-    background: "transparent",
-    border: "1px solid #D1CFD0",
-    borderRadius: "2px",
-    boxShadow: "none",
-    boxSizing: "border-box", 
+transition: "0.1s all ease-in-out",
+position: "relative",
+display: "flex",
+flexDirection: "row",
+justifyContent: "center",
+alignItems: "center",
+height: "48px", 
+background: "transparent",
+border: "1px solid #D1CFD0",
+borderRadius: "2px",
+boxShadow: "none",
+...SIZE_STYLES[LARGE_OPTION][REGULAR_BUTTON_VARIANT][BUTTON_SUBCOMPONENT]
 }
 Style3[TEXT_SUBCOMPONENT] = {
-    position: "static",
-    fontFamily: "SEATBCN",
-    fontStyle: "normal",
-    fontWeight: "bold",
-    fontSize: "16px",
-    display: "flex",
-    alignItems: "center",
-    textAlign: "center",
-    color: "#D1CFD0",
-    flex: "none",
-    order: "0",
-    flexGrow: "0",
-    lineHeight: "20px",
+position: "static",
+fontFamily: "SEATBCN",
+fontStyle: "normal",
+fontWeight: "bold",
+fontSize: "16px",
+color: "#D1CFD0",
+...SIZE_STYLES[LARGE_OPTION][REGULAR_BUTTON_VARIANT][TEXT_SUBCOMPONENT]
 }
 const Style3Path = {}
 Style3Path[HIERARCHY_ATTRIBUTE] = SECONDARY_OPTION
-Style3Path[DEVICE_ATTRIBUTE] = DESKTOP_OPTION
+Style3Path[SIZE_ATTRIBUTE] = LARGE_OPTION
 Style3Path[COLOR_ATTRIBUTE] = BLACK_OPTION
 Style3Path [STATE_ATTRIBUTE] = DISABLED_OPTION
 Style3Path[ICON_ATTRIBUTE] = OFF_OPTION 
@@ -190,54 +169,46 @@ secondaryStyles.push(styleWrapper3)
 const Style4 = {}
 
 Style4 [BUTTON_SUBCOMPONENT] = {
-    
-    transition: "0.1s all ease-in-out",
-    position: "relative",
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
-    width: "230px",
-    height: "48px", 
-    background: "transparent",
-    border: "1px solid #D1CFD0",
-    borderRadius: "2px",
-    boxShadow: "none",
-    boxSizing: "border-box",
-    
+
+transition: "0.1s all ease-in-out",
+position: "relative",
+display: "flex",
+flexDirection: "row",
+justifyContent: "center",
+alignItems: "center",
+height: "48px", 
+background: "transparent",
+border: "1px solid #D1CFD0",
+borderRadius: "2px",
+boxShadow: "none",
+...SIZE_STYLES[LARGE_OPTION][REGULAR_BUTTON_ICON_VARIANT][BUTTON_SUBCOMPONENT]
+
 }
 Style4[TEXT_SUBCOMPONENT] = {
-    position: "static",
-    fontFamily: "SEATBCN",
-    fontStyle: "normal",
-    fontWeight: "bold",
-    fontSize: "16px",
-    display: "flex",
-    alignItems: "center",
-    textAlign: "center",
-    color: "#D1CFD0",
-    flex: "none",
-    order: "0",
-    flexGrow: "0",
-    lineHeight: "20px",
-    margin: "0px 8px",
+position: "static",
+fontFamily: "SEATBCN",
+fontStyle: "normal",
+fontWeight: "bold",
+fontSize: "16px",
+color: "#D1CFD0",
+...SIZE_STYLES[LARGE_OPTION][REGULAR_BUTTON_ICON_VARIANT][TEXT_SUBCOMPONENT]
 }
 Style4[ICON_CONTAINER_SUBCOMPONENT] ={
-    color: "#D1CFD0",
-    width: "24px",
-    height: "24px",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
+color: "#D1CFD0",
+width: "24px",
+height: "24px",
+display: "flex",
+justifyContent: "center",
+alignItems: "center",
 }
 Style4[ICON_SUBCOMPONENT] = {
-    color: "#D1CFD0",
-    width: "13.5px",
-    height: "13.5px",
+color: "#D1CFD0",
+width: "13.5px",
+height: "13.5px",
 }
 const Style4Path = {}
 Style4Path[HIERARCHY_ATTRIBUTE] = SECONDARY_OPTION
-Style4Path[DEVICE_ATTRIBUTE] = DESKTOP_OPTION
+Style4Path[SIZE_ATTRIBUTE] = LARGE_OPTION
 Style4Path[COLOR_ATTRIBUTE] = BLACK_OPTION
 Style4Path [STATE_ATTRIBUTE] = DISABLED_OPTION
 Style4Path[ICON_ATTRIBUTE] = ON_OPTION 
@@ -252,42 +223,35 @@ secondaryStyles.push(styleWrapper4)
 //* SECONDARY TABLET&MOBILE BLACK NORMAL OFFICON *//
 const Style5 = {}
 Style5 [BUTTON_SUBCOMPONENT] = {
-    
-    transition: "0.1s all ease-in-out",
-    boxShadow: "inset 0 0 0 2px transparent",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    width: "230px",
-    height: "38px", 
-    background: "transparent",
-    border: "1px solid #190F14",
-    borderRadius: "2px",
-    boxShadow: "none",
-    boxSizing: "border-box",
-    
+
+transition: "0.1s all ease-in-out",
+boxShadow: "inset 0 0 0 2px transparent",
+display: "flex",
+justifyContent: "center",
+alignItems: "center",
+height: "38px", 
+background: "transparent",
+border: "1px solid #190F14",
+borderRadius: "2px",
+boxShadow: "none",
+...SIZE_STYLES[LARGE_OPTION][REGULAR_BUTTON_VARIANT][BUTTON_SUBCOMPONENT]
+
 }
 Style5[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
-    border: "2px solid #190F14",
+border: "2px solid #190F14",
 }
 Style5[TEXT_SUBCOMPONENT] = {
-    position: "static",
-    fontFamily: "SEATBCN",
-    fontStyle: "normal",
-    fontWeight: "bold",
-    fontSize: "14px",
-    display: "flex",
-    alignItems: "center",
-    textAlign: "center",
-    color: "#190F14",
-    flex: "none",
-    order: "0",
-    flexGrow: "0",
-    lineHeight: "16px",
+position: "static",
+fontFamily: "SEATBCN",
+fontStyle: "normal",
+fontWeight: "bold",
+fontSize: "14px",
+color: "#190F14",
+...SIZE_STYLES[LARGE_OPTION][REGULAR_BUTTON_VARIANT][TEXT_SUBCOMPONENT]
 }
 const Style5Path = {}
 Style5Path[HIERARCHY_ATTRIBUTE] = SECONDARY_OPTION
-Style5Path[DEVICE_ATTRIBUTE] = TABLET_MOBILE_OPTION
+Style5Path[SIZE_ATTRIBUTE] = MEDIUM_OPTION
 Style5Path[COLOR_ATTRIBUTE] = BLACK_OPTION
 Style5Path [STATE_ATTRIBUTE] = NORMAL_OPTION
 Style5Path[ICON_ATTRIBUTE] = OFF_OPTION 
@@ -304,54 +268,46 @@ secondaryStyles.push(styleWrapper5)
 const Style6 = {}
 
 Style6 [BUTTON_SUBCOMPONENT] = {
-    transition: "0.1s all ease-in-out",
-    boxShadow: "inset 0 0 0 2px transparent",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    width: "230px",
-    height: "40px", 
-    background: "transparent",
-    border: "1px solid #190F14",
-    borderRadius: "2px",
-    boxShadow: "none",
-    boxSizing: "border-box",
+transition: "0.1s all ease-in-out",
+boxShadow: "inset 0 0 0 2px transparent",
+display: "flex",
+justifyContent: "center",
+alignItems: "center",
+height: "40px", 
+background: "transparent",
+border: "1px solid #190F14",
+borderRadius: "2px",
+boxShadow: "none",
+...SIZE_STYLES[MEDIUM_OPTION][REGULAR_BUTTON_ICON_VARIANT][BUTTON_SUBCOMPONENT]
 }
 Style6[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
-    border: "2px solid #190F14",
+border: "2px solid #190F14",
 }
 Style6[TEXT_SUBCOMPONENT] = {
-    position: "static",
-    fontFamily: "SEATBCN",
-    fontStyle: "normal",
-    fontWeight: "bold",
-    fontSize: "14px",
-    display: "flex",
-    alignItems: "center",
-    textAlign: "center",
-    color: "#190F14",
-    flex: "none",
-    order: "0",
-    flexGrow: "0",
-    lineHeight: "16px",
-    margin: "0px 8px",
+position: "static",
+fontFamily: "SEATBCN",
+fontStyle: "normal",
+fontWeight: "bold",
+fontSize: "14px",
+color: "#190F14",
+...SIZE_STYLES[MEDIUM_OPTION][REGULAR_BUTTON_ICON_VARIANT][TEXT_SUBCOMPONENT]
 }
 Style6[ICON_CONTAINER_SUBCOMPONENT] ={
-    color: "#190F14",
-    width: "24px",
-    height: "24px",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
+color: "#190F14",
+width: "24px",
+height: "24px",
+display: "flex",
+justifyContent: "center",
+alignItems: "center",
 }
 Style6[ICON_SUBCOMPONENT] = {
-    color: "#190F14",
-    width: "13.5px",
-    height: "13.5px",
+color: "#190F14",
+width: "13.5px",
+height: "13.5px",
 }
 const Style6Path = {}
 Style6Path[HIERARCHY_ATTRIBUTE] = SECONDARY_OPTION
-Style6Path[DEVICE_ATTRIBUTE] = TABLET_MOBILE_OPTION
+Style6Path[SIZE_ATTRIBUTE] = MEDIUM_OPTION
 Style6Path[COLOR_ATTRIBUTE] = BLACK_OPTION
 Style6Path [STATE_ATTRIBUTE] = NORMAL_OPTION
 Style6Path[ICON_ATTRIBUTE] = ON_OPTION 
@@ -365,38 +321,31 @@ secondaryStyles.push(styleWrapper6)
 //* SECONDARY TABLET&MOBILE BLACK DISABLED OFFICON *//
 const Style7 = {}
 Style7 [BUTTON_SUBCOMPONENT] = {
-    transition: "0.1s all ease-in-out",
-    position: "relative",
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
-    width: "230px",
-    height: "38px", 
-    background: "transparent",
-    border: "1px solid #D1CFD0",
-    borderRadius: "2px",
-    boxShadow: "none",
-    boxSizing: "border-box", 
+transition: "0.1s all ease-in-out",
+position: "relative",
+display: "flex",
+flexDirection: "row",
+justifyContent: "center",
+alignItems: "center",
+height: "38px", 
+background: "transparent",
+border: "1px solid #D1CFD0",
+borderRadius: "2px",
+boxShadow: "none",
+...SIZE_STYLES[MEDIUM_OPTION][REGULAR_BUTTON_VARIANT][BUTTON_SUBCOMPONENT]
 }
 Style7[TEXT_SUBCOMPONENT] = {
-    position: "static",
-    fontFamily: "SEATBCN",
-    fontStyle: "normal",
-    fontWeight: "bold",
-    fontSize: "14px",
-    display: "flex",
-    alignItems: "center",
-    textAlign: "center",
-    color: "#D1CFD0",
-    flex: "none",
-    order: "0",
-    flexGrow: "0",
-    lineHeight: "16px",
+position: "static",
+fontFamily: "SEATBCN",
+fontStyle: "normal",
+fontWeight: "bold",
+fontSize: "14px",
+color: "#D1CFD0",
+...SIZE_STYLES[MEDIUM_OPTION][REGULAR_BUTTON_VARIANT][TEXT_SUBCOMPONENT]
 }
 const Style7Path = {}
 Style7Path[HIERARCHY_ATTRIBUTE] = SECONDARY_OPTION
-Style7Path[DEVICE_ATTRIBUTE] = TABLET_MOBILE_OPTION
+Style7Path[SIZE_ATTRIBUTE] = MEDIUM_OPTION
 Style7Path[COLOR_ATTRIBUTE] = BLACK_OPTION
 Style7Path [STATE_ATTRIBUTE] = DISABLED_OPTION
 Style7Path[ICON_ATTRIBUTE] = OFF_OPTION 
@@ -411,54 +360,46 @@ secondaryStyles.push(styleWrapper7)
 const Style8 = {}
 
 Style8 [BUTTON_SUBCOMPONENT] = {
-    
-    transition: "0.1s all ease-in-out",
-    position: "relative",
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
-    width: "230px",
-    height: "40px", 
-    background: "transparent",
-    border: "1px solid #D1CFD0",
-    borderRadius: "2px",
-    boxShadow: "none",
-    boxSizing: "border-box",
-    
+
+transition: "0.1s all ease-in-out",
+position: "relative",
+display: "flex",
+flexDirection: "row",
+justifyContent: "center",
+alignItems: "center",
+height: "40px", 
+background: "transparent",
+border: "1px solid #D1CFD0",
+borderRadius: "2px",
+boxShadow: "none",
+...SIZE_STYLES[MEDIUM_OPTION][REGULAR_BUTTON_ICON_VARIANT][BUTTON_SUBCOMPONENT]
+
 }
 Style8[TEXT_SUBCOMPONENT] = {
-    position: "static",
-    fontFamily: "SEATBCN",
-    fontStyle: "normal",
-    fontWeight: "bold",
-    fontSize: "14px",
-    display: "flex",
-    alignItems: "center",
-    textAlign: "center",
-    color: "#D1CFD0",
-    flex: "none",
-    order: "0",
-    flexGrow: "0",
-    lineHeight: "16px",
-    margin: "0px 8px",
+position: "static",
+fontFamily: "SEATBCN",
+fontStyle: "normal",
+fontWeight: "bold",
+fontSize: "14px",
+color: "#D1CFD0",
+...SIZE_STYLES[MEDIUM_OPTION][REGULAR_BUTTON_ICON_VARIANT][TEXT_SUBCOMPONENT]
 }
 Style8[ICON_CONTAINER_SUBCOMPONENT] ={
-    color: "#D1CFD0",
-    width: "24px",
-    height: "24px",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
+color: "#D1CFD0",
+width: "24px",
+height: "24px",
+display: "flex",
+justifyContent: "center",
+alignItems: "center",
 }
 Style8[ICON_SUBCOMPONENT] = {
-    color: "#D1CFD0",
-    width: "13.5px",
-    height: "13.5px",
+color: "#D1CFD0",
+width: "13.5px",
+height: "13.5px",
 }
 const Style8Path = {}
 Style8Path[HIERARCHY_ATTRIBUTE] = SECONDARY_OPTION
-Style8Path[DEVICE_ATTRIBUTE] = TABLET_MOBILE_OPTION
+Style8Path[SIZE_ATTRIBUTE] = MEDIUM_OPTION
 Style8Path[COLOR_ATTRIBUTE] = BLACK_OPTION
 Style8Path [STATE_ATTRIBUTE] = DISABLED_OPTION
 Style8Path[ICON_ATTRIBUTE] = ON_OPTION 
@@ -475,42 +416,35 @@ secondaryStyles.push(styleWrapper8)
 //* SECONDARY SMALL BLACK NORMAL OFFICON *//
 const Style9 = {}
 Style9 [BUTTON_SUBCOMPONENT] = {
-    
-    transition: "0.1s all ease-in-out",
-    boxShadow: "inset 0 0 0 2px transparent",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    width: "230px",
-    height: "30px", 
-    background: "transparent",
-    border: "1px solid #190F14",
-    borderRadius: "2px",
-    boxShadow: "none",
-    boxSizing: "border-box",
-    
+
+transition: "0.1s all ease-in-out",
+boxShadow: "inset 0 0 0 2px transparent",
+display: "flex",
+justifyContent: "center",
+alignItems: "center",
+height: "30px", 
+background: "transparent",
+border: "1px solid #190F14",
+borderRadius: "2px",
+boxShadow: "none",
+...SIZE_STYLES[SMALL_OPTION][REGULAR_BUTTON_VARIANT][BUTTON_SUBCOMPONENT]
+
 }
 Style9[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
-    border: "2px solid #190F14",
+border: "2px solid #190F14",
 }
 Style9[TEXT_SUBCOMPONENT] = {
-    position: "static",
-    fontFamily: "SEATBCN",
-    fontStyle: "normal",
-    fontWeight: "bold",
-    fontSize: "14px",
-    display: "flex",
-    alignItems: "center",
-    textAlign: "center",
-    color: "#190F14",
-    flex: "none",
-    order: "0",
-    flexGrow: "0",
-    lineHeight: "16px",
+position: "static",
+fontFamily: "SEATBCN",
+fontStyle: "normal",
+fontWeight: "bold",
+fontSize: "14px",
+color: "#190F14",
+...SIZE_STYLES[SMALL_OPTION][REGULAR_BUTTON_VARIANT][TEXT_SUBCOMPONENT]
 }
 const Style9Path = {}
 Style9Path[HIERARCHY_ATTRIBUTE] = SECONDARY_OPTION
-Style9Path[DEVICE_ATTRIBUTE] = SMALL_OPTION
+Style9Path[SIZE_ATTRIBUTE] = SMALL_OPTION
 Style9Path[COLOR_ATTRIBUTE] = BLACK_OPTION
 Style9Path [STATE_ATTRIBUTE] = NORMAL_OPTION
 Style9Path[ICON_ATTRIBUTE] = OFF_OPTION 
@@ -527,54 +461,46 @@ secondaryStyles.push(styleWrapper9)
 const Style10 = {}
 
 Style10 [BUTTON_SUBCOMPONENT] = {
-    transition: "0.1s all ease-in-out",
-    boxShadow: "inset 0 0 0 2px transparent",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    width: "230px",
-    height: "32px", 
-    background: "transparent",
-    border: "1px solid #190F14",
-    borderRadius: "2px",
-    boxShadow: "none",
-    boxSizing: "border-box",
+transition: "0.1s all ease-in-out",
+boxShadow: "inset 0 0 0 2px transparent",
+display: "flex",
+justifyContent: "center",
+alignItems: "center",
+height: "32px", 
+background: "transparent",
+border: "1px solid #190F14",
+borderRadius: "2px",
+boxShadow: "none",
+...SIZE_STYLES[SMALL_OPTION][REGULAR_BUTTON_ICON_VARIANT][BUTTON_SUBCOMPONENT]
 }
 Style10[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
-    border: "2px solid #190F14",
+border: "2px solid #190F14",
 }
 Style10[TEXT_SUBCOMPONENT] = {
-    position: "static",
-    fontFamily: "SEATBCN",
-    fontStyle: "normal",
-    fontWeight: "bold",
-    fontSize: "14px",
-    display: "flex",
-    alignItems: "center",
-    textAlign: "center",
-    color: "#190F14",
-    flex: "none",
-    order: "0",
-    flexGrow: "0",
-    lineHeight: "16px",
-    margin: "0px 8px",
+position: "static",
+fontFamily: "SEATBCN",
+fontStyle: "normal",
+fontWeight: "bold",
+fontSize: "14px",
+color: "#190F14",
+...SIZE_STYLES[SMALL_OPTION][REGULAR_BUTTON_ICON_VARIANT][TEXT_SUBCOMPONENT]
 }
 Style10[ICON_CONTAINER_SUBCOMPONENT] ={
-    color: "#190F14",
-    width: "20px",
-    height: "20px",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
+color: "#190F14",
+width: "20px",
+height: "20px",
+display: "flex",
+justifyContent: "center",
+alignItems: "center",
 }
 Style10[ICON_SUBCOMPONENT] = {
-    color: "#190F14",
-    width: "11.25px",
-    height: "11.25px",
+color: "#190F14",
+width: "11.25px",
+height: "11.25px",
 }
 const Style10Path = {}
 Style10Path[HIERARCHY_ATTRIBUTE] = SECONDARY_OPTION
-Style10Path[DEVICE_ATTRIBUTE] = SMALL_OPTION
+Style10Path[SIZE_ATTRIBUTE] = SMALL_OPTION
 Style10Path[COLOR_ATTRIBUTE] = BLACK_OPTION
 Style10Path [STATE_ATTRIBUTE] = NORMAL_OPTION
 Style10Path[ICON_ATTRIBUTE] = ON_OPTION 
@@ -588,38 +514,31 @@ secondaryStyles.push(styleWrapper10)
 //* SECONDARY SMALL BLACK DISABLED OFFICON *//
 const Style11 = {}
 Style11 [BUTTON_SUBCOMPONENT] = {
-    transition: "0.1s all ease-in-out",
-    position: "relative",
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
-    width: "230px",
-    height: "30px", 
-    background: "transparent",
-    border: "1px solid #D1CFD0",
-    borderRadius: "2px",
-    boxShadow: "none",
-    boxSizing: "border-box", 
+transition: "0.1s all ease-in-out",
+position: "relative",
+display: "flex",
+flexDirection: "row",
+justifyContent: "center",
+alignItems: "center",
+height: "30px", 
+background: "transparent",
+border: "1px solid #D1CFD0",
+borderRadius: "2px",
+boxShadow: "none",
+...SIZE_STYLES[SMALL_OPTION][REGULAR_BUTTON_VARIANT][BUTTON_SUBCOMPONENT]
 }
 Style11[TEXT_SUBCOMPONENT] = {
-    position: "static",
-    fontFamily: "SEATBCN",
-    fontStyle: "normal",
-    fontWeight: "bold",
-    fontSize: "14px",
-    display: "flex",
-    alignItems: "center",
-    textAlign: "center",
-    color: "#D1CFD0",
-    flex: "none",
-    order: "0",
-    flexGrow: "0",
-    lineHeight: "16px",
+position: "static",
+fontFamily: "SEATBCN",
+fontStyle: "normal",
+fontWeight: "bold",
+fontSize: "14px",
+color: "#D1CFD0",
+...SIZE_STYLES[SMALL_OPTION][REGULAR_BUTTON_VARIANT][TEXT_SUBCOMPONENT]
 }
 const Style11Path = {}
 Style11Path[HIERARCHY_ATTRIBUTE] = SECONDARY_OPTION
-Style11Path[DEVICE_ATTRIBUTE] = SMALL_OPTION
+Style11Path[SIZE_ATTRIBUTE] = SMALL_OPTION
 Style11Path[COLOR_ATTRIBUTE] = BLACK_OPTION
 Style11Path [STATE_ATTRIBUTE] = DISABLED_OPTION
 Style11Path[ICON_ATTRIBUTE] = OFF_OPTION 
@@ -634,54 +553,46 @@ secondaryStyles.push(styleWrapper11)
 const Style12 = {}
 
 Style12 [BUTTON_SUBCOMPONENT] = {
-    
-    transition: "0.1s all ease-in-out",
-    position: "relative",
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
-    width: "230px",
-    height: "32px", 
-    background: "transparent",
-    border: "1px solid #D1CFD0",
-    borderRadius: "2px",
-    boxShadow: "none",
-    boxSizing: "border-box",
-    
+
+transition: "0.1s all ease-in-out",
+position: "relative",
+display: "flex",
+flexDirection: "row",
+justifyContent: "center",
+alignItems: "center",
+height: "32px", 
+background: "transparent",
+border: "1px solid #D1CFD0",
+borderRadius: "2px",
+boxShadow: "none",
+...SIZE_STYLES[SMALL_OPTION][REGULAR_BUTTON_ICON_VARIANT][BUTTON_SUBCOMPONENT]
+
 }
 Style12[TEXT_SUBCOMPONENT] = {
-    position: "static",
-    fontFamily: "SEATBCN",
-    fontStyle: "normal",
-    fontWeight: "bold",
-    fontSize: "14px",
-    display: "flex",
-    alignItems: "center",
-    textAlign: "center",
-    color: "#D1CFD0",
-    flex: "none",
-    order: "0",
-    flexGrow: "0",
-    lineHeight: "16px",
-    margin: "0px 8px",
+position: "static",
+fontFamily: "SEATBCN",
+fontStyle: "normal",
+fontWeight: "bold",
+fontSize: "14px",
+color: "#D1CFD0",
+...SIZE_STYLES[SMALL_OPTION][REGULAR_BUTTON_ICON_VARIANT][TEXT_SUBCOMPONENT]
 }
 Style12[ICON_CONTAINER_SUBCOMPONENT] ={
-    color: "#D1CFD0",
-    width: "20px",
-    height: "20px",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
+color: "#D1CFD0",
+width: "20px",
+height: "20px",
+display: "flex",
+justifyContent: "center",
+alignItems: "center",
 }
 Style12[ICON_SUBCOMPONENT] = {
-    color: "#D1CFD0",
-    width: "11.25px",
-    height: "11.25px",
+color: "#D1CFD0",
+width: "11.25px",
+height: "11.25px",
 }
 const Style12Path = {}
 Style12Path[HIERARCHY_ATTRIBUTE] = SECONDARY_OPTION
-Style12Path[DEVICE_ATTRIBUTE] = SMALL_OPTION
+Style12Path[SIZE_ATTRIBUTE] = SMALL_OPTION
 Style12Path[COLOR_ATTRIBUTE] = BLACK_OPTION
 Style12Path [STATE_ATTRIBUTE] = DISABLED_OPTION
 Style12Path[ICON_ATTRIBUTE] = ON_OPTION 
@@ -696,42 +607,35 @@ secondaryStyles.push(styleWrapper12)
 //* PRIMARY DESKTOP WHITE NORMAL OFFICON */
 const Style13 = {}
 Style13 [BUTTON_SUBCOMPONENT] = {
-    
-    transition: "0.1s all ease-in-out",
-    boxShadow: "inset 0 0 0 2px transparent",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    width: "230px",
-    height: "46px", 
-    background: "#2E2A2B",
-    border: "1px solid #ECE9E1",
-    borderRadius: "2px",
-    boxShadow: "none",
-    boxSizing: "border-box",
-    
+
+transition: "0.1s all ease-in-out",
+boxShadow: "inset 0 0 0 2px transparent",
+display: "flex",
+justifyContent: "center",
+alignItems: "center",
+height: "46px", 
+background: "#2E2A2B",
+border: "1px solid #ECE9E1",
+borderRadius: "2px",
+boxShadow: "none",
+...SIZE_STYLES[LARGE_OPTION][REGULAR_BUTTON_VARIANT][BUTTON_SUBCOMPONENT]
+
 }
 Style13[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
-    border: "2px solid #ECE9E1",
+border: "2px solid #ECE9E1",
 }
 Style13[TEXT_SUBCOMPONENT] = {
-    position: "static",
-    fontFamily: "SEATBCN",
-    fontStyle: "normal",
-    fontWeight: "bold",
-    fontSize: "16px",
-    display: "flex",
-    alignItems: "center",
-    textAlign: "center",
-    color: "#ECE9E1",
-    flex: "none",
-    order: "0",
-    flexGrow: "0",
-    lineHeight: "20px",
+position: "static",
+fontFamily: "SEATBCN",
+fontStyle: "normal",
+fontWeight: "bold",
+fontSize: "16px",
+color: "#ECE9E1",
+...SIZE_STYLES[LARGE_OPTION][REGULAR_BUTTON_VARIANT][TEXT_SUBCOMPONENT]
 }
 const Style13Path = {}
 Style13Path[HIERARCHY_ATTRIBUTE] = SECONDARY_OPTION
-Style13Path[DEVICE_ATTRIBUTE] = DESKTOP_OPTION
+Style13Path[SIZE_ATTRIBUTE] = LARGE_OPTION
 Style13Path[COLOR_ATTRIBUTE] = WHITE_OPTION
 Style13Path [STATE_ATTRIBUTE] = NORMAL_OPTION
 Style13Path[ICON_ATTRIBUTE] = OFF_OPTION 
@@ -746,56 +650,48 @@ secondaryStyles.push(styleWrapper13)
 const Style14 = {}
 
 Style14 [BUTTON_SUBCOMPONENT] = {
-    
-    transition: "0.1s all ease-in-out",
-    position: "relative",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    width: "230px",
-    height: "48px", 
-    background: "#2E2A2B",
-    border: "1px solid #ECE9E1",
-    borderRadius: "2px",
-    boxShadow: "none",
-    boxSizing: "border-box",
-    
+
+transition: "0.1s all ease-in-out",
+position: "relative",
+display: "flex",
+justifyContent: "center",
+alignItems: "center",
+height: "48px", 
+background: "#2E2A2B",
+border: "1px solid #ECE9E1",
+borderRadius: "2px",
+boxShadow: "none",
+...SIZE_STYLES[SMALL_OPTION][REGULAR_BUTTON_ICON_VARIANT][BUTTON_SUBCOMPONENT]
+
 }
 Style14[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
-    border: "2px solid #ECE9E1",
+border: "2px solid #ECE9E1",
 }
 Style14[TEXT_SUBCOMPONENT] = {
-    position: "static",
-    fontFamily: "SEATBCN",
-    fontStyle: "normal",
-    fontWeight: "bold",
-    fontSize: "16px",
-    display: "flex",
-    alignItems: "center",
-    textAlign: "center",
-    color: "#ECE9E1",
-    flex: "none",
-    order: "0",
-    flexGrow: "0",
-    lineHeight: "20px",
-    margin: "0px 8px",
+position: "static",
+fontFamily: "SEATBCN",
+fontStyle: "normal",
+fontWeight: "bold",
+fontSize: "16px",
+color: "#ECE9E1",
+...SIZE_STYLES[SMALL_OPTION][REGULAR_BUTTON_ICON_VARIANT][TEXT_SUBCOMPONENT]
 }
 Style14[ICON_CONTAINER_SUBCOMPONENT] ={
-    color: "#ECE9E1",
-    width: "24px",
-    height: "24px",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
+color: "#ECE9E1",
+width: "24px",
+height: "24px",
+display: "flex",
+justifyContent: "center",
+alignItems: "center",
 }
 Style14[ICON_SUBCOMPONENT] = {
-    color: "#ECE9E1",
-    width: "13.5px",
-    height: "13.5px",
+color: "#ECE9E1",
+width: "13.5px",
+height: "13.5px",
 }
 const Style14Path = {}
 Style14Path[HIERARCHY_ATTRIBUTE] = SECONDARY_OPTION
-Style14Path[DEVICE_ATTRIBUTE] = DESKTOP_OPTION
+Style14Path[SIZE_ATTRIBUTE] = LARGE_OPTION
 Style14Path[COLOR_ATTRIBUTE] = WHITE_OPTION
 Style14Path [STATE_ATTRIBUTE] = NORMAL_OPTION
 Style14Path[ICON_ATTRIBUTE] = ON_OPTION 
@@ -814,42 +710,35 @@ const Style15 = {}
 /* Interactive/02 Secondary/01 Enabled */
 
 Style15 [BUTTON_SUBCOMPONENT] = {
-    
-    transition: "0.1s all ease-in-out",
-    position: "relative",
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
-    width: "230px",
-    height: "48px", 
-    background: "#2E2A2B",
-    border: "1px solid #6F696C",
-    borderRadius: "2px",
-    boxShadow: "none",
-    boxSizing: "border-box",
-    
+
+transition: "0.1s all ease-in-out",
+position: "relative",
+display: "flex",
+flexDirection: "row",
+justifyContent: "center",
+alignItems: "center",
+height: "48px", 
+background: "#2E2A2B",
+border: "1px solid #6F696C",
+borderRadius: "2px",
+boxShadow: "none",
+...SIZE_STYLES[LARGE_OPTION][REGULAR_BUTTON_VARIANT][BUTTON_SUBCOMPONENT]
+
 }
 Style15[TEXT_SUBCOMPONENT] = {
-    position: "static",
-    fontFamily: "SEATBCN",
-    fontStyle: "normal",
-    fontWeight: "bold",
-    fontSize: "16px",
-    display: "flex",
-    alignItems: "center",
-    textAlign: "center",
-    color: "#D1CFD0",
-    opacity: "0.4",
-    flex: "none",
-    order: "0",
-    flexGrow: "0",
-    lineHeight: "20px",
+position: "static",
+fontFamily: "SEATBCN",
+fontStyle: "normal",
+fontWeight: "bold",
+fontSize: "16px",
+color: "#D1CFD0",
+opacity: "0.4",
+...SIZE_STYLES[LARGE_OPTION][REGULAR_BUTTON_VARIANT][TEXT_SUBCOMPONENT]
 }
 
 const Style15Path = {}
 Style15Path[HIERARCHY_ATTRIBUTE] = SECONDARY_OPTION
-Style15Path[DEVICE_ATTRIBUTE] = DESKTOP_OPTION
+Style15Path[SIZE_ATTRIBUTE] = LARGE_OPTION
 Style15Path[COLOR_ATTRIBUTE] = WHITE_OPTION
 Style15Path [STATE_ATTRIBUTE] = DISABLED_OPTION
 Style15Path[ICON_ATTRIBUTE] = OFF_OPTION 
@@ -864,56 +753,47 @@ secondaryStyles.push(styleWrapper15)
 const Style16 = {}
 
 Style16 [BUTTON_SUBCOMPONENT] = {
-    
-    transition: "0.1s all ease-in-out",
-    position: "relative",
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
-    width: "230px",
-    height: "48px", 
-    background: "#2E2A2B",
-    border: "1px solid #6F696C",
-    borderRadius: "2px",
-    boxShadow: "none",
-    boxSizing: "border-box",
-    
+
+transition: "0.1s all ease-in-out",
+position: "relative",
+display: "flex",
+flexDirection: "row",
+justifyContent: "center",
+alignItems: "center",
+height: "48px", 
+background: "#2E2A2B",
+border: "1px solid #6F696C",
+borderRadius: "2px",
+boxShadow: "none",
+...SIZE_STYLES[LARGE_OPTION][REGULAR_BUTTON_ICON_VARIANT][BUTTON_SUBCOMPONENT]
+
 }
 Style16[TEXT_SUBCOMPONENT] = {
-    position: "static",
-    fontFamily: "SEATBCN",
-    fontStyle: "normal",
-    fontWeight: "bold",
-    fontSize: "16px",
-    display: "flex",
-    alignItems: "center",
-    textAlign: "center",
-    color: "#D1CFD0",
-    opacity: "0.4",
-    flex: "none",
-    order: "0",
-    flexGrow: "0",
-    lineHeight: "20px",
-    margin: "0px 8px",
+position: "static",
+fontFamily: "SEATBCN",
+fontStyle: "normal",
+fontWeight: "bold",
+fontSize: "16px",
+color: "#D1CFD0",
+...SIZE_STYLES[LARGE_OPTION][REGULAR_BUTTON_ICON_VARIANT][TEXT_SUBCOMPONENT]
 }
 Style16[ICON_CONTAINER_SUBCOMPONENT] ={
-    color: "#D1CFD0",
-    opacity: "0.4",
-    width: "24px",
-    height: "24px",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
+color: "#D1CFD0",
+opacity: "0.4",
+width: "24px",
+height: "24px",
+display: "flex",
+justifyContent: "center",
+alignItems: "center",
 }
 Style16[ICON_SUBCOMPONENT] = {
-    color: "#D1CFD0",
-    width: "13.5px",
-    height: "13.5px",
+color: "#D1CFD0",
+width: "13.5px",
+height: "13.5px",
 }
 const Style16Path = {}
 Style16Path[HIERARCHY_ATTRIBUTE] = SECONDARY_OPTION
-Style16Path[DEVICE_ATTRIBUTE] = DESKTOP_OPTION
+Style16Path[SIZE_ATTRIBUTE] = LARGE_OPTION
 Style16Path[COLOR_ATTRIBUTE] = WHITE_OPTION
 Style16Path [STATE_ATTRIBUTE] = DISABLED_OPTION
 Style16Path[ICON_ATTRIBUTE] = ON_OPTION 
@@ -932,42 +812,35 @@ secondaryStyles.push(styleWrapper16)
 //* PRIMARY DESKTOP WHITE NORMAL OFFICON */
 const Style17 = {}
 Style17 [BUTTON_SUBCOMPONENT] = {
-    
-    transition: "0.1s all ease-in-out",
-    boxShadow: "inset 0 0 0 2px transparent",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    width: "230px",
-    height: "38px", 
-    background: "#2E2A2B",
-    border: "1px solid #ECE9E1",
-    borderRadius: "2px",
-    boxShadow: "none",
-    boxSizing: "border-box",
-    
+
+transition: "0.1s all ease-in-out",
+boxShadow: "inset 0 0 0 2px transparent",
+display: "flex",
+justifyContent: "center",
+alignItems: "center",
+height: "38px", 
+background: "#2E2A2B",
+border: "1px solid #ECE9E1",
+borderRadius: "2px",
+boxShadow: "none",
+...SIZE_STYLES[MEDIUM_OPTION][REGULAR_BUTTON_VARIANT][BUTTON_SUBCOMPONENT]
+
 }
 Style17[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
-    border: "2px solid #ECE9E1",
+border: "2px solid #ECE9E1",
 }
 Style17[TEXT_SUBCOMPONENT] = {
-    position: "static",
-    fontFamily: "SEATBCN",
-    fontStyle: "normal",
-    fontWeight: "bold",
-    fontSize: "14px",
-    display: "flex",
-    alignItems: "center",
-    textAlign: "center",
-    color: "#ECE9E1",
-    flex: "none",
-    order: "0",
-    flexGrow: "0",
-    lineHeight: "16px",
+position: "static",
+fontFamily: "SEATBCN",
+fontStyle: "normal",
+fontWeight: "bold",
+fontSize: "14px",
+color: "#ECE9E1",
+...SIZE_STYLES[MEDIUM_OPTION][REGULAR_BUTTON_VARIANT][TEXT_SUBCOMPONENT]
 }
 const Style17Path = {}
 Style17Path[HIERARCHY_ATTRIBUTE] = SECONDARY_OPTION
-Style17Path[DEVICE_ATTRIBUTE] = TABLET_MOBILE_OPTION
+Style17Path[SIZE_ATTRIBUTE] = MEDIUM_OPTION
 Style17Path[COLOR_ATTRIBUTE] = WHITE_OPTION
 Style17Path [STATE_ATTRIBUTE] = NORMAL_OPTION
 Style17Path[ICON_ATTRIBUTE] = OFF_OPTION 
@@ -982,56 +855,47 @@ secondaryStyles.push(styleWrapper17)
 const Style18 = {}
 
 Style18 [BUTTON_SUBCOMPONENT] = {
-    
-    transition: "0.1s all ease-in-out",
-    position: "relative",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    width: "230px",
-    height: "38px", 
-    background: "#2E2A2B",
-    border: "1px solid #ECE9E1",
-    borderRadius: "2px",
-    boxShadow: "none",
-    boxSizing: "border-box",
-    
+
+transition: "0.1s all ease-in-out",
+position: "relative",
+display: "flex",
+justifyContent: "center",
+alignItems: "center",
+height: "38px", 
+background: "#2E2A2B",
+border: "1px solid #ECE9E1",
+borderRadius: "2px",
+boxShadow: "none",
+...SIZE_STYLES[MEDIUM_OPTION][REGULAR_BUTTON_ICON_VARIANT][BUTTON_SUBCOMPONENT]
 }
 Style18[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
-    border: "2px solid #ECE9E1",
+border: "2px solid #ECE9E1",
 }
 Style18[TEXT_SUBCOMPONENT] = {
-    position: "static",
-    fontFamily: "SEATBCN",
-    fontStyle: "normal",
-    fontWeight: "bold",
-    fontSize: "14px",
-    display: "flex",
-    alignItems: "center",
-    textAlign: "center",
-    color: "#ECE9E1",
-    flex: "none",
-    order: "0",
-    flexGrow: "0",
-    lineHeight: "16px",
-    margin: "0px 8px",
+position: "static",
+fontFamily: "SEATBCN",
+fontStyle: "normal",
+fontWeight: "bold",
+fontSize: "14px",
+color: "#ECE9E1",
+...SIZE_STYLES[MEDIUM_OPTION][REGULAR_BUTTON_ICON_VARIANT][TEXT_SUBCOMPONENT]
 }
 Style18[ICON_CONTAINER_SUBCOMPONENT] ={
-    color: "#ECE9E1",
-    width: "24px",
-    height: "24px",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
+color: "#ECE9E1",
+width: "24px",
+height: "24px",
+display: "flex",
+justifyContent: "center",
+alignItems: "center",
 }
 Style18[ICON_SUBCOMPONENT] = {
-    color: "#ECE9E1",
-    width: "13.5px",
-    height: "13.5px",
+color: "#ECE9E1",
+width: "13.5px",
+height: "13.5px",
 }
 const Style18Path = {}
 Style18Path[HIERARCHY_ATTRIBUTE] = SECONDARY_OPTION
-Style18Path[DEVICE_ATTRIBUTE] = TABLET_MOBILE_OPTION
+Style18Path[SIZE_ATTRIBUTE] = MEDIUM_OPTION
 Style18Path[COLOR_ATTRIBUTE] = WHITE_OPTION
 Style18Path [STATE_ATTRIBUTE] = NORMAL_OPTION
 Style18Path[ICON_ATTRIBUTE] = ON_OPTION 
@@ -1050,42 +914,36 @@ const Style19 = {}
 /* Interactive/02 Secondary/01 Enabled */
 
 Style19 [BUTTON_SUBCOMPONENT] = {
-    
-    transition: "0.1s all ease-in-out",
-    position: "relative",
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
-    width: "230px",
-    height: "38px", 
-    background: "#2E2A2B",
-    border: "1px solid #6F696C",
-    borderRadius: "2px",
-    boxShadow: "none",
-    boxSizing: "border-box",
-    
+
+transition: "0.1s all ease-in-out",
+position: "relative",
+display: "flex",
+flexDirection: "row",
+justifyContent: "center",
+alignItems: "center",
+height: "38px", 
+background: "#2E2A2B",
+border: "1px solid #6F696C",
+borderRadius: "2px",
+boxShadow: "none",
+...SIZE_STYLES[MEDIUM_OPTION][REGULAR_BUTTON_VARIANT][BUTTON_SUBCOMPONENT]
+
 }
 Style19[TEXT_SUBCOMPONENT] = {
-    position: "static",
-    fontFamily: "SEATBCN",
-    fontStyle: "normal",
-    fontWeight: "bold",
-    fontSize: "14px",
-    display: "flex",
-    alignItems: "center",
-    textAlign: "center",
-    color: "#D1CFD0",
-    opacity: "0.4",
-    flex: "none",
-    order: "0",
-    flexGrow: "0",
-    lineHeight: "16px",
+position: "static",
+fontFamily: "SEATBCN",
+fontStyle: "normal",
+fontWeight: "bold",
+fontSize: "14px",
+color: "#D1CFD0",
+opacity: "0.4",
+...SIZE_STYLES[MEDIUM_OPTION][REGULAR_BUTTON_VARIANT][TEXT_SUBCOMPONENT]
+
 }
 
 const Style19Path = {}
 Style19Path[HIERARCHY_ATTRIBUTE] = SECONDARY_OPTION
-Style19Path[DEVICE_ATTRIBUTE] = TABLET_MOBILE_OPTION
+Style19Path[SIZE_ATTRIBUTE] = MEDIUM_OPTION
 Style19Path[COLOR_ATTRIBUTE] = WHITE_OPTION
 Style19Path [STATE_ATTRIBUTE] = DISABLED_OPTION
 Style19Path[ICON_ATTRIBUTE] = OFF_OPTION 
@@ -1100,56 +958,47 @@ secondaryStyles.push(styleWrapper19)
 const Style20 = {}
 
 Style20 [BUTTON_SUBCOMPONENT] = {
-    
-    transition: "0.1s all ease-in-out",
-    position: "relative",
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
-    width: "230px",
-    height: "38px", 
-    background: "#2E2A2B",
-    border: "1px solid #6F696C",
-    borderRadius: "2px",
-    boxShadow: "none",
-    boxSizing: "border-box",
-    
+
+transition: "0.1s all ease-in-out",
+position: "relative",
+display: "flex",
+flexDirection: "row",
+justifyContent: "center",
+alignItems: "center",
+height: "38px", 
+background: "#2E2A2B",
+border: "1px solid #6F696C",
+borderRadius: "2px",
+boxShadow: "none",
+...SIZE_STYLES[MEDIUM_OPTION][REGULAR_BUTTON_ICON_VARIANT][BUTTON_SUBCOMPONENT]
+
 }
 Style20[TEXT_SUBCOMPONENT] = {
-    position: "static",
-    fontFamily: "SEATBCN",
-    fontStyle: "normal",
-    fontWeight: "bold",
-    fontSize: "14px",
-    display: "flex",
-    alignItems: "center",
-    textAlign: "center",
-    color: "#D1CFD0",
-    opacity: "0.4",
-    flex: "none",
-    order: "0",
-    flexGrow: "0",
-    lineHeight: "16px",
-    margin: "0px 8px",
+position: "static",
+fontFamily: "SEATBCN",
+fontStyle: "normal",
+fontWeight: "bold",
+fontSize: "14px",
+color: "#D1CFD0",
+...SIZE_STYLES[MEDIUM_OPTION][REGULAR_BUTTON_ICON_VARIANT][TEXT_SUBCOMPONENT]
 }
 Style20[ICON_CONTAINER_SUBCOMPONENT] ={
-    color: "#D1CFD0",
-    opacity: "0.4",
-    width: "24px",
-    height: "24px",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
+color: "#D1CFD0",
+opacity: "0.4",
+width: "24px",
+height: "24px",
+display: "flex",
+justifyContent: "center",
+alignItems: "center",
 }
 Style20[ICON_SUBCOMPONENT] = {
-    color: "#D1CFD0",
-    width: "13.5px",
-    height: "13.5px",
+color: "#D1CFD0",
+width: "13.5px",
+height: "13.5px",
 }
 const Style20Path = {}
 Style20Path[HIERARCHY_ATTRIBUTE] = SECONDARY_OPTION
-Style20Path[DEVICE_ATTRIBUTE] = TABLET_MOBILE_OPTION
+Style20Path[SIZE_ATTRIBUTE] = MEDIUM_OPTION
 Style20Path[COLOR_ATTRIBUTE] = WHITE_OPTION
 Style20Path [STATE_ATTRIBUTE] = DISABLED_OPTION
 Style20Path[ICON_ATTRIBUTE] = ON_OPTION 
@@ -1166,42 +1015,35 @@ secondaryStyles.push(styleWrapper20)
 
 const Style21 = {}
 Style21 [BUTTON_SUBCOMPONENT] = {
-    
-    transition: "0.1s all ease-in-out",
-    boxShadow: "inset 0 0 0 2px transparent",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    width: "230px",
-    height: "32px", 
-    background: "#2E2A2B",
-    border: "1px solid #ECE9E1",
-    borderRadius: "2px",
-    boxShadow: "none",
-    boxSizing: "border-box",
-    
+
+transition: "0.1s all ease-in-out",
+boxShadow: "inset 0 0 0 2px transparent",
+display: "flex",
+justifyContent: "center",
+alignItems: "center",
+height: "32px", 
+background: "#2E2A2B",
+border: "1px solid #ECE9E1",
+borderRadius: "2px",
+boxShadow: "none",
+...SIZE_STYLES[SMALL_OPTION][REGULAR_BUTTON_VARIANT][BUTTON_SUBCOMPONENT]
+
 }
 Style21[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
-    border: "2px solid #ECE9E1",
+border: "2px solid #ECE9E1",
 }
 Style21[TEXT_SUBCOMPONENT] = {
-    position: "static",
-    fontFamily: "SEATBCN",
-    fontStyle: "normal",
-    fontWeight: "bold",
-    fontSize: "14px",
-    display: "flex",
-    alignItems: "center",
-    textAlign: "center",
-    color: "#ECE9E1",
-    flex: "none",
-    order: "0",
-    flexGrow: "0",
-    lineHeight: "16px",
+position: "static",
+fontFamily: "SEATBCN",
+fontStyle: "normal",
+fontWeight: "bold",
+fontSize: "14px",
+color: "#ECE9E1",
+...SIZE_STYLES[SMALL_OPTION][REGULAR_BUTTON_VARIANT][TEXT_SUBCOMPONENT]
 }
 const Style21Path = {}
 Style21Path[HIERARCHY_ATTRIBUTE] = SECONDARY_OPTION
-Style21Path[DEVICE_ATTRIBUTE] = SMALL_OPTION
+Style21Path[SIZE_ATTRIBUTE] = SMALL_OPTION
 Style21Path[COLOR_ATTRIBUTE] = WHITE_OPTION
 Style21Path [STATE_ATTRIBUTE] = NORMAL_OPTION
 Style21Path[ICON_ATTRIBUTE] = OFF_OPTION 
@@ -1216,56 +1058,48 @@ secondaryStyles.push(styleWrapper21)
 const Style22 = {}
 
 Style22 [BUTTON_SUBCOMPONENT] = {
-    
-    transition: "0.1s all ease-in-out",
-    position: "relative",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    width: "230px",
-    height: "32px", 
-    background: "#2E2A2B",
-    border: "1px solid #ECE9E1",
-    borderRadius: "2px",
-    boxShadow: "none",
-    boxSizing: "border-box",
-    
+
+transition: "0.1s all ease-in-out",
+position: "relative",
+display: "flex",
+justifyContent: "center",
+alignItems: "center",
+height: "32px", 
+background: "#2E2A2B",
+border: "1px solid #ECE9E1",
+borderRadius: "2px",
+boxShadow: "none",
+...SIZE_STYLES[SMALL_OPTION][REGULAR_BUTTON_ICON_VARIANT][BUTTON_SUBCOMPONENT]
+
 }
 Style22[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
-    border: "2px solid #ECE9E1",
+border: "2px solid #ECE9E1",
 }
 Style22[TEXT_SUBCOMPONENT] = {
-    position: "static",
-    fontFamily: "SEATBCN",
-    fontStyle: "normal",
-    fontWeight: "bold",
-    fontSize: "14px",
-    display: "flex",
-    alignItems: "center",
-    textAlign: "center",
-    color: "#ECE9E1",
-    flex: "none",
-    order: "0",
-    flexGrow: "0",
-    lineHeight: "16px",
-    margin: "0px 8px",
+position: "static",
+fontFamily: "SEATBCN",
+fontStyle: "normal",
+fontWeight: "bold",
+fontSize: "14px",
+color: "#ECE9E1",
+...SIZE_STYLES[SMALL_OPTION][REGULAR_BUTTON_ICON_VARIANT][TEXT_SUBCOMPONENT]
 }
 Style22[ICON_CONTAINER_SUBCOMPONENT] ={
-    color: "#ECE9E1",
-    width: "20px",
-    height: "20px",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
+color: "#ECE9E1",
+width: "20px",
+height: "20px",
+display: "flex",
+justifyContent: "center",
+alignItems: "center",
 }
 Style22[ICON_SUBCOMPONENT] = {
-    color: "#ECE9E1",
-    width: "11.25px",
-    height: "11.25px",
+color: "#ECE9E1",
+width: "11.25px",
+height: "11.25px",
 }
 const Style22Path = {}
 Style22Path[HIERARCHY_ATTRIBUTE] = SECONDARY_OPTION
-Style22Path[DEVICE_ATTRIBUTE] = SMALL_OPTION
+Style22Path[SIZE_ATTRIBUTE] = SMALL_OPTION
 Style22Path[COLOR_ATTRIBUTE] = WHITE_OPTION
 Style22Path [STATE_ATTRIBUTE] = NORMAL_OPTION
 Style22Path[ICON_ATTRIBUTE] = ON_OPTION 
@@ -1284,42 +1118,35 @@ const Style23 = {}
 /* Interactive/02 Secondary/01 Enabled */
 
 Style23 [BUTTON_SUBCOMPONENT] = {
-    
-    transition: "0.1s all ease-in-out",
-    position: "relative",
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
-    width: "230px",
-    height: "32px", 
-    background: "#2E2A2B",
-    border: "1px solid #6F696C",
-    borderRadius: "2px",
-    boxShadow: "none",
-    boxSizing: "border-box",
-    
+
+transition: "0.1s all ease-in-out",
+position: "relative",
+display: "flex",
+flexDirection: "row",
+justifyContent: "center",
+alignItems: "center",
+height: "32px", 
+background: "#2E2A2B",
+border: "1px solid #6F696C",
+borderRadius: "2px",
+boxShadow: "none",
+...SIZE_STYLES[SMALL_OPTION][REGULAR_BUTTON_VARIANT][BUTTON_SUBCOMPONENT]
+
 }
 Style23[TEXT_SUBCOMPONENT] = {
-    position: "static",
-    fontFamily: "SEATBCN",
-    fontStyle: "normal",
-    fontWeight: "bold",
-    fontSize: "14px",
-    display: "flex",
-    alignItems: "center",
-    textAlign: "center",
-    color: "#D1CFD0",
-    opacity: "0.4",
-    flex: "none",
-    order: "0",
-    flexGrow: "0",
-    lineHeight: "16px",
+position: "static",
+fontFamily: "SEATBCN",
+fontStyle: "normal",
+fontWeight: "bold",
+fontSize: "14px",
+color: "#D1CFD0",
+opacity: "0.4",
+...SIZE_STYLES[SMALL_OPTION][REGULAR_BUTTON_VARIANT][TEXT_SUBCOMPONENT]
 }
 
 const Style23Path = {}
 Style23Path[HIERARCHY_ATTRIBUTE] = SECONDARY_OPTION
-Style23Path[DEVICE_ATTRIBUTE] = SMALL_OPTION
+Style23Path[SIZE_ATTRIBUTE] = SMALL_OPTION
 Style23Path[COLOR_ATTRIBUTE] = WHITE_OPTION
 Style23Path [STATE_ATTRIBUTE] = DISABLED_OPTION
 Style23Path[ICON_ATTRIBUTE] = OFF_OPTION 
@@ -1334,56 +1161,47 @@ secondaryStyles.push(styleWrapper23)
 const Style24 = {}
 
 Style24 [BUTTON_SUBCOMPONENT] = {
-    
-    transition: "0.1s all ease-in-out",
-    position: "relative",
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
-    width: "230px",
-    height: "32px", 
-    background: "#2E2A2B",
-    border: "1px solid #6F696C",
-    borderRadius: "2px",
-    boxShadow: "none",
-    boxSizing: "border-box",
-    
+
+transition: "0.1s all ease-in-out",
+position: "relative",
+display: "flex",
+flexDirection: "row",
+justifyContent: "center",
+alignItems: "center",
+height: "32px", 
+background: "#2E2A2B",
+border: "1px solid #6F696C",
+borderRadius: "2px",
+boxShadow: "none",
+...SIZE_STYLES[SMALL_OPTION][REGULAR_BUTTON_ICON_VARIANT][BUTTON_SUBCOMPONENT]
+
 }
 Style24[TEXT_SUBCOMPONENT] = {
-    position: "static",
-    fontFamily: "SEATBCN",
-    fontStyle: "normal",
-    fontWeight: "bold",
-    fontSize: "14px",
-    display: "flex",
-    alignItems: "center",
-    textAlign: "center",
-    color: "#D1CFD0",
-    opacity: "0.4",
-    flex: "none",
-    order: "0",
-    flexGrow: "0",
-    lineHeight: "16px",
-    margin: "0px 8px",
+position: "static",
+fontFamily: "SEATBCN",
+fontStyle: "normal",
+fontWeight: "bold",
+fontSize: "14px",
+color: "#D1CFD0",
+...SIZE_STYLES[SMALL_OPTION][REGULAR_BUTTON_ICON_VARIANT][TEXT_SUBCOMPONENT]
 }
 Style24[ICON_CONTAINER_SUBCOMPONENT] ={
-    color: "#D1CFD0",
-    opacity: "0.4",
-    width: "20px",
-    height: "20px",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
+color: "#D1CFD0",
+opacity: "0.4",
+width: "20px",
+height: "20px",
+display: "flex",
+justifyContent: "center",
+alignItems: "center",
 }
 Style24[ICON_SUBCOMPONENT] = {
-    color: "#D1CFD0",
-    width: "11.25px",
-    height: "11.25px",
+color: "#D1CFD0",
+width: "11.25px",
+height: "11.25px",
 }
 const Style24Path = {}
 Style24Path[HIERARCHY_ATTRIBUTE] = SECONDARY_OPTION
-Style24Path[DEVICE_ATTRIBUTE] = SMALL_OPTION
+Style24Path[SIZE_ATTRIBUTE] = SMALL_OPTION
 Style24Path[COLOR_ATTRIBUTE] = WHITE_OPTION
 Style24Path [STATE_ATTRIBUTE] = DISABLED_OPTION
 Style24Path[ICON_ATTRIBUTE] = ON_OPTION 

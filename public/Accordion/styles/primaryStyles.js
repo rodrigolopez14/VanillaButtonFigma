@@ -1,4 +1,5 @@
 
+import {REGULAR_ACCORDION_COMPONENT} from "../constants.js"
 import {COLOR_ATTRIBUTE,
         SIZE_ATTRIBUTE} from "../constants.js"
 import {BLACK_OPTION, 
@@ -12,7 +13,8 @@ import {CONTAINER_SUBCOMPONENT,
         ICON_PARENT_TITLE_SUBCOMPONENT, 
         ICON_CHILD_SUBCOMPONENT,
         CONTENT_SUBCOMPONENT} from "../constants.js"
-import { OPEN_ACCORDION_EVENT} from "../constants.js"
+import {OPEN_ACCORDION_EVENT} from "../constants.js"
+import {PATH_STYLE,STYLE_OBJECT,COMPONENT_VARIANT_KEY} from "../../commonMethodsAndConstants/Styles/commonConstants.js"
 const Styles = []
 //*----------------STYLING ACCORDIONS ------------------------*/
 
@@ -89,9 +91,12 @@ const Style1Path = {}
 Style1Path[COLOR_ATTRIBUTE] = BLACK_OPTION
 Style1Path [SIZE_ATTRIBUTE] = BIG_OPTION
 
+const style1Wrapper = {}
+style1Wrapper[STYLE_OBJECT] = {...Style1}
+style1Wrapper[COMPONENT_VARIANT_KEY] = REGULAR_ACCORDION_COMPONENT
+style1Wrapper[PATH_STYLE] = Style1Path
 
-
-Styles.push({style: Style1, path: Style1Path})
+Styles.push(style1Wrapper)
 
 //*----------------NEW ACCORDION ------------------------*/
 
@@ -169,9 +174,12 @@ const Style2Path = {}
 Style2Path[COLOR_ATTRIBUTE] = BLACK_OPTION
 Style2Path [SIZE_ATTRIBUTE] = SMALL_OPTION
 
+const style2Wrapper = {}
+style2Wrapper[STYLE_OBJECT] = {...Style2}
+style2Wrapper[COMPONENT_VARIANT_KEY] = REGULAR_ACCORDION_COMPONENT
+style2Wrapper[PATH_STYLE] = Style2Path
 
-
-Styles.push({style: Style2, path: Style2Path})
+Styles.push(style2Wrapper)
 
 //*----------------NEW ACCORDION ------------------------*/
 
@@ -248,11 +256,12 @@ const Style3Path = {}
 Style3Path[COLOR_ATTRIBUTE] = BLACK_OPTION
 Style3Path [SIZE_ATTRIBUTE] = SMALLEST_OPTION
 
+const style3Wrapper = {}
+style3Wrapper[STYLE_OBJECT] = {...Style3}
+style3Wrapper[COMPONENT_VARIANT_KEY] = REGULAR_ACCORDION_COMPONENT
+style3Wrapper[PATH_STYLE] = Style3Path
 
-
-Styles.push({style: Style3, path: Style3Path})
-
-
+Styles.push(style3Wrapper)
 //*----------------NEW ACCORDION ------------------------*/
 
 
@@ -328,10 +337,12 @@ const Style4Path = {}
 Style4Path[COLOR_ATTRIBUTE] = WHITE_OPTION
 Style4Path [SIZE_ATTRIBUTE] = BIG_OPTION
 
+const style4Wrapper = {}
+style4Wrapper[STYLE_OBJECT] = {...Style4}
+style4Wrapper[COMPONENT_VARIANT_KEY] = REGULAR_ACCORDION_COMPONENT
+style4Wrapper[PATH_STYLE] = Style4Path
 
-
-Styles.push({style: Style4, path: Style4Path})
-
+Styles.push(style4Wrapper)
 //*----------------NEW ACCORDION ------------------------*/
 
 //*WHITE  SMALL*/
@@ -409,9 +420,12 @@ const Style5Path = {}
 Style5Path[COLOR_ATTRIBUTE] = WHITE_OPTION
 Style5Path [SIZE_ATTRIBUTE] = SMALL_OPTION
 
+const style5Wrapper = {}
+style5Wrapper[STYLE_OBJECT] = {...Style5}
+style5Wrapper[COMPONENT_VARIANT_KEY] = REGULAR_ACCORDION_COMPONENT
+style5Wrapper[PATH_STYLE] = Style5Path
 
-
-Styles.push({style: Style5, path: Style5Path})
+Styles.push(style5Wrapper)
 
 //*----------------NEW ACCORDION ------------------------*/
 
@@ -489,8 +503,11 @@ const Style6Path = {}
 Style6Path[COLOR_ATTRIBUTE] = WHITE_OPTION
 Style6Path [SIZE_ATTRIBUTE] = SMALLEST_OPTION
 
+const style6Wrapper = {}
+style6Wrapper[STYLE_OBJECT] = {...Style6}
+style6Wrapper[COMPONENT_VARIANT_KEY] = REGULAR_ACCORDION_COMPONENT
+style6Wrapper[PATH_STYLE] = Style6Path
 
+Styles.push(style6Wrapper)
 
-Styles.push({style: Style6, path: Style6Path})
-
-export default Styles;
+export {Styles};

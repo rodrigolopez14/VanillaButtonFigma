@@ -1,4 +1,6 @@
 export const CUSTOM_ELEMENT_NAME = "seat-accordion"
+//variants
+export const REGULAR_ACCORDION_COMPONENT = 'regular accordion'
 // attributeNames
 export const COLOR_ATTRIBUTE = "color";
 export const SIZE_ATTRIBUTE = "size";
@@ -52,8 +54,6 @@ export {ATTRIBUTES};
  export const ICON_PARENT_TITLE_SUBCOMPONENT = 'icon parent title'
  export const ICON_CHILD_SUBCOMPONENT = 'icon child'
  export const CONTENT_SUBCOMPONENT = 'content'
-// export const ICONARROW_SUBCOMPONENT = 'icon Arrow'
-// export const TEXT_SUBCOMPONENT = 'textButton'
 
 //  Defining constants for events 
 export const DEFAULT_EVENT = 'default'

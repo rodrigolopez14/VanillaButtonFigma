@@ -1,11 +1,11 @@
 import {HIERARCHY_ATTRIBUTE, 
-    DEVICE_ATTRIBUTE, 
+    SIZE_ATTRIBUTE, 
     COLOR_ATTRIBUTE,
     STATE_ATTRIBUTE,
     ICON_ATTRIBUTE} from "../constants.js"
 import {TERTIARY_OPTION,
-    DESKTOP_OPTION,
-    TABLET_MOBILE_OPTION,
+    LARGE_OPTION,
+    MEDIUM_OPTION,
     BLACK_OPTION,
     WHITE_OPTION,
     NORMAL_OPTION,
@@ -23,6 +23,7 @@ import {ARROW_BUTTON_VARIANT, ARROW_BUTTON_ICON_VARIANT} from "../constants.js"
 import {PATH_STYLE,
     STYLE_OBJECT,
     COMPONENT_VARIANT_KEY} from "../../commonMethodsAndConstants/Styles/commonConstants.js"
+import { SIZE_STYLES } from "./commonStyles.js"
 const tertiaryStyles = []
 
 const Style1 = {}
@@ -31,15 +32,11 @@ margin: "0px",
 transition: "0.5s all ease-in-out",
 boxShadow: "inset 0 0 0 2px transparent",
 display: "flex",
-justifyContent: "center",
 alignItems: "center",
-width: "132px",
 height: "20px", 
 background: "transparent",
 border: "none",
-}
-Style1[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
-    width: "142px",
+...SIZE_STYLES[LARGE_OPTION][ARROW_BUTTON_VARIANT][BUTTON_SUBCOMPONENT]
 }
 Style1[TEXT_SUBCOMPONENT] = {
 position: "static",
@@ -47,15 +44,8 @@ fontFamily: "SEATBCN",
 fontStyle: "normal",
 fontWeight: "bold",
 fontSize: "16px",
-display: "flex",
-alignItems: "center",
-textAlign: "center",
 color: "#190F14",
-flex: "none",
-order: "0",
-flexGrow: "0",
-lineHeight: "20px",
-margin: "0px 2px",
+...SIZE_STYLES[LARGE_OPTION][ARROW_BUTTON_VARIANT][TEXT_SUBCOMPONENT]
 }
 
 Style1[TEXT_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
@@ -70,11 +60,11 @@ height: "20px",
 display: "flex",
 justifyContent: "center",
 alignItems: "center",
-margin: "0px 2px",
+margin: "0px 0px 0px 2px",
 
 }
 Style1[ICONARROW_CONTAINER_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
-    margin: "0px 8px",
+    margin: "0px 0px 0px 8px",
 }
 Style1[ICONARROW_SUBCOMPONENT] = {
     transition: "0.5s all ease-in-out",
@@ -87,7 +77,7 @@ Style1[ICONARROW_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
 }
 const Style1Path = {}
 Style1Path[HIERARCHY_ATTRIBUTE] = TERTIARY_OPTION
-Style1Path[DEVICE_ATTRIBUTE] = DESKTOP_OPTION
+Style1Path[SIZE_ATTRIBUTE] = LARGE_OPTION
 Style1Path[COLOR_ATTRIBUTE] = BLACK_OPTION
 Style1Path [STATE_ATTRIBUTE] = NORMAL_OPTION
 Style1Path[ICON_ATTRIBUTE] = OFF_OPTION 
@@ -105,32 +95,21 @@ Style2 [BUTTON_SUBCOMPONENT] = {
 transition: "0.5s all ease-in-out",
 boxShadow: "inset 0 0 0 2px transparent",
 display: "flex",
-justifyContent: "center",
 alignItems: "center",
-width: "160px",
 height: "20px", 
 background: "transparent",
 border: "none",
-padding: "0px"
+...SIZE_STYLES[LARGE_OPTION][ARROW_BUTTON_ICON_VARIANT][BUTTON_SUBCOMPONENT]
 }
-Style2[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
-    width: "166px",
-}
+
 Style2[TEXT_SUBCOMPONENT] = {
 position: "static",
 fontFamily: "SEATBCN",
 fontStyle: "normal",
 fontWeight: "bold",
 fontSize: "16px",
-display: "flex",
-alignItems: "center",
-textAlign: "center",
 color: "#190F14",
-flex: "none",
-order: "0",
-flexGrow: "0",
-lineHeight: "20px",
-margin: "0px 2px 0px 8px",
+...SIZE_STYLES[LARGE_OPTION][ARROW_BUTTON_ICON_VARIANT][TEXT_SUBCOMPONENT]
 }
 Style2[TEXT_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
     color: '#747468',
@@ -143,6 +122,7 @@ Style2[ICON_CONTAINER_SUBCOMPONENT] ={
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
+    margin: "0px 0px 0px 8px",
 }
 Style2[ICON_SUBCOMPONENT] = {
     color: "#190F14",
@@ -176,7 +156,7 @@ Style2[ICONARROW_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
 }
 const Style2Path = {}
 Style2Path[HIERARCHY_ATTRIBUTE] = TERTIARY_OPTION
-Style2Path[DEVICE_ATTRIBUTE] = DESKTOP_OPTION
+Style2Path[SIZE_ATTRIBUTE] = LARGE_OPTION
 Style2Path[COLOR_ATTRIBUTE] = BLACK_OPTION
 Style2Path [STATE_ATTRIBUTE] = NORMAL_OPTION
 Style2Path[ICON_ATTRIBUTE] = ON_OPTION 
@@ -193,12 +173,11 @@ Style3 [BUTTON_SUBCOMPONENT] = {
 transition: "0.5s all ease-in-out",
 boxShadow: "inset 0 0 0 2px transparent",
 display: "flex",
-justifyContent: "center",
 alignItems: "center",
-width: "132px",
 height: "20px", 
 background: "transparent",
 border: "none",
+...SIZE_STYLES[LARGE_OPTION][ARROW_BUTTON_VARIANT][BUTTON_SUBCOMPONENT]
 }
 Style3[TEXT_SUBCOMPONENT] = {
 transition: "0.5s all ease-in-out",
@@ -207,15 +186,8 @@ fontFamily: "SEATBCN",
 fontStyle: "normal",
 fontWeight: "bold",
 fontSize: "16px",
-display: "flex",
-alignItems: "center",
-textAlign: "center",
 color: "#D1CFD0",
-flex: "none",
-order: "0",
-flexGrow: "0",
-lineHeight: "20px",
-margin: "0px 2px",
+...SIZE_STYLES[LARGE_OPTION][ARROW_BUTTON_VARIANT][TEXT_SUBCOMPONENT]
 }
 Style3[ICONARROW_CONTAINER_SUBCOMPONENT] = {
 transition: "0.5s all ease-in-out",
@@ -225,7 +197,7 @@ height: "20px",
 display: "flex",
 justifyContent: "center",
 alignItems: "center",
-margin: "0px 2px",
+margin: "0px 0px 0px 8px",
 
 }
 Style3[ICONARROW_SUBCOMPONENT] = {
@@ -236,7 +208,7 @@ Style3[ICONARROW_SUBCOMPONENT] = {
     
 const Style3Path = {}
 Style3Path[HIERARCHY_ATTRIBUTE] = TERTIARY_OPTION
-Style3Path[DEVICE_ATTRIBUTE] = DESKTOP_OPTION
+Style3Path[SIZE_ATTRIBUTE] = LARGE_OPTION
 Style3Path[COLOR_ATTRIBUTE] = BLACK_OPTION
 Style3Path [STATE_ATTRIBUTE] = DISABLED_OPTION
 Style3Path[ICON_ATTRIBUTE] = OFF_OPTION 
@@ -253,13 +225,11 @@ Style4 [BUTTON_SUBCOMPONENT] = {
 transition: "0.5s all ease-in-out",
 boxShadow: "inset 0 0 0 2px transparent",
 display: "flex",
-justifyContent: "center",
 alignItems: "center",
-width: "160px",
 height: "20px", 
 background: "transparent",
 border: "none",
-padding: "0px"
+...SIZE_STYLES[LARGE_OPTION][ARROW_BUTTON_ICON_VARIANT][BUTTON_SUBCOMPONENT]
 }
 
 Style4[TEXT_SUBCOMPONENT] = {
@@ -269,15 +239,8 @@ fontFamily: "SEATBCN",
 fontStyle: "normal",
 fontWeight: "bold",
 fontSize: "16px",
-display: "flex",
-alignItems: "center",
-textAlign: "center",
 color: "#D1CFD0",
-flex: "none",
-order: "0",
-flexGrow: "0",
-lineHeight: "20px",
-margin: "0px 2px 0px 8px",
+...SIZE_STYLES[LARGE_OPTION][ARROW_BUTTON_ICON_VARIANT][TEXT_SUBCOMPONENT]
 }
 
 Style4[ICON_CONTAINER_SUBCOMPONENT] ={
@@ -288,6 +251,7 @@ Style4[ICON_CONTAINER_SUBCOMPONENT] ={
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
+    margin: "0px 8px 0px 0px"
 }
 Style4[ICON_SUBCOMPONENT] = {
     color: "#D1CFD0",
@@ -302,7 +266,7 @@ height: "20px",
 display: "flex",
 justifyContent: "center",
 alignItems: "center",
-margin: "0px 0px 0px 2px",
+margin: "0px 0px 0px 8px",
 }
 
 Style4[ICONARROW_SUBCOMPONENT] = {
@@ -313,7 +277,7 @@ Style4[ICONARROW_SUBCOMPONENT] = {
     
 const Style4Path = {}
 Style4Path[HIERARCHY_ATTRIBUTE] = TERTIARY_OPTION
-Style4Path[DEVICE_ATTRIBUTE] = DESKTOP_OPTION
+Style4Path[SIZE_ATTRIBUTE] = LARGE_OPTION
 Style4Path[COLOR_ATTRIBUTE] = BLACK_OPTION
 Style4Path [STATE_ATTRIBUTE] = DISABLED_OPTION
 Style4Path[ICON_ATTRIBUTE] = ON_OPTION 
@@ -330,15 +294,11 @@ Style5 [BUTTON_SUBCOMPONENT] = {
 transition: "0.5s all ease-in-out",
 boxShadow: "inset 0 0 0 2px transparent",
 display: "flex",
-justifyContent: "center",
 alignItems: "center",
-width: "118px",
 height: "20px", 
 background: "transparent",
 border: "none",
-}
-Style5[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
-    width: "124px",
+...SIZE_STYLES[MEDIUM_OPTION][ARROW_BUTTON_VARIANT][BUTTON_SUBCOMPONENT]
 }
 Style5[TEXT_SUBCOMPONENT] = {
 position: "static",
@@ -346,15 +306,8 @@ fontFamily: "SEATBCN",
 fontStyle: "normal",
 fontWeight: "bold",
 fontSize: "14px",
-display: "flex",
-alignItems: "center",
-textAlign: "center",
 color: "#190F14",
-flex: "none",
-order: "0",
-flexGrow: "0",
-lineHeight: "16px",
-margin: "0px 2px 0px 0px",
+...SIZE_STYLES[MEDIUM_OPTION][ARROW_BUTTON_VARIANT][TEXT_SUBCOMPONENT]
 }
 Style5[TEXT_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
     color: '#747468',
@@ -384,7 +337,7 @@ Style5[ICONARROW_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
 
 const Style5Path = {}
 Style5Path[HIERARCHY_ATTRIBUTE] = TERTIARY_OPTION
-Style5Path[DEVICE_ATTRIBUTE] = TABLET_MOBILE_OPTION
+Style5Path[SIZE_ATTRIBUTE] = MEDIUM_OPTION
 Style5Path[COLOR_ATTRIBUTE] = BLACK_OPTION
 Style5Path [STATE_ATTRIBUTE] = NORMAL_OPTION
 Style5Path[ICON_ATTRIBUTE] = OFF_OPTION 
@@ -401,16 +354,11 @@ Style6 [BUTTON_SUBCOMPONENT] = {
 transition: "0.5s all ease-in-out",
 boxShadow: "inset 0 0 0 2px transparent",
 display: "flex",
-justifyContent: "center",
 alignItems: "center",
-width: "146px",
 height: "20px", 
 background: "transparent",
 border: "none",
-padding: "0px"
-}
-Style6[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
-    width: "152px",
+...SIZE_STYLES[MEDIUM_OPTION][ARROW_BUTTON_ICON_VARIANT][BUTTON_SUBCOMPONENT]
 }
 Style6[TEXT_SUBCOMPONENT] = {
 position: "static",
@@ -418,15 +366,8 @@ fontFamily: "SEATBCN",
 fontStyle: "normal",
 fontWeight: "bold",
 fontSize: "14px",
-display: "flex",
-alignItems: "center",
-textAlign: "center",
 color: "#190F14",
-flex: "none",
-order: "0",
-flexGrow: "0",
-lineHeight: "16px",
-margin: "0px 2px 0px 8px",
+...SIZE_STYLES[MEDIUM_OPTION][ARROW_BUTTON_ICON_VARIANT][TEXT_SUBCOMPONENT]
 }
 Style6[TEXT_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
     color: '#747468',
@@ -439,6 +380,7 @@ Style6[ICON_CONTAINER_SUBCOMPONENT] ={
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
+    margin: "0px 8px 0px 0px"
 }
 Style6[ICON_SUBCOMPONENT] = {
     color: "#190F14",
@@ -472,7 +414,7 @@ Style6[ICONARROW_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
     
 const Style6Path = {}
 Style6Path[HIERARCHY_ATTRIBUTE] = TERTIARY_OPTION
-Style6Path[DEVICE_ATTRIBUTE] = TABLET_MOBILE_OPTION
+Style6Path[SIZE_ATTRIBUTE] = MEDIUM_OPTION
 Style6Path[COLOR_ATTRIBUTE] = BLACK_OPTION
 Style6Path [STATE_ATTRIBUTE] = NORMAL_OPTION
 Style6Path[ICON_ATTRIBUTE] = ON_OPTION 
@@ -488,12 +430,11 @@ Style7 [BUTTON_SUBCOMPONENT] = {
 transition: "0.5s all ease-in-out",
 boxShadow: "inset 0 0 0 2px transparent",
 display: "flex",
-justifyContent: "center",
 alignItems: "center",
-width: "118px",
 height: "20px", 
 background: "transparent",
 border: "none",
+...SIZE_STYLES[MEDIUM_OPTION][ARROW_BUTTON_VARIANT][BUTTON_SUBCOMPONENT]
 }
 
 Style7[TEXT_SUBCOMPONENT] = {
@@ -503,14 +444,7 @@ fontFamily: "SEATBCN",
 fontStyle: "normal",
 fontWeight: "bold",
 fontSize: "14px",
-display: "flex",
-alignItems: "center",
-textAlign: "center",
-flex: "none",
-order: "0",
-flexGrow: "0",
-lineHeight: "16px",
-margin: "0px 2px 0px 0px",
+...SIZE_STYLES[MEDIUM_OPTION][ARROW_BUTTON_ICON_VARIANT][TEXT_SUBCOMPONENT]
 }
 Style7[ICONARROW_CONTAINER_SUBCOMPONENT] = {
 transition: "0.5s all ease-in-out",
@@ -532,7 +466,7 @@ Style7[ICONARROW_SUBCOMPONENT] = {
     
 const Style7Path = {}
 Style7Path[HIERARCHY_ATTRIBUTE] = TERTIARY_OPTION
-Style7Path[DEVICE_ATTRIBUTE] = TABLET_MOBILE_OPTION
+Style7Path[SIZE_ATTRIBUTE] = MEDIUM_OPTION
 Style7Path[COLOR_ATTRIBUTE] = BLACK_OPTION
 Style7Path [STATE_ATTRIBUTE] = DISABLED_OPTION
 Style7Path[ICON_ATTRIBUTE] = OFF_OPTION 
@@ -549,13 +483,11 @@ Style8 [BUTTON_SUBCOMPONENT] = {
 transition: "0.5s all ease-in-out",
 boxShadow: "inset 0 0 0 2px transparent",
 display: "flex",
-justifyContent: "center",
 alignItems: "center",
-width: "146px",
 height: "20px", 
 background: "transparent",
 border: "none",
-padding: "0px"
+...SIZE_STYLES[MEDIUM_OPTION][ARROW_BUTTON_ICON_VARIANT][BUTTON_SUBCOMPONENT]
 }
 
 Style8[TEXT_SUBCOMPONENT] = {
@@ -565,15 +497,8 @@ fontFamily: "SEATBCN",
 fontStyle: "normal",
 fontWeight: "bold",
 fontSize: "14px",
-display: "flex",
-alignItems: "center",
-textAlign: "center",
 color: "#D1CFD0",
-flex: "none",
-order: "0",
-flexGrow: "0",
-lineHeight: "16px",
-margin: "0px 2px 0px 8px",
+...SIZE_STYLES[MEDIUM_OPTION][ARROW_BUTTON_ICON_VARIANT][TEXT_SUBCOMPONENT]
 }
 
 Style8[ICON_CONTAINER_SUBCOMPONENT] ={
@@ -584,6 +509,7 @@ Style8[ICON_CONTAINER_SUBCOMPONENT] ={
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
+    margin: "0px 8px 0px 0px"
 }
 Style8[ICON_SUBCOMPONENT] = {
     color: "#D1CFD0",
@@ -609,7 +535,7 @@ Style8[ICONARROW_SUBCOMPONENT] = {
     
 const Style8Path = {}
 Style8Path[HIERARCHY_ATTRIBUTE] = TERTIARY_OPTION
-Style8Path[DEVICE_ATTRIBUTE] = TABLET_MOBILE_OPTION
+Style8Path[SIZE_ATTRIBUTE] = MEDIUM_OPTION
 Style8Path[COLOR_ATTRIBUTE] = BLACK_OPTION
 Style8Path [STATE_ATTRIBUTE] = DISABLED_OPTION
 Style8Path[ICON_ATTRIBUTE] = ON_OPTION 
@@ -627,12 +553,11 @@ margin: "0px",
 transition: "0.5s all ease-in-out",
 boxShadow: "inset 0 0 0 2px transparent",
 display: "flex",
-justifyContent: "center",
 alignItems: "center",
-width: "132px",
 height: "20px", 
 background: "transparent",
 border: "none",
+...SIZE_STYLES[LARGE_OPTION][ARROW_BUTTON_VARIANT][BUTTON_SUBCOMPONENT]
 }
 Style9[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
     width: "142px",
@@ -643,15 +568,8 @@ fontFamily: "SEATBCN",
 fontStyle: "normal",
 fontWeight: "bold",
 fontSize: "16px",
-display: "flex",
-alignItems: "center",
-textAlign: "center",
 color: "#ECE9E1",
-flex: "none",
-order: "0",
-flexGrow: "0",
-lineHeight: "20px",
-margin: "0px 2px",
+...SIZE_STYLES[LARGE_OPTION][ARROW_BUTTON_VARIANT][TEXT_SUBCOMPONENT]
 }
 
 Style9[TEXT_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
@@ -666,11 +584,11 @@ height: "20px",
 display: "flex",
 justifyContent: "center",
 alignItems: "center",
-margin: "0px 2px",
+margin: "0px 0px 0px 2px",
 
 }
 Style9[ICONARROW_CONTAINER_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
-    margin: "0px 8px",
+    margin: "0px 0px 0px 8px",
 }
 Style9[ICONARROW_SUBCOMPONENT] = {
     transition: "0.5s all ease-in-out",
@@ -683,7 +601,7 @@ Style9[ICONARROW_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
 }
 const Style9Path = {}
 Style9Path[HIERARCHY_ATTRIBUTE] = TERTIARY_OPTION
-Style9Path[DEVICE_ATTRIBUTE] = DESKTOP_OPTION
+Style9Path[SIZE_ATTRIBUTE] = LARGE_OPTION
 Style9Path[COLOR_ATTRIBUTE] = WHITE_OPTION
 Style9Path [STATE_ATTRIBUTE] = NORMAL_OPTION
 Style9Path[ICON_ATTRIBUTE] = OFF_OPTION 
@@ -701,16 +619,11 @@ Style10 [BUTTON_SUBCOMPONENT] = {
 transition: "0.5s all ease-in-out",
 boxShadow: "inset 0 0 0 2px transparent",
 display: "flex",
-justifyContent: "center",
 alignItems: "center",
-width: "160px",
 height: "20px", 
 background: "transparent",
 border: "none",
-padding: "0px"
-}
-Style10[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
-    width: "166px",
+...SIZE_STYLES[LARGE_OPTION][ARROW_BUTTON_ICON_VARIANT][BUTTON_SUBCOMPONENT]
 }
 Style10[TEXT_SUBCOMPONENT] = {
 position: "static",
@@ -718,15 +631,8 @@ fontFamily: "SEATBCN",
 fontStyle: "normal",
 fontWeight: "bold",
 fontSize: "16px",
-display: "flex",
-alignItems: "center",
-textAlign: "center",
 color: "#ECE9E1",
-flex: "none",
-order: "0",
-flexGrow: "0",
-lineHeight: "20px",
-margin: "0px 2px 0px 8px",
+...SIZE_STYLES[LARGE_OPTION][ARROW_BUTTON_ICON_VARIANT][TEXT_SUBCOMPONENT]
 }
 Style10[TEXT_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
     color: '#98928F',
@@ -739,6 +645,7 @@ Style10[ICON_CONTAINER_SUBCOMPONENT] ={
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
+    margin: "0px 8px 0px 0px"
 }
 Style10[ICON_SUBCOMPONENT] = {
     color: "#ECE9E1",
@@ -772,7 +679,7 @@ Style10[ICONARROW_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
 }
 const Style10Path = {}
 Style10Path[HIERARCHY_ATTRIBUTE] = TERTIARY_OPTION
-Style10Path[DEVICE_ATTRIBUTE] = DESKTOP_OPTION
+Style10Path[SIZE_ATTRIBUTE] = LARGE_OPTION
 Style10Path[COLOR_ATTRIBUTE] = WHITE_OPTION
 Style10Path [STATE_ATTRIBUTE] = NORMAL_OPTION
 Style10Path[ICON_ATTRIBUTE] = ON_OPTION 
@@ -789,12 +696,11 @@ Style11 [BUTTON_SUBCOMPONENT] = {
 transition: "0.5s all ease-in-out",
 boxShadow: "inset 0 0 0 2px transparent",
 display: "flex",
-justifyContent: "center",
 alignItems: "center",
-width: "132px",
 height: "20px", 
 background: "transparent",
 border: "none",
+...SIZE_STYLES[LARGE_OPTION][ARROW_BUTTON_VARIANT][BUTTON_SUBCOMPONENT]
 }
 Style11[TEXT_SUBCOMPONENT] = {
 transition: "0.5s all ease-in-out",
@@ -803,15 +709,8 @@ fontFamily: "SEATBCN",
 fontStyle: "normal",
 fontWeight: "bold",
 fontSize: "16px",
-display: "flex",
-alignItems: "center",
-textAlign: "center",
 color: "#747468",
-flex: "none",
-order: "0",
-flexGrow: "0",
-lineHeight: "20px",
-margin: "0px 2px",
+...SIZE_STYLES[LARGE_OPTION][ARROW_BUTTON_VARIANT][TEXT_SUBCOMPONENT]
 }
 Style11[ICONARROW_CONTAINER_SUBCOMPONENT] = {
 transition: "0.5s all ease-in-out",
@@ -821,7 +720,7 @@ height: "20px",
 display: "flex",
 justifyContent: "center",
 alignItems: "center",
-margin: "0px 2px",
+margin: "0px 0px 0px 2px",
 
 }
 Style11[ICONARROW_SUBCOMPONENT] = {
@@ -832,7 +731,7 @@ Style11[ICONARROW_SUBCOMPONENT] = {
     
 const Style11Path = {}
 Style11Path[HIERARCHY_ATTRIBUTE] = TERTIARY_OPTION
-Style11Path[DEVICE_ATTRIBUTE] = DESKTOP_OPTION
+Style11Path[SIZE_ATTRIBUTE] = LARGE_OPTION
 Style11Path[COLOR_ATTRIBUTE] = WHITE_OPTION
 Style11Path [STATE_ATTRIBUTE] = DISABLED_OPTION
 Style11Path[ICON_ATTRIBUTE] = OFF_OPTION 
@@ -849,13 +748,11 @@ Style12 [BUTTON_SUBCOMPONENT] = {
 transition: "0.5s all ease-in-out",
 boxShadow: "inset 0 0 0 2px transparent",
 display: "flex",
-justifyContent: "center",
 alignItems: "center",
-width: "160px",
 height: "20px", 
 background: "transparent",
 border: "none",
-padding: "0px"
+...SIZE_STYLES[LARGE_OPTION][ARROW_BUTTON_ICON_VARIANT][BUTTON_SUBCOMPONENT]
 }
 
 Style12[TEXT_SUBCOMPONENT] = {
@@ -865,15 +762,8 @@ fontFamily: "SEATBCN",
 fontStyle: "normal",
 fontWeight: "bold",
 fontSize: "16px",
-display: "flex",
-alignItems: "center",
-textAlign: "center",
 color: "#747468",
-flex: "none",
-order: "0",
-flexGrow: "0",
-lineHeight: "20px",
-margin: "0px 2px 0px 8px",
+...SIZE_STYLES[LARGE_OPTION][ARROW_BUTTON_ICON_VARIANT][TEXT_SUBCOMPONENT]
 }
 
 Style12[ICON_CONTAINER_SUBCOMPONENT] ={
@@ -884,6 +774,7 @@ Style12[ICON_CONTAINER_SUBCOMPONENT] ={
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
+    margin: "0px 8px 0px 0px"
 }
 Style12[ICON_SUBCOMPONENT] = {
     color: "#747468",
@@ -909,7 +800,7 @@ Style12[ICONARROW_SUBCOMPONENT] = {
     
 const Style12Path = {}
 Style12Path[HIERARCHY_ATTRIBUTE] = TERTIARY_OPTION
-Style12Path[DEVICE_ATTRIBUTE] = DESKTOP_OPTION
+Style12Path[SIZE_ATTRIBUTE] = LARGE_OPTION
 Style12Path[COLOR_ATTRIBUTE] = WHITE_OPTION
 Style12Path [STATE_ATTRIBUTE] = DISABLED_OPTION
 Style12Path[ICON_ATTRIBUTE] = ON_OPTION 
@@ -926,12 +817,11 @@ Style13 [BUTTON_SUBCOMPONENT] = {
 transition: "0.5s all ease-in-out",
 boxShadow: "inset 0 0 0 2px transparent",
 display: "flex",
-justifyContent: "center",
 alignItems: "center",
-width: "118px",
 height: "20px", 
 background: "transparent",
 border: "none",
+...SIZE_STYLES[MEDIUM_OPTION][ARROW_BUTTON_VARIANT][BUTTON_SUBCOMPONENT]
 }
 Style13[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
     width: "124px",
@@ -942,15 +832,8 @@ fontFamily: "SEATBCN",
 fontStyle: "normal",
 fontWeight: "bold",
 fontSize: "14px",
-display: "flex",
-alignItems: "center",
-textAlign: "center",
 color: "#ECE9E1",
-flex: "none",
-order: "0",
-flexGrow: "0",
-lineHeight: "16px",
-margin: "0px 2px 0px 0px",
+...SIZE_STYLES[MEDIUM_OPTION][ARROW_BUTTON_VARIANT][TEXT_SUBCOMPONENT]
 }
 Style13[TEXT_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
     color: '#98928F',
@@ -980,7 +863,7 @@ Style13[ICONARROW_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
 
 const Style13Path = {}
 Style13Path[HIERARCHY_ATTRIBUTE] = TERTIARY_OPTION
-Style13Path[DEVICE_ATTRIBUTE] = TABLET_MOBILE_OPTION
+Style13Path[SIZE_ATTRIBUTE] = MEDIUM_OPTION
 Style13Path[COLOR_ATTRIBUTE] = WHITE_OPTION
 Style13Path [STATE_ATTRIBUTE] = NORMAL_OPTION
 Style13Path[ICON_ATTRIBUTE] = OFF_OPTION 
@@ -997,16 +880,11 @@ Style14 [BUTTON_SUBCOMPONENT] = {
 transition: "0.5s all ease-in-out",
 boxShadow: "inset 0 0 0 2px transparent",
 display: "flex",
-justifyContent: "center",
 alignItems: "center",
-width: "146px",
 height: "20px", 
 background: "transparent",
 border: "none",
-padding: "0px"
-}
-Style14[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
-    width: "152px",
+...SIZE_STYLES[MEDIUM_OPTION][ARROW_BUTTON_ICON_VARIANT][BUTTON_SUBCOMPONENT]
 }
 Style14[TEXT_SUBCOMPONENT] = {
 position: "static",
@@ -1014,15 +892,8 @@ fontFamily: "SEATBCN",
 fontStyle: "normal",
 fontWeight: "bold",
 fontSize: "14px",
-display: "flex",
-alignItems: "center",
-textAlign: "center",
 color: "#ECE9E1",
-flex: "none",
-order: "0",
-flexGrow: "0",
-lineHeight: "16px",
-margin: "0px 2px 0px 8px",
+...SIZE_STYLES[MEDIUM_OPTION][ARROW_BUTTON_ICON_VARIANT][TEXT_SUBCOMPONENT]
 }
 Style14[TEXT_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
     color: '#98928F',
@@ -1035,6 +906,7 @@ Style14[ICON_CONTAINER_SUBCOMPONENT] ={
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
+    margin: "0px 8px 0px 0px"
 }
 Style14[ICON_SUBCOMPONENT] = {
     color: "#ECE9E1",
@@ -1068,7 +940,7 @@ Style14[ICONARROW_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
     
 const Style14Path = {}
 Style14Path[HIERARCHY_ATTRIBUTE] = TERTIARY_OPTION
-Style14Path[DEVICE_ATTRIBUTE] = TABLET_MOBILE_OPTION
+Style14Path[SIZE_ATTRIBUTE] = MEDIUM_OPTION
 Style14Path[COLOR_ATTRIBUTE] = WHITE_OPTION
 Style14Path [STATE_ATTRIBUTE] = NORMAL_OPTION
 Style14Path[ICON_ATTRIBUTE] = ON_OPTION 
@@ -1084,12 +956,11 @@ Style15 [BUTTON_SUBCOMPONENT] = {
 transition: "0.5s all ease-in-out",
 boxShadow: "inset 0 0 0 2px transparent",
 display: "flex",
-justifyContent: "center",
 alignItems: "center",
-width: "118px",
 height: "20px", 
 background: "transparent",
 border: "none",
+...SIZE_STYLES[MEDIUM_OPTION][ARROW_BUTTON_VARIANT][BUTTON_SUBCOMPONENT]
 }
 
 Style15[TEXT_SUBCOMPONENT] = {
@@ -1099,14 +970,7 @@ fontFamily: "SEATBCN",
 fontStyle: "normal",
 fontWeight: "bold",
 fontSize: "14px",
-display: "flex",
-alignItems: "center",
-textAlign: "center",
-flex: "none",
-order: "0",
-flexGrow: "0",
-lineHeight: "16px",
-margin: "0px 2px 0px 0px",
+...SIZE_STYLES[MEDIUM_OPTION][ARROW_BUTTON_VARIANT][TEXT_SUBCOMPONENT]
 }
 Style15[ICONARROW_CONTAINER_SUBCOMPONENT] = {
 transition: "0.5s all ease-in-out",
@@ -1128,7 +992,7 @@ Style15[ICONARROW_SUBCOMPONENT] = {
     
 const Style15Path = {}
 Style15Path[HIERARCHY_ATTRIBUTE] = TERTIARY_OPTION
-Style15Path[DEVICE_ATTRIBUTE] = TABLET_MOBILE_OPTION
+Style15Path[SIZE_ATTRIBUTE] = MEDIUM_OPTION
 Style15Path[COLOR_ATTRIBUTE] = WHITE_OPTION
 Style15Path [STATE_ATTRIBUTE] = DISABLED_OPTION
 Style15Path[ICON_ATTRIBUTE] = OFF_OPTION 
@@ -1145,13 +1009,11 @@ Style16 [BUTTON_SUBCOMPONENT] = {
 transition: "0.5s all ease-in-out",
 boxShadow: "inset 0 0 0 2px transparent",
 display: "flex",
-justifyContent: "center",
 alignItems: "center",
-width: "146px",
 height: "20px", 
 background: "transparent",
 border: "none",
-padding: "0px"
+...SIZE_STYLES[MEDIUM_OPTION][ARROW_BUTTON_ICON_VARIANT][BUTTON_SUBCOMPONENT]
 }
 
 Style16[TEXT_SUBCOMPONENT] = {
@@ -1161,15 +1023,8 @@ fontFamily: "SEATBCN",
 fontStyle: "normal",
 fontWeight: "bold",
 fontSize: "14px",
-display: "flex",
-alignItems: "center",
-textAlign: "center",
 color: "#747468",
-flex: "none",
-order: "0",
-flexGrow: "0",
-lineHeight: "16px",
-margin: "0px 2px 0px 8px",
+...SIZE_STYLES[MEDIUM_OPTION][ARROW_BUTTON_ICON_VARIANT][TEXT_SUBCOMPONENT]
 }
 
 Style16[ICON_CONTAINER_SUBCOMPONENT] ={
@@ -1180,6 +1035,7 @@ Style16[ICON_CONTAINER_SUBCOMPONENT] ={
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
+    margin: "0px 8px 0px 0px"
 }
 Style16[ICON_SUBCOMPONENT] = {
     color: "#747468",
@@ -1205,7 +1061,7 @@ Style16[ICONARROW_SUBCOMPONENT] = {
     
 const Style16Path = {}
 Style16Path[HIERARCHY_ATTRIBUTE] = TERTIARY_OPTION
-Style16Path[DEVICE_ATTRIBUTE] = TABLET_MOBILE_OPTION
+Style16Path[SIZE_ATTRIBUTE] = MEDIUM_OPTION
 Style16Path[COLOR_ATTRIBUTE] = WHITE_OPTION
 Style16Path [STATE_ATTRIBUTE] = DISABLED_OPTION
 Style16Path[ICON_ATTRIBUTE] = ON_OPTION 

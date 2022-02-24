@@ -1,11 +1,11 @@
 import {HIERARCHY_ATTRIBUTE, 
-    DEVICE_ATTRIBUTE, 
+    SIZE_ATTRIBUTE, 
     COLOR_ATTRIBUTE,
     LINE_ATTRIBUTE,
     ICON_ATTRIBUTE} from "../constants.js"
 import {HYPERLINK_OPTION,
-    DESKTOP_OPTION,
-    TABLET_MOBILE_OPTION,
+    LARGE_OPTION,
+    MEDIUM_OPTION,
     BLACK_OPTION,
     WHITE_OPTION,
     TITLE_OPTION,
@@ -16,7 +16,7 @@ import {BUTTON_SUBCOMPONENT,
 import {HOVER_BUTTON_EVENT} from "../constants.js"
 import {REGULAR_BUTTON_VARIANT} from "../constants.js"
 import {PATH_STYLE,STYLE_OBJECT,COMPONENT_VARIANT_KEY} from "../../commonMethodsAndConstants/Styles/commonConstants.js"
-
+import { SIZE_STYLES } from "./commonStyles.js"
 const hyperlinkStyles = []
 
 const Style1 = {}
@@ -29,11 +29,9 @@ Style1 [BUTTON_SUBCOMPONENT] = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    width: "100px",
     height: "21px", 
     background: "transparent",
-    padding: "0px",
-    margin: "0px",
+    ...SIZE_STYLES[LARGE_OPTION][REGULAR_BUTTON_VARIANT][BUTTON_SUBCOMPONENT]
 }
 Style1[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
     borderBottomColor: "RGBA(68,60,64,0.6)",
@@ -44,19 +42,14 @@ Style1[TEXT_SUBCOMPONENT] = {
     fontStyle: "normal",
     fontWeight: "400",
     fontSize: "16px",
-    display: "flex",
-    alignItems: "center",
-    textAlign: "center",
     color: "#190F14",
-    flex: "none",
-    order: "0",
-    flexGrow: "0",
-    lineHeight: "20px",
+    ...SIZE_STYLES[LARGE_OPTION][REGULAR_BUTTON_VARIANT][TEXT_SUBCOMPONENT]
+
 }
 
 const Style1Path = {}
 Style1Path[HIERARCHY_ATTRIBUTE] = HYPERLINK_OPTION
-Style1Path[DEVICE_ATTRIBUTE] = DESKTOP_OPTION
+Style1Path[SIZE_ATTRIBUTE] = LARGE_OPTION
 Style1Path[COLOR_ATTRIBUTE] = BLACK_OPTION
 Style1Path [LINE_ATTRIBUTE] = TITLE_OPTION
 Style1Path [ICON_ATTRIBUTE] = OFF_OPTION
@@ -77,11 +70,10 @@ Style2 [BUTTON_SUBCOMPONENT] = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    width: "100px",
     height: "21px", 
     background: "transparent",
-    padding: "0px",
     margin: "0px",
+    ...SIZE_STYLES[LARGE_OPTION][REGULAR_BUTTON_VARIANT][BUTTON_SUBCOMPONENT]
 }
 Style2[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
     borderBottomColor: "RGBA(68,60,64,0.6)",
@@ -92,19 +84,14 @@ Style2[TEXT_SUBCOMPONENT] = {
     fontStyle: "normal",
     fontWeight: "400",
     fontSize: "16px",
-    display: "flex",
-    alignItems: "center",
-    textAlign: "center",
     color: "#190F14",
-    flex: "none",
-    order: "0",
-    flexGrow: "0",
-    lineHeight: "20px",
+    ...SIZE_STYLES[LARGE_OPTION][REGULAR_BUTTON_VARIANT][TEXT_SUBCOMPONENT]
+
 }
 
 const Style2Path = {}
 Style2Path[HIERARCHY_ATTRIBUTE] = HYPERLINK_OPTION
-Style2Path[DEVICE_ATTRIBUTE] = DESKTOP_OPTION
+Style2Path[SIZE_ATTRIBUTE] = LARGE_OPTION
 Style2Path[COLOR_ATTRIBUTE] = BLACK_OPTION
 Style2Path [LINE_ATTRIBUTE] = PARAGRAPH_OPTION
 Style2Path [ICON_ATTRIBUTE] = OFF_OPTION
@@ -125,11 +112,10 @@ Style3 [BUTTON_SUBCOMPONENT] = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    width: "100px",
     height: "21px", 
     background: "transparent",
-    padding: "0px",
     margin: "0px",
+    ...SIZE_STYLES[LARGE_OPTION][REGULAR_BUTTON_VARIANT][BUTTON_SUBCOMPONENT]
 }
 Style3[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
     borderBottomColor: "RGBA(68,60,64,0.6)",
@@ -140,19 +126,14 @@ Style3[TEXT_SUBCOMPONENT] = {
     fontStyle: "normal",
     fontWeight: "400",
     fontSize: "16px",
-    display: "flex",
-    alignItems: "center",
-    textAlign: "center",
     color: "#ECE9E1",
-    flex: "none",
-    order: "0",
-    flexGrow: "0",
-    lineHeight: "20px",
+    ...SIZE_STYLES[LARGE_OPTION][REGULAR_BUTTON_VARIANT][TEXT_SUBCOMPONENT]
+
 }
 
 const Style3Path = {}
 Style3Path[HIERARCHY_ATTRIBUTE] = HYPERLINK_OPTION
-Style3Path[DEVICE_ATTRIBUTE] = DESKTOP_OPTION
+Style3Path[SIZE_ATTRIBUTE] = LARGE_OPTION
 Style3Path[COLOR_ATTRIBUTE] = WHITE_OPTION
 Style3Path [LINE_ATTRIBUTE] = TITLE_OPTION
 Style3Path [ICON_ATTRIBUTE] = OFF_OPTION
@@ -173,11 +154,10 @@ Style4 [BUTTON_SUBCOMPONENT] = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    width: "100px",
     height: "21px", 
     background: "transparent",
-    padding: "0px",
     margin: "0px",
+    ...SIZE_STYLES[LARGE_OPTION][REGULAR_BUTTON_VARIANT][BUTTON_SUBCOMPONENT]
 }
 Style4[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
     borderBottomColor: "RGBA(68,60,64,0.6)",
@@ -188,19 +168,14 @@ Style4[TEXT_SUBCOMPONENT] = {
     fontStyle: "normal",
     fontWeight: "400",
     fontSize: "16px",
-    display: "flex",
-    alignItems: "center",
-    textAlign: "center",
     color: "#ECE9E1",
-    flex: "none",
-    order: "0",
-    flexGrow: "0",
-    lineHeight: "20px",
+    ...SIZE_STYLES[LARGE_OPTION][REGULAR_BUTTON_VARIANT][TEXT_SUBCOMPONENT]
+
 }
 
 const Style4Path = {}
 Style4Path[HIERARCHY_ATTRIBUTE] = HYPERLINK_OPTION
-Style4Path[DEVICE_ATTRIBUTE] = DESKTOP_OPTION
+Style4Path[SIZE_ATTRIBUTE] = LARGE_OPTION
 Style4Path[COLOR_ATTRIBUTE] = WHITE_OPTION
 Style4Path [LINE_ATTRIBUTE] = PARAGRAPH_OPTION
 Style4Path [ICON_ATTRIBUTE] = OFF_OPTION
@@ -222,11 +197,10 @@ Style5 [BUTTON_SUBCOMPONENT] = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    width: "90px",
     height: "17px", 
     background: "transparent",
-    padding: "0px",
     margin: "0px",
+    ...SIZE_STYLES[MEDIUM_OPTION][REGULAR_BUTTON_VARIANT][BUTTON_SUBCOMPONENT]
 }
 Style5[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
     borderBottomColor: "RGBA(68,60,64,0.6)",
@@ -237,19 +211,13 @@ Style5[TEXT_SUBCOMPONENT] = {
     fontStyle: "normal",
     fontWeight: "400",
     fontSize: "14px",
-    display: "flex",
-    alignItems: "center",
-    textAlign: "center",
     color: "#190F14",
-    flex: "none",
-    order: "0",
-    flexGrow: "0",
-    lineHeight: "16px",
+    ...SIZE_STYLES[MEDIUM_OPTION][REGULAR_BUTTON_VARIANT][TEXT_SUBCOMPONENT]
 }
 
 const Style5Path = {}
 Style5Path[HIERARCHY_ATTRIBUTE] = HYPERLINK_OPTION
-Style5Path[DEVICE_ATTRIBUTE] = TABLET_MOBILE_OPTION
+Style5Path[SIZE_ATTRIBUTE] = MEDIUM_OPTION
 Style5Path[COLOR_ATTRIBUTE] = BLACK_OPTION
 Style5Path [LINE_ATTRIBUTE] = TITLE_OPTION
 Style5Path [ICON_ATTRIBUTE] = OFF_OPTION
@@ -270,11 +238,10 @@ Style6 [BUTTON_SUBCOMPONENT] = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    width: "90px",
     height: "17px", 
     background: "transparent",
-    padding: "0px",
     margin: "0px",
+    ...SIZE_STYLES[MEDIUM_OPTION][REGULAR_BUTTON_VARIANT][BUTTON_SUBCOMPONENT]
 }
 Style6[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
     borderBottomColor: "RGBA(68,60,64,0.6)",
@@ -285,19 +252,13 @@ Style6[TEXT_SUBCOMPONENT] = {
     fontStyle: "normal",
     fontWeight: "400",
     fontSize: "14px",
-    display: "flex",
-    alignItems: "center",
-    textAlign: "center",
     color: "#190F14",
-    flex: "none",
-    order: "0",
-    flexGrow: "0",
-    lineHeight: "16px",
+    ...SIZE_STYLES[MEDIUM_OPTION][REGULAR_BUTTON_VARIANT][TEXT_SUBCOMPONENT]
 }
 
 const Style6Path = {}
 Style6Path[HIERARCHY_ATTRIBUTE] = HYPERLINK_OPTION
-Style6Path[DEVICE_ATTRIBUTE] = TABLET_MOBILE_OPTION
+Style6Path[SIZE_ATTRIBUTE] = MEDIUM_OPTION
 Style6Path[COLOR_ATTRIBUTE] = BLACK_OPTION
 Style6Path [LINE_ATTRIBUTE] = PARAGRAPH_OPTION
 Style6Path [ICON_ATTRIBUTE] = OFF_OPTION
@@ -318,11 +279,10 @@ Style7 [BUTTON_SUBCOMPONENT] = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    width: "90px",
     height: "17px", 
     background: "transparent",
-    padding: "0px",
     margin: "0px",
+    ...SIZE_STYLES[MEDIUM_OPTION][REGULAR_BUTTON_VARIANT][BUTTON_SUBCOMPONENT]
 }
 Style7[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
     borderBottomColor: "RGBA(68,60,64,0.6)",
@@ -333,19 +293,13 @@ Style7[TEXT_SUBCOMPONENT] = {
     fontStyle: "normal",
     fontWeight: "400",
     fontSize: "14px",
-    display: "flex",
-    alignItems: "center",
-    textAlign: "center",
     color: "#ECE9E1",
-    flex: "none",
-    order: "0",
-    flexGrow: "0",
-    lineHeight: "16px",
+    ...SIZE_STYLES[MEDIUM_OPTION][REGULAR_BUTTON_VARIANT][TEXT_SUBCOMPONENT]
 }
 
 const Style7Path = {}
 Style7Path[HIERARCHY_ATTRIBUTE] = HYPERLINK_OPTION
-Style7Path[DEVICE_ATTRIBUTE] = TABLET_MOBILE_OPTION
+Style7Path[SIZE_ATTRIBUTE] = MEDIUM_OPTION
 Style7Path[COLOR_ATTRIBUTE] = WHITE_OPTION
 Style7Path [LINE_ATTRIBUTE] = TITLE_OPTION
 Style7Path [ICON_ATTRIBUTE] = OFF_OPTION
@@ -366,11 +320,10 @@ Style8 [BUTTON_SUBCOMPONENT] = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    width: "90px",
     height: "17px", 
     background: "transparent",
-    padding: "0px",
     margin: "0px",
+    ...SIZE_STYLES[MEDIUM_OPTION][REGULAR_BUTTON_VARIANT][BUTTON_SUBCOMPONENT]
 }
 Style8[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
     borderBottomColor: "RGBA(68,60,64,0.6)",
@@ -381,19 +334,13 @@ Style8[TEXT_SUBCOMPONENT] = {
     fontStyle: "normal",
     fontWeight: "400",
     fontSize: "14px",
-    display: "flex",
-    alignItems: "center",
-    textAlign: "center",
     color: "#ECE9E1",
-    flex: "none",
-    order: "0",
-    flexGrow: "0",
-    lineHeight: "16px",
+    ...SIZE_STYLES[MEDIUM_OPTION][REGULAR_BUTTON_VARIANT][TEXT_SUBCOMPONENT]
 }
 
 const Style8Path = {}
 Style8Path[HIERARCHY_ATTRIBUTE] = HYPERLINK_OPTION
-Style8Path[DEVICE_ATTRIBUTE] = TABLET_MOBILE_OPTION
+Style8Path[SIZE_ATTRIBUTE] = MEDIUM_OPTION
 Style8Path[COLOR_ATTRIBUTE] = WHITE_OPTION
 Style8Path [LINE_ATTRIBUTE] = PARAGRAPH_OPTION
 Style8Path [ICON_ATTRIBUTE] = OFF_OPTION

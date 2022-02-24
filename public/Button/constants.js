@@ -1,6 +1,6 @@
 // attributeNames
 export const HIERARCHY_ATTRIBUTE = "hierarchy";
-export const DEVICE_ATTRIBUTE = "device";
+export const SIZE_ATTRIBUTE = "size";
 export const COLOR_ATTRIBUTE = "color";
 export const STATE_ATTRIBUTE = "state";
 export const LINE_ATTRIBUTE = "line";
@@ -17,9 +17,9 @@ export const GHOST_OPTION = "ghost";
 export const PURCHASE_OPTION = "purchase";
 export const HYPERLINK_OPTION = "hyperlink";
 //device options 
-export const DESKTOP_OPTION = "desktop";
-export const TABLET_MOBILE_OPTION = "tabletAndMobile";
-export const SMALL_OPTION = "small";
+export const LARGE_OPTION = "L";
+export const MEDIUM_OPTION = "M";
+export const SMALL_OPTION = "S";
 // color options
 export const BLACK_OPTION = "black";
 export const WHITE_OPTION = "white";
@@ -51,7 +51,7 @@ ATTRIBUTES.push({
     proccessValue: (value) => {return   value}
 })
 ATTRIBUTES.push({
-    attributeName: DEVICE_ATTRIBUTE,
+    attributeName: SIZE_ATTRIBUTE,
     defaultValue : null,
     proccessValue: (value) => {return   value}
 
