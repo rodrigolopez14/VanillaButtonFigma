@@ -559,9 +559,7 @@ background: "transparent",
 border: "none",
 ...SIZE_STYLES[LARGE_OPTION][ARROW_BUTTON_VARIANT][BUTTON_SUBCOMPONENT]
 }
-Style9[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
-    width: "142px",
-}
+
 Style9[TEXT_SUBCOMPONENT] = {
 position: "static",
 fontFamily: "SEATBCN",
@@ -822,9 +820,6 @@ height: "20px",
 background: "transparent",
 border: "none",
 ...SIZE_STYLES[MEDIUM_OPTION][ARROW_BUTTON_VARIANT][BUTTON_SUBCOMPONENT]
-}
-Style13[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
-    width: "124px",
 }
 Style13[TEXT_SUBCOMPONENT] = {
 position: "static",
