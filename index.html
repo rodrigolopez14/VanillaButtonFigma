@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Web Component</title>
-    <script  type="module" src="./Button/index.js"></script>
+    <script  type="module" src="./Accordion/index.js"></script>
     <style>
       .hey {
         background-color: black;
@@ -17,33 +17,9 @@
     </style>
   </head>
   <body>
+    <seat-accordion size="small">
+      
+    </seat-accordion >
     
-    <h1>--HYPERLINK </h1>
-    <h1>-BLACK</h1>
-    <h1>Desktop</h1>
-    <seat-button hierarchy="primary" device="desktop" color="black" state="normal" icon= "on" iconSelection="plus" onclick = " function yes ()  {alert(new Date())}"></seat-button>
-    <seat-button hierarchy="hyperlink"  color="black" device="desktop" line="title"  onclick = " function yes ()  {alert(new Date())}"></seat-button>
-    <br>
-    <seat-button hierarchy="hyperlink"  color="black" device="desktop" line="paragraph"  onclick = " function yes ()  {alert(new Date())}"></seat-button>
-    <br>
-    <h1>Tablet&Mobile</h1>
-    <seat-button hierarchy="hyperlink"  color="black" device="tablet&mobile" line="title"  onclick = " function yes ()  {alert(new Date())}"></seat-button>
-    <br>
-    <seat-button hierarchy="hyperlink"  color="black" device="tablet&mobile" line="paragraph"  onclick = " function yes ()  {alert(new Date())}"></seat-button>
-    <br>
-    
-    <div class="hey">
-    <h1 class="h1black">-WHITE</h1>
-    <h1 class="h1black">Desktop</h1>
-    <seat-button hierarchy="hyperlink"  color="white" device="desktop" line="title"  onclick = " function yes ()  {alert(new Date())}"></seat-button>
-    <br>
-    <seat-button hierarchy="hyperlink"  color="white" device="desktop" line="paragraph"  onclick = " function yes ()  {alert(new Date())}"></seat-button>
-    <br>
-    <h1 class="h1black">Tablet&Mobile</h1>
-    <seat-button hierarchy="hyperlink"  color="white" device="tablet&mobile" line="title"  onclick = " function yes ()  {alert(new Date())}"></seat-button>
-    <br>
-    <seat-button hierarchy="hyperlink"  color="white" device="tablet&mobile" line="paragraph"  onclick = " function yes ()  {alert(new Date())}"></seat-button>
-    
-    </div>
   </body>
 </html>

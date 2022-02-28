@@ -1,7 +1,7 @@
-import {REGULAR_ACCORDION_COMPONENT} from "../constants";
-import {regularAccordionFunction} from './regularAccordion.js'
+import {REGULAR_ACCORDION_COMPONENT} from "../constants.js";
+import {createRegularAccordion} from './regularAccordion.js'
 const COMPONENTS = {};
 
-COMPONENTS[REGULAR_ACCORDION_COMPONENT] = regularAccordionFunction
+COMPONENTS[REGULAR_ACCORDION_COMPONENT] = createRegularAccordion
 
-export default COMPONENTS;
+export  {COMPONENTS};

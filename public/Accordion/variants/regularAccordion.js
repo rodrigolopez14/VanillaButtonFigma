@@ -1,28 +1,24 @@
-import {CUSTOM_ELEMENT_NAME} from "./constants.js"
-import {loadFonts} from "../Fonts/index.js"
-import {setStyle, processStyle} from "./styles/index.js"
+import {STYLE_KEY} from "../../commonMethodsAndConstants/Styles/commonConstants.js"
+import {setStyle, processStyle} from "../styles/index.js"
+import {OPENED_OPTION, CLOSED_OPTION, OPEN_ATTRIBUTE, TITLE_ATTRIBUTE} from "../constants.js"
+import { OPEN_ACCORDION_EVENT, DEFAULT_EVENT } from "../constants.js"
+import {CONTAINER_SUBCOMPONENT, TITLE_SUBCOMPONENT, TEXT_TITLE_SUBCOMPONENT, ICON_PARENT_TITLE_SUBCOMPONENT, ICON_CHILD_SUBCOMPONENT , CONTENT_SUBCOMPONENT} from "../constants.js"
 
-import {OPENED_OPTION, CLOSED_OPTION, OPEN_ATTRIBUTE, TITLE_ATTRIBUTE} from "./constants.js"
-import { OPEN_ACCORDION_EVENT, DEFAULT_EVENT } from "./constants.js"
-import {CONTAINER_SUBCOMPONENT, TITLE_SUBCOMPONENT, TEXT_TITLE_SUBCOMPONENT, ICON_PARENT_TITLE_SUBCOMPONENT, ICON_CHILD_SUBCOMPONENT , CONTENT_SUBCOMPONENT} from "./constants.js"
-import { ATTRIBUTES } from "./constants.js"
+import {PLUS_ICON_OPTION, MINUS_ICON_OPTION} from "../../Icons/constants.js"
+import { ICON_COLOR_ATTRIBUTE, ICON_WIDTH_ATTRIBUTE, ICON_HEIGHT_ATTRIBUTE, ICON_SELECTION_ATTRIBUTE } from "../../Icons/constants.js"
+import {ICON} from "../../Icons/index.js"
 
-import {PLUS_ICON_OPTION, MINUS_ICON_OPTION} from "./accordionIcons/constants.js"
-import accordionIcons from "./accordionIcons/index.js"
-loadFonts()
-class vanillaAccordion extends HTMLElement {
+const TEMPORARY_ATTRIBUTE = 'temporary-attribute'
+class vanillaRegularAccordion extends HTMLElement {
     constructor()
     {
         super();
-        this.shadow = this.attachShadow({mode: 'open'});
         this.styles = null
         this.openStyles = []
         this.closeStyles = []
         this.iconParent = document.createElement('div')
-        this.slot = null
+        this.slotty = null        
 
-
-        
     }
     static get observedAttributes() { return [OPEN_ATTRIBUTE]; }
     attributeChangedCallback() 
@@ -30,21 +26,24 @@ class vanillaAccordion extends HTMLElement {
         const state = this.getAttribute(OPEN_ATTRIBUTE)
         if (state === OPENED_OPTION)
             {                
-                this.iconParent.removeChild(this.iconChild)
-                this.iconChild = document.createElement(accordionIcons[MINUS_ICON_OPTION])
-                this.iconChild.setAttribute('color',this.styles[ICON_PARENT_TITLE_SUBCOMPONENT]['color'])
-                this.iconChild.setAttribute('height',this.styles[ICON_CHILD_SUBCOMPONENT]['height'])
-                this.iconChild.setAttribute('width',this.styles[ICON_CHILD_SUBCOMPONENT]['width'])
+                if (this.iconChild) this.iconParent.removeChild(this.iconChild)
+                this.iconChild = document.createElement(ICON)
+                this.iconChild.setAttribute(ICON_SELECTION_ATTRIBUTE, MINUS_ICON_OPTION)
+                this.iconChild.setAttribute(ICON_COLOR_ATTRIBUTE,this.styles[ICON_PARENT_TITLE_SUBCOMPONENT][ICON_COLOR_ATTRIBUTE])
+                this.iconChild.setAttribute(ICON_HEIGHT_ATTRIBUTE,this.styles[ICON_CHILD_SUBCOMPONENT][ICON_HEIGHT_ATTRIBUTE])
+                this.iconChild.setAttribute(ICON_WIDTH_ATTRIBUTE,this.styles[ICON_CHILD_SUBCOMPONENT][ICON_WIDTH_ATTRIBUTE])
                 this.iconParent.appendChild(this.iconChild)
                 this.openStyles.forEach( (style)=>  style())
             }
         else if (state !== OPENED_OPTION)
             {                
-                this.iconParent.removeChild(this.iconChild)
-                this.iconChild = document.createElement(accordionIcons[PLUS_ICON_OPTION])
-                this.iconChild.setAttribute('color',this.styles[ICON_PARENT_TITLE_SUBCOMPONENT]['color'])
-                this.iconChild.setAttribute('height',this.styles[ICON_CHILD_SUBCOMPONENT]['height'])
-                this.iconChild.setAttribute('width',this.styles[ICON_CHILD_SUBCOMPONENT]['width'])
+                console.log(this.iconChild)
+                if(this.iconChild) this.iconParent.removeChild(this.iconChild)
+                this.iconChild = document.createElement(ICON)
+                this.iconChild.setAttribute(ICON_SELECTION_ATTRIBUTE, PLUS_ICON_OPTION)
+                this.iconChild.setAttribute(ICON_COLOR_ATTRIBUTE,this.styles[ICON_PARENT_TITLE_SUBCOMPONENT][ICON_COLOR_ATTRIBUTE])
+                this.iconChild.setAttribute(ICON_HEIGHT_ATTRIBUTE,this.styles[ICON_CHILD_SUBCOMPONENT][ICON_HEIGHT_ATTRIBUTE])
+                this.iconChild.setAttribute(ICON_WIDTH_ATTRIBUTE,this.styles[ICON_CHILD_SUBCOMPONENT][ICON_WIDTH_ATTRIBUTE])
                 this.iconParent.appendChild(this.iconChild)
                 this.closeStyles.forEach( (style)=>  style())
                 return;
@@ -53,15 +52,13 @@ class vanillaAccordion extends HTMLElement {
     }
     connectedCallback() {
         
-        const attributes = {}
-        ATTRIBUTES.forEach((ATTRIBUTE)=>{ 
-            if (this.getAttribute(ATTRIBUTE.attributeName)) attributes[ATTRIBUTE.attributeName] = ATTRIBUTE.proccessValue(this.getAttribute(ATTRIBUTE.attributeName))
-            else attributes[ATTRIBUTE.attributeName] = ATTRIBUTE.defaultValue
-                        })
-        const styleAttributes = {...attributes}
-        delete styleAttributes[OPEN_ATTRIBUTE];
-        delete styleAttributes[TITLE_ATTRIBUTE];
-        this.styles = setStyle(styleAttributes)
+        const attributes = JSON.parse(this.getAttribute(TEMPORARY_ATTRIBUTE))
+        this.setAttribute(STYLE_KEY,attributes[STYLE_KEY])
+        this.setAttribute(OPEN_ATTRIBUTE,attributes[OPEN_ATTRIBUTE])
+        this.setAttribute(TITLE_ATTRIBUTE,attributes[TITLE_ATTRIBUTE])
+        console.log(attributes)
+        this.removeAttribute(TEMPORARY_ATTRIBUTE)
+        this.styles = setStyle(attributes[STYLE_KEY])
 
         const container = document.createElement('div')
         const stylesProccessedContainer = processStyle(container,this.styles[CONTAINER_SUBCOMPONENT])
@@ -74,12 +71,7 @@ class vanillaAccordion extends HTMLElement {
         this.openStyles.push(...stylesProccessedTitle[OPEN_ACCORDION_EVENT])
 
         const content = document.createElement('div')    
-        
-        
-
         const contentToAppend = document.createElement('slot')
-        
-        
         content.appendChild(contentToAppend)
 
         const textTitleNode = document.createTextNode(attributes[TITLE_ATTRIBUTE])
@@ -95,16 +87,17 @@ class vanillaAccordion extends HTMLElement {
         this.closeStyles.push(...stylesProccessedIconParent[DEFAULT_EVENT])
         this.openStyles.push(...stylesProccessedIconParent[OPEN_ACCORDION_EVENT])
 
-        if (attributes[OPEN_ATTRIBUTE] === OPENED_OPTION) this.iconChild = document.createElement(accordionIcons[MINUS_ICON_OPTION])
-        else if (attributes[OPEN_ATTRIBUTE] !== OPENED_OPTION) this.iconChild = document.createElement( accordionIcons[PLUS_ICON_OPTION])
-        this.iconChild.setAttribute('color',this.styles[ICON_PARENT_TITLE_SUBCOMPONENT]['color'])
-        this.iconChild.setAttribute('height',this.styles[ICON_CHILD_SUBCOMPONENT]['height'])
-        this.iconChild.setAttribute('width',this.styles[ICON_CHILD_SUBCOMPONENT]['width'])
+        this.iconChild = document.createElement(ICON)
+        if (attributes[OPEN_ATTRIBUTE] === OPENED_OPTION) this.iconChild.setAttribute(ICON_SELECTION_ATTRIBUTE, MINUS_ICON_OPTION)
+        else if (attributes[OPEN_ATTRIBUTE] !== OPENED_OPTION)this.iconChild.setAttribute(ICON_SELECTION_ATTRIBUTE, PLUS_ICON_OPTION)
+        this.iconChild.setAttribute(ICON_COLOR_ATTRIBUTE,this.styles[ICON_PARENT_TITLE_SUBCOMPONENT][ICON_COLOR_ATTRIBUTE])
+        this.iconChild.setAttribute(ICON_HEIGHT_ATTRIBUTE,this.styles[ICON_CHILD_SUBCOMPONENT][ICON_HEIGHT_ATTRIBUTE])
+        this.iconChild.setAttribute(ICON_WIDTH_ATTRIBUTE,this.styles[ICON_CHILD_SUBCOMPONENT][ICON_WIDTH_ATTRIBUTE])
         this.iconParent.appendChild(this.iconChild)
         title.appendChild(this.iconParent)
 
         
-        this.slot = contentToAppend
+        this.slotty = contentToAppend
        
         
 
@@ -131,19 +124,27 @@ class vanillaAccordion extends HTMLElement {
         const customClass = this
         contentToAppend.addEventListener('slotchange', function(e) {
             contentToAppend.assignedElements()[0].style['padding']='1px'
-            const st = JSON.parse(JSON.stringify(customClass.styles));
-            st[CONTENT_SUBCOMPONENT][OPEN_ACCORDION_EVENT]['height'] = `${contentToAppend.assignedElements()[0].scrollHeight}px`
-            const stylesProccessedContent = processStyle(content,st[CONTENT_SUBCOMPONENT])
+            const copyStyleObject = JSON.parse(JSON.stringify(customClass.styles));
+            copyStyleObject[CONTENT_SUBCOMPONENT][OPEN_ACCORDION_EVENT][ICON_HEIGHT_ATTRIBUTE] = `${contentToAppend.assignedElements()[0].scrollHeight}px`
+            const stylesProccessedContent = processStyle(content,copyStyleObject[CONTENT_SUBCOMPONENT])
             customClass.closeStyles.push(...stylesProccessedContent[DEFAULT_EVENT])
             customClass.openStyles.push(...stylesProccessedContent[OPEN_ACCORDION_EVENT])
             customClass.closeStyles.forEach((style) =>  style())
             if (attributes[OPEN_ATTRIBUTE] === OPENED_OPTION) customClass.openStyles.forEach( (style)=>  style())
         })
         title.addEventListener("click", clickAccordion)
-        this.shadow.appendChild(container) 
+        this.innerHTML=`${container.outerHTML}`
       }
 }
 
+const regularAccordionCustomComponent = 'regular-accordion'
+customElements.define(regularAccordionCustomComponent, class extends vanillaRegularAccordion {});
 
-customElements.define(CUSTOM_ELEMENT_NAME, class extends vanillaAccordion {});
-export const SEAT_ACCORDION = CUSTOM_ELEMENT_NAME;
+export const createRegularAccordion =   (attributes) => {
+    const regularAccordionElement = document.createElement(regularAccordionCustomComponent)
+    console.log(regularAccordionElement)
+    //regularAccordionElement.setAttribute(OPEN_ATTRIBUTE,attributes[OPEN_ATTRIBUTE])
+    regularAccordionElement.setAttribute(TEMPORARY_ATTRIBUTE,JSON.stringify(attributes))
+
+    return regularAccordionElement;
+}
