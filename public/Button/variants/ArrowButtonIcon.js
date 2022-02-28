@@ -6,7 +6,7 @@ import {DEFAULT_EVENT, HOVER_BUTTON_EVENT} from "../constants.js"
 import {BUTTON_SUBCOMPONENT, TEXT_SUBCOMPONENT, ICON_CONTAINER_SUBCOMPONENT, ICON_SUBCOMPONENT,ICONARROW_SUBCOMPONENT, ICONARROW_CONTAINER_SUBCOMPONENT} from "../constants.js"
 import {setStyle, processStyle} from "../styles/index.js"
 
-import {ICON} from "../../Icons/index.js"
+import {NAME_OF_COMPONENT as ICON} from "../../Icons/constants.js"
 import {ICON_SELECTION_ATTRIBUTE as ICON_SELECTION_ATTRIBUTE_FOR_COMPONENT} from "../../Icons/constants.js"
 import { ICON_COLOR_ATTRIBUTE, ICON_WIDTH_ATTRIBUTE, ICON_HEIGHT_ATTRIBUTE } from "../../Icons/constants.js"
 import {NAV_ARROW_ICON_OPTION} from "../../Icons/constants.js"

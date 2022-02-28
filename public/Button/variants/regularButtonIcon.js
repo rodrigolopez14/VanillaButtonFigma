@@ -7,7 +7,7 @@ import {BUTTON_SUBCOMPONENT, TEXT_SUBCOMPONENT, ICON_CONTAINER_SUBCOMPONENT, ICO
 import {setStyle, processStyle} from "../styles/index.js"
 
 
-import {ICON} from "../../Icons/index.js"
+import {NAME_OF_COMPONENT as ICON} from "../../Icons/constants.js"
 import {ICON_SELECTION_ATTRIBUTE as ICON_SELECTION_ATTRIBUTE_FOR_COMPONENT} from "../../Icons/constants.js"
 import { ICON_COLOR_ATTRIBUTE, 
          ICON_HEIGHT_ATTRIBUTE,

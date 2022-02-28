@@ -19,7 +19,6 @@ import {REGULAR_BUTTON_VARIANT} from "../constants.js"
 import { SIZE_STYLES } from "./commonStyles.js"
 import {PATH_STYLE,STYLE_OBJECT,COMPONENT_VARIANT_KEY} from "../../commonMethodsAndConstants/Styles/commonConstants.js"
 const ghostStyles = []
-console.log(SIZE_STYLES)
 const Style1 = {}
 Style1 [BUTTON_SUBCOMPONENT] = {
     

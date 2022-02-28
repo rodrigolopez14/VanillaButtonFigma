@@ -6,7 +6,7 @@ import {CONTAINER_SUBCOMPONENT, TITLE_SUBCOMPONENT, TEXT_TITLE_SUBCOMPONENT, ICO
 
 import {PLUS_ICON_OPTION, MINUS_ICON_OPTION} from "../../Icons/constants.js"
 import { ICON_COLOR_ATTRIBUTE, ICON_WIDTH_ATTRIBUTE, ICON_HEIGHT_ATTRIBUTE, ICON_SELECTION_ATTRIBUTE } from "../../Icons/constants.js"
-import {ICON} from "../../Icons/index.js"
+import {NAME_OF_COMPONENT as ICON} from "../../Icons/constants.js"
 
 const TEMPORARY_ATTRIBUTE = 'temporary-attribute'
 class vanillaRegularAccordion extends HTMLElement {
@@ -18,6 +18,7 @@ class vanillaRegularAccordion extends HTMLElement {
         this.closeStyles = []
         this.iconParent = document.createElement('div')
         this.slotty = null        
+        this.shadow = this.attachShadow({mode: 'open'});
 
     }
     static get observedAttributes() { return [OPEN_ATTRIBUTE]; }
@@ -37,7 +38,6 @@ class vanillaRegularAccordion extends HTMLElement {
             }
         else if (state !== OPENED_OPTION)
             {                
-                console.log(this.iconChild)
                 if(this.iconChild) this.iconParent.removeChild(this.iconChild)
                 this.iconChild = document.createElement(ICON)
                 this.iconChild.setAttribute(ICON_SELECTION_ATTRIBUTE, PLUS_ICON_OPTION)
@@ -51,12 +51,8 @@ class vanillaRegularAccordion extends HTMLElement {
 
     }
     connectedCallback() {
-        
+      
         const attributes = JSON.parse(this.getAttribute(TEMPORARY_ATTRIBUTE))
-        this.setAttribute(STYLE_KEY,attributes[STYLE_KEY])
-        this.setAttribute(OPEN_ATTRIBUTE,attributes[OPEN_ATTRIBUTE])
-        this.setAttribute(TITLE_ATTRIBUTE,attributes[TITLE_ATTRIBUTE])
-        console.log(attributes)
         this.removeAttribute(TEMPORARY_ATTRIBUTE)
         this.styles = setStyle(attributes[STYLE_KEY])
 
@@ -94,36 +90,36 @@ class vanillaRegularAccordion extends HTMLElement {
         this.iconChild.setAttribute(ICON_HEIGHT_ATTRIBUTE,this.styles[ICON_CHILD_SUBCOMPONENT][ICON_HEIGHT_ATTRIBUTE])
         this.iconChild.setAttribute(ICON_WIDTH_ATTRIBUTE,this.styles[ICON_CHILD_SUBCOMPONENT][ICON_WIDTH_ATTRIBUTE])
         this.iconParent.appendChild(this.iconChild)
+      
         title.appendChild(this.iconParent)
-
-        
         this.slotty = contentToAppend
        
         
 
-        container.appendChild(title)
-        container.appendChild(content)
-        
+       
+        const customClass = this
 
         this.closeStyles.forEach((style) =>  style())
         const clickAccordion = (event) => {
             event.preventDefault()
-            const state = this.getAttribute(OPEN_ATTRIBUTE)
+            const state = customClass.getAttribute(OPEN_ATTRIBUTE)
             if (state === OPENED_OPTION)
             {
-                this.setAttribute(OPEN_ATTRIBUTE,CLOSED_OPTION)
+                customClass.setAttribute(OPEN_ATTRIBUTE,CLOSED_OPTION)
                 return;
             }
             else if (state !== OPENED_OPTION)
             {
-                this.setAttribute(OPEN_ATTRIBUTE,OPENED_OPTION)
+                customClass.setAttribute(OPEN_ATTRIBUTE,OPENED_OPTION)
                 return;
             }
             
         }
-        const customClass = this
+        title.addEventListener('click',clickAccordion)
         contentToAppend.addEventListener('slotchange', function(e) {
             contentToAppend.assignedElements()[0].style['padding']='1px'
+            contentToAppend.assignedElements()[0].style['margin']='0px'
+            contentToAppend.assignedElements()[0].style['border']='0px'
             const copyStyleObject = JSON.parse(JSON.stringify(customClass.styles));
             copyStyleObject[CONTENT_SUBCOMPONENT][OPEN_ACCORDION_EVENT][ICON_HEIGHT_ATTRIBUTE] = `${contentToAppend.assignedElements()[0].scrollHeight}px`
             const stylesProccessedContent = processStyle(content,copyStyleObject[CONTENT_SUBCOMPONENT])
@@ -132,8 +128,11 @@ class vanillaRegularAccordion extends HTMLElement {
             customClass.closeStyles.forEach((style) =>  style())
             if (attributes[OPEN_ATTRIBUTE] === OPENED_OPTION) customClass.openStyles.forEach( (style)=>  style())
         })
-        title.addEventListener("click", clickAccordion)
-        this.innerHTML=`${container.outerHTML}`
+     
+        container.appendChild(title)
+        container.appendChild(content)
+        if (this.shadow.children.length === 0)  this.shadow.appendChild(container) 
+        this.setAttribute(OPEN_ATTRIBUTE,attributes[OPEN_ATTRIBUTE])
       }
 }
 
@@ -142,9 +141,6 @@ customElements.define(regularAccordionCustomComponent, class extends vanillaRegu
 
 export const createRegularAccordion =   (attributes) => {
     const regularAccordionElement = document.createElement(regularAccordionCustomComponent)
-    console.log(regularAccordionElement)
-    //regularAccordionElement.setAttribute(OPEN_ATTRIBUTE,attributes[OPEN_ATTRIBUTE])
     regularAccordionElement.setAttribute(TEMPORARY_ATTRIBUTE,JSON.stringify(attributes))
-
     return regularAccordionElement;
 }
