@@ -5,68 +5,274 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Web Component</title>
+    <script  type="module" src="./index.js"></script>
+    
+  
+    <style>
+      .hey {
+        background-color: black;
+        padding: 20px;
+      }
+      .h1black {
+        color: white
+      }
+      .h1custom  {
+        color: #058;
+        font-size: 1em;
+        margin-bottom: .3em;
+        text-align: center;
+        
+      }
+    </style>
   </head>
   <body>
-   
+    <h1>ACCORDION</h1>
+    <h1>BLACK ACCORDION BIG</h1>
+    <seat-accordion >
+      <div >
+        <h1 class= "h1custom">
+          HELLO 1 - THIS IS ACCORDION SIZE : BIG AND COLOR: BLACK
+        </h1>
+        <h1 class= "h1custom">
+            HELLO 1 - THIS IS ACCORDION SIZE : BIG AND COLOR: BLACK
+        </h1>
+        <seat-button hierarchy="primary" size="L" color="black" state="normal"  onclick = " function yes ()  {alert(new Date())}"></seat-button>
+        <br>
+        <seat-button hierarchy="primary" size="S" color="black" state="normal" icon= "on" iconSelection="calendar" onclick = " function yes ()  {alert(new Date())}"></seat-button>
+        <br>
+        <seat-button hierarchy="secondary" size="S" color="black" state="disabled"  onclick = " function yes ()  {alert(new Date())}"></seat-button>
+      </div>
+    </seat-accordion>
+    <seat-accordion >
+      <div >
+        <h1 class= "h1custom">
+          HELLO 1 - THIS IS ACCORDION SIZE : BIG AND COLOR: BLACK
+        </h1>
+        <h1 class= "h1custom">
+            HELLO 1 - THIS IS ACCORDION SIZE : BIG AND COLOR: BLACK
+        </h1>
+        <h1 class= "h1custom">
+          HELLO 1 - THIS IS ACCORDION SIZE : BIG AND COLOR: BLACK
+        </h1>
+        <h1 class= "h1custom">
+            HELLO 1 - THIS IS ACCORDION SIZE : BIG AND COLOR: BLACK
+        </h1>
+      </div>
+    </seat-accordion>
+    <seat-accordion >
+      <div >
+        <h1 class= "h1custom">
+          HELLO 1 - THIS IS ACCORDION SIZE : BIG AND COLOR: BLACK
+        </h1>
+        <h1 class= "h1custom">
+            HELLO 1 - THIS IS ACCORDION SIZE : BIG AND COLOR: BLACK
+        </h1>
+        <h1 class= "h1custom">
+          HELLO 1 - THIS IS ACCORDION SIZE : BIG AND COLOR: BLACK
+        </h1>
+        <h1 class= "h1custom">
+            HELLO 1 - THIS IS ACCORDION SIZE : BIG AND COLOR: BLACK
+        </h1>
+        <h1 class= "h1custom">
+          HELLO 1 - THIS IS ACCORDION SIZE : BIG AND COLOR: BLACK
+        </h1>
+        <h1 class= "h1custom">
+            HELLO 1 - THIS IS ACCORDION SIZE : BIG AND COLOR: BLACK
+        </h1>
+      </div>
+    </seat-accordion>
+    <h1>BLACK ACCORDION SMALL</h1>
+    <seat-accordion size="small">
+      <div >
+        <h1 class= "h1custom">
+          HELLO 1 - THIS IS ACCORDION SIZE : SMALL AND COLOR: BLACK
+        </h1>
+        <h1 class= "h1custom">
+            HELLO 1 - THIS IS ACCORDION SIZE : SMALL AND COLOR: BLACK
+        </h1>
+        <h1 class= "h1custom">
+          HELLO 1 - THIS IS ACCORDION SIZE : BIG AND COLOR: BLACK
+        </h1>
+        <h1 class= "h1custom">
+            HELLO 1 - THIS IS ACCORDION SIZE : BIG AND COLOR: BLACK
+        </h1>
+
+      </div>
+    </seat-accordion>
+    <seat-accordion size="small">
+      <div >
+        <h1 class= "h1custom">
+          HELLO 1 - THIS IS ACCORDION SIZE : SMALL AND COLOR: BLACK
+        </h1>
+        <h1 class= "h1custom">
+            HELLO 1 - THIS IS ACCORDION SIZE : SMALL AND COLOR: BLACK
+        </h1>
+      </div>
+    </seat-accordion>
+    <seat-accordion size="small">
+      <div >
+        <h1 class= "h1custom">
+          HELLO 1 - THIS IS ACCORDION SIZE : SMALL AND COLOR: BLACK
+        </h1>
+        <h1 class= "h1custom">
+            HELLO 1 - THIS IS ACCORDION SIZE : SMALL AND COLOR: BLACK
+        </h1>
+        <h1 class= "h1custom">
+          HELLO 1 - THIS IS ACCORDION SIZE : BIG AND COLOR: BLACK
+        </h1>
+        <h1 class= "h1custom">
+            HELLO 1 - THIS IS ACCORDION SIZE : BIG AND COLOR: BLACK
+        </h1>
+        <h1 class= "h1custom">
+          HELLO 1 - THIS IS ACCORDION SIZE : BIG AND COLOR: BLACK
+        </h1>
+        <h1 class= "h1custom">
+            HELLO 1 - THIS IS ACCORDION SIZE : BIG AND COLOR: BLACK
+        </h1>
+        <h1 class= "h1custom">
+          HELLO 1 - THIS IS ACCORDION SIZE : BIG AND COLOR: BLACK
+        </h1>
+        <h1 class= "h1custom">
+            HELLO 1 - THIS IS ACCORDION SIZE : BIG AND COLOR: BLACK
+        </h1>
+      </div>
+    </seat-accordion size="smallest">
+    <h1>BLACK ACCORDION SMALLEST</h1>
+    <seat-accordion size="smallest">
+      <div >
+        <h1 class= "h1custom">
+          HELLO 1 - THIS IS ACCORDION SIZE : SMALLEST AND COLOR: BLACK
+        </h1>
+        <h1 class= "h1custom">
+            HELLO 1 - THIS IS ACCORDION SIZE : SMALLEST AND COLOR: BLACK
+        </h1>
+      </div>
+    </seat-accordion>
+    <seat-accordion size="smallest">
+      <div >
+        <h1 class= "h1custom">
+          HELLO 1 - THIS IS ACCORDION SIZE : SMALLEST AND COLOR: BLACK
+        </h1>
+        <h1 class= "h1custom">
+            HELLO 1 - THIS IS ACCORDION SIZE : SMALLEST AND COLOR: BLACK
+        </h1>
+      </div>
+    </seat-accordion>
+    <seat-accordion size="smallest">
+      <div >
+        <h1 class= "h1custom">
+          HELLO 1 - THIS IS ACCORDION SIZE : SMALLEST AND COLOR: BLACK
+        </h1>
+        <h1 class= "h1custom">
+            HELLO 1 - THIS IS ACCORDION SIZE : SMALLEST AND COLOR: BLACK
+        </h1>
+      </div>
+    </seat-accordion>
+    
+
+
+
+
+    <h1>WHITE ACCORDION BIG</h1>
+    <seat-accordion color="white" >
+      <div >
+        <h1  class= "h1custom">
+          HELLO 1 - THIS IS ACCORDION SIZE : BIG AND COLOR: WHITE
+        </h1>
+        <h1 class= "h1custom">
+            HELLO 1 - THIS IS ACCORDION SIZE : BIG AND COLOR: WHITE
+        </h1>
+      </div>
+    </seat-accordion>
+    <seat-accordion color="white">
+      <div >
+        <h1 class= "h1custom">
+          HELLO 1 - THIS IS ACCORDION SIZE : BIG AND COLOR: WHITE
+        </h1>
+        <h1 class= "h1custom">
+            HELLO 1 - THIS IS ACCORDION SIZE : BIG AND COLOR: WHITE
+        </h1>
+      </div>
+    </seat-accordion>
+    <seat-accordion color="white">
+      <div >
+        <h1 class= "h1custom">
+          HELLO 1 - THIS IS ACCORDION SIZE : BIG AND COLOR: WHITE
+        </h1>
+        <h1 class= "h1custom">
+            HELLO 1 - THIS IS ACCORDION SIZE : BIG AND COLOR: WHITE
+        </h1>
+      </div>
+    </seat-accordion>
+    <h1>WHITE ACCORDION SMALL</h1>
+    <seat-accordion color="white" size="small">
+      <div >
+        <h1 class= "h1custom">
+          HELLO 1 - THIS IS ACCORDION SIZE : SMALL AND COLOR: WHITE
+        </h1>
+        <h1 class= "h1custom">
+            HELLO 1 - THIS IS ACCORDION SIZE : SMALL AND COLOR: WHITE
+        </h1>
+      </div>
+    </seat-accordion>
+    <seat-accordion color="white" size="small">
+      <div >
+        <h1 class= "h1custom">
+          HELLO 1 - THIS IS ACCORDION SIZE : SMALL AND COLOR: WHITE
+        </h1>
+        <h1 class= "h1custom">
+            HELLO 1 - THIS IS ACCORDION SIZE : SMALL AND COLOR: WHITE
+        </h1>
+      </div>
+    </seat-accordion>
+    <seat-accordion color="white" size="small">
+      <div >
+        <h1 class= "h1custom">
+          HELLO 1 - THIS IS ACCORDION SIZE : SMALL AND COLOR: WHITE
+        </h1>
+        <h1 class= "h1custom">
+            HELLO 1 - THIS IS ACCORDION SIZE : SMALL AND COLOR: WHITE
+        </h1>
+      </div>
+    </seat-accordion color="white" size="smallest">
+    <h1>WHITE ACCORDION SMALLEST</h1>
+    <seat-accordion color="white" size="smallest">
+      <div >
+        <h1 class= "h1custom">
+          HELLO 1 - THIS IS ACCORDION SIZE : SMALLEST AND COLOR: WHITE
+        </h1>
+        <h1 class= "h1custom">
+            HELLO 1 - THIS IS ACCORDION SIZE : SMALLEST AND COLOR: WHITE
+        </h1>
+      </div>
+    </seat-accordion>
+    <seat-accordion color="white" size="smallest">
+      <div >
+        <h1 class= "h1custom" color="white">
+          HELLO 1 - THIS IS ACCORDION SIZE : SMALLEST AND COLOR: WHITE
+        </h1>
+        <h1 class= "h1custom">
+            HELLO 1 - THIS IS ACCORDION SIZE : SMALLEST AND COLOR: WHITE
+        </h1>
+      </div>
+    </seat-accordion>
+    <seat-accordion size="smallest" color="white">
+      <div >
+        <h1 class= "h1custom">
+          HELLO 1 - THIS IS ACCORDION SIZE : SMALLEST AND COLOR: WHITE
+        </h1>
+        <h1 class= "h1custom">
+            HELLO 1 - THIS IS ACCORDION SIZE : SMALLEST AND COLOR: WHITE
+        </h1>
+      </div>
+    </seat-accordion>
     <h1>--PRIMARY</h1>
     <h1>-BLACK</h1>
     <h1>Desktop</h1>
-    <seat-button hierarchy="primary" device="desktop" color="black" state="normal"  onclick = " function yes ()  {alert(new Date())}"></seat-button>
-    <br>
-    <seat-button hierarchy="primary" device="desktop" color="black" state="normal" icon= "on" iconSelection="calendar" onclick = " function yes ()  {alert(new Date())}"></seat-button>
-    <br>
-    <seat-button hierarchy="primary" device="desktop" color="black" state="disabled"  onclick = " function yes ()  {alert(new Date())}"></seat-button>
-    <br>
-    <seat-button hierarchy="primary" device="desktop" color="black" state="disabled" icon= "on" iconSelection="calendar" onclick = " function yes ()  {alert(new Date())}"></seat-button>
-    <br>
-    <h1>Tablet&Mobile</h1>
-    <seat-button hierarchy="primary" device="tablet&mobile" color="black" state="normal"  onclick = " function yes ()  {alert(new Date())}"></seat-button>
-    <br>
-    <seat-button hierarchy="primary" device="tablet&mobile" color="black" state="normal" icon= "on" iconSelection="success icon animated" onclick = " function yes ()  {alert(new Date())}"></seat-button>
-    <br>
-    <seat-button hierarchy="primary" device="tablet&mobile" color="black" state="disabled"  onclick = " function yes ()  {alert(new Date())}"></seat-button>
-    <br>
-    <seat-button hierarchy="primary" device="tablet&mobile" color="black" state="disabled" icon= "on" iconSelection="success icon animated" onclick = " function yes ()  {alert(new Date())}"></seat-button>
-    <br>
-    <h1>Small</h1>
-    <seat-button hierarchy="primary" device="small" color="black" state="normal"  onclick = " function yes ()  {alert(new Date())}"></seat-button>
-    <br>
-    <seat-button hierarchy="primary" device="small" color="black" state="normal" icon= "on" iconSelection="success icon animated" onclick = " function yes ()  {alert(new Date())}"></seat-button>
-    <br>
-    <seat-button hierarchy="primary" device="small" color="black" state="disabled"  onclick = " function yes ()  {alert(new Date())}"></seat-button>
-    <br>
-    <seat-button hierarchy="primary" device="small" color="black" state="disabled" icon= "on" iconSelection="success icon animated" onclick = " function yes ()  {alert(new Date())}"></seat-button>
-    <br>
-    <h1>-WHITE</h1>
-    <h1>Desktop</h1>
-    <seat-button hierarchy="primary" device="desktop" color="white" state="normal"  onclick = " function yes ()  {alert(new Date())}"></seat-button>
-    <br>
-    <seat-button hierarchy="primary" device="desktop" color="white" state="normal" icon= "on" iconSelection="calendar" onclick = " function yes ()  {alert(new Date())}"></seat-button>
-    <br>
-    <seat-button hierarchy="primary" device="desktop" color="white" state="disabled"  onclick = " function yes ()  {alert(new Date())}"></seat-button>
-    <br>
-    <seat-button hierarchy="primary" device="desktop" color="white" state="disabled" icon= "on" iconSelection="calendar" onclick = " function yes ()  {alert(new Date())}"></seat-button>
-    <br>
-    <h1>Tablet&Mobile</h1>
-    <seat-button hierarchy="primary" device="tablet&mobile" color="white" state="normal"  onclick = " function yes ()  {alert(new Date())}"></seat-button>
-    <br>
-    <seat-button hierarchy="primary" device="tablet&mobile" color="white" state="normal" icon= "on" iconSelection="success icon animated" onclick = " function yes ()  {alert(new Date())}"></seat-button>
-    <br>
-    <seat-button hierarchy="primary" device="tablet&mobile" color="white" state="disabled"  onclick = " function yes ()  {alert(new Date())}"></seat-button>
-    <br>
-    <seat-button hierarchy="primary" device="tablet&mobile" color="white" state="disabled" icon= "on" iconSelection="success icon animated" onclick = " function yes ()  {alert(new Date())}"></seat-button>
-    <br>
-    <h1>Small</h1>
-    <seat-button hierarchy="primary" device="small" color="white" state="normal"  onclick = " function yes ()  {alert(new Date())}"></seat-button>
-    <br>
-    <seat-button hierarchy="primary" device="small" color="white" state="normal" icon= "on" iconSelection="success icon animated" onclick = " function yes ()  {alert(new Date())}"></seat-button>
-    <br>
-    <seat-button hierarchy="primary" device="small" color="white" state="disabled"  onclick = " function yes ()  {alert(new Date())}"></seat-button>
-    <br>
-    <seat-button hierarchy="primary" device="small" color="white" state="disabled" icon= "on" iconSelection="success icon animated" onclick = " function yes ()  {alert(new Date())}"></seat-button>
-    <br>    
-    <div>HE</div>
-
-    <script  type="module" src="./Button/index.js"></script>
+   
+   
+    
+   
+    
   </body>
 </html>

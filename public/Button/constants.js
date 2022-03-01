@@ -1,12 +1,12 @@
 // attributeNames
 export const HIERARCHY_ATTRIBUTE = "hierarchy";
-export const DEVICE_ATTRIBUTE = "device";
+export const SIZE_ATTRIBUTE = "size";
 export const COLOR_ATTRIBUTE = "color";
 export const STATE_ATTRIBUTE = "state";
 export const LINE_ATTRIBUTE = "line";
 export const ICON_ATTRIBUTE = "icon";
-export const ICON_SELECTION_ATTRIBUTE = "iconSelection"
-export const PURCHASE_HIERARCHY_ATTRIBUTE = "purchaseHierarchy"
+export const ICON_SELECTION_ATTRIBUTE = "iconSelection";
+export const PURCHASE_HIERARCHY_ATTRIBUTE = "purchaseHierarchy";
 export const CHILDREN_ATTRIBUTE = "children";
 export const ONCLICK_ATTRIBUTE = "onClick";
 // hierarchy options
@@ -17,15 +17,14 @@ export const GHOST_OPTION = "ghost";
 export const PURCHASE_OPTION = "purchase";
 export const HYPERLINK_OPTION = "hyperlink";
 //device options 
-export const DESKTOP_OPTION = "desktop";
-export const TABLET_MOBILE_OPTION = "tablet&mobile";
-export const SMALL_OPTION = "small";
+export const LARGE_OPTION = "L";
+export const MEDIUM_OPTION = "M";
+export const SMALL_OPTION = "S";
 // color options
 export const BLACK_OPTION = "black";
 export const WHITE_OPTION = "white";
 //state options
 export const NORMAL_OPTION = "normal";
-export const HOVER_OPTION = "hover";
 export const DISABLED_OPTION = "disabled";
 //line options
 export const TITLE_OPTION = "title";
@@ -52,7 +51,7 @@ ATTRIBUTES.push({
     proccessValue: (value) => {return   value}
 })
 ATTRIBUTES.push({
-    attributeName: DEVICE_ATTRIBUTE,
+    attributeName: SIZE_ATTRIBUTE,
     defaultValue : null,
     proccessValue: (value) => {return   value}
 
@@ -108,7 +107,16 @@ ATTRIBUTES.push({
 
 export {ATTRIBUTES};
 
+//Definining names of subcomponents of component. This is used to identify the style to assign that subcomponent
+export const BUTTON_SUBCOMPONENT = 'button'
+export const ICON_CONTAINER_SUBCOMPONENT = 'icon container'
+export const ICON_SUBCOMPONENT = 'icon'
+export const ICONARROW_CONTAINER_SUBCOMPONENT = 'icon Arrow container'
+export const ICONARROW_SUBCOMPONENT = 'icon Arrow'
+export const TEXT_SUBCOMPONENT = 'textButton'
+
 //  Defining constants for events 
+export const DEFAULT_EVENT = 'default'
 export const HOVER_BUTTON_EVENT = 'hoverButton'
 
 //array of events
@@ -117,3 +125,11 @@ const EVENTS_OF_COMPONENT = []
 EVENTS_OF_COMPONENT.push(HOVER_BUTTON_EVENT)
 
 export {EVENTS_OF_COMPONENT}
+
+// components variants of buttons
+export const REGULAR_BUTTON_VARIANT = 'regular button'
+export const REGULAR_BUTTON_ICON_VARIANT = 'regular button icon'
+export const ARROW_BUTTON_VARIANT = 'arrow button'
+export const ARROW_BUTTON_ICON_VARIANT = 'arrow button icon'
+
+export const NAME_OF_COMPONENT = 'seat-button'
