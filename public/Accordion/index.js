@@ -35,5 +35,5 @@ class vanillaAccordion extends HTMLElement {
 }
 
 
-customElements.define(CUSTOM_ELEMENT_NAME, class extends vanillaAccordion {});
+if (customElements.get(CUSTOM_ELEMENT_NAME) === undefined) customElements.define(CUSTOM_ELEMENT_NAME, class extends vanillaAccordion {});
 export const SEAT_ACCORDION = CUSTOM_ELEMENT_NAME;

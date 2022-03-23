@@ -26,10 +26,46 @@
     </style>
   </head>
   <body>
+    
+    <seat-text-input color="black" size="L" id="1" form-width="150px" ></seat-text-input>
+    <br>
+    <seat-text-input color="black" size="M" id="2"form-width="150px" ></seat-text-input>
+    <br>
+    <seat-text-input color="black" size="L" id="3" form-width="150px" iconSelection="calendar"></seat-text-input>
+    <br>
+    <seat-text-input color="black" size="M" id="4" iconSelection="calendar" form-width="150px"></seat-text-input>
+    <br>
+    <seat-text-input color="black" size="L" id="5" descriptor="Introduzca su nombre" form-width="150px"></seat-text-input>
+    <br>
+    <seat-text-input color="black" size="M" id="6" descriptor="Introduzca su nombre" ></seat-text-input>
+    <br>
+    <seat-text-input color="black" size="L" id="7" descriptor="Introduzca su nombre" iconSelection="calendar" form-width="150px"></seat-text-input>
+    <br>
+    <seat-text-input color="black" size="M" id="8" descriptor="Introduzca su nombre" iconSelection="calendar"></seat-text-input></seat-text-input>
+    <br>
+
+    <div class="hey">
+      <seat-text-input color="white" size="L" id="9" ></seat-text-input>
+      <br>
+      <seat-text-input color="white" size="M" id="10" ></seat-text-input>
+      <br>
+      <seat-text-input color="white" size="L" id="11" iconSelection="calendar"></seat-text-input>
+      <br>
+      <seat-text-input color="white" size="M" id="12" iconSelection="calendar"></seat-text-input>
+      <br>
+      <seat-text-input color="white" size="L" id="13" descriptor="Introduzca su nombre"></seat-text-input>
+      <br>
+      <seat-text-input color="white" size="M" id="14" descriptor="Introduzca su nombre" ></seat-text-input>
+      <br>
+      <seat-text-input color="white" size="L" id="15" descriptor="Introduzca su nombre" iconSelection="calendar"></seat-text-input>
+      <br>
+      <seat-text-input color="white" size="M" id="16" descriptor="Introduzca su nombre" iconSelection="calendar"></seat-text-input></seat-text-input>
+      <br>
+    </div>
     <h1>ACCORDION</h1>
     <h1>BLACK ACCORDION BIG</h1>
     <seat-accordion >
-      <div >
+      <div class="hey">
         <h1 class= "h1custom">
           HELLO 1 - THIS IS ACCORDION SIZE : BIG AND COLOR: BLACK
         </h1>
@@ -273,6 +309,28 @@
    
     
    
-    
+    <script>
+      const mutationCallback = (mutationsList) => {
+      for (const mutation of mutationsList) {
+        if (
+          mutation.type !== "attributes" ||
+          mutation.attributeName !== "form-value"
+        ) {
+          return
+        }
+        var value = mutation.target.getAttribute("form-value")
+        var state = mutation.target.getAttribute("state")
+        if (value === "error" || value==="no") mutation.target.setAttribute("state","error")
+        else if (value==="validated" || value==="yes"|| value==="nop" ) mutation.target.setAttribute("state","validated")
+        else if (state !== null)  mutation.target.setAttribute("state","active")
+      }
+      }
+      const observer = new MutationObserver(mutationCallback)
+      for (var i=1; i<=16; i++)
+      {
+        observer.observe(document.getElementById(i.toString()), { attributes: true })
+      }
+      
+    </script>
   </body>
 </html>

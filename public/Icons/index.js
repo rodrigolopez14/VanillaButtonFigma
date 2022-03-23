@@ -31,6 +31,6 @@ export  class SvgIconSeat extends HTMLElement {
         this.style.height = attributes [ICON_HEIGHT_ATTRIBUTE] 
     }
 }
-customElements.define(NAME_OF_COMPONENT, class extends SvgIconSeat {});
+if (customElements.get(NAME_OF_COMPONENT) === undefined) customElements.define(NAME_OF_COMPONENT, class extends SvgIconSeat {});
 export const ICON = NAME_OF_COMPONENT;
 
