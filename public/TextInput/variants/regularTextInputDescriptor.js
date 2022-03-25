@@ -1,30 +1,38 @@
 import {CONTAINER_WRAPPER,
-    CONTAINER_SUB_WRAPPER,
-    TEXT_INPUT_CONTAINER_SUBCOMPONENT, 
-    TITLE_PLUS_TEXT_CONTAINER_SUBCOMPONENT, 
-    TITLE_SUBCOMPONENT,
-    TEXT_SUBCOMPONENT,
-    SUCCESS_ICON_CONTAINER_SUBCOMPONENT,
-    SUCCESS_ICON_SUBCOMPONENT,
-    ERROR_CONTAINER_SUBCOMPONENT, 
-    ERROR_SUBCOMPONENT,
-    TITLE_ATTRIBUTE,
-    DESCRIPTOR_SUBCOMPONENT,
-    DESCRIPTOR_ATTRIBUTE,
-    
-    } from "../constants.js"
-import { DEFAULT_EVENT, INPUT_EVENT, VALIDATED_EVENT, ERROR_EVENT } from "../constants.js"
+        CONTAINER_SUB_WRAPPER,
+        TEXT_INPUT_CONTAINER_SUBCOMPONENT, 
+        TITLE_PLUS_TEXT_CONTAINER_SUBCOMPONENT, 
+        TITLE_SUBCOMPONENT,
+        TEXT_SUBCOMPONENT,
+        SUCCESS_ICON_CONTAINER_SUBCOMPONENT,
+        SUCCESS_ICON_SUBCOMPONENT,
+        ERROR_CONTAINER_SUBCOMPONENT, 
+        DESCRIPTOR_SUBCOMPONENT,
+        } from "../constants.js"
+import {STATE_ATTRIBUTE, 
+        TITLE_ATTRIBUTE,
+        ERROR_MESSAGE_ATTRIBUTE,
+        FORM_VALUE_ATTRIBUTE, 
+        FORM_WIDTH_ATTRIBUTE,
+        DESCRIPTOR_ATTRIBUTE } from "../constants.js"
+import {NORMAL_OPTION,
+        ACTIVE_OPTION, 
+        VALIDATED_OPTION, 
+        ERROR_OPTION,
+        FILLED_OPTION} from "../constants.js"
+import {DEFAULT_EVENT, 
+        INPUT_EVENT, 
+        VALIDATED_EVENT, 
+        ERROR_EVENT} from "../constants.js"
 import {setStyle, processStyle} from "../styles/index.js"
 import {STYLE_KEY} from "../../commonMethodsAndConstants/Styles/commonConstants.js"
-import {NORMAL_OPTION,ACTIVE_OPTION, VALIDATED_OPTION, ERROR_OPTION,FILLED_OPTION} from "../constants.js"
-import { STATE_ATTRIBUTE, ERROR_MESSAGE_ATTRIBUTE, FORM_VALUE_ATTRIBUTE, FORM_WIDTH_ATTRIBUTE } from "../constants.js"
-
 import {NAME_OF_COMPONENT as ICON} from "../../Icons/constants.js"
-import {ICON_SELECTION_ATTRIBUTE as ICON_SELECTION_ATTRIBUTE_FOR_COMPONENT} from "../../Icons/constants.js"
-import { ICON_COLOR_ATTRIBUTE, 
-     ICON_HEIGHT_ATTRIBUTE,
-     ICON_WIDTH_ATTRIBUTE } from "../../Icons/constants.js"
+import {ICON_SELECTION_ATTRIBUTE as ICON_SELECTION_ATTRIBUTE_FOR_COMPONENT,
+        ICON_COLOR_ATTRIBUTE, 
+        ICON_HEIGHT_ATTRIBUTE,
+        ICON_WIDTH_ATTRIBUTE} from "../../Icons/constants.js"
 import {SUCCESS_ICON_ANIMATED_ICON_OPTION} from "../../Icons/constants.js"
+const TEMPORARY_ATTRIBUTE = 'temporary-attribute'
 // CONTAINER_SUB_WRAPPER
 // I----------->TEXT_INPUT_CONTAINER_SUBCOMPONENT
 // I                I----------->TITLE_PLUS_TEXT_CONTAINER_SUBCOMPONENT
@@ -40,7 +48,6 @@ import {SUCCESS_ICON_ANIMATED_ICON_OPTION} from "../../Icons/constants.js"
 // I
 // I----------->ERROR_CONTAINER_SUBCOMPONENT
 //                  I----------->ERROR_SUBCOMPONENT
-const TEMPORARY_ATTRIBUTE = 'temporary-attribute'
 class tiComponent extends HTMLElement {
 constructor()
 {
@@ -165,7 +172,6 @@ connectedCallback() {
     wrapper.appendChild(descriptorContainer)
     wrapper.appendChild(errorContainer)
     
-    //this.appendChild(wrapper)
     this.shadow.appendChild(wrapper)
     this[NORMAL_OPTION].forEach( (style)=>  style())
     this.setAttribute(STATE_ATTRIBUTE,attributes[STATE_ATTRIBUTE])
@@ -205,7 +211,6 @@ const mutationCallback = (mutationsList) => {
     {
       if (mutation.type !== "attributes" || mutation.attributeName !== FORM_VALUE_ATTRIBUTE) return
       const formV =  mutation.target.getAttribute(FORM_VALUE_ATTRIBUTE)
-      //if (parentElement.getAttribute(STATE_ATTRIBUTE)=== ERROR_OPTION) parentElement.setAttribute(STATE_ATTRIBUTE, ACTIVE_OPTION)
       parentElement.setAttribute(FORM_VALUE_ATTRIBUTE,formV)
     }
 }

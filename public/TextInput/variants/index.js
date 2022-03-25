@@ -1,4 +1,7 @@
-import { REGULAR_TEXT_INPUT_VARIANT, REGULAR_TEXT_INPUT_DESCRIPTOR_VARIANT,ICON_TEXT_INPUT_VARIANT, ICON_TEXT_INPUT_DESCRIPTOR_VARIANT } from "../constants.js"
+import {REGULAR_TEXT_INPUT_VARIANT,
+        REGULAR_TEXT_INPUT_DESCRIPTOR_VARIANT,
+        ICON_TEXT_INPUT_VARIANT, 
+        ICON_TEXT_INPUT_DESCRIPTOR_VARIANT } from "../constants.js"
 import { regularTextInputSeat } from "./regularTextInput.js"
 import {regularTextInputDescriptorSeat} from "./regularTextInputDescriptor.js"
 import {iconTextInputSeat} from "./iconTextInput.js"

@@ -107,33 +107,41 @@ ATTRIBUTES.push({
 export {ATTRIBUTES};
 
 //Definining names of subcomponents of component. This is used to identify the style to assign that subcomponent
-// CONTAINER_WRAPPER
+//CONTAINER_WRAPPER
+// I
+// CONTAINER_SUB_WRAPPER
 // I----------->TEXT_INPUT_CONTAINER_SUBCOMPONENT
 // I                I----------->TITLE_PLUS_TEXT_CONTAINER_SUBCOMPONENT
 // I                I                   I
 // I                I                   I----------->TITLE_SUBCOMPONENT
 // I                I                   I----------->TEXT_SUBCOMPONENT
 // I                I
-// I                I----------->SUCCESS_ICON_CONTAINER_SUBCOMPONENT
-// I                                    I
-// I                                    I----------->SUCCESS_ICON_SUBCOMPONENT
+// I                I----------->ALL_ICONS_CONTAINER
+// I                                I
+// I                                I----------->ICON_CONTAINER_SUBCOMPONENT
+// I                                I               I
+// I                                I               I----------->ICON_SUBCOMPONENT
+// I                                I               
+// I                                I----------->SUCCESS_ICON_CONTAINER_SUBCOMPONENT
+// I                                                I
+// I                                                I----------->SUCCESS_ICON_SUBCOMPONENT
+// I
+// I----------->DESCRIPTOR_SUBCOMPONENT
 // I
 // I----------->ERROR_CONTAINER_SUBCOMPONENT
-//                  I----------->ERROR_SUBCOMPONENT
 export const CONTAINER_WRAPPER = 'container wrapper'
 export const CONTAINER_SUB_WRAPPER = 'container sub wrapper'
 export const TEXT_INPUT_CONTAINER_SUBCOMPONENT = 'textInput container'
 export const TITLE_PLUS_TEXT_CONTAINER_SUBCOMPONENT = "title + text container"
 export const TITLE_SUBCOMPONENT = 'title'
+export const TEXT_SUBCOMPONENT = 'text'
 export const ALL_ICONS_CONTAINER = 'all icons'
-export const SUCCESS_ICON_CONTAINER_SUBCOMPONENT = 'success icon container'
-export const SUCCESS_ICON_SUBCOMPONENT = 'success icon'
 export const ICON_CONTAINER_SUBCOMPONENT = 'icon container'
 export const ICON_SUBCOMPONENT = 'icon'
-export const TEXT_SUBCOMPONENT = 'text'
+export const SUCCESS_ICON_CONTAINER_SUBCOMPONENT = 'success icon container'
+export const SUCCESS_ICON_SUBCOMPONENT = 'success icon'
 export const DESCRIPTOR_SUBCOMPONENT = 'descriptor'
 export const ERROR_CONTAINER_SUBCOMPONENT = 'error container'
-export const ERROR_SUBCOMPONENT = 'error'
 //  Defining constants for events 
 export const DEFAULT_EVENT = 'default'
 export const INPUT_EVENT = 'inputEvent'
