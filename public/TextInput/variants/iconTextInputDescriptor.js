@@ -118,6 +118,7 @@ connectedCallback() {
     const stylesProccessedTitleTextContainer = processStyle(titleTextContainer,this.styles[TITLE_PLUS_TEXT_CONTAINER_SUBCOMPONENT])
     this[NORMAL_OPTION].push(...stylesProccessedTitleTextContainer[DEFAULT_EVENT])
     this[ACTIVE_OPTION].push(...stylesProccessedTitleTextContainer[INPUT_EVENT])
+    this[ERROR_OPTION].push(...stylesProccessedTitleTextContainer[ERROR_EVENT])
     this[VALIDATED_OPTION].push(...stylesProccessedTitleTextContainer[VALIDATED_EVENT])
     textInputContainer.appendChild(titleTextContainer)
 
@@ -167,6 +168,7 @@ connectedCallback() {
     this[NORMAL_OPTION].push(...stylesProccessedIconContainer[DEFAULT_EVENT])
     this[ACTIVE_OPTION].push(...stylesProccessedIconContainer[INPUT_EVENT])
     this[VALIDATED_OPTION].push(...stylesProccessedIconContainer[VALIDATED_EVENT])
+    this[ERROR_OPTION].push(...stylesProccessedIconContainer[ERROR_EVENT])
     allIconsContainer.appendChild(succesIconContainer)
 
     const succesIcon = document.createElement(ICON)

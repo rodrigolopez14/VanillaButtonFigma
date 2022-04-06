@@ -4,7 +4,6 @@
     
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Web Component</title>
     <script  type="module" src="./index.js"></script>
     
   
@@ -26,7 +25,87 @@
     </style>
   </head>
   <body>
-    
+    <seat-dropdown data-color="black">
+      <select  id="cars" >
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="mercedes">Mercedes</option>
+        <option value="audi">Audi</option>
+        <option value="volkswagen">Volkswagen</option>
+        <option value="saab">Saab</option>
+        <option value="mercedes">Mercedes</option>
+        <option value="audi">Audi</option>
+        <option value="volkswagen">Volkswagen</option>
+        <option value="saab">Saab</option>
+        <option value="mercedes">Mercedes</option>
+        <option value="audi">Audi</option>
+      
+      </select>
+    </seat-dropdown>
+    <br>
+    <seat-dropdown data-color="white" data-size="L">
+      <select name="cars" id="new" >
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="mercedes">Mercedes</option>
+      </select>
+    </seat-dropdown>
+    <br>
+    <seat-dropdown data-color="black">
+      <select name="Nombres" id="yes" >
+        <option value="Yo">Yo</option>
+        <option value="Tu">Tu</option>
+        <option value="Ella">Ella</option>
+      </select>
+    </seat-dropdown>
+    <br>
+    <br>
+    <h1>--HYPERLINK </h1>
+    <h1>-BLACK</h1>
+    <h1>Desktop</h1>
+    <seat-button hierarchy="hyperlink"  color="black" size="L" line="title"  onclick = " function yes ()  {alert(new Date())}"></seat-button>
+    <br>
+    <seat-button hierarchy="hyperlink"  color="black" size="L" line="paragraph"  onclick = " function yes ()  {alert(new Date())}"></seat-button>
+    <br>
+    <h1>Tablet&Mobile</h1>
+    <seat-button hierarchy="hyperlink"  color="black" size="M" line="title"  onclick = " function yes ()  {alert(new Date())}"></seat-button>
+    <br>
+    <seat-button hierarchy="hyperlink"  color="black" size="M" line="paragraph"  onclick = " function yes ()  {alert(new Date())}"></seat-button>
+    <br>
+    <seat-dropdown data-color="white" data-size="L">
+      <select name="cars" id="new" >
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="mercedes">Mercedes</option>
+      </select>
+    </seat-dropdown>
+    <div class="hey">
+    <h1 class="h1black">-WHITE</h1>
+    <h1 class="h1black">Desktop</h1>
+    <seat-dropdown data-color="white" data-size="M">
+      <select name="cars" id="new" >
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="mercedes">Mercedes</option>
+      </select>
+    </seat-dropdown>
+    <seat-dropdown data-color="white" data-size="L">
+      <select name="cars" id="new" >
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="mercedes">Mercedes</option>
+      </select>
+    </seat-dropdown>
+    <br>
+    <seat-button hierarchy="hyperlink"  color="white" size="L" line="title"  onclick = " function yes ()  {alert(new Date())}"></seat-button>
+    <br>
+    <seat-button hierarchy="hyperlink"  color="white" size="L" line="paragraph"  onclick = " function yes ()  {alert(new Date())}"></seat-button>
+    <br>
+    <h1 class="h1black">Tablet&Mobile</h1>
+    <seat-button hierarchy="hyperlink"  color="white" size="M" line="title"  onclick = " function yes ()  {alert(new Date())}"></seat-button>
+    <br>
+    <seat-button hierarchy="hyperlink"  color="white" size="M" line="paragraph"  onclick = " function yes ()  {alert(new Date())}"></seat-button>
+    </div>
     <seat-text-input color="black" size="L" id="1" form-width="150px" ></seat-text-input>
     <br>
     <seat-text-input color="black" size="M" id="2"form-width="150px" ></seat-text-input>

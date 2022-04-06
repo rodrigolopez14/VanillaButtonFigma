@@ -1,8 +1,5 @@
-import {primaryStyles} from "./primaryStyles.js"
-import {secondaryStyles} from "./secondaryStyles.js"
-import {purchaseStyles} from "./purchaseStyles.js"
-import {tertiaryStyles} from "./tertiaryStyles.js"
-import {hyperlinkStyles} from "./hyperlinkStyles.js"
+
+import {regularDropdownStyle} from "./regularDropdownStyle.js"
 import {PATH_STYLE,
         STYLE_KEY,
         STYLE_OBJECT,
@@ -11,18 +8,14 @@ const allStylesObjects = {}
 const allStylesKeysAndPaths = []
 
 const allStyles = []
-allStyles.push(...primaryStyles)
-allStyles.push(...secondaryStyles)
-allStyles.push(...purchaseStyles)
-allStyles.push(...tertiaryStyles)
-allStyles.push(...hyperlinkStyles)
+allStyles.push(...regularDropdownStyle)
 
 for (var i=0; i<allStyles.length;i++)
 {
-  var styleKey = "Button_Style_" + i
+  var styleKey = "Style_" + i
 
   var componentKeyAndPath = {}
-  componentKeyAndPath[PATH_STYLE] = allStyles[i].path
+  componentKeyAndPath[PATH_STYLE] = allStyles[i][PATH_STYLE]
   componentKeyAndPath[STYLE_KEY] = styleKey
   componentKeyAndPath[COMPONENT_VARIANT_KEY] = allStyles[i][COMPONENT_VARIANT_KEY]
   allStylesKeysAndPaths.push({...componentKeyAndPath})
