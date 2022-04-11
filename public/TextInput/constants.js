@@ -6,15 +6,15 @@ export const ICON_TEXT_INPUT_VARIANT = 'icon text input'
 export const ICON_TEXT_INPUT_DESCRIPTOR_VARIANT = 'icon text input descriptor'
 
 // attributeNames
-export const SIZE_ATTRIBUTE = "size";
-export const COLOR_ATTRIBUTE = "color";
-export const STATE_ATTRIBUTE = "state";
-export const ERROR_MESSAGE_ATTRIBUTE = "errorMessage";
-export const TITLE_ATTRIBUTE = "title";
-export const DESCRIPTOR_ATTRIBUTE = "descriptor";
-export const ICON_SELECTION_ATTRIBUTE = "iconSelection";
-export const FORM_VALUE_ATTRIBUTE = "form-value";
-export const FORM_WIDTH_ATTRIBUTE = "form-width";
+export const SIZE_ATTRIBUTE = "data-size";
+export const COLOR_ATTRIBUTE = "data-color";
+export const STATE_ATTRIBUTE = "data-state";
+export const ERROR_MESSAGE_ATTRIBUTE = "data-error-message";
+export const TITLE_ATTRIBUTE = "data-title";
+export const DESCRIPTOR_ATTRIBUTE = "data-descriptor";
+export const ICON_SELECTION_ATTRIBUTE = "data-icon-selection";
+export const FORM_VALUE_ATTRIBUTE = "data-form-value";
+export const FORM_WIDTH_ATTRIBUTE = "data-form-width";
 //size options 
 export const LARGE_OPTION = "L";
 export const MEDIUM_OPTION = "M";

@@ -3,7 +3,7 @@
   <head>
     
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content=" initial-scale=1.0" />
     <script  type="module" src="./index.js"></script>
     
   
@@ -22,9 +22,320 @@
         text-align: center;
         
       }
+      .blackbckgr {
+        background-color: black;
+        padding: 20px;
+      }
+      .h1white {
+        color: white
+      }
     </style>
   </head>
   <body>
+    <h1>--PRIMARY</h1>
+    <h1>-BLACK</h1>
+    <h1>L</h1>
+    <seat-button data-hierarchy="primary" data-size="L" data-color="black" data-state="normal"  >
+      <button  onclick="sayHi()">Click Me!</button>
+    </seat-button>
+    <br>
+    <seat-button data-hierarchy="primary" data-size="L" data-color="black" data-state="normal"  data-icon-selection="calendar" >
+      <a id="myAnchor" href="https://www.w3schools.com">Tutorials</a>
+    </seat-button>
+    <br>
+    <seat-button data-hierarchy="primary" data-size="L" data-color="black" data-state="disabled"  >
+      <a id="myAnchor" href="https://www.w3schools.com">Tutorials</a>
+    </seat-button>
+    <br>
+    <seat-button data-hierarchy="primary" data-size="L" data-color="black" data-state="disabled"  data-icon-selection="calendar" >
+      <a id="myAnchor" href="https://www.w3schools.com">Tutorials</a>
+    </seat-button>
+    <br>
+    <h1>M</h1>
+    <seat-button data-hierarchy="primary" data-size="M" data-color="black" data-state="normal"  >
+      <a id="myAnchor" href="https://www.w3schools.com">Tutorials</a>
+    </seat-button>
+    <br>
+    <seat-button data-hierarchy="primary" data-size="M" data-color="black" data-state="normal"  data-icon-selection="success icon animated" >
+      <a id="myAnchor" href="https://www.w3schools.com">Tutorials</a>
+    </seat-button>
+    <br>
+    <seat-button data-hierarchy="primary" data-size="M" data-color="black" data-state="disabled"  >
+      <a id="myAnchor" href="https://www.w3schools.com">Tutorials</a>
+    </seat-button>
+    <br>
+    <seat-button data-hierarchy="primary" data-size="M" data-color="black" data-state="disabled"  data-icon-selection="success icon animated" >
+      <a id="myAnchor" href="https://www.w3schools.com">Tutorials</a>
+    </seat-button>
+    <br>
+    <h1>S</h1>
+    <seat-button data-hierarchy="primary" data-size="S" data-color="black" data-state="normal"  >
+      <a id="myAnchor" href="https://www.w3schools.com">Tutorials</a>
+    </seat-button>
+    <br>
+    <seat-button data-hierarchy="primary" data-size="S" data-color="black" data-state="normal"  data-icon-selection="success icon animated" >
+      <a id="myAnchor" href="https://www.w3schools.com">Tutorials</a>
+    </seat-button>
+    <br>
+    <seat-button data-hierarchy="primary" data-size="S" data-color="black" data-state="disabled"  >
+      <a id="myAnchor" href="https://www.w3schools.com">Tutorials</a>
+    </seat-button>
+    <br>
+    <seat-button data-hierarchy="primary" data-size="S" data-color="black" data-state="disabled"  data-icon-selection="success icon animated" >
+      <a id="myAnchor" href="https://www.w3schools.com">Tutorials</a>
+    </seat-button>
+    <br>
+    <h1>-WHITE</h1>
+    <h1>L</h1>
+    <seat-button data-hierarchy="primary" data-size="L" data-color="white" data-state="normal"  >
+      <a id="myAnchor" href="https://www.w3schools.com">Tutorials</a>
+    </seat-button>
+    <br>
+    <seat-button data-hierarchy="primary" data-size="L" data-color="white" data-state="normal"  data-icon-selection="calendar" >
+      <a id="myAnchor" href="https://www.w3schools.com">Tutorials</a>
+    </seat-button>
+    <br>
+    <seat-button data-hierarchy="primary" data-size="L" data-color="white" data-state="disabled"  ></seat-button>
+    <br>
+    <seat-button data-hierarchy="primary" data-size="L" data-color="white" data-state="disabled"  data-icon-selection="calendar" ></seat-button>
+    <br>
+    <h1>M</h1>
+    <seat-button data-hierarchy="primary" data-size="M" data-color="white" data-state="normal"  ></seat-button>
+    <br>
+    <seat-button data-hierarchy="primary" data-size="M" data-color="white" data-state="normal"  data-icon-selection="success icon animated" ></seat-button>
+    <br>
+    <seat-button data-hierarchy="primary" data-size="M" data-color="white" data-state="disabled"  ></seat-button>
+    <br>
+    <seat-button data-hierarchy="primary" data-size="M" data-color="white" data-state="disabled"  data-icon-selection="success icon animated" ></seat-button>
+    <br>
+    <h1>S</h1>
+    <seat-button data-hierarchy="primary" data-size="S" data-color="white" data-state="normal"  ></seat-button>
+    <br>
+    <seat-button data-hierarchy="primary" data-size="S" data-color="white" data-state="normal"  data-icon-selection="success icon animated" ></seat-button>
+    <br>
+    <seat-button data-hierarchy="primary" data-size="S" data-color="white" data-state="disabled"  ></seat-button>
+    <br>
+    <seat-button data-hierarchy="primary" data-size="S" data-color="white" data-state="disabled"  data-icon-selection="success icon animated" ></seat-button>
+    <br>    
+    <h1>--Secondary</h1>
+    <h1>-BLACK</h1>
+    <h1>L</h1>
+    <seat-button data-hierarchy="secondary"  data-size="L" data-color="black" data-state="normal"  ></seat-button>
+    <br>
+    <seat-button data-hierarchy="secondary" data-size="L" data-color="black" data-state="normal"  data-icon-selection="calendar" ></seat-button>
+    <br>
+    <seat-button data-hierarchy="secondary" data-size="L" data-color="black" data-state="disabled"  ></seat-button>
+    <br>
+    <seat-button data-hierarchy="secondary" data-size="L" data-color="black" data-state="disabled"  data-icon-selection="calendar" ></seat-button>
+    <br>
+    <h1>M</h1>
+    <seat-button data-hierarchy="secondary" data-size="M" data-color="black" data-state="normal"  ></seat-button>
+    <br>
+    <seat-button data-hierarchy="secondary" data-size="M" data-color="black" data-state="normal"  data-icon-selection="success icon animated" ></seat-button>
+    <br>
+    <seat-button data-hierarchy="secondary" data-size="M" data-color="black" data-state="disabled"  ></seat-button>
+    <br>
+    <seat-button data-hierarchy="secondary" data-size="M" data-color="black" data-state="disabled"  data-icon-selection="success icon animated" ></seat-button>
+    <br>
+    <h1>S</h1>
+
+    <seat-button data-hierarchy="secondary" data-size="S" data-color="black" data-state="normal"  ></seat-button>
+    <br>
+  
+    <seat-button data-hierarchy="secondary" data-size="S" data-color="black" data-state="normal"  data-icon-selection="success icon animated" ></seat-button>
+    <br>
+    <seat-button data-hierarchy="secondary" data-size="S" data-color="black" data-state="disabled"  ></seat-button>
+    <br>
+    <seat-button data-hierarchy="secondary" data-size="S" data-color="black" data-state="disabled"  data-icon-selection="success icon animated" ></seat-button>
+    <br>
+    <div class="blackbckgr">
+    <h1 class="h1white">-WHITE</h1>
+    <h1 class="h1white">L</h1>
+    
+    <br>
+    <seat-button data-hierarchy="secondary" data-size="L" data-color="white" data-state="normal"  ></seat-button>
+    <br>
+    <seat-button data-hierarchy="secondary" data-size="L" data-color="white" data-state="normal"  data-icon-selection="calendar" ></seat-button>
+    <br>
+    <seat-button data-hierarchy="secondary" data-size="L" data-color="white" data-state="disabled"  ></seat-button>
+    <br>
+    <seat-button data-hierarchy="secondary" data-size="L" data-color="white" data-state="disabled"  data-icon-selection="calendar" ></seat-button>
+    <br>
+    <h1 class="h1white">M</h1>
+    <seat-button data-hierarchy="secondary" data-size="M" data-color="white" data-state="normal"  ></seat-button>
+    <br>
+    <seat-button data-hierarchy="secondary" data-size="M" data-color="white" data-state="normal"  data-icon-selection="abs" ></seat-button>
+    <br>
+    <seat-button data-hierarchy="secondary" data-size="M" data-color="white" data-state="disabled"  ></seat-button>
+    <br>
+    <seat-button data-hierarchy="secondary" data-size="M" data-color="white" data-state="disabled"  data-icon-selection="abs" ></seat-button>
+    <br>
+    <h1 class="h1white">S</h1>
+    <seat-button data-hierarchy="secondary" data-size="S" data-color="white" data-state="normal"  ></seat-button>
+    <br>
+    <seat-button data-hierarchy="secondary" data-size="S" data-color="white" data-state="normal"  data-icon-selection="success icon animated" ></seat-button>
+    <br>
+    <seat-button data-hierarchy="secondary" data-size="S" data-color="white" data-state="disabled"  ></seat-button>
+    <br>
+    <seat-button data-hierarchy="secondary" data-size="S" data-color="white" data-state="disabled"  data-icon-selection="success icon animated" ></seat-button>
+    <br>    
+    </div>
+
+
+    <h1>--TERTIARY </h1>
+    <h1>-BLACK</h1>
+    <h1>L</h1>
+    <seat-button data-hierarchy="tertiary"  data-color= "black" data-size="L" data-state="normal"  ></seat-button>
+    <br>
+    <seat-button  data-icon-selection="calendar" data-hierarchy="tertiary"  data-color= "black" data-size="L" data-state="normal"  ></seat-button>
+    <br>
+    <seat-button data-hierarchy="tertiary"  data-size="L" data-color="black" data-state="disabled"  ></seat-button>
+    <br>
+    <seat-button data-hierarchy="tertiary"  data-size="L" data-color="black" data-state="disabled"   data-icon-selection="calendar" ></seat-button>
+    <h1>M</h1>
+    <seat-button data-hierarchy="tertiary"  data-color= "black" data-size="M" data-state="normal"  ></seat-button>
+    <br>
+    <seat-button data-hierarchy="tertiary"  data-color= "black" data-size="M" data-state="normal"  data-icon-selection="calendar" ></seat-button>
+    <br>
+    <seat-button data-hierarchy="tertiary"  data-color= "black" data-size="M" data-state="disabled"  ></seat-button>
+    <br>
+    <seat-button data-hierarchy="tertiary"  data-color="black"  data-size="M" data-state="disabled"   data-icon-selection="calendar" ></seat-button>
+    
+    
+    <div class="blackbckgr">
+    <h1 class="h1white">-WHITE</h1>
+    <h1 class="h1white">L</h1>
+    <seat-button data-hierarchy="tertiary"  data-color= "white" data-size="L" data-state="normal"  ></seat-button>
+    <br>
+    <seat-button  data-icon-selection="calendar" data-hierarchy="tertiary"  data-color= "white" data-size="L" data-state="normal"  ></seat-button>
+    <br>
+    <seat-button data-hierarchy="tertiary"  data-size="L" data-color="white" data-state="disabled"  ></seat-button>
+    <br>
+    <seat-button data-hierarchy="tertiary"  data-size="L" data-color="white" data-state="disabled"   data-icon-selection="calendar" ></seat-button>
+    <h1 class="h1white">M</h1>
+    <seat-button data-hierarchy="tertiary"  data-color= "white" data-size="M" data-state="normal"  ></seat-button>
+    <br>
+    <seat-button data-hierarchy="tertiary"  data-color= "white" data-size="M" data-state="normal"  data-icon-selection="calendar" ></seat-button>
+    <br>
+    <seat-button data-hierarchy="tertiary"  data-color= "white" data-size="M" data-state="disabled"  ></seat-button>
+    <br>
+    <seat-button data-hierarchy="tertiary"  data-color="white"  data-size="M" data-state="disabled"   data-icon-selection="calendar" ></seat-button>
+    
+    
+    </div>
+
+
+    <h1>--PURCHASE </h1>
+    <h1>-PRIMARY</h1>
+    <h1>L</h1>
+    <seat-button data-hierarchy="purchase"  data-size="L" data-purchase-hierarchy="primary" data-state="normal"  ></seat-button>
+    <br>
+    <seat-button data-hierarchy="purchase"  data-size="L" data-purchase-hierarchy="primary" data-state="normal"  data-icon-selection="calendar" ></seat-button>
+    <br>
+    <seat-button data-hierarchy="purchase"  data-size="L" data-purchase-hierarchy="primary" data-state="disabled"  ></seat-button>
+    <br>
+    <seat-button data-hierarchy="purchase"  data-size="L" data-purchase-hierarchy="primary" data-state="disabled"  data-icon-selection="calendar" ></seat-button>
+    <br>
+    <h1>M</h1>
+    <seat-button data-hierarchy="purchase"  data-size="M" data-purchase-hierarchy="primary" data-state="normal"  ></seat-button>
+    <br>
+    <seat-button data-hierarchy="purchase"  data-size="M" data-purchase-hierarchy="primary" data-state="normal"  data-icon-selection="calendar" ></seat-button>
+    <br>
+    <seat-button data-hierarchy="purchase"  data-size="M" data-purchase-hierarchy="primary" data-state="disabled"  ></seat-button>
+    <br>
+    <seat-button data-hierarchy="purchase"  data-size="M" data-purchase-hierarchy="primary" data-state="disabled"  data-icon-selection="calendar" ></seat-button>
+    <br>
+    
+    <h1>S</h1>
+    <seat-button data-hierarchy="purchase"  data-size="S" data-purchase-hierarchy="primary" data-state="normal"  ></seat-button>
+    <br>
+    <seat-button data-hierarchy="purchase"  data-size="S" data-purchase-hierarchy="primary" data-state="normal"  data-icon-selection="calendar" ></seat-button>
+    <br>
+    <seat-button data-hierarchy="purchase"  data-size="S" data-purchase-hierarchy="primary" data-state="disabled"  ></seat-button>
+    <br>
+    <seat-button data-hierarchy="purchase"  data-size="S" data-purchase-hierarchy="primary" data-state="disabled"  data-icon-selection="calendar" ></seat-button>
+    <br>
+    
+    <div >
+    <h1 >-SECONDARY</h1>
+    <h1 >L</h1>
+    <seat-button data-hierarchy="purchase"  data-size="L" data-purchase-hierarchy="secondary" data-state="normal"  ></seat-button>
+    <br>
+    <seat-button data-hierarchy="purchase"  data-size="L" data-purchase-hierarchy="secondary" data-state="normal"  data-icon-selection="calendar" ></seat-button>
+    <br>
+    <seat-button data-hierarchy="purchase"  data-size="L" data-purchase-hierarchy="secondary" data-state="disabled"  ></seat-button>
+    <br>
+    <seat-button data-hierarchy="purchase"  data-size="L" data-purchase-hierarchy="secondary" data-state="disabled"  data-icon-selection="calendar" ></seat-button>
+    <br>
+    <h1>M</h1>
+    <seat-button data-hierarchy="purchase"  data-size="M" data-purchase-hierarchy="secondary" data-state="normal"  ></seat-button>
+    <br>
+    <seat-button data-hierarchy="purchase"  data-size="M" data-purchase-hierarchy="secondary" data-state="normal"  data-icon-selection="calendar" ></seat-button>
+    <br>
+    <seat-button data-hierarchy="purchase"  data-size="M" data-purchase-hierarchy="secondary" data-state="disabled"  ></seat-button>
+    <br>
+    <seat-button data-hierarchy="purchase"  data-size="M" data-purchase-hierarchy="secondary" data-state="disabled"  data-icon-selection="calendar" ></seat-button>
+    <br>
+    
+    <h1>S</h1>
+    <seat-button data-hierarchy="purchase"  data-size="S" data-purchase-hierarchy="secondary" data-state="normal"  ></seat-button>
+    <br>
+    <seat-button data-hierarchy="purchase"  data-size="S" data-purchase-hierarchy="secondary" data-state="normal"  data-icon-selection="calendar" ></seat-button>
+    <br>
+    <seat-button data-hierarchy="purchase"  data-size="S" data-purchase-hierarchy="secondary" data-state="disabled"  ></seat-button>
+    <br>
+    <seat-button data-hierarchy="purchase"  data-size="S" data-purchase-hierarchy="secondary" data-state="disabled"  data-icon-selection="calendar" ></seat-button>
+    <br>
+    <br>    
+    <div>HE</div>
+    </div>
+    <h1 >-TERTIARY</h1>
+    <h1 >L</h1>
+    <seat-button  data-hierarchy="purchase"  data-size="L" data-purchase-hierarchy="tertiary" data-state="normal"  ></seat-button>
+    <br>
+    <seat-button data-hierarchy="purchase"  data-size="L" data-purchase-hierarchy="tertiary" data-state="normal"  data-icon-selection="calendar" ></seat-button>
+    <br>
+    <seat-button data-hierarchy="purchase"  data-size="L" data-purchase-hierarchy="tertiary" data-state="disabled"  ></seat-button>
+    <br>
+    <seat-button data-hierarchy="purchase"  data-size="L" data-purchase-hierarchy="tertiary" data-state="disabled"  data-icon-selection="calendar" ></seat-button>
+    <br>
+
+    <seat-button data-hierarchy="purchase"  data-size="M" data-purchase-hierarchy="tertiary" data-state="normal"  ></seat-button>
+    <br>
+    <seat-button data-hierarchy="purchase"  data-size="M" data-purchase-hierarchy="tertiary" data-state="normal"  data-icon-selection="calendar" ></seat-button>
+    <br>
+    <seat-button data-hierarchy="purchase"  data-size="M" data-purchase-hierarchy="tertiary" data-state="disabled"  ></seat-button>
+    <br>
+    <seat-button data-hierarchy="purchase"  data-size="M" data-purchase-hierarchy="tertiary" data-state="disabled"  data-icon-selection="calendar" ></seat-button>
+    <br>
+
+
+    <h1>--HYPERLINK </h1>
+    <h1>-BLACK</h1>
+    <h1>L</h1>
+    <seat-button data-hierarchy="hyperlink"  data-color="black" data-size="L" data-line="title"  ></seat-button>
+    <br>
+    <seat-button data-hierarchy="hyperlink"  data-color="black" data-size="L" data-line="paragraph"  ></seat-button>
+    <br>
+    <h1>M</h1>
+    <seat-button data-hierarchy="hyperlink"  data-color="black" data-size="M" data-line="title"  ></seat-button>
+    <br>
+    <seat-button data-hierarchy="hyperlink"  data-color="black" data-size="M" data-line="paragraph"  ></seat-button>
+    <br>
+    
+    <div class="blackbckgr">
+    <h1 class="h1white">-WHITE</h1>
+    <h1 class="h1white">L</h1>
+    <seat-button data-hierarchy="hyperlink"  data-color="white" data-size="L" data-line="title"  ></seat-button>
+    <br>
+    <seat-button data-hierarchy="hyperlink"  data-color="white" data-size="L" data-line="paragraph"  ></seat-button>
+    <br>
+    <h1 class="h1white">M</h1>
+    <seat-button data-hierarchy="hyperlink"  data-color="white" data-size="M" data-line="title"  ></seat-button>
+    <br>
+    <seat-button data-hierarchy="hyperlink"  data-color="white" data-size="M" data-line="paragraph"  ></seat-button>
+    
+    </div>
     <seat-dropdown data-color="black">
       <select  id="cars" >
         <option value="volvo">Volvo</option>
@@ -39,11 +350,10 @@
         <option value="saab">Saab</option>
         <option value="mercedes">Mercedes</option>
         <option value="audi">Audi</option>
-      
       </select>
     </seat-dropdown>
     <br>
-    <seat-dropdown data-color="white" data-size="L">
+    <seat-dropdown data-color="white" data-data-size="L">
       <select name="cars" id="new" >
         <option value="volvo">Volvo</option>
         <option value="saab">Saab</option>
@@ -62,15 +372,15 @@
     <br>
     <h1>--HYPERLINK </h1>
     <h1>-BLACK</h1>
-    <h1>Desktop</h1>
-    <seat-button hierarchy="hyperlink"  color="black" size="L" line="title"  onclick = " function yes ()  {alert(new Date())}"></seat-button>
+    <h1>L</h1>
+    <seat-button data-hierarchy="hyperlink"  data-color="black" data-size="L" data-line="title"  ></seat-button>
     <br>
-    <seat-button hierarchy="hyperlink"  color="black" size="L" line="paragraph"  onclick = " function yes ()  {alert(new Date())}"></seat-button>
+    <seat-button data-hierarchy="hyperlink"  data-color="black" data-size="L" data-line="paragraph"  ></seat-button>
     <br>
-    <h1>Tablet&Mobile</h1>
-    <seat-button hierarchy="hyperlink"  color="black" size="M" line="title"  onclick = " function yes ()  {alert(new Date())}"></seat-button>
+    <h1>M</h1>
+    <seat-button data-hierarchy="hyperlink"  data-color="black" data-size="M" data-line="title"  ></seat-button>
     <br>
-    <seat-button hierarchy="hyperlink"  color="black" size="M" line="paragraph"  onclick = " function yes ()  {alert(new Date())}"></seat-button>
+    <seat-button data-hierarchy="hyperlink"  data-color="black" data-size="M" data-line="paragraph"  ></seat-button>
     <br>
     <seat-dropdown data-color="white" data-size="L">
       <select name="cars" id="new" >
@@ -81,7 +391,7 @@
     </seat-dropdown>
     <div class="hey">
     <h1 class="h1black">-WHITE</h1>
-    <h1 class="h1black">Desktop</h1>
+    <h1 class="h1black">L</h1>
     <seat-dropdown data-color="white" data-size="M">
       <select name="cars" id="new" >
         <option value="volvo">Volvo</option>
@@ -97,48 +407,48 @@
       </select>
     </seat-dropdown>
     <br>
-    <seat-button hierarchy="hyperlink"  color="white" size="L" line="title"  onclick = " function yes ()  {alert(new Date())}"></seat-button>
+    <seat-button data-hierarchy="hyperlink"  data-color="white" data-size="L" data-line="title"  ></seat-button>
     <br>
-    <seat-button hierarchy="hyperlink"  color="white" size="L" line="paragraph"  onclick = " function yes ()  {alert(new Date())}"></seat-button>
+    <seat-button data-hierarchy="hyperlink"  data-color="white" data-size="L" data-line="paragraph"  ></seat-button>
     <br>
-    <h1 class="h1black">Tablet&Mobile</h1>
-    <seat-button hierarchy="hyperlink"  color="white" size="M" line="title"  onclick = " function yes ()  {alert(new Date())}"></seat-button>
+    <h1 class="h1black">M</h1>
+    <seat-button data-hierarchy="hyperlink"  data-color="white" data-size="M" data-line="title"  ></seat-button>
     <br>
-    <seat-button hierarchy="hyperlink"  color="white" size="M" line="paragraph"  onclick = " function yes ()  {alert(new Date())}"></seat-button>
+    <seat-button data-hierarchy="hyperlink"  data-color="white" data-size="M" data-line="paragraph"  ></seat-button>
     </div>
-    <seat-text-input color="black" size="L" id="1" form-width="150px" ></seat-text-input>
+    <seat-text-input data-color="black" data-size="L" id="1" data-form-width="150px" ></seat-text-input>
     <br>
-    <seat-text-input color="black" size="M" id="2"form-width="150px" ></seat-text-input>
+    <seat-text-input data-color="black" data-size="M" id="2"data-form-width="150px" ></seat-text-input>
     <br>
-    <seat-text-input color="black" size="L" id="3" form-width="150px" iconSelection="calendar"></seat-text-input>
+    <seat-text-input data-color="black" data-size="L" id="3" data-form-width="150px" data-icon-selection="calendar"></seat-text-input>
     <br>
-    <seat-text-input color="black" size="M" id="4" iconSelection="calendar" form-width="150px"></seat-text-input>
+    <seat-text-input data-color="black" data-size="M" id="4" data-icon-selection="calendar" data-form-width="150px"></seat-text-input>
     <br>
-    <seat-text-input color="black" size="L" id="5" descriptor="Introduzca su nombre" form-width="150px"></seat-text-input>
+    <seat-text-input data-color="black" data-size="L" id="5" data-descriptor="Introduzca su nombre" data-form-width="150px"></seat-text-input>
     <br>
-    <seat-text-input color="black" size="M" id="6" descriptor="Introduzca su nombre" ></seat-text-input>
+    <seat-text-input data-color="black" data-size="M" id="6" data-descriptor="Introduzca su nombre" ></seat-text-input>
     <br>
-    <seat-text-input color="black" size="L" id="7" descriptor="Introduzca su nombre" iconSelection="calendar" form-width="150px"></seat-text-input>
+    <seat-text-input data-color="black" data-size="L" id="7" data-descriptor="Introduzca su nombre" data-icon-selection="calendar" data-form-width="150px"></seat-text-input>
     <br>
-    <seat-text-input color="black" size="M" id="8" descriptor="Introduzca su nombre" iconSelection="calendar"></seat-text-input></seat-text-input>
+    <seat-text-input data-color="black" data-size="M" id="8" data-descriptor="Introduzca su nombre" data-icon-selection="calendar"></seat-text-input></seat-text-input>
     <br>
 
     <div class="hey">
-      <seat-text-input color="white" size="L" id="9" ></seat-text-input>
+      <seat-text-input data-color="white" data-size="L" id="9" ></seat-text-input>
       <br>
-      <seat-text-input color="white" size="M" id="10" ></seat-text-input>
+      <seat-text-input data-color="white" data-size="M" id="10" ></seat-text-input>
       <br>
-      <seat-text-input color="white" size="L" id="11" iconSelection="calendar"></seat-text-input>
+      <seat-text-input data-color="white" data-size="L" id="11" data-icon-selection="calendar"></seat-text-input>
       <br>
-      <seat-text-input color="white" size="M" id="12" iconSelection="calendar"></seat-text-input>
+      <seat-text-input data-color="white" data-size="M" id="12" data-icon-selection="calendar"></seat-text-input>
       <br>
-      <seat-text-input color="white" size="L" id="13" descriptor="Introduzca su nombre"></seat-text-input>
+      <seat-text-input data-color="white" data-size="L" id="13" data-descriptor="Introduzca su nombre"></seat-text-input>
       <br>
-      <seat-text-input color="white" size="M" id="14" descriptor="Introduzca su nombre" ></seat-text-input>
+      <seat-text-input data-color="white" data-size="M" id="14" data-descriptor="Introduzca su nombre" ></seat-text-input>
       <br>
-      <seat-text-input color="white" size="L" id="15" descriptor="Introduzca su nombre" iconSelection="calendar"></seat-text-input>
+      <seat-text-input data-color="white" data-size="L" id="15" data-descriptor="Introduzca su nombre" data-icon-selection="calendar"></seat-text-input>
       <br>
-      <seat-text-input color="white" size="M" id="16" descriptor="Introduzca su nombre" iconSelection="calendar"></seat-text-input></seat-text-input>
+      <seat-text-input data-color="white" data-size="M" id="16" data-descriptor="Introduzca su nombre" data-icon-selection="calendar"></seat-text-input></seat-text-input>
       <br>
     </div>
     <h1>ACCORDION</h1>
@@ -146,140 +456,156 @@
     <seat-accordion >
       <div class="hey">
         <h1 class= "h1custom">
-          HELLO 1 - THIS IS ACCORDION SIZE : BIG AND COLOR: BLACK
+          HELLO 1 - THIS IS ACCORDION data-SIZE : BIG AND data-COLOR: BLACK
         </h1>
         <h1 class= "h1custom">
-            HELLO 1 - THIS IS ACCORDION SIZE : BIG AND COLOR: BLACK
+            HELLO 1 - THIS IS ACCORDION data-SIZE : BIG AND data-COLOR: BLACK
         </h1>
-        <seat-button hierarchy="primary" size="L" color="black" state="normal"  onclick = " function yes ()  {alert(new Date())}"></seat-button>
+        <seat-button data-hierarchy="primary" data-size="L" data-color="black" data-state="normal"  ></seat-button>
         <br>
-        <seat-button hierarchy="primary" size="S" color="black" state="normal" icon= "on" iconSelection="calendar" onclick = " function yes ()  {alert(new Date())}"></seat-button>
+        <seat-button data-hierarchy="primary" data-size="S" data-color="black" data-state="normal"  data-icon-selection="calendar" ></seat-button>
         <br>
-        <seat-button hierarchy="secondary" size="S" color="black" state="disabled"  onclick = " function yes ()  {alert(new Date())}"></seat-button>
+        <seat-button data-hierarchy="secondary" data-size="S" data-color="black" data-state="disabled"  ></seat-button>
+      </div>
+    </seat-accordion>
+    <seat-accordion >
+      <div >
+        <seat-dropdown data-color="black">
+          <select  id="cars" >
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="mercedes">Mercedes</option>
+            <option value="audi">Audi</option>
+            <option value="volkswagen">Volkswagen</option>
+            <option value="saab">Saab</option>
+            <option value="mercedes">Mercedes</option>
+            <option value="audi">Audi</option>
+            <option value="volkswagen">Volkswagen</option>
+            <option value="saab">Saab</option>
+            <option value="mercedes">Mercedes</option>
+            <option value="audi">Audi</option>
+          </select>
+        </seat-dropdown>
+        <h1 class= "h1custom">
+          HELLO 1 - THIS IS ACCORDION data-SIZE : BIG AND data-COLOR: BLACK
+        </h1>
+        <h1 class= "h1custom">
+            HELLO 1 - THIS IS ACCORDION data-SIZE : BIG AND data-COLOR: BLACK
+        </h1>
+        <h1 class= "h1custom">
+          HELLO 1 - THIS IS ACCORDION data-SIZE : BIG AND data-COLOR: BLACK
+        </h1>
+        <h1 class= "h1custom">
+            HELLO 1 - THIS IS ACCORDION data-SIZE : BIG AND data-COLOR: BLACK
+        </h1>
       </div>
     </seat-accordion>
     <seat-accordion >
       <div >
         <h1 class= "h1custom">
-          HELLO 1 - THIS IS ACCORDION SIZE : BIG AND COLOR: BLACK
+          HELLO 1 - THIS IS ACCORDION data-SIZE : BIG AND data-COLOR: BLACK
         </h1>
         <h1 class= "h1custom">
-            HELLO 1 - THIS IS ACCORDION SIZE : BIG AND COLOR: BLACK
+            HELLO 1 - THIS IS ACCORDION data-SIZE : BIG AND data-COLOR: BLACK
         </h1>
         <h1 class= "h1custom">
-          HELLO 1 - THIS IS ACCORDION SIZE : BIG AND COLOR: BLACK
+          HELLO 1 - THIS IS ACCORDION data-SIZE : BIG AND data-COLOR: BLACK
         </h1>
         <h1 class= "h1custom">
-            HELLO 1 - THIS IS ACCORDION SIZE : BIG AND COLOR: BLACK
-        </h1>
-      </div>
-    </seat-accordion>
-    <seat-accordion >
-      <div >
-        <h1 class= "h1custom">
-          HELLO 1 - THIS IS ACCORDION SIZE : BIG AND COLOR: BLACK
+            HELLO 1 - THIS IS ACCORDION data-SIZE : BIG AND data-COLOR: BLACK
         </h1>
         <h1 class= "h1custom">
-            HELLO 1 - THIS IS ACCORDION SIZE : BIG AND COLOR: BLACK
+          HELLO 1 - THIS IS ACCORDION data-SIZE : BIG AND data-COLOR: BLACK
         </h1>
         <h1 class= "h1custom">
-          HELLO 1 - THIS IS ACCORDION SIZE : BIG AND COLOR: BLACK
-        </h1>
-        <h1 class= "h1custom">
-            HELLO 1 - THIS IS ACCORDION SIZE : BIG AND COLOR: BLACK
-        </h1>
-        <h1 class= "h1custom">
-          HELLO 1 - THIS IS ACCORDION SIZE : BIG AND COLOR: BLACK
-        </h1>
-        <h1 class= "h1custom">
-            HELLO 1 - THIS IS ACCORDION SIZE : BIG AND COLOR: BLACK
+            HELLO 1 - THIS IS ACCORDION data-SIZE : BIG AND data-COLOR: BLACK
         </h1>
       </div>
     </seat-accordion>
-    <h1>BLACK ACCORDION SMALL</h1>
-    <seat-accordion size="small">
+    <h1>BLACK ACCORDION S</h1>
+    <seat-accordion data-size="S">
       <div >
         <h1 class= "h1custom">
-          HELLO 1 - THIS IS ACCORDION SIZE : SMALL AND COLOR: BLACK
+          HELLO 1 - THIS IS ACCORDION data-SIZE : S AND data-COLOR: BLACK
         </h1>
         <h1 class= "h1custom">
-            HELLO 1 - THIS IS ACCORDION SIZE : SMALL AND COLOR: BLACK
+            HELLO 1 - THIS IS ACCORDION data-SIZE : S AND data-COLOR: BLACK
         </h1>
         <h1 class= "h1custom">
-          HELLO 1 - THIS IS ACCORDION SIZE : BIG AND COLOR: BLACK
+          HELLO 1 - THIS IS ACCORDION data-SIZE : BIG AND data-COLOR: BLACK
         </h1>
         <h1 class= "h1custom">
-            HELLO 1 - THIS IS ACCORDION SIZE : BIG AND COLOR: BLACK
+            HELLO 1 - THIS IS ACCORDION data-SIZE : BIG AND data-COLOR: BLACK
         </h1>
 
       </div>
     </seat-accordion>
-    <seat-accordion size="small">
+    <seat-accordion data-size="S">
       <div >
         <h1 class= "h1custom">
-          HELLO 1 - THIS IS ACCORDION SIZE : SMALL AND COLOR: BLACK
+          HELLO 1 - THIS IS ACCORDION data-SIZE : S AND data-COLOR: BLACK
         </h1>
         <h1 class= "h1custom">
-            HELLO 1 - THIS IS ACCORDION SIZE : SMALL AND COLOR: BLACK
+            HELLO 1 - THIS IS ACCORDION data-SIZE : S AND data-COLOR: BLACK
         </h1>
       </div>
     </seat-accordion>
-    <seat-accordion size="small">
+    <seat-accordion data-size="S">
       <div >
         <h1 class= "h1custom">
-          HELLO 1 - THIS IS ACCORDION SIZE : SMALL AND COLOR: BLACK
+          HELLO 1 - THIS IS ACCORDION data-SIZE : S AND data-COLOR: BLACK
         </h1>
         <h1 class= "h1custom">
-            HELLO 1 - THIS IS ACCORDION SIZE : SMALL AND COLOR: BLACK
+            HELLO 1 - THIS IS ACCORDION data-SIZE : S AND data-COLOR: BLACK
         </h1>
         <h1 class= "h1custom">
-          HELLO 1 - THIS IS ACCORDION SIZE : BIG AND COLOR: BLACK
+          HELLO 1 - THIS IS ACCORDION data-SIZE : BIG AND data-COLOR: BLACK
         </h1>
         <h1 class= "h1custom">
-            HELLO 1 - THIS IS ACCORDION SIZE : BIG AND COLOR: BLACK
+            HELLO 1 - THIS IS ACCORDION data-SIZE : BIG AND data-COLOR: BLACK
         </h1>
         <h1 class= "h1custom">
-          HELLO 1 - THIS IS ACCORDION SIZE : BIG AND COLOR: BLACK
+          HELLO 1 - THIS IS ACCORDION data-SIZE : BIG AND data-COLOR: BLACK
         </h1>
         <h1 class= "h1custom">
-            HELLO 1 - THIS IS ACCORDION SIZE : BIG AND COLOR: BLACK
+            HELLO 1 - THIS IS ACCORDION data-SIZE : BIG AND data-COLOR: BLACK
         </h1>
         <h1 class= "h1custom">
-          HELLO 1 - THIS IS ACCORDION SIZE : BIG AND COLOR: BLACK
+          HELLO 1 - THIS IS ACCORDION data-SIZE : BIG AND data-COLOR: BLACK
         </h1>
         <h1 class= "h1custom">
-            HELLO 1 - THIS IS ACCORDION SIZE : BIG AND COLOR: BLACK
-        </h1>
-      </div>
-    </seat-accordion size="smallest">
-    <h1>BLACK ACCORDION SMALLEST</h1>
-    <seat-accordion size="smallest">
-      <div >
-        <h1 class= "h1custom">
-          HELLO 1 - THIS IS ACCORDION SIZE : SMALLEST AND COLOR: BLACK
-        </h1>
-        <h1 class= "h1custom">
-            HELLO 1 - THIS IS ACCORDION SIZE : SMALLEST AND COLOR: BLACK
+            HELLO 1 - THIS IS ACCORDION data-SIZE : BIG AND data-COLOR: BLACK
         </h1>
       </div>
     </seat-accordion>
-    <seat-accordion size="smallest">
+    <h1>BLACK ACCORDION S</h1>
+    <seat-accordion data-size="S">
       <div >
         <h1 class= "h1custom">
-          HELLO 1 - THIS IS ACCORDION SIZE : SMALLEST AND COLOR: BLACK
+          HELLO 1 - THIS IS ACCORDION data-SIZE : S AND data-COLOR: BLACK
         </h1>
         <h1 class= "h1custom">
-            HELLO 1 - THIS IS ACCORDION SIZE : SMALLEST AND COLOR: BLACK
+            HELLO 1 - THIS IS ACCORDION data-SIZE : S AND data-COLOR: BLACK
         </h1>
       </div>
     </seat-accordion>
-    <seat-accordion size="smallest">
+    <seat-accordion data-size="S">
       <div >
         <h1 class= "h1custom">
-          HELLO 1 - THIS IS ACCORDION SIZE : SMALLEST AND COLOR: BLACK
+          HELLO 1 - THIS IS ACCORDION data-SIZE : S AND data-COLOR: BLACK
         </h1>
         <h1 class= "h1custom">
-            HELLO 1 - THIS IS ACCORDION SIZE : SMALLEST AND COLOR: BLACK
+            HELLO 1 - THIS IS ACCORDION data-SIZE : S AND data-COLOR: BLACK
+        </h1>
+      </div>
+    </seat-accordion>
+    <seat-accordion data-size="S">
+      <div >
+        <h1 class= "h1custom">
+          HELLO 1 - THIS IS ACCORDION data-SIZE : S AND data-COLOR: BLACK
+        </h1>
+        <h1 class= "h1custom">
+            HELLO 1 - THIS IS ACCORDION data-SIZE : S AND data-COLOR: BLACK
         </h1>
       </div>
     </seat-accordion>
@@ -289,119 +615,120 @@
 
 
     <h1>WHITE ACCORDION BIG</h1>
-    <seat-accordion color="white" >
+    <seat-accordion data-color="white" >
       <div >
         <h1  class= "h1custom">
-          HELLO 1 - THIS IS ACCORDION SIZE : BIG AND COLOR: WHITE
+          HELLO 1 - THIS IS ACCORDION data-SIZE : BIG AND data-COLOR: WHITE
         </h1>
         <h1 class= "h1custom">
-            HELLO 1 - THIS IS ACCORDION SIZE : BIG AND COLOR: WHITE
+            HELLO 1 - THIS IS ACCORDION data-SIZE : BIG AND data-COLOR: WHITE
         </h1>
       </div>
     </seat-accordion>
-    <seat-accordion color="white">
+    <seat-accordion data-color="white">
       <div >
         <h1 class= "h1custom">
-          HELLO 1 - THIS IS ACCORDION SIZE : BIG AND COLOR: WHITE
+          HELLO 1 - THIS IS ACCORDION data-SIZE : BIG AND data-COLOR: WHITE
         </h1>
         <h1 class= "h1custom">
-            HELLO 1 - THIS IS ACCORDION SIZE : BIG AND COLOR: WHITE
+            HELLO 1 - THIS IS ACCORDION data-SIZE : BIG AND data-COLOR: WHITE
         </h1>
       </div>
     </seat-accordion>
-    <seat-accordion color="white">
+    <seat-accordion data-color="white">
       <div >
         <h1 class= "h1custom">
-          HELLO 1 - THIS IS ACCORDION SIZE : BIG AND COLOR: WHITE
+          HELLO 1 - THIS IS ACCORDION data-SIZE : BIG AND data-COLOR: WHITE
         </h1>
         <h1 class= "h1custom">
-            HELLO 1 - THIS IS ACCORDION SIZE : BIG AND COLOR: WHITE
+            HELLO 1 - THIS IS ACCORDION data-SIZE : BIG AND data-COLOR: WHITE
         </h1>
       </div>
     </seat-accordion>
-    <h1>WHITE ACCORDION SMALL</h1>
-    <seat-accordion color="white" size="small">
+    <h1>WHITE ACCORDION S</h1>
+    <seat-accordion data-color="white" data-size="S">
       <div >
         <h1 class= "h1custom">
-          HELLO 1 - THIS IS ACCORDION SIZE : SMALL AND COLOR: WHITE
+          HELLO 1 - THIS IS ACCORDION data-SIZE : S AND data-COLOR: WHITE
         </h1>
         <h1 class= "h1custom">
-            HELLO 1 - THIS IS ACCORDION SIZE : SMALL AND COLOR: WHITE
+            HELLO 1 - THIS IS ACCORDION data-SIZE : S AND data-COLOR: WHITE
         </h1>
       </div>
     </seat-accordion>
-    <seat-accordion color="white" size="small">
+    <seat-accordion data-color="white" data-size="S">
       <div >
         <h1 class= "h1custom">
-          HELLO 1 - THIS IS ACCORDION SIZE : SMALL AND COLOR: WHITE
+          HELLO 1 - THIS IS ACCORDION data-SIZE : S AND data-COLOR: WHITE
         </h1>
         <h1 class= "h1custom">
-            HELLO 1 - THIS IS ACCORDION SIZE : SMALL AND COLOR: WHITE
+            HELLO 1 - THIS IS ACCORDION data-SIZE : S AND data-COLOR: WHITE
         </h1>
       </div>
     </seat-accordion>
-    <seat-accordion color="white" size="small">
+    <seat-accordion data-color="white" data-size="S">
       <div >
         <h1 class= "h1custom">
-          HELLO 1 - THIS IS ACCORDION SIZE : SMALL AND COLOR: WHITE
+          HELLO 1 - THIS IS ACCORDION data-SIZE : S AND data-COLOR: WHITE
         </h1>
         <h1 class= "h1custom">
-            HELLO 1 - THIS IS ACCORDION SIZE : SMALL AND COLOR: WHITE
+            HELLO 1 - THIS IS ACCORDION data-SIZE : S AND data-COLOR: WHITE
         </h1>
       </div>
-    </seat-accordion color="white" size="smallest">
-    <h1>WHITE ACCORDION SMALLEST</h1>
-    <seat-accordion color="white" size="smallest">
+    </seat-accordion data-color="white" data-size="S">
+    <h1>WHITE ACCORDION S</h1>
+    <seat-accordion data-color="white" data-size="S">
       <div >
         <h1 class= "h1custom">
-          HELLO 1 - THIS IS ACCORDION SIZE : SMALLEST AND COLOR: WHITE
+          HELLO 1 - THIS IS ACCORDION data-SIZE : S AND data-COLOR: WHITE
         </h1>
         <h1 class= "h1custom">
-            HELLO 1 - THIS IS ACCORDION SIZE : SMALLEST AND COLOR: WHITE
-        </h1>
-      </div>
-    </seat-accordion>
-    <seat-accordion color="white" size="smallest">
-      <div >
-        <h1 class= "h1custom" color="white">
-          HELLO 1 - THIS IS ACCORDION SIZE : SMALLEST AND COLOR: WHITE
-        </h1>
-        <h1 class= "h1custom">
-            HELLO 1 - THIS IS ACCORDION SIZE : SMALLEST AND COLOR: WHITE
+            HELLO 1 - THIS IS ACCORDION data-SIZE : S AND data-COLOR: WHITE
         </h1>
       </div>
     </seat-accordion>
-    <seat-accordion size="smallest" color="white">
+    <seat-accordion data-color="white" data-size="S">
       <div >
-        <h1 class= "h1custom">
-          HELLO 1 - THIS IS ACCORDION SIZE : SMALLEST AND COLOR: WHITE
+        <h1 class= "h1custom" data-color="white">
+          HELLO 1 - THIS IS ACCORDION data-SIZE : S AND data-COLOR: WHITE
         </h1>
         <h1 class= "h1custom">
-            HELLO 1 - THIS IS ACCORDION SIZE : SMALLEST AND COLOR: WHITE
+            HELLO 1 - THIS IS ACCORDION data-SIZE : S AND data-COLOR: WHITE
+        </h1>
+      </div>
+    </seat-accordion>
+    <seat-accordion data-size="S" data-color="white">
+      <div >
+        <h1 class= "h1custom">
+          HELLO 1 - THIS IS ACCORDION data-SIZE : S AND data-COLOR: WHITE
+        </h1>
+        <h1 class= "h1custom">
+            HELLO 1 - THIS IS ACCORDION data-SIZE : S AND data-COLOR: WHITE
         </h1>
       </div>
     </seat-accordion>
     <h1>--PRIMARY</h1>
     <h1>-BLACK</h1>
-    <h1>Desktop</h1>
+    <h1>L</h1>
    
    
     
    
     <script>
+      const sayHi = function () {alert ('HIIII')}
       const mutationCallback = (mutationsList) => {
       for (const mutation of mutationsList) {
         if (
           mutation.type !== "attributes" ||
-          mutation.attributeName !== "form-value"
+          mutation.attributeName !== "data-form-value"
         ) {
           return
         }
-        var value = mutation.target.getAttribute("form-value")
-        var state = mutation.target.getAttribute("state")
-        if (value === "error" || value==="no") mutation.target.setAttribute("state","error")
-        else if (value==="validated" || value==="yes"|| value==="nop" ) mutation.target.setAttribute("state","validated")
-        else if (state !== null)  mutation.target.setAttribute("state","active")
+        var value = mutation.target.getAttribute("data-form-value")
+        var state = mutation.target.getAttribute("data-state")
+        if (value === "error" || value==="no") mutation.target.setAttribute("data-state","error")
+        else if (value==="validated" || value==="yes"|| value==="nop" ) mutation.target.setAttribute("data-state","validated")
+        else if (state !== null)  mutation.target.setAttribute("data-state","active")
       }
       }
       const observer = new MutationObserver(mutationCallback)

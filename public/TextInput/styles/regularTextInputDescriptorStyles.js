@@ -131,7 +131,7 @@ Style1[TEXT_SUBCOMPONENT] = {
     width: "calc(100%-2px)",
     backgroundColor: "transparent",
     color: "#190F14",
-    fontFamily: 'SEAT BCN',
+    fontFamily: 'SEATBCN',
     fontStyle: "normal",
     fontSize: "16px",
     
