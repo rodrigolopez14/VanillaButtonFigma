@@ -172,7 +172,8 @@ Style1[OPTION_SELECTED_SUBCOMPONENT][OPEN_EVENT] = {
 Style1[ARROW_ICON_SUBCOMPONENT] = {
     backgroundColor: "#FFFFFF",
     display: "flex",
-    alignItems: "center"
+    alignItems: "center",
+    border: "none"
 }
 Style1[ARROW_ICON_CONTAINER] = {
     height: "24px",
@@ -184,12 +185,15 @@ Style1[ARROW_ICON_CONTAINER] = {
     textAlign: "center",
     transition: "0.2s all ease-in-out",
     transform: "rotate(90deg)",
+    border: "none"
 }
 Style1[ARROW_ICON_CONTAINER][SELECTION_EVENT] = {
-    transform: "rotate(90deg)"
+    transform: "rotate(90deg)",
+    border: "none"
 }
 Style1[ARROW_ICON_CONTAINER][OPEN_EVENT] = {
     transform: "rotate(270deg)",
+    border: "none"
 }
 Style1[ARROW_ICON_ITEM]={}
 Style1[ARROW_ICON_ITEM][ICON_COLOR_ATTRIBUTE]="#7F7F72"

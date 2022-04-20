@@ -1,9 +1,9 @@
 // attributeNames
-export const ICON_COLOR_ATTRIBUTE = 'color';
-export const ICON_WIDTH_ATTRIBUTE = 'width';
-export const ICON_HEIGHT_ATTRIBUTE = 'height';
-export const ICON_SELECTION_ATTRIBUTE = 'iconSelection';
-export const ICON_ANIMATION_DURATION = 'duration'
+export const ICON_COLOR_ATTRIBUTE = 'data-color';
+export const ICON_WIDTH_ATTRIBUTE = 'data-width';
+export const ICON_HEIGHT_ATTRIBUTE = 'data-height';
+export const ICON_SELECTION_ATTRIBUTE = 'data-icon-selection';
+export const ICON_ANIMATION_DURATION = 'data-duration'
 // defaultValues
 
 export const COLOR_DEFAULT = '#190F14';

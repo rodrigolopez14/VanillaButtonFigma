@@ -2,17 +2,17 @@ export const CUSTOM_ELEMENT_NAME = "seat-accordion"
 //variants
 export const REGULAR_ACCORDION_COMPONENT = 'regular accordion'
 // attributeNames
-export const COLOR_ATTRIBUTE = "color";
-export const SIZE_ATTRIBUTE = "size";
-export const OPEN_ATTRIBUTE = "open";
-export const TITLE_ATTRIBUTE = "title";
+export const COLOR_ATTRIBUTE = "data-color";
+export const SIZE_ATTRIBUTE = "data-size";
+export const OPEN_ATTRIBUTE = "data-open";
+export const TITLE_ATTRIBUTE = "data-title";
 // color options
 export const BLACK_OPTION = "black";
 export const WHITE_OPTION = "white";
 //size options
-export const BIG_OPTION = "big";
-export const SMALL_OPTION = "small";
-export const SMALLEST_OPTION = "smallest";
+export const BIG_OPTION = "L";
+export const SMALL_OPTION = "M";
+export const SMALLEST_OPTION = "S";
 // open options
 export const OPENED_OPTION = "isOpen";
 export const CLOSED_OPTION = "isClosed";

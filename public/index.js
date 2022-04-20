@@ -4,7 +4,7 @@ import {SEAT_ACCORDION} from "./Accordion/index.js"
 import {SEAT_TEXT_INPUT} from "./TextInput/index.js";
 import {loadFonts} from "./Fonts/index.js"
 import {SEAT_DROPDOWN} from "./Dropdown/index.js"
-
+import {SEAT_RADIO_BUTTON} from "./RadioButton/index.js"
 const styleSheet = document.createElement("style")
 styleSheet.innerText = `${SEAT_ACCORDION}:not(:defined) { display:none }`
 document.head.appendChild(styleSheet)

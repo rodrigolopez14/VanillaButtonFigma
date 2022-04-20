@@ -30,9 +30,9 @@ class vanillaRegularAccordion extends HTMLElement {
                 if (this.iconChild) this.iconParent.removeChild(this.iconChild)
                 this.iconChild = document.createElement(ICON)
                 this.iconChild.setAttribute(ICON_SELECTION_ATTRIBUTE, MINUS_ICON_OPTION)
-                this.iconChild.setAttribute(ICON_COLOR_ATTRIBUTE,this.styles[ICON_PARENT_TITLE_SUBCOMPONENT][ICON_COLOR_ATTRIBUTE])
-                this.iconChild.setAttribute(ICON_HEIGHT_ATTRIBUTE,this.styles[ICON_CHILD_SUBCOMPONENT][ICON_HEIGHT_ATTRIBUTE])
-                this.iconChild.setAttribute(ICON_WIDTH_ATTRIBUTE,this.styles[ICON_CHILD_SUBCOMPONENT][ICON_WIDTH_ATTRIBUTE])
+                this.iconChild.setAttribute(ICON_COLOR_ATTRIBUTE,this.styles[ICON_PARENT_TITLE_SUBCOMPONENT].color)
+                this.iconChild.setAttribute(ICON_HEIGHT_ATTRIBUTE,this.styles[ICON_CHILD_SUBCOMPONENT].height)
+                this.iconChild.setAttribute(ICON_WIDTH_ATTRIBUTE,this.styles[ICON_CHILD_SUBCOMPONENT].width)
                 this.iconParent.appendChild(this.iconChild)
                 this.openStyles.forEach( (style)=>  style())
             }
@@ -41,9 +41,9 @@ class vanillaRegularAccordion extends HTMLElement {
                 if(this.iconChild) this.iconParent.removeChild(this.iconChild)
                 this.iconChild = document.createElement(ICON)
                 this.iconChild.setAttribute(ICON_SELECTION_ATTRIBUTE, PLUS_ICON_OPTION)
-                this.iconChild.setAttribute(ICON_COLOR_ATTRIBUTE,this.styles[ICON_PARENT_TITLE_SUBCOMPONENT][ICON_COLOR_ATTRIBUTE])
-                this.iconChild.setAttribute(ICON_HEIGHT_ATTRIBUTE,this.styles[ICON_CHILD_SUBCOMPONENT][ICON_HEIGHT_ATTRIBUTE])
-                this.iconChild.setAttribute(ICON_WIDTH_ATTRIBUTE,this.styles[ICON_CHILD_SUBCOMPONENT][ICON_WIDTH_ATTRIBUTE])
+                this.iconChild.setAttribute(ICON_COLOR_ATTRIBUTE,this.styles[ICON_PARENT_TITLE_SUBCOMPONENT].color)
+                this.iconChild.setAttribute(ICON_HEIGHT_ATTRIBUTE,this.styles[ICON_CHILD_SUBCOMPONENT].height)
+                this.iconChild.setAttribute(ICON_WIDTH_ATTRIBUTE,this.styles[ICON_CHILD_SUBCOMPONENT].width)
                 this.iconParent.appendChild(this.iconChild)
                 this.closeStyles.forEach( (style)=>  style())
                 return;
@@ -86,9 +86,9 @@ class vanillaRegularAccordion extends HTMLElement {
         this.iconChild = document.createElement(ICON)
         if (attributes[OPEN_ATTRIBUTE] === OPENED_OPTION) this.iconChild.setAttribute(ICON_SELECTION_ATTRIBUTE, MINUS_ICON_OPTION)
         else if (attributes[OPEN_ATTRIBUTE] !== OPENED_OPTION)this.iconChild.setAttribute(ICON_SELECTION_ATTRIBUTE, PLUS_ICON_OPTION)
-        this.iconChild.setAttribute(ICON_COLOR_ATTRIBUTE,this.styles[ICON_PARENT_TITLE_SUBCOMPONENT][ICON_COLOR_ATTRIBUTE])
-        this.iconChild.setAttribute(ICON_HEIGHT_ATTRIBUTE,this.styles[ICON_CHILD_SUBCOMPONENT][ICON_HEIGHT_ATTRIBUTE])
-        this.iconChild.setAttribute(ICON_WIDTH_ATTRIBUTE,this.styles[ICON_CHILD_SUBCOMPONENT][ICON_WIDTH_ATTRIBUTE])
+        this.iconChild.setAttribute(ICON_COLOR_ATTRIBUTE,this.styles[ICON_PARENT_TITLE_SUBCOMPONENT].color)
+        this.iconChild.setAttribute(ICON_HEIGHT_ATTRIBUTE,this.styles[ICON_CHILD_SUBCOMPONENT].height)
+        this.iconChild.setAttribute(ICON_WIDTH_ATTRIBUTE,this.styles[ICON_CHILD_SUBCOMPONENT].width)
         this.iconParent.appendChild(this.iconChild)
       
         title.appendChild(this.iconParent)
@@ -121,7 +121,7 @@ class vanillaRegularAccordion extends HTMLElement {
             contentToAppend.assignedElements()[0].style['margin']='0px'
             contentToAppend.assignedElements()[0].style['border']='0px'
             const copyStyleObject = JSON.parse(JSON.stringify(customClass.styles));
-            copyStyleObject[CONTENT_SUBCOMPONENT][OPEN_ACCORDION_EVENT][ICON_HEIGHT_ATTRIBUTE] = `${contentToAppend.assignedElements()[0].scrollHeight}px`
+            copyStyleObject[CONTENT_SUBCOMPONENT][OPEN_ACCORDION_EVENT].height = `${contentToAppend.assignedElements()[0].scrollHeight}px`
             const stylesProccessedContent = processStyle(content,copyStyleObject[CONTENT_SUBCOMPONENT])
             customClass.closeStyles.push(...stylesProccessedContent[DEFAULT_EVENT])
             customClass.openStyles.push(...stylesProccessedContent[OPEN_ACCORDION_EVENT])
