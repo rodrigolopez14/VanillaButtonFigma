@@ -26,7 +26,7 @@ class SeatTI extends HTMLElement {
     attributeChangedCallback() 
     {
         const state = this.getAttribute(STATE_ATTRIBUTE)
-        if (this.children.length>0) this.children[0].children[0].setAttribute(STATE_ATTRIBUTE,state)
+        if (this.children.length>0) this.children[0].setAttribute(STATE_ATTRIBUTE,state)
     }
     connectedCallback() {
         const WebComponent = this

@@ -55,7 +55,7 @@ Style1[CONTAINER_WRAPPER] = {
 Style1[CONTAINER_SUB_WRAPPER] = {
     transition: "0.2s all ease-in-out",
     margin: "0px",
-    width: "100%",
+    width: "260px",
     height: "60px", 
     display: "flex",
     flexDirection: "column",

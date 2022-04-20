@@ -84,7 +84,13 @@ class tiComponent extends HTMLElement {
         const attributes = JSON.parse(this.getAttribute(TEMPORARY_ATTRIBUTE))
         thisComponent.setAttribute(FORM_VALUE_ATTRIBUTE, attributes[FORM_VALUE_ATTRIBUTE])
         this.removeAttribute(TEMPORARY_ATTRIBUTE)
-        this.styles = setStyle(attributes[STYLE_KEY])
+
+        this.styles = JSON.parse(JSON.stringify(setStyle(attributes[STYLE_KEY])))
+        if (attributes[FORM_WIDTH_ATTRIBUTE]!== "") this.styles[CONTAINER_SUB_WRAPPER].width = attributes[FORM_WIDTH_ATTRIBUTE]
+
+        //Component width dimensions and display
+        thisComponent.style.width = this.styles[CONTAINER_SUB_WRAPPER].width
+        thisComponent.style.display = 'block' 
         
         const wrapper = document.createElement('div')
         const stylesProccessedWrapper = processStyle(wrapper,this.styles[CONTAINER_SUB_WRAPPER])
@@ -159,6 +165,22 @@ class tiComponent extends HTMLElement {
 
         wrapper.appendChild(textInputContainer)
         wrapper.appendChild(errorContainer)
+
+        document.addEventListener('click', function(event) {
+            const isClickInsideElement = thisComponent.contains(event.target);
+            if (isClickInsideElement && thisComponent.getAttribute(STATE_ATTRIBUTE)!== ERROR_OPTION && thisComponent.getAttribute(STATE_ATTRIBUTE)!== VALIDATED_OPTION) 
+            {
+                thisComponent.setAttribute(STATE_ATTRIBUTE,ACTIVE_OPTION)
+            }
+            else 
+            {
+                if (thisComponent.getAttribute(FORM_VALUE_ATTRIBUTE)=="" && thisComponent.getAttribute(STATE_ATTRIBUTE)!== NORMAL_OPTION) thisComponent.setAttribute(STATE_ATTRIBUTE,NORMAL_OPTION)
+                else 
+                {
+                    if (thisComponent.getAttribute(STATE_ATTRIBUTE)!== ERROR_OPTION && thisComponent.getAttribute(STATE_ATTRIBUTE)!== VALIDATED_OPTION && thisComponent.getAttribute(FORM_VALUE_ATTRIBUTE)!=="") thisComponent.setAttribute(STATE_ATTRIBUTE,FILLED_OPTION)
+                }
+            }
+        });
         
         this.shadow.appendChild(wrapper)
         this[NORMAL_OPTION].forEach( (style)=>  style())
@@ -171,29 +193,9 @@ const regularTextInput  = 'regular-text-input'
 if (customElements.get(regularTextInput) === undefined) customElements.define(regularTextInput, class extends tiComponent {});
 export const regularTextInputSeat = function (attributes,parentElement)
 {
-    const styles = {...setStyle(attributes[STYLE_KEY])}
-    if (attributes[FORM_WIDTH_ATTRIBUTE]!== "") styles[CONTAINER_WRAPPER].width = attributes[FORM_WIDTH_ATTRIBUTE]
-    const wrapper = document.createElement('div')
-    const stylesProccessedWrapper = processStyle(wrapper,styles[CONTAINER_WRAPPER])
     const customTextInput = document.createElement(regularTextInput)
     customTextInput.setAttribute(TEMPORARY_ATTRIBUTE,JSON.stringify(attributes))
-    stylesProccessedWrapper[DEFAULT_EVENT].forEach(style => style())
-    wrapper.appendChild(customTextInput)
-    document.addEventListener('click', function(event) {
-        const isClickInsideElement = wrapper.contains(event.target);
-        if (isClickInsideElement) 
-        {
-            customTextInput.setAttribute(STATE_ATTRIBUTE,ACTIVE_OPTION)
-        }
-        else 
-        {
-            if (customTextInput.getAttribute(FORM_VALUE_ATTRIBUTE)=="" && customTextInput.getAttribute(STATE_ATTRIBUTE)!== NORMAL_OPTION) customTextInput.setAttribute(STATE_ATTRIBUTE,NORMAL_OPTION)
-            else 
-            {
-                if (customTextInput.getAttribute(STATE_ATTRIBUTE)!== FILLED_OPTION) customTextInput.setAttribute(STATE_ATTRIBUTE,FILLED_OPTION)
-            }
-        }
-    });
+    
     const mutationCallback = (mutationsList) => {
         for (const mutation of mutationsList) 
         {
@@ -204,5 +206,5 @@ export const regularTextInputSeat = function (attributes,parentElement)
     }
     const observer = new MutationObserver(mutationCallback)
     observer.observe(customTextInput, { attributes: true })
-    return wrapper;
+    return customTextInput;
 }
