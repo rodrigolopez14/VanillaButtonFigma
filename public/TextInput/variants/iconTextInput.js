@@ -93,6 +93,20 @@ attributeChangedCallback()
         this[VALIDATED_OPTION].forEach( (style)=>  style())
     }
 }
+pushingEvents (stylesProcessed) {
+
+    this[NORMAL_OPTION].push(...stylesProcessed[DEFAULT_EVENT])
+    this[ACTIVE_OPTION].push(...stylesProcessed[INPUT_EVENT])
+    this[VALIDATED_OPTION].push(...stylesProcessed[VALIDATED_EVENT])
+    this[ERROR_OPTION].push(...stylesProcessed[ERROR_EVENT])
+}
+creatingElement (NAME_OF_SUBCOMPONENT) 
+{
+const subComponent = document.createElement('div')
+const stylesProccessed= processStyle(subComponent,this.styles[NAME_OF_SUBCOMPONENT])
+this.pushingEvents(stylesProccessed)
+return subComponent;
+}
 
 connectedCallback() {
     const thisComponent = this
@@ -107,105 +121,57 @@ connectedCallback() {
     thisComponent.style.width = this.styles[CONTAINER_SUB_WRAPPER].width
     thisComponent.style.display = 'block' 
 
-    const wrapper = document.createElement('div')
-    const stylesProccessedWrapper = processStyle(wrapper,this.styles[CONTAINER_SUB_WRAPPER])
-    this[NORMAL_OPTION].push(...stylesProccessedWrapper[DEFAULT_EVENT])
-    this[ERROR_OPTION].push(...stylesProccessedWrapper[ERROR_EVENT])
-    this[ACTIVE_OPTION].push(...stylesProccessedWrapper[INPUT_EVENT])
-    this[VALIDATED_OPTION].push(...stylesProccessedWrapper[VALIDATED_EVENT])
-
-    const textInputContainer = document.createElement('div')
-    const stylesProccessedTextInputContainer = processStyle(textInputContainer,this.styles[TEXT_INPUT_CONTAINER_SUBCOMPONENT])
-
-    this[NORMAL_OPTION].push(...stylesProccessedTextInputContainer[DEFAULT_EVENT])
-    this[ERROR_OPTION].push(...stylesProccessedTextInputContainer[ERROR_EVENT])
-    this[ACTIVE_OPTION].push(...stylesProccessedTextInputContainer[INPUT_EVENT])
-    this[VALIDATED_OPTION].push(...stylesProccessedTextInputContainer[VALIDATED_EVENT])
-
-    const titleTextContainer = document.createElement('div')
-    const stylesProccessedTitleTextContainer = processStyle(titleTextContainer,this.styles[TITLE_PLUS_TEXT_CONTAINER_SUBCOMPONENT])
-    this[NORMAL_OPTION].push(...stylesProccessedTitleTextContainer[DEFAULT_EVENT])
-    this[ACTIVE_OPTION].push(...stylesProccessedTitleTextContainer[INPUT_EVENT])
-    this[ERROR_OPTION].push(...stylesProccessedTitleTextContainer[ERROR_EVENT])
-    this[VALIDATED_OPTION].push(...stylesProccessedTitleTextContainer[VALIDATED_EVENT])
-    textInputContainer.appendChild(titleTextContainer)
-
-    const titleContainer = document.createElement('div')
-    const stylesProccessedTitleContainer = processStyle(titleContainer,this.styles[TITLE_SUBCOMPONENT])
-    this[NORMAL_OPTION].push(...stylesProccessedTitleContainer[DEFAULT_EVENT])
-    this[ACTIVE_OPTION].push(...stylesProccessedTitleContainer[INPUT_EVENT])
+    //Creation of all Subcomponents
+    const wrapper = this.creatingElement(CONTAINER_SUB_WRAPPER)
+    const textInputContainer = this.creatingElement(TEXT_INPUT_CONTAINER_SUBCOMPONENT)
+    const titleTextContainer = this.creatingElement(TITLE_PLUS_TEXT_CONTAINER_SUBCOMPONENT)
+    const titleContainer = this.creatingElement(TITLE_SUBCOMPONENT)
     const titleTextNode = document.createTextNode(attributes[TITLE_ATTRIBUTE])
-    titleContainer.appendChild(titleTextNode)
-    titleTextContainer.appendChild(titleContainer)
-
+    
     const inputContainer = document.createElement('input')
     inputContainer.setAttribute("type","text")
     inputContainer.onkeyup=()=> thisComponent.setAttribute(FORM_VALUE_ATTRIBUTE,inputContainer.value)
-   
     const stylesProccessedInputContainer = processStyle(inputContainer,this.styles[TEXT_SUBCOMPONENT])
-    this[NORMAL_OPTION].push(...stylesProccessedInputContainer[DEFAULT_EVENT])
-    this[ACTIVE_OPTION].push(...stylesProccessedInputContainer[INPUT_EVENT])
+    this.pushingEvents(stylesProccessedInputContainer)
     this[ACTIVE_OPTION].push(()=> inputContainer.focus())
-    titleTextContainer.appendChild(inputContainer)
 
-    const allIconsContainer = document.createElement('div')
-    const stylesProccessedAllIconsContainer = processStyle(allIconsContainer,this.styles[ALL_ICONS_CONTAINER])
-    this[NORMAL_OPTION].push(...stylesProccessedAllIconsContainer[DEFAULT_EVENT])
-    this[ACTIVE_OPTION].push(...stylesProccessedAllIconsContainer[INPUT_EVENT])
-    this[ERROR_OPTION].push(...stylesProccessedAllIconsContainer[ERROR_EVENT])
-    this[VALIDATED_OPTION].push(...stylesProccessedAllIconsContainer[VALIDATED_EVENT])
-    textInputContainer.appendChild(allIconsContainer)
 
-    const iconSelectedContainer = document.createElement('div')
-    const stylesProccessedIconSelectedContainer = processStyle(iconSelectedContainer,this.styles[ICON_CONTAINER_SUBCOMPONENT])
-    this[NORMAL_OPTION].push(...stylesProccessedIconSelectedContainer[DEFAULT_EVENT])
-    this[ACTIVE_OPTION].push(...stylesProccessedIconSelectedContainer[INPUT_EVENT])
-    this[VALIDATED_OPTION].push(...stylesProccessedIconSelectedContainer[VALIDATED_EVENT])
-    allIconsContainer.appendChild(iconSelectedContainer)
-
+    const allIconsContainer = this.creatingElement(ALL_ICONS_CONTAINER)
+    const iconSelectedContainer = this.creatingElement(ICON_CONTAINER_SUBCOMPONENT)
+   
     const iconSelected = document.createElement(ICON)
     iconSelected.setAttribute(ICON_SELECTION_ATTRIBUTE_FOR_COMPONENT, attributes[ICON_SELECTION_ATTRIBUTE])
     iconSelected.setAttribute(ICON_HEIGHT_ATTRIBUTE, this.styles[ICON_SUBCOMPONENT][ICON_HEIGHT_ATTRIBUTE])
     iconSelected.setAttribute(ICON_WIDTH_ATTRIBUTE, this.styles[ICON_SUBCOMPONENT][ICON_WIDTH_ATTRIBUTE])
     iconSelected.setAttribute(ICON_COLOR_ATTRIBUTE, this.styles[ICON_SUBCOMPONENT][ICON_COLOR_ATTRIBUTE])
-    iconSelectedContainer.appendChild(iconSelected)
     
-
-    const succesIconContainer = document.createElement('div')
-    const stylesProccessedIconContainer = processStyle(succesIconContainer,this.styles[SUCCESS_ICON_CONTAINER_SUBCOMPONENT])
-    this[NORMAL_OPTION].push(...stylesProccessedIconContainer[DEFAULT_EVENT])
-    this[ACTIVE_OPTION].push(...stylesProccessedIconContainer[INPUT_EVENT])
-    this[ERROR_OPTION].push(...stylesProccessedIconContainer[ERROR_EVENT])
-    this[VALIDATED_OPTION].push(...stylesProccessedIconContainer[VALIDATED_EVENT])
-    allIconsContainer.appendChild(succesIconContainer)
-
+    const succesIconContainer = this.creatingElement(SUCCESS_ICON_CONTAINER_SUBCOMPONENT)
+   
     const succesIcon = document.createElement(ICON)
     const stylesProccessedSuccessIcon= processStyle(succesIcon,this.styles[SUCCESS_ICON_SUBCOMPONENT][SUCCESS_ICON_SUBCOMPONENT])
-    this[NORMAL_OPTION].push(...stylesProccessedSuccessIcon[DEFAULT_EVENT])
-    this[VALIDATED_OPTION].push(...stylesProccessedSuccessIcon[VALIDATED_EVENT])
-    this[ACTIVE_OPTION].push(...stylesProccessedSuccessIcon[INPUT_EVENT])
-    this[ERROR_OPTION].push(...stylesProccessedSuccessIcon[ERROR_EVENT])
+    this.pushingEvents(stylesProccessedSuccessIcon)
     this[VALIDATED_OPTION].push(()=> succesIcon.setAttribute(ICON_SELECTION_ATTRIBUTE_FOR_COMPONENT, SUCCESS_ICON_ANIMATED_ICON_OPTION))
     this[VALIDATED_OPTION].push(()=> succesIcon.setAttribute(ICON_COLOR_ATTRIBUTE, this.styles[SUCCESS_ICON_SUBCOMPONENT][ICON_COLOR_ATTRIBUTE]))
-    
     succesIcon.setAttribute(ICON_HEIGHT_ATTRIBUTE, this.styles[SUCCESS_ICON_SUBCOMPONENT][ICON_HEIGHT_ATTRIBUTE])
     succesIcon.setAttribute(ICON_WIDTH_ATTRIBUTE, this.styles[SUCCESS_ICON_SUBCOMPONENT][ICON_WIDTH_ATTRIBUTE])
-    succesIconContainer.appendChild(succesIcon)
-
-    const errorContainer = document.createElement('div')
-    const stylesProccessedErrorContainer = processStyle(errorContainer,this.styles[ERROR_CONTAINER_SUBCOMPONENT])
-    this[NORMAL_OPTION].push(...stylesProccessedErrorContainer[DEFAULT_EVENT])
-    this[ERROR_OPTION].push(...stylesProccessedErrorContainer[ERROR_EVENT])
-    this[VALIDATED_OPTION].push(...stylesProccessedErrorContainer[VALIDATED_EVENT])
-    this[ACTIVE_OPTION].push(...stylesProccessedErrorContainer[INPUT_EVENT])
-
-
+    
+    const errorContainer = this.creatingElement(ERROR_CONTAINER_SUBCOMPONENT)
     const textNodeErrorMessage = document.createTextNode(attributes[ERROR_MESSAGE_ATTRIBUTE])
-    errorContainer.appendChild(textNodeErrorMessage)
-
+    //Appending subcomponents with its respective parent
+    this.shadow.appendChild(wrapper)
     wrapper.appendChild(textInputContainer)
+        textInputContainer.appendChild(titleTextContainer)
+            titleTextContainer.appendChild(titleContainer)
+                titleContainer.appendChild(titleTextNode)
+            titleTextContainer.appendChild(inputContainer)
+        textInputContainer.appendChild(allIconsContainer)
+            allIconsContainer.appendChild(iconSelectedContainer)
+                iconSelectedContainer.appendChild(iconSelected)
+            allIconsContainer.appendChild(succesIconContainer)
+                succesIconContainer.appendChild(succesIcon)
     wrapper.appendChild(errorContainer)
-
+        errorContainer.appendChild(textNodeErrorMessage)
+    //Adding some behaviour to the component
     document.addEventListener('click', function(event) {
         const isClickInsideElement = thisComponent.contains(event.target);
         if (isClickInsideElement && thisComponent.getAttribute(STATE_ATTRIBUTE)!== ERROR_OPTION && thisComponent.getAttribute(STATE_ATTRIBUTE)!== VALIDATED_OPTION) 
@@ -221,7 +187,8 @@ connectedCallback() {
             }
         }
     });
-    this.shadow.appendChild(wrapper)
+
+    // Stating initial attributes for the component
     this[NORMAL_OPTION].forEach( (style)=>  style())
     this.setAttribute(STATE_ATTRIBUTE,attributes[STATE_ATTRIBUTE])
 
