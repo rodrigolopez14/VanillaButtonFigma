@@ -1,4 +1,4 @@
-import {CONTAINER_WRAPPER,
+import {CONTAINER_SLOT_WRAPPER,
         CONTAINER_SUB_WRAPPER,
         TEXT_INPUT_CONTAINER_SUBCOMPONENT, 
         TITLE_PLUS_TEXT_CONTAINER_SUBCOMPONENT, 
@@ -120,6 +120,8 @@ connectedCallback() {
     thisComponent.style.display = 'block' 
 
     //Creation of all Subcomponents
+    const slotWrapper = this.creatingElement(CONTAINER_SLOT_WRAPPER)
+    const inputSlot = document.createElement('slot')
     const wrapper = this.creatingElement(CONTAINER_SUB_WRAPPER)
     const textInputContainer = this.creatingElement(TEXT_INPUT_CONTAINER_SUBCOMPONENT)
     const titleTextContainer = this.creatingElement(TITLE_PLUS_TEXT_CONTAINER_SUBCOMPONENT)
@@ -128,7 +130,10 @@ connectedCallback() {
 
     const inputContainer = document.createElement('input')
     inputContainer.setAttribute("type","text")
-    inputContainer.onkeyup=()=> thisComponent.setAttribute(FORM_VALUE_ATTRIBUTE,inputContainer.value)
+    inputContainer.onkeyup = ()=> {
+        thisComponent.setAttribute(FORM_VALUE_ATTRIBUTE,inputContainer.value)
+        inputSlot.assignedElements()[0].setAttribute('value',inputContainer.value)
+    }
     const stylesProccessedInputContainer = processStyle(inputContainer,this.styles[TEXT_SUBCOMPONENT])
     this.pushingEvents(stylesProccessedInputContainer)
     this[ACTIVE_OPTION].push(()=> inputContainer.focus())
@@ -156,6 +161,8 @@ connectedCallback() {
     const errorContainer = this.creatingElement(ERROR_CONTAINER_SUBCOMPONENT)
     const textNodeErrorMessage = document.createTextNode(attributes[ERROR_MESSAGE_ATTRIBUTE])
     //Appending subcomponents with its respective parent
+    this.shadow.appendChild(slotWrapper)
+    slotWrapper.appendChild(inputSlot)
     this.shadow.appendChild(wrapper)
         wrapper.appendChild(textInputContainer)
             textInputContainer.appendChild(titleTextContainer)
@@ -201,6 +208,19 @@ const regularTextInput  = 'icon-text-input-descriptor'
 if (customElements.get(regularTextInput) === undefined) customElements.define(regularTextInput, class extends tiComponent {});
 export const iconTextInputDescriptorSeat = function (attributes,parentElement)
 {
+    const contentToAppend = {}
+    const inputElement = 'inputElement'
+    if (parentElement.getElementsByTagName('input').length>0)  
+    {
+        if (contentToAppend[inputElement] = parentElement.getElementsByTagName('input')[0].type === 'text')
+        {
+            contentToAppend[inputElement] = parentElement.getElementsByTagName('input')[0].cloneNode(true)
+        }
+    }
+    while (parentElement.hasChildNodes()) 
+    {
+            parentElement.removeChild(parentElement.firstChild);
+    }
 const customTextInput = document.createElement(regularTextInput)
 customTextInput.setAttribute(TEMPORARY_ATTRIBUTE,JSON.stringify(attributes))
 
@@ -213,6 +233,7 @@ const mutationCallback = (mutationsList) => {
       parentElement.setAttribute(FORM_VALUE_ATTRIBUTE,formV)
     }
 }
+customTextInput.appendChild(contentToAppend[inputElement])
 const observer = new MutationObserver(mutationCallback)
 observer.observe(customTextInput, { attributes: true })
 return customTextInput;

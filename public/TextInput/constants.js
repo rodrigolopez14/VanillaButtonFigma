@@ -129,6 +129,8 @@ export {ATTRIBUTES};
 // I----------->DESCRIPTOR_SUBCOMPONENT
 // I
 // I----------->ERROR_CONTAINER_SUBCOMPONENT
+export const CONTAINER_SLOT_WRAPPER = 'slot wrapper'
+export const INPUT_SLOT = 'inputSlot'
 export const CONTAINER_WRAPPER = 'container wrapper'
 export const CONTAINER_SUB_WRAPPER = 'container sub wrapper'
 export const TEXT_INPUT_CONTAINER_SUBCOMPONENT = 'textInput container'

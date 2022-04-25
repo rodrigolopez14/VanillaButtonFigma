@@ -10,7 +10,8 @@ import { LARGE_OPTION,
          DESCRIPTOR_OFF_OPTION  } from "../constants.js"
 import {INPUT_EVENT, VALIDATED_EVENT, ERROR_EVENT} from "../constants.js"
 import {ICON_TEXT_INPUT_VARIANT } from "../constants.js"
-import {CONTAINER_SUB_WRAPPER,
+import {CONTAINER_SLOT_WRAPPER,
+        CONTAINER_SUB_WRAPPER,
         TEXT_INPUT_CONTAINER_SUBCOMPONENT,
         TITLE_PLUS_TEXT_CONTAINER_SUBCOMPONENT,
         TITLE_SUBCOMPONENT,
@@ -47,6 +48,9 @@ import {ICON_COLOR_ATTRIBUTE,
 //                  I----------->ERROR_SUBCOMPONENT
 const iconTextInputDescriptorStyles = []
 const Style1 = {}
+Style1[CONTAINER_SLOT_WRAPPER] = {
+    display: "none",
+}
 Style1[CONTAINER_WRAPPER] = {
     margin: "0px",
     width: "260px",
