@@ -1,11 +1,22 @@
-import {ENABLE_ATTRIBUTE, ON_OPTION, TEMPORARY_ATTRIBUTE} from "../constants.js"
-import {CONTAINER_SLOT_WRAPPER,WRAPPER_SUBCOMPONENT, LABEL_SUBCOMPONENT, SVG_SUBCOMPONENT, CIRCLE_STROKE_SUBCOMPONENT, CIRCLE_FILL_SUBCOMPONENT, LABEL_SLOT, INPUT_SLOT} from "../constants.js"
+import {CONTAINER_SLOT_WRAPPER,
+        WRAPPER_SUBCOMPONENT, 
+        LABEL_SUBCOMPONENT, 
+        SVG_SUBCOMPONENT, 
+        CIRCLE_STROKE_SUBCOMPONENT, 
+        CIRCLE_FILL_SUBCOMPONENT, 
+        LABEL_SLOT, 
+        INPUT_SLOT} from "../constants.js"
 import {SVG_ATTRIBUTES, SVG_STYLES, SVG_TYPE} from "../constants.js"
-import {STATE_ATTRIBUTE, LABEL_ATTRIBUTE} from "../constants.js"
-import {NORMAL_OPTION,SELECTED_OPTION} from "../constants.js"
+import {STATE_ATTRIBUTE, 
+        LABEL_ATTRIBUTE,
+        ENABLE_ATTRIBUTE,
+        TEMPORARY_ATTRIBUTE} from "../constants.js"
+import {NORMAL_OPTION,
+        SELECTED_OPTION,
+        ON_OPTION} from "../constants.js"
 import { DEFAULT_EVENT, SELECTED_EVENT } from "../constants.js"
 import {setStyle, processStyle} from "../styles/index.js"
-import {COMPONENT_VARIANT_KEY,STYLE_KEY} from "../../commonMethodsAndConstants/Styles/commonConstants.js"
+import {STYLE_KEY} from "../../commonMethodsAndConstants/Styles/commonConstants.js"
 
  
 

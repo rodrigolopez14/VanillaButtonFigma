@@ -1,27 +1,35 @@
-import {PATH_STYLE,STYLE_OBJECT,COMPONENT_VARIANT_KEY} from "../../commonMethodsAndConstants/Styles/commonConstants.js"
-import {SIZE_ATTRIBUTE,COLOR_ATTRIBUTE,STATE_ATTRIBUTE,DESCRIPTOR_ON_ATTRIBUTE,ICON_ON_ATTRIBUTE, CONTAINER_WRAPPER, SUCCESS_ICON_CONTAINER_SUBCOMPONENT, SUCCESS_ICON_SUBCOMPONENT} from "../constants.js"
-import { LARGE_OPTION,
-         MEDIUM_OPTION,
-         BLACK_OPTION,
-         WHITE_OPTION, 
-         ICON_ON_OPTION, 
-         ICON_OFF_OPTION, 
-         DESCRIPTOR_ON_OPTION, 
-         DESCRIPTOR_OFF_OPTION  } from "../constants.js"
-import {INPUT_EVENT, VALIDATED_EVENT, ERROR_EVENT} from "../constants.js"
-import {REGULAR_TEXT_INPUT_DESCRIPTOR_VARIANT } from "../constants.js"
+import {PATH_STYLE,
+        STYLE_OBJECT,
+        COMPONENT_VARIANT_KEY} from "../../commonMethodsAndConstants/Styles/commonConstants.js"
+import {SIZE_ATTRIBUTE,
+        COLOR_ATTRIBUTE,
+        DESCRIPTOR_ON_ATTRIBUTE,
+        ICON_ON_ATTRIBUTE} from "../constants.js"
+import {LARGE_OPTION,
+        MEDIUM_OPTION,
+        BLACK_OPTION,
+        WHITE_OPTION, 
+        ICON_OFF_OPTION, 
+        DESCRIPTOR_ON_OPTION} from "../constants.js"
+import {REGULAR_TEXT_INPUT_DESCRIPTOR_VARIANT} from "../constants.js"
 import {CONTAINER_SLOT_WRAPPER,
+        CONTAINER_WRAPPER, 
         CONTAINER_SUB_WRAPPER,
         TEXT_INPUT_CONTAINER_SUBCOMPONENT,
         TITLE_PLUS_TEXT_CONTAINER_SUBCOMPONENT,
         TITLE_SUBCOMPONENT,
         TEXT_SUBCOMPONENT,
+        SUCCESS_ICON_CONTAINER_SUBCOMPONENT, 
+        SUCCESS_ICON_SUBCOMPONENT,
+        DESCRIPTOR_SUBCOMPONENT,
         ERROR_CONTAINER_SUBCOMPONENT,
-        DESCRIPTOR_SUBCOMPONENT
-    } from "../constants.js"
+        } from "../constants.js"
 import {ICON_COLOR_ATTRIBUTE, 
         ICON_HEIGHT_ATTRIBUTE,
-        ICON_WIDTH_ATTRIBUTE } from "../../Icons/constants.js"
+        ICON_WIDTH_ATTRIBUTE} from "../../Icons/constants.js"
+import {INPUT_EVENT, 
+        VALIDATED_EVENT, 
+        ERROR_EVENT} from "../constants.js"
 // CONTAINER_SUB_WRAPPER
 // I----------->TEXT_INPUT_CONTAINER_SUBCOMPONENT
 // I                I----------->TITLE_PLUS_TEXT_CONTAINER_SUBCOMPONENT

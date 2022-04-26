@@ -9,15 +9,14 @@ import {CONTAINER_SLOT_WRAPPER,
         ICON_SUBCOMPONENT,
         SUCCESS_ICON_CONTAINER_SUBCOMPONENT,
         SUCCESS_ICON_SUBCOMPONENT,
-        ERROR_CONTAINER_SUBCOMPONENT,
-        } from "../constants.js"
+        ERROR_CONTAINER_SUBCOMPONENT} from "../constants.js"
 import {STATE_ATTRIBUTE,
-        TITLE_ATTRIBUTE,
         ERROR_MESSAGE_ATTRIBUTE,
+        TITLE_ATTRIBUTE,
+        ICON_SELECTION_ATTRIBUTE,
         FORM_VALUE_ATTRIBUTE,
         FORM_WIDTH_ATTRIBUTE,
-        ICON_SELECTION_ATTRIBUTE,
-        } from "../constants.js"
+        TEMPORARY_ATTRIBUTE} from "../constants.js"
 import {NORMAL_OPTION,
         ACTIVE_OPTION,
         VALIDATED_OPTION,
@@ -35,7 +34,6 @@ import {ICON_SELECTION_ATTRIBUTE as ICON_SELECTION_ATTRIBUTE_FOR_COMPONENT,
         ICON_HEIGHT_ATTRIBUTE,
         ICON_WIDTH_ATTRIBUTE} from "../../Icons/constants.js"
 import {SUCCESS_ICON_ANIMATED_ICON_OPTION} from "../../Icons/constants.js"
-const TEMPORARY_ATTRIBUTE = 'temporary-attribute'
 
 // CONTAINER_SUB_WRAPPER
 // I----------->TEXT_INPUT_CONTAINER_SUBCOMPONENT

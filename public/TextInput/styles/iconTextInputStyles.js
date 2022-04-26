@@ -1,29 +1,34 @@
 import {PATH_STYLE,STYLE_OBJECT,COMPONENT_VARIANT_KEY} from "../../commonMethodsAndConstants/Styles/commonConstants.js"
-import {SIZE_ATTRIBUTE,COLOR_ATTRIBUTE,STATE_ATTRIBUTE,DESCRIPTOR_ON_ATTRIBUTE,ICON_ON_ATTRIBUTE, CONTAINER_WRAPPER, SUCCESS_ICON_CONTAINER_SUBCOMPONENT, SUCCESS_ICON_SUBCOMPONENT} from "../constants.js"
-import { LARGE_OPTION,
-         MEDIUM_OPTION,
-         BLACK_OPTION,
-         WHITE_OPTION, 
-         ICON_ON_OPTION, 
-         ICON_OFF_OPTION, 
-         DESCRIPTOR_ON_OPTION, 
-         DESCRIPTOR_OFF_OPTION  } from "../constants.js"
-import {INPUT_EVENT, VALIDATED_EVENT, ERROR_EVENT} from "../constants.js"
-import {ICON_TEXT_INPUT_VARIANT } from "../constants.js"
+import {SIZE_ATTRIBUTE,
+        COLOR_ATTRIBUTE,
+        DESCRIPTOR_ON_ATTRIBUTE,
+        ICON_ON_ATTRIBUTE} from "../constants.js"
+import {LARGE_OPTION,
+        MEDIUM_OPTION,
+        BLACK_OPTION,
+        WHITE_OPTION, 
+        ICON_ON_OPTION, 
+        DESCRIPTOR_OFF_OPTION} from "../constants.js"
+import {ICON_TEXT_INPUT_VARIANT} from "../constants.js"
 import {CONTAINER_SLOT_WRAPPER,
+        CONTAINER_WRAPPER,
         CONTAINER_SUB_WRAPPER,
         TEXT_INPUT_CONTAINER_SUBCOMPONENT,
         TITLE_PLUS_TEXT_CONTAINER_SUBCOMPONENT,
         TITLE_SUBCOMPONENT,
         TEXT_SUBCOMPONENT,
-        ERROR_CONTAINER_SUBCOMPONENT,
         ALL_ICONS_CONTAINER,
         ICON_CONTAINER_SUBCOMPONENT,
-        ICON_SUBCOMPONENT
-    } from "../constants.js"
+        ICON_SUBCOMPONENT,
+        SUCCESS_ICON_CONTAINER_SUBCOMPONENT,
+        SUCCESS_ICON_SUBCOMPONENT,
+        ERROR_CONTAINER_SUBCOMPONENT} from "../constants.js"
 import {ICON_COLOR_ATTRIBUTE, 
         ICON_HEIGHT_ATTRIBUTE,
-        ICON_WIDTH_ATTRIBUTE } from "../../Icons/constants.js"
+        ICON_WIDTH_ATTRIBUTE} from "../../Icons/constants.js"
+import {INPUT_EVENT,
+        VALIDATED_EVENT, 
+        ERROR_EVENT} from "../constants.js"
 // CONTAINER_SUB_WRAPPER
 // I----------->TEXT_INPUT_CONTAINER_SUBCOMPONENT
 // I                I----------->TITLE_PLUS_TEXT_CONTAINER_SUBCOMPONENT
@@ -54,7 +59,6 @@ Style1[CONTAINER_WRAPPER] = {
     margin: "0px",
     width: "260px",
     cursor: "default"
-
 }
 Style1[CONTAINER_SUB_WRAPPER] = {
     transition: "0.2s all ease-in-out",
@@ -65,7 +69,6 @@ Style1[CONTAINER_SUB_WRAPPER] = {
     flexDirection: "column",
     alignItems: "flex-start",
     cursor: "default"
-
 }
 Style1[CONTAINER_SUB_WRAPPER][ERROR_EVENT] = {
     height: "80px", 
@@ -88,7 +91,6 @@ Style1[TEXT_INPUT_CONTAINER_SUBCOMPONENT] = {
     display: "flex",
     justifyContent: "flex-start",
     alignItems: "center"
-
 }
 
 Style1[TEXT_INPUT_CONTAINER_SUBCOMPONENT][INPUT_EVENT] = {
@@ -131,7 +133,6 @@ Style1[TITLE_SUBCOMPONENT] ={
     lineHeight: "20px",
     color: "#747468",
     userSelect: "none"
-
 }
 Style1[TITLE_SUBCOMPONENT][INPUT_EVENT] ={
     fontSize: "12px",
@@ -154,7 +155,6 @@ Style1[TEXT_SUBCOMPONENT] = {
     fontFamily: 'SEATBCN',
     fontStyle: "normal",
     fontSize: "16px",
-    
 }
 Style1[TEXT_SUBCOMPONENT][INPUT_EVENT] ={
     height: "100%",
@@ -171,7 +171,6 @@ Style1[ALL_ICONS_CONTAINER] = {
     justifyContent: "center",
     alignItems: "center",
     flexDirection: "row-reverse",
-
 }
 Style1[ALL_ICONS_CONTAINER][ERROR_EVENT] = {
     width: "24px",
@@ -192,7 +191,6 @@ Style1[ICON_CONTAINER_SUBCOMPONENT] = {
     height: "24px", 
     margin: "0px",
     border: "none"
-
 }
 Style1[ICON_SUBCOMPONENT] = {}
 Style1[ICON_SUBCOMPONENT][ICON_COLOR_ATTRIBUTE]="#7F7F72"
@@ -208,7 +206,6 @@ Style1[SUCCESS_ICON_CONTAINER_SUBCOMPONENT] = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center"
-
 }
 Style1[SUCCESS_ICON_CONTAINER_SUBCOMPONENT][VALIDATED_EVENT] = {
     width: "24px",
@@ -248,7 +245,6 @@ Style1[SUCCESS_ICON_SUBCOMPONENT][ICON_HEIGHT_ATTRIBUTE]="16.5px"
 Style1[SUCCESS_ICON_SUBCOMPONENT][ICON_WIDTH_ATTRIBUTE]="12.38px"
 Style1[ERROR_CONTAINER_SUBCOMPONENT] = {
     transition: "0.2s all ease-in-out",
-    
     height: "0px", 
     fontFamily: "SEATBCN",
     fontStyle: "normal",

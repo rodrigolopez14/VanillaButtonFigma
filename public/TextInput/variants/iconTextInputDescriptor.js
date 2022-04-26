@@ -10,24 +10,24 @@ import {CONTAINER_SLOT_WRAPPER,
         SUCCESS_ICON_CONTAINER_SUBCOMPONENT,
         SUCCESS_ICON_SUBCOMPONENT,
         DESCRIPTOR_SUBCOMPONENT,
-        ERROR_CONTAINER_SUBCOMPONENT, 
-        } from "../constants.js"
-import {STATE_ATTRIBUTE,   
+        ERROR_CONTAINER_SUBCOMPONENT} from "../constants.js"
+import {STATE_ATTRIBUTE,
+        ERROR_MESSAGE_ATTRIBUTE,    
         TITLE_ATTRIBUTE,
-        ERROR_MESSAGE_ATTRIBUTE, 
+        DESCRIPTOR_ATTRIBUTE,
+        ICON_SELECTION_ATTRIBUTE, 
         FORM_VALUE_ATTRIBUTE, 
         FORM_WIDTH_ATTRIBUTE, 
-        ICON_SELECTION_ATTRIBUTE, 
-        DESCRIPTOR_ATTRIBUTE } from "../constants.js"
-import {DEFAULT_EVENT, 
-        INPUT_EVENT, 
-        VALIDATED_EVENT, 
-        ERROR_EVENT } from "../constants.js"
+        TEMPORARY_ATTRIBUTE} from "../constants.js"
 import {NORMAL_OPTION,
         ACTIVE_OPTION, 
         VALIDATED_OPTION, 
         ERROR_OPTION,
         FILLED_OPTION} from "../constants.js"
+import {DEFAULT_EVENT, 
+        INPUT_EVENT, 
+        VALIDATED_EVENT, 
+        ERROR_EVENT} from "../constants.js"
 import {setStyle, processStyle} from "../styles/index.js"
 import {STYLE_KEY} from "../../commonMethodsAndConstants/Styles/commonConstants.js"
 import {NAME_OF_COMPONENT as ICON} from "../../Icons/constants.js"
@@ -36,7 +36,6 @@ import {ICON_SELECTION_ATTRIBUTE as ICON_SELECTION_ATTRIBUTE_FOR_COMPONENT,
         ICON_HEIGHT_ATTRIBUTE,
         ICON_WIDTH_ATTRIBUTE} from "../../Icons/constants.js"
 import {SUCCESS_ICON_ANIMATED_ICON_OPTION} from "../../Icons/constants.js"
-const TEMPORARY_ATTRIBUTE = 'temporary-attribute'
 // CONTAINER_SUB_WRAPPER
 // I----------->TEXT_INPUT_CONTAINER_SUBCOMPONENT
 // I                I----------->TITLE_PLUS_TEXT_CONTAINER_SUBCOMPONENT
@@ -67,7 +66,6 @@ constructor()
     this[ERROR_OPTION] = []
     this.styles = null
     this.shadow = this.attachShadow({mode: 'open'});
-
 }
 static get observedAttributes() { return [STATE_ATTRIBUTE]; }
 attributeChangedCallback() 
@@ -100,17 +98,16 @@ pushingEvents (stylesProcessed) {
 }
 creatingElement (NAME_OF_SUBCOMPONENT) 
 {
-const subComponent = document.createElement('div')
-const stylesProccessed= processStyle(subComponent,this.styles[NAME_OF_SUBCOMPONENT])
-this.pushingEvents(stylesProccessed)
-return subComponent;
+    const subComponent = document.createElement('div')
+    const stylesProccessed= processStyle(subComponent,this.styles[NAME_OF_SUBCOMPONENT])
+    this.pushingEvents(stylesProccessed)
+    return subComponent;
 }
 connectedCallback() {
     const thisComponent = this
     const attributes = JSON.parse(this.getAttribute(TEMPORARY_ATTRIBUTE))
     thisComponent.setAttribute(FORM_VALUE_ATTRIBUTE, attributes[FORM_VALUE_ATTRIBUTE])
     this.removeAttribute(TEMPORARY_ATTRIBUTE)
-    
         
     this.styles = JSON.parse(JSON.stringify(setStyle(attributes[STYLE_KEY])))
     if (attributes[FORM_WIDTH_ATTRIBUTE]!== "") this.styles[CONTAINER_SUB_WRAPPER].width = attributes[FORM_WIDTH_ATTRIBUTE]
@@ -200,7 +197,6 @@ connectedCallback() {
     // Stating initial attributes for the component
     this[NORMAL_OPTION].forEach( (style)=>  style())
     this.setAttribute(STATE_ATTRIBUTE,attributes[STATE_ATTRIBUTE])
-
 }
 }
 

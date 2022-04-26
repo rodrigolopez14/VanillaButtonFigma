@@ -1,5 +1,9 @@
-import {NAME_OF_COMPONENT, NORMAL_OPTION} from './constants.js'
-import {ATTRIBUTES, COLOR_ATTRIBUTE, SIZE_ATTRIBUTE, STATE_ATTRIBUTE,ENABLE_ATTRIBUTE} from './constants.js'
+import {NAME_OF_COMPONENT} from './constants.js'
+import {ATTRIBUTES,
+        COLOR_ATTRIBUTE,
+        SIZE_ATTRIBUTE,
+        STATE_ATTRIBUTE,
+        ENABLE_ATTRIBUTE} from './constants.js'
 import {setKeys} from './Styles/index.js'
 import {COMPONENTS} from './variants/index.js'
 import {COMPONENT_VARIANT_KEY,STYLE_KEY} from "../commonMethodsAndConstants/Styles/commonConstants.js"

@@ -19,7 +19,7 @@ for (var i=0; i<allStyles.length;i++)
 {
   var styleKey = "Style_" + i
 
-  var componentKeyAndPath = {}
+  const componentKeyAndPath = {}
   componentKeyAndPath[PATH_STYLE] = allStyles[i][PATH_STYLE]
   componentKeyAndPath[STYLE_KEY] = styleKey
   componentKeyAndPath[COMPONENT_VARIANT_KEY] = allStyles[i][COMPONENT_VARIANT_KEY]

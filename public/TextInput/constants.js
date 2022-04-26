@@ -5,6 +5,7 @@ export const REGULAR_TEXT_INPUT_DESCRIPTOR_VARIANT = 'regular text input descrip
 export const ICON_TEXT_INPUT_VARIANT = 'icon text input'
 export const ICON_TEXT_INPUT_DESCRIPTOR_VARIANT = 'icon text input descriptor'
 
+
 // attributeNames
 export const SIZE_ATTRIBUTE = "data-size";
 export const COLOR_ATTRIBUTE = "data-color";
@@ -15,6 +16,8 @@ export const DESCRIPTOR_ATTRIBUTE = "data-descriptor";
 export const ICON_SELECTION_ATTRIBUTE = "data-icon-selection";
 export const FORM_VALUE_ATTRIBUTE = "data-form-value";
 export const FORM_WIDTH_ATTRIBUTE = "data-form-width";
+
+export const TEMPORARY_ATTRIBUTE = 'data-temporary'
 //size options 
 export const LARGE_OPTION = "L";
 export const MEDIUM_OPTION = "M";
