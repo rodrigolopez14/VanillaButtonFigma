@@ -122,7 +122,7 @@ Style2[ICON_CONTAINER_SUBCOMPONENT] ={
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    margin: "0px 0px 0px 8px",
+    margin: "0px 8px 0px 0px",
 }
 Style2[ICON_SUBCOMPONENT] = {
     color: "#190F14",
