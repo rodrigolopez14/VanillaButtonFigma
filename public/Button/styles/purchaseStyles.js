@@ -977,34 +977,37 @@ boxShadow: "none",
 ...SIZE_STYLES[MEDIUM_OPTION][REGULAR_BUTTON_ICON_VARIANT][BUTTON_SUBCOMPONENT]
 
 }
-Style20[TEXT_SUBCOMPONENT] = {
-position: "static",
-fontFamily: "SEATBCN",
-fontStyle: "normal",
-fontWeight: "bold",
-fontSize: "14px",
-color: "#EEA786",
-...SIZE_STYLES[MEDIUM_OPTION][REGULAR_BUTTON_ICON_VARIANT][TEXT_SUBCOMPONENT]
+Style20[TEXT_SUBCOMPONENT] = 
+{
+    position        : "static",
+    fontFamily      : "SEATBCN",
+    fontStyle       : "normal",
+    fontWeight      : "bold",
+    fontSize        : "14px",
+    color           : "#EEA786",
+    ...SIZE_STYLES[MEDIUM_OPTION][REGULAR_BUTTON_ICON_VARIANT][TEXT_SUBCOMPONENT]
 }
-Style20[ICON_CONTAINER_SUBCOMPONENT] ={
-color: "#EEA786",
-width: "24px",
-height: "24px",
-display: "flex",
-justifyContent: "center",
-alignItems: "center",
+Style20[ICON_CONTAINER_SUBCOMPONENT] = 
+{
+    color           : "#EEA786",
+    width           : "24px",
+    height          : "24px",
+    display         : "flex",
+    justifyContent  : "center",
+    alignItems      : "center",
 }
-Style20[ICON_SUBCOMPONENT] = {
-color: "#EEA786",
-width: "13.5px",
-height: "13.5px",
+Style20[ICON_SUBCOMPONENT] = 
+{
+    color           : "#EEA786",
+    width           : "13.5px",
+    height          : "13.5px",
 }
 const Style20Path = {}
-Style20Path[HIERARCHY_ATTRIBUTE] = PURCHASE_OPTION
-Style20Path[PURCHASE_HIERARCHY_ATTRIBUTE] = SECONDARY_PURCHASE_HIERARCHY_OPTION
-Style20Path[SIZE_ATTRIBUTE] = MEDIUM_OPTION
-Style20Path [STATE_ATTRIBUTE] = DISABLED_OPTION
-Style20Path[ICON_ATTRIBUTE] = ON_OPTION 
+Style20Path [HIERARCHY_ATTRIBUTE]            = PURCHASE_OPTION
+Style20Path [PURCHASE_HIERARCHY_ATTRIBUTE]   = SECONDARY_PURCHASE_HIERARCHY_OPTION
+Style20Path [SIZE_ATTRIBUTE]                 = MEDIUM_OPTION
+Style20Path [STATE_ATTRIBUTE]                = DISABLED_OPTION
+Style20Path [ICON_ATTRIBUTE]                 = ON_OPTION 
 
 const styleWrapper20 = {}
 styleWrapper20[STYLE_OBJECT] = {...Style20}
@@ -1222,7 +1225,10 @@ height: "20px",
 background: "transparent",
 border: "none",
 ...SIZE_STYLES[LARGE_OPTION][ARROW_BUTTON_VARIANT][BUTTON_SUBCOMPONENT],
-
+paddingRight: "22px",
+}
+Style25[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
+paddingRight: "16px",
 }
 Style25[TEXT_SUBCOMPONENT] = {
 position: "static",
@@ -1239,14 +1245,14 @@ color: '#EEA786',
 }
 
 Style25[ICONARROW_CONTAINER_SUBCOMPONENT] = {
-transition: "0.5s all ease-in-out",
-color: "#EA5D1A",
-width: "20px",
-height: "20px",
-display: "flex",
+transition:     "0.5s all ease-in-out",
+color:          "#EA5D1A",
+width:          "20px",
+height:         "20px",
+display:        "flex",
 justifyContent: "center",
-alignItems: "center",
-margin: "0px 0px 0px 2px",
+alignItems:     "center",
+margin:         "0px 0px 0px 2px",
 
 }
 Style25[ICONARROW_CONTAINER_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
@@ -1286,6 +1292,10 @@ height: "20px",
 background: "transparent",
 border: "none",
 ...SIZE_STYLES[LARGE_OPTION][ARROW_BUTTON_ICON_VARIANT][BUTTON_SUBCOMPONENT],
+paddingRight: "22px",
+}
+Style26[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
+paddingRight: "16px",
 }
 Style26[TEXT_SUBCOMPONENT] = {
 position: "static",
@@ -1480,12 +1490,15 @@ Style29 [BUTTON_SUBCOMPONENT] = {
 transition: "0.5s all ease-in-out",
 boxShadow: "inset 0 0 0 2px transparent",
 display: "flex",
-justifyContent: "center",
 alignItems: "center",
 height: "20px", 
 background: "transparent",
 border: "none",
-...SIZE_STYLES[MEDIUM_OPTION][ARROW_BUTTON_VARIANT][BUTTON_SUBCOMPONENT]
+...SIZE_STYLES[MEDIUM_OPTION][ARROW_BUTTON_VARIANT][BUTTON_SUBCOMPONENT],
+paddingRight: "22px",
+}
+Style29[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
+paddingRight: "16px",
 }
 Style29[TEXT_SUBCOMPONENT] = {
 position: "static",
@@ -1541,15 +1554,15 @@ Style30 [BUTTON_SUBCOMPONENT] = {
 transition: "0.5s all ease-in-out",
 boxShadow: "inset 0 0 0 2px transparent",
 display: "flex",
-justifyContent: "center",
 alignItems: "center",
 height: "20px", 
 background: "transparent",
 border: "none",
-...SIZE_STYLES[MEDIUM_OPTION][ARROW_BUTTON_ICON_VARIANT][BUTTON_SUBCOMPONENT]
+...SIZE_STYLES[MEDIUM_OPTION][ARROW_BUTTON_ICON_VARIANT][BUTTON_SUBCOMPONENT],
+paddingRight: "22px",
 }
 Style30[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
-width: "152px",
+paddingRight: "16px",
 }
 Style30[TEXT_SUBCOMPONENT] = {
 position: "static",
@@ -1622,7 +1635,6 @@ Style31 [BUTTON_SUBCOMPONENT] = {
 transition: "0.5s all ease-in-out",
 boxShadow: "inset 0 0 0 2px transparent",
 display: "flex",
-justifyContent: "center",
 alignItems: "center",
 height: "20px", 
 background: "transparent",
@@ -1675,7 +1687,6 @@ Style32 [BUTTON_SUBCOMPONENT] = {
 transition: "0.5s all ease-in-out",
 boxShadow: "inset 0 0 0 2px transparent",
 display: "flex",
-justifyContent: "center",
 alignItems: "center",
 height: "20px", 
 background: "transparent",
