@@ -30,12 +30,12 @@ class vanillaButton extends HTMLElement {
         if (this.getElementsByTagName('button').length>0) 
         {
             buttonOrAnchor.pop()
-            buttonOrAnchor.push(this.getElementsByTagName('button')[0].cloneNode(true))
+            buttonOrAnchor.push(this.getElementsByTagName('button')[0])
         }
         else if (this.getElementsByTagName('a').length>0) 
         {
             buttonOrAnchor.pop()
-            buttonOrAnchor.push(this.getElementsByTagName('a')[0].cloneNode(true))
+            buttonOrAnchor.push(this.getElementsByTagName('a')[0])
         }
         const attributes = {}
         ATTRIBUTES.forEach((ATTRIBUTE)=>{ 
@@ -53,6 +53,10 @@ class vanillaButton extends HTMLElement {
         
         attributes[STYLE_KEY] = stylesKeys[STYLE_KEY]
         const button = COMPONENTS[stylesKeys[COMPONENT_VARIANT_KEY]] (attributes,buttonOrAnchor)
+        button.onclick = () => {
+            buttonOrAnchor[0].click()
+
+        }
         //if (this.shadow.children.length === 0) this.shadow.appendChild(button)
         const slotContainer = document.createElement('div')
         slotContainer.style.display = 'none'

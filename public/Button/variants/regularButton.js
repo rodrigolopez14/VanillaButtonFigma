@@ -8,14 +8,9 @@ import {setStyle, processStyle} from "../styles/index.js"
 export const regularButton = function (attributes,elementToAppend)
 {
     if (elementToAppend[0].textContent) attributes[CHILDREN_ATTRIBUTE] = elementToAppend[0].textContent
-    const button = elementToAppend[0]
-    while (button.hasChildNodes()) 
-    {
-            button.removeChild(button.firstChild);
-    }
+    const button = document.createElement('div')
     const styleKey = attributes[STYLE_KEY]
     const styles = setStyle(styleKey)
-    
     const stylesProccessedButton = processStyle(button,styles[BUTTON_SUBCOMPONENT])
     const onMouseOutButtonStyles = stylesProccessedButton[DEFAULT_EVENT]
     const onMouseOverButtonStyles = stylesProccessedButton[HOVER_BUTTON_EVENT]

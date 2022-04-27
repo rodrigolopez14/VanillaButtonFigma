@@ -19,6 +19,7 @@ maxWidth: "670px",
 minWidth: "132px",
 width: "fit-content",
 boxSizing: "border-box",
+cursor: "pointer",
 }
 SIZE_STYLES[LARGE_OPTION][REGULAR_BUTTON_VARIANT][TEXT_SUBCOMPONENT] = {
 height: "20px",
@@ -36,6 +37,7 @@ maxWidth: "951px",
 minWidth: "212px",
 width: "fit-content",
 boxSizing: "border-box",
+cursor: "pointer",
 }
 SIZE_STYLES[MEDIUM_OPTION][REGULAR_BUTTON_VARIANT][TEXT_SUBCOMPONENT] = {
 height: "16px",
@@ -53,6 +55,7 @@ maxWidth: "731px",
 minWidth: "136px",
 width: "fit-content",
 boxSizing: "border-box",
+cursor: "pointer",
 }
 SIZE_STYLES[SMALL_OPTION][REGULAR_BUTTON_VARIANT][TEXT_SUBCOMPONENT] = {
 height: "16px",
@@ -69,6 +72,7 @@ maxWidth: "670px",
 minWidth: "132px",
 width: "fit-content",
 boxSizing: "border-box",
+cursor: "pointer",
 }
 SIZE_STYLES[LARGE_OPTION][REGULAR_BUTTON_ICON_VARIANT][TEXT_SUBCOMPONENT] = {
 height: "20px",
@@ -85,6 +89,7 @@ maxWidth: "951px",
 minWidth: "212px",
 width: "fit-content",
 boxSizing: "border-box",
+cursor: "pointer",
 }
 SIZE_STYLES[MEDIUM_OPTION][REGULAR_BUTTON_ICON_VARIANT][TEXT_SUBCOMPONENT] = {
 height: "16px",
@@ -101,6 +106,7 @@ maxWidth: "731px",
 minWidth: "136px",
 width: "fit-content",
 boxSizing: "border-box",
+cursor: "pointer",
 }
 SIZE_STYLES[SMALL_OPTION][REGULAR_BUTTON_ICON_VARIANT][TEXT_SUBCOMPONENT] = {
 height: "16px",
@@ -117,6 +123,7 @@ maxWidth: "670px",
 minWidth: "132px",
 width: "fit-content",
 boxSizing: "border-box",
+cursor: "pointer",
 }
 SIZE_STYLES[LARGE_OPTION][ARROW_BUTTON_VARIANT][TEXT_SUBCOMPONENT] = {
 height: "20px",
@@ -132,6 +139,7 @@ maxWidth: "951px",
 minWidth: "212px",
 width: "fit-content",
 boxSizing: "border-box",
+cursor: "pointer",
 }
 SIZE_STYLES[MEDIUM_OPTION][ARROW_BUTTON_VARIANT][TEXT_SUBCOMPONENT] = {
 height: "16px",
@@ -147,6 +155,7 @@ maxWidth: "731px",
 minWidth: "136px",
 width: "fit-content",
 boxSizing: "border-box",
+cursor: "pointer",
 }
 SIZE_STYLES[SMALL_OPTION][ARROW_BUTTON_VARIANT][TEXT_SUBCOMPONENT] = {
 height: "16px",
@@ -162,6 +171,7 @@ maxWidth: "670px",
 minWidth: "132px",
 width: "fit-content",
 boxSizing: "border-box",
+cursor: "pointer",
 }
 SIZE_STYLES[LARGE_OPTION][ARROW_BUTTON_ICON_VARIANT][TEXT_SUBCOMPONENT] = {
 height: "20px",
@@ -177,6 +187,7 @@ maxWidth: "951px",
 minWidth: "212px",
 width: "fit-content",
 boxSizing: "border-box",
+cursor: "pointer",
 }
 SIZE_STYLES[MEDIUM_OPTION][ARROW_BUTTON_ICON_VARIANT][TEXT_SUBCOMPONENT] = {
 height: "16px",
@@ -192,6 +203,7 @@ maxWidth: "731px",
 minWidth: "136px",
 width: "fit-content",
 boxSizing: "border-box",
+cursor: "pointer",
 }
 SIZE_STYLES[SMALL_OPTION][ARROW_BUTTON_ICON_VARIANT][TEXT_SUBCOMPONENT] = {
 height: "16px",
