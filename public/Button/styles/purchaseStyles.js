@@ -631,11 +631,13 @@ border: "1px solid #EA5D1A",
 borderRadius: "2px",
 boxShadow: "none",
 opacity: "1.0",
-...SIZE_STYLES[LARGE_OPTION][REGULAR_BUTTON_VARIANT][BUTTON_SUBCOMPONENT]
+...SIZE_STYLES[LARGE_OPTION][REGULAR_BUTTON_VARIANT][BUTTON_SUBCOMPONENT],
+padding: "0px 17px",
 
 }
 Style13[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
 border: "2px solid #EA5D1A",
+padding: "0px 16px",
 }
 Style13[TEXT_SUBCOMPONENT] = {
 position: "static",
@@ -678,10 +680,12 @@ borderRadius: "2px",
 boxShadow: "none",
 boxSizing: "border-box",
 opacity: "1.0",
-...SIZE_STYLES[LARGE_OPTION][REGULAR_BUTTON_ICON_VARIANT][BUTTON_SUBCOMPONENT]
+...SIZE_STYLES[LARGE_OPTION][REGULAR_BUTTON_ICON_VARIANT][BUTTON_SUBCOMPONENT],
+padding: "0px 17px",
 
 }
 Style14[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
+padding: "0px 16px",
 border: "2px solid #EA5D1A",
 }
 Style14[TEXT_SUBCOMPONENT] = {
@@ -827,11 +831,13 @@ border: "1px solid #EA5D1A",
 borderRadius: "2px",
 boxShadow: "none",
 opacity: "1",
-...SIZE_STYLES[MEDIUM_OPTION][REGULAR_BUTTON_VARIANT][BUTTON_SUBCOMPONENT]
+...SIZE_STYLES[MEDIUM_OPTION][REGULAR_BUTTON_VARIANT][BUTTON_SUBCOMPONENT],
+padding: "0px 17px",
 
 }
 Style17[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
 border: "2px solid #EA5D1A",
+padding: "0px 16px",
 }
 Style17[TEXT_SUBCOMPONENT] = {
 position: "static",
@@ -872,10 +878,12 @@ border: "1px solid #EA5D1A",
 borderRadius: "2px",
 boxShadow: "none",
 opacity: "1",
-...SIZE_STYLES[MEDIUM_OPTION][REGULAR_BUTTON_ICON_VARIANT][BUTTON_SUBCOMPONENT]
+...SIZE_STYLES[MEDIUM_OPTION][REGULAR_BUTTON_ICON_VARIANT][BUTTON_SUBCOMPONENT],
+padding: "0px 17px",
 }
 Style18[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
 border: "2px solid #EA5D1A",
+padding: "0px 16px",
 }
 Style18[TEXT_SUBCOMPONENT] = {
 position: "static",
@@ -1022,10 +1030,12 @@ border: "1px solid #EA5D1A",
 borderRadius: "2px",
 boxShadow: "none",
 opacity: "1",
-...SIZE_STYLES[SMALL_OPTION][REGULAR_BUTTON_VARIANT][BUTTON_SUBCOMPONENT]
+...SIZE_STYLES[SMALL_OPTION][REGULAR_BUTTON_VARIANT][BUTTON_SUBCOMPONENT],
+padding: "0px 17px",
 }
 Style21[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
 border: "2px solid #EA5D1A",
+padding: "0px 16px",
 }
 Style21[TEXT_SUBCOMPONENT] = {
 position: "static",
@@ -1066,10 +1076,12 @@ border: "1px solid #EA5D1A",
 borderRadius: "2px",
 boxShadow: "none",
 opacity: "1",
-...SIZE_STYLES[SMALL_OPTION][REGULAR_BUTTON_ICON_VARIANT][BUTTON_SUBCOMPONENT]
+...SIZE_STYLES[SMALL_OPTION][REGULAR_BUTTON_ICON_VARIANT][BUTTON_SUBCOMPONENT],
+padding: "0px 17px",
 }
 Style22[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
 border: "2px solid #EA5D1A",
+padding: "0px 16px",
 }
 Style22[TEXT_SUBCOMPONENT] = {
 position: "static",
