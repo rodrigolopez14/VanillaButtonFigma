@@ -22,6 +22,7 @@ class vanillaButton extends HTMLElement {
     connectedCallback() {
         
         const buttonOrAnchor = []
+        //CREATION OF A DEFAULT BUTTON IF NOTHING IS APPENDED 
         const buttonDefault = document.createElement('button')
         const textNode = document.createTextNode('Call to action')
         buttonDefault.appendChild(textNode)
@@ -37,6 +38,10 @@ class vanillaButton extends HTMLElement {
             buttonOrAnchor.pop()
             buttonOrAnchor.push(this.getElementsByTagName('a')[0])
         }
+        const slotContainer = document.createElement('div')
+        slotContainer.style.display = 'none'
+        const slotSubComponent = document.createElement('slot')
+
         const attributes = {}
         ATTRIBUTES.forEach((ATTRIBUTE)=>{ 
             if (this.getAttribute(ATTRIBUTE.attributeName)) attributes[ATTRIBUTE.attributeName] = ATTRIBUTE.proccessValue(this.getAttribute(ATTRIBUTE.attributeName))
@@ -46,26 +51,18 @@ class vanillaButton extends HTMLElement {
         delete keysAttributes[CHILDREN_ATTRIBUTE];
         delete keysAttributes[ONCLICK_ATTRIBUTE];
         delete keysAttributes[ICON_SELECTION_ATTRIBUTE];
-
         if (attributes[ICON_SELECTION_ATTRIBUTE] === ICON_DEFAULT) keysAttributes[ICON_ATTRIBUTE] = OFF_OPTION
         else keysAttributes[ICON_ATTRIBUTE] = ON_OPTION
         const stylesKeys = setKeys(keysAttributes)
         
         attributes[STYLE_KEY] = stylesKeys[STYLE_KEY]
-        const button = COMPONENTS[stylesKeys[COMPONENT_VARIANT_KEY]] (attributes,buttonOrAnchor)
-        button.onclick = () => {
-            buttonOrAnchor[0].click()
-
-        }
-        //if (this.shadow.children.length === 0) this.shadow.appendChild(button)
-        const slotContainer = document.createElement('div')
-        slotContainer.style.display = 'none'
-        
-        const slotSubComponent = document.createElement('slot')
-        slotContainer.appendChild(slotSubComponent)
+        attributes[CHILDREN_ATTRIBUTE] = buttonOrAnchor[0].textContent
+        const button = COMPONENTS[stylesKeys[COMPONENT_VARIANT_KEY]] (attributes)
+        button.onclick = () => {buttonOrAnchor[0].click()}
+       
         this.shadow.appendChild(slotContainer)
-        this.shadow.appendChild(button)
-        
+            slotContainer.appendChild(slotSubComponent)
+        this.shadow.appendChild(button) 
       }
 }
 
