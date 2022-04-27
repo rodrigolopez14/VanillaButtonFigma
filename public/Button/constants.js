@@ -13,7 +13,6 @@ export const ONCLICK_ATTRIBUTE = "data-onClick";
 export const PRIMARY_OPTION = "primary";
 export const SECONDARY_OPTION = "secondary";
 export const TERTIARY_OPTION = "tertiary";
-export const GHOST_OPTION = "ghost";
 export const PURCHASE_OPTION = "purchase";
 export const HYPERLINK_OPTION = "hyperlink";
 //device options 
@@ -98,12 +97,7 @@ ATTRIBUTES.push({
     proccessValue: (value) => {return   value}
 
 })
-ATTRIBUTES.push({
-    attributeName: ONCLICK_ATTRIBUTE,
-    defaultValue: ()=>{},
-    proccessValue: (value) => {return  Function("return " + value)()}
 
-})
 
 export {ATTRIBUTES};
 

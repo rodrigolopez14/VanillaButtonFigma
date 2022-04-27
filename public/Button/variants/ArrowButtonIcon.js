@@ -1,7 +1,6 @@
 
 import {ICON_SELECTION_ATTRIBUTE,
-        CHILDREN_ATTRIBUTE,
-        ONCLICK_ATTRIBUTE} from "../constants.js"
+        CHILDREN_ATTRIBUTE} from "../constants.js"
 import {DEFAULT_EVENT, HOVER_BUTTON_EVENT} from "../constants.js"
 import {BUTTON_SUBCOMPONENT, TEXT_SUBCOMPONENT, ICON_CONTAINER_SUBCOMPONENT, ICON_SUBCOMPONENT,ICONARROW_SUBCOMPONENT, ICONARROW_CONTAINER_SUBCOMPONENT} from "../constants.js"
 import {setStyle, processStyle} from "../styles/index.js"

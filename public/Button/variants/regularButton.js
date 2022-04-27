@@ -1,7 +1,6 @@
 
 import { STYLE_KEY } from "../../commonMethodsAndConstants/Styles/commonConstants.js"
-import {CHILDREN_ATTRIBUTE,
-        ONCLICK_ATTRIBUTE} from "../constants.js"
+import {CHILDREN_ATTRIBUTE} from "../constants.js"
 import {DEFAULT_EVENT, HOVER_BUTTON_EVENT} from "../constants.js"
 import {BUTTON_SUBCOMPONENT, TEXT_SUBCOMPONENT} from "../constants.js"
 import {setStyle, processStyle} from "../styles/index.js"
