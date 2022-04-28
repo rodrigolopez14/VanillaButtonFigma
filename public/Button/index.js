@@ -2,6 +2,7 @@ import {ICON_ATTRIBUTE,
         ICON_SELECTION_ATTRIBUTE,
         CHILDREN_ATTRIBUTE,
         ONCLICK_ATTRIBUTE,
+        SIZE_ATTRIBUTE
         } from "./constants.js"
 import {ON_OPTION,
         OFF_OPTION,
@@ -47,12 +48,16 @@ class vanillaButton extends HTMLElement {
             if (this.getAttribute(ATTRIBUTE.attributeName)) attributes[ATTRIBUTE.attributeName] = ATTRIBUTE.proccessValue(this.getAttribute(ATTRIBUTE.attributeName))
             else attributes[ATTRIBUTE.attributeName] = ATTRIBUTE.defaultValue
                         })
+        if (!this.getAttribute(SIZE_ATTRIBUTE)) this.setAttribute(SIZE_ATTRIBUTE,attributes[SIZE_ATTRIBUTE])
+        
         const keysAttributes = {...attributes}
         delete keysAttributes[CHILDREN_ATTRIBUTE];
         delete keysAttributes[ONCLICK_ATTRIBUTE];
         delete keysAttributes[ICON_SELECTION_ATTRIBUTE];
         if (attributes[ICON_SELECTION_ATTRIBUTE] === ICON_DEFAULT) keysAttributes[ICON_ATTRIBUTE] = OFF_OPTION
         else keysAttributes[ICON_ATTRIBUTE] = ON_OPTION
+        
+        
         const stylesKeys = setKeys(keysAttributes)
         
         attributes[STYLE_KEY] = stylesKeys[STYLE_KEY]

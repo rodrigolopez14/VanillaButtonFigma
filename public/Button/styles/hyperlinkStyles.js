@@ -2,7 +2,8 @@ import {HIERARCHY_ATTRIBUTE,
     SIZE_ATTRIBUTE, 
     COLOR_ATTRIBUTE,
     LINE_ATTRIBUTE,
-    ICON_ATTRIBUTE} from "../constants.js"
+    ICON_ATTRIBUTE,
+    SMALL_OPTION} from "../constants.js"
 import {HYPERLINK_OPTION,
     LARGE_OPTION,
     MEDIUM_OPTION,
@@ -361,9 +362,62 @@ Style8Path [LINE_ATTRIBUTE] = PARAGRAPH_OPTION
 Style8Path [ICON_ATTRIBUTE] = OFF_OPTION
 
 const styleWrapper8 = {}
-styleWrapper8[STYLE_OBJECT] = {...Style8}
-styleWrapper8[COMPONENT_VARIANT_KEY] = REGULAR_BUTTON_VARIANT
-styleWrapper8[PATH_STYLE] = Style8Path
+styleWrapper8[STYLE_OBJECT]             = {...Style8}
+styleWrapper8[COMPONENT_VARIANT_KEY]    = REGULAR_BUTTON_VARIANT
+styleWrapper8[PATH_STYLE]               = Style8Path
 hyperlinkStyles.push(styleWrapper8)
+
+// THERE'S NO SPECIFIC STYLE FOR SMALL_OPTION SO WE COPY THE SAME STYLES AS MEDIUM_OPTION
+const Style9Path = {}
+Style9Path[HIERARCHY_ATTRIBUTE] = HYPERLINK_OPTION
+Style9Path[SIZE_ATTRIBUTE]      = SMALL_OPTION
+Style9Path[COLOR_ATTRIBUTE]     = BLACK_OPTION
+Style9Path [LINE_ATTRIBUTE]     = TITLE_OPTION
+Style9Path [ICON_ATTRIBUTE]     = OFF_OPTION
+
+const styleWrapper9 = {}
+styleWrapper9[STYLE_OBJECT]             = {...Style5}
+styleWrapper9[COMPONENT_VARIANT_KEY]    = REGULAR_BUTTON_VARIANT
+styleWrapper9[PATH_STYLE]               = Style9Path
+hyperlinkStyles.push(styleWrapper9)
+
+const Style10Path = {}
+Style10Path[HIERARCHY_ATTRIBUTE]    = HYPERLINK_OPTION
+Style10Path[SIZE_ATTRIBUTE]         = SMALL_OPTION
+Style10Path[COLOR_ATTRIBUTE]        = BLACK_OPTION
+Style10Path [LINE_ATTRIBUTE]        = PARAGRAPH_OPTION
+Style10Path [ICON_ATTRIBUTE]        = OFF_OPTION
+
+const styleWrapper10 = {}
+styleWrapper10[STYLE_OBJECT]            = {...Style6}
+styleWrapper10[COMPONENT_VARIANT_KEY]   = REGULAR_BUTTON_VARIANT
+styleWrapper10[PATH_STYLE]              = Style10Path
+hyperlinkStyles.push(styleWrapper10)
+
+const Style11Path = {}
+Style11Path[HIERARCHY_ATTRIBUTE] = HYPERLINK_OPTION
+Style11Path[SIZE_ATTRIBUTE] = SMALL_OPTION
+Style11Path[COLOR_ATTRIBUTE] = WHITE_OPTION
+Style11Path [LINE_ATTRIBUTE] = TITLE_OPTION
+Style11Path [ICON_ATTRIBUTE] = OFF_OPTION
+
+const styleWrapper11 = {}
+styleWrapper11[STYLE_OBJECT] = {...Style7}
+styleWrapper11[COMPONENT_VARIANT_KEY] = REGULAR_BUTTON_VARIANT
+styleWrapper11[PATH_STYLE] = Style11Path
+hyperlinkStyles.push(styleWrapper11)
+
+const Style12Path = {}
+Style12Path[HIERARCHY_ATTRIBUTE] = HYPERLINK_OPTION
+Style12Path[SIZE_ATTRIBUTE] = SMALL_OPTION
+Style12Path[COLOR_ATTRIBUTE] = WHITE_OPTION
+Style12Path [LINE_ATTRIBUTE] = PARAGRAPH_OPTION
+Style12Path [ICON_ATTRIBUTE] = OFF_OPTION
+
+const styleWrapper12 = {}
+styleWrapper12[STYLE_OBJECT] = {...Style8}
+styleWrapper12[COMPONENT_VARIANT_KEY] = REGULAR_BUTTON_VARIANT
+styleWrapper12[PATH_STYLE] = Style12Path
+hyperlinkStyles.push(styleWrapper12)
 
 export {hyperlinkStyles}
