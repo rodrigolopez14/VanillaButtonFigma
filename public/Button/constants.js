@@ -40,7 +40,7 @@ export const CHILDREN_DEFAULT_OPTION = "Call to action";
 //icon selection default value
 export const ICON_DEFAULT = "nothing"
 
-// VIEWPORTS DIMENSIONS ROOF
+// VIEWPORTS CEIL DIMENSIONS
 export const MAX_WIDTH_SMALL_OPTION = 764
 export const MAX_WIDTH_MEDIUM_OPTION = 1016
 
