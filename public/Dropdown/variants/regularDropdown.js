@@ -236,13 +236,14 @@ connectedCallback() {
         for (let entry of entries) {
           if(entry.contentBoxSize) {
             const contentBoxSize = Array.isArray(entry.contentBoxSize) ? entry.contentBoxSize[0] : entry.contentBoxSize;
+            console.log(contentBoxSize.blockSize)
             if (contentBoxSize.blockSize=== (parseInt(this.styles[CONTAINER_WRAPPER].height.slice(0, -2))-2)) wrapper.style.zIndex = "initial"
             else if (contentBoxSize.blockSize===(totalHeight - 2)) wrapper.style.zIndex = "1"
           }
         }
       });
     resizeObserver.observe(wrapper);
-
+      console.log(resizeObserver)
     // Stating initial attributes for the component
     thisComponent.setAttribute(DROPDOWN_VALUE_ATTRIBUTE, attributes[DROPDOWN_VALUE_ATTRIBUTE])
     thisComponent.setAttribute(STATE_ATTRIBUTE, attributes[STATE_ATTRIBUTE])

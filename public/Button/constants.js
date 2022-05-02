@@ -1,3 +1,5 @@
+import {MAX_WIDTH_MEDIUM_OPTION, MAX_WIDTH_SMALL_OPTION} from '../commonMethodsAndConstants/Styles/commonConstants.js'
+
 // attributeNames
 export const HIERARCHY_ATTRIBUTE = "data-hierarchy";
 export const SIZE_ATTRIBUTE = "data-size";
@@ -39,11 +41,6 @@ export const TERTIARY_PURCHASE_HIERARCHY_OPTION = "tertiary";
 export const CHILDREN_DEFAULT_OPTION = "Call to action";
 //icon selection default value
 export const ICON_DEFAULT = "nothing"
-
-// VIEWPORTS CEIL DIMENSIONS
-export const MAX_WIDTH_SMALL_OPTION = 764
-export const MAX_WIDTH_MEDIUM_OPTION = 1016
-
 
 const ATTRIBUTES = [];
 ATTRIBUTES.push({
