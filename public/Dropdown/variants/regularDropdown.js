@@ -255,12 +255,9 @@ if (customElements.get(regularDropdown) === undefined) customElements.define(reg
 export const regularDropdownSeat = function (attributes,parentElement)
 {
     const dropdownList = []
-    if (parentElement.getElementsByTagName('select').length>0)  dropdownList.push(parentElement.getElementsByTagName('select')[0].cloneNode(true))
+    if (parentElement.getElementsByTagName('select').length>0)  dropdownList.push(parentElement.getElementsByTagName('select')[0])
     else {console.log("WARNING FOR THIS COMPONENT AT LEAST ONE CHILD NODE SHOULD HAVE SELECT TAG")}
-    while (parentElement.hasChildNodes()) 
-    {
-            parentElement.removeChild(parentElement.firstChild);
-    }
+   
     //Parsing Options List
     const options = dropdownList[0].getElementsByTagName('option')
     const optionsObject = []

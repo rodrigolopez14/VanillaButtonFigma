@@ -210,12 +210,8 @@ export const iconTextInputSeat = function (attributes,parentElement)
     {
         if (contentToAppend[inputElement] = parentElement.getElementsByTagName('input')[0].type === 'text')
         {
-            contentToAppend[inputElement] = parentElement.getElementsByTagName('input')[0].cloneNode(true)
+            contentToAppend[inputElement] = parentElement.getElementsByTagName('input')[0]
         }
-    }
-    while (parentElement.hasChildNodes()) 
-    {
-            parentElement.removeChild(parentElement.firstChild);
     }
 const customTextInput = document.createElement(regularTextInput)
 customTextInput.setAttribute(TEMPORARY_ATTRIBUTE,JSON.stringify(attributes))

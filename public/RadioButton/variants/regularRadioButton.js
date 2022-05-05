@@ -122,12 +122,9 @@ export const regularRadioButtonComponent = function (attributes, parentElement)
     const contentToAppend = {}
     const labelElement = 'labelElement'
     const inputElement = 'inputElement'
-    if (parentElement.getElementsByTagName('label').length>0)  contentToAppend[labelElement] = parentElement.getElementsByTagName('label')[0].cloneNode(true)
-    if (parentElement.getElementsByTagName('input').length>0)  contentToAppend[inputElement] = parentElement.getElementsByTagName('input')[0].cloneNode(true)
-    while (parentElement.hasChildNodes()) 
-    {
-            parentElement.removeChild(parentElement.firstChild);
-    }
+    if (parentElement.getElementsByTagName('label').length>0)  contentToAppend[labelElement] = parentElement.getElementsByTagName('label')[0]
+    if (parentElement.getElementsByTagName('input').length>0)  contentToAppend[inputElement] = parentElement.getElementsByTagName('input')[0]
+  
     attributes[LABEL_ATTRIBUTE] = contentToAppend[labelElement].textContent
     const customRadioButton = document.createElement(regularRB)
     customRadioButton.setAttribute(TEMPORARY_ATTRIBUTE,JSON.stringify(attributes))
