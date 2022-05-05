@@ -28,6 +28,7 @@ class radioButton extends HTMLElement {
         attributes[STYLE_KEY] = stylesKeys[STYLE_KEY]
         const radioButtonComponent = COMPONENTS[stylesKeys[COMPONENT_VARIANT_KEY]] (attributes, WebComponent)
         this.appendChild(radioButtonComponent)
+        this.style.display = 'contents' 
       }
 }
 

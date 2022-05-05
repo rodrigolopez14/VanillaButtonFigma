@@ -12,6 +12,12 @@ class seatCheckbox extends HTMLElement {
     {
         super();        
     }
+    static get observedAttributes() { return [STATE_ATTRIBUTE]; }
+    attributeChangedCallback() 
+    {
+        const state = this.getAttribute(STATE_ATTRIBUTE)
+        if (this.children.length>0) this.children[0].setAttribute(STATE_ATTRIBUTE,state)
+    }
     connectedCallback() {
         const WebComponent = this
         const attributes = {}
@@ -24,6 +30,7 @@ class seatCheckbox extends HTMLElement {
         keysAttributes[SIZE_ATTRIBUTE] = attributes[SIZE_ATTRIBUTE]
         keysAttributes[ENABLE_ATTRIBUTE] = attributes[ENABLE_ATTRIBUTE]
         keysAttributes[STATE_ATTRIBUTE] = attributes[STATE_ATTRIBUTE]
+         
         if (this.getElementsByTagName('input').length>0)
         {
             if (this.getElementsByTagName('input')[0].getAttribute('disabled') === 'true') 
@@ -41,6 +48,7 @@ class seatCheckbox extends HTMLElement {
         attributes[STYLE_KEY] = stylesKeys[STYLE_KEY]
         const checkboxComponent = COMPONENTS[stylesKeys[COMPONENT_VARIANT_KEY]] (attributes, WebComponent)
         this.appendChild(checkboxComponent)
+        this.style.display = 'contents'
       }
 }
 

@@ -35,6 +35,7 @@ class SeatDropdown extends HTMLElement {
         
         
         this.appendChild(dropdown)
+        this.style.display = 'contents' 
       }
 }
 if (customElements.get(NAME_OF_COMPONENT) === undefined) customElements.define(NAME_OF_COMPONENT, class extends SeatDropdown {});

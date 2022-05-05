@@ -68,6 +68,7 @@ class vanillaButton extends HTMLElement {
         this.shadow.appendChild(slotContainer)
             slotContainer.appendChild(slotSubComponent)
         this.shadow.appendChild(button) 
+        this.style.display = 'contents'
       }
 }
 

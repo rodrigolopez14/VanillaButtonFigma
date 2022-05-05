@@ -2,6 +2,8 @@ import {MAX_WIDTH_MEDIUM_OPTION} from '../commonMethodsAndConstants/Styles/commo
 export const NAME_OF_COMPONENT = 'seat-checkbox'
 //Variants keys
 export const REGULAR_CHECKBOX_VARIANT = 'regular checkbox'
+//Attribute for slot 
+export const STATE_SLOT_ATTRIBUTE = 'data-state-web-component'
 
 //Attributes names
 export const COLOR_ATTRIBUTE = "data-color"
@@ -10,10 +12,6 @@ export const STATE_ATTRIBUTE = "data-state"
 export const ENABLE_ATTRIBUTE = "data-enable"
 export const LABEL_ATTRIBUTE = "data-label"
 export const ERROR_MESSAGE_ATTRIBUTE = "data-error-message";
-//SVG attributes
-export const SVG_ATTRIBUTES = "svg attributes"
-export const SVG_STYLES = "svg styles"
-export const SVG_TYPE = "svg type"
 
 export const TEMPORARY_ATTRIBUTE = "data-temporary"
 //COLOR OPTIONS
@@ -74,10 +72,16 @@ export {ATTRIBUTES}
 // WRAPPER_SUBCOMPONENT
 // I----------->CHECKBOX_SUBCOMPONENT
 // I                I----------->CHECK_SUBCOMPONENT
-// I                I                   I----------->BACKGROUND_SVG_SUBCOMPONENT
-// I                I                   I----------->SUCCESS_SVG_SUBCOMPONENT
-// I                I----------->LABEL_SUBCOMPONENT
+// I                I                   I----------->CHECK_BCKGR_SUBCOMPONENT
+// I                I                                       I----------->ICON_CONTAINER_SUBCOMPONENT
+// I                I                                                               I----------->ICON_SUBCOMPONENT
+// I                I                                                                               I----------->SUCCESS_ICON_SUBCOMPONENT
+// I                I                                                                                       |
+// I                I                                                                                       |--->MINUS_ICON_SUBCOMPONENT
+// I                I----------->LABEL_SUBCOMPONENT                                                         
+// I
 // I----------->ERROR_SUBCOMPONENT
+//                  I----------->ERROR_LABEL
 // subcomponents of component
 export const CONTAINER_SLOT_WRAPPER = 'slot wrapper'
 export const LABEL_SLOT = 'labelSlot'
@@ -85,11 +89,16 @@ export const INPUT_SLOT = 'inputSlot'
 export const WRAPPER_SUBCOMPONENT = 'wrapper'
 export const CHECKBOX_SUBCOMPONENT = 'checkbox subcomponent'
 export const CHECK_SUBCOMPONENT = 'check subcomponent'
-export const BACKGROUND_SVG_SUBCOMPONENT = 'background subcomponent'
-export const SUCCESS_SVG_SUBCOMPONENT = 'success subcomponent'
+export const CHECK_BCKGR_SUBCOMPONENT = 'check background subcomponent'
+export const ICON_CONTAINER_SUBCOMPONENT = 'icon container'
+export const ICON_SUBCOMPONENT = 'icon subcomponent'
+export const SUCCESS_ICON_SUBCOMPONENT = 'success icon subcomponent'
+export const MINUS_ICON_SUBCOMPONENT = 'minus icon subcomponent'
 export const LABEL_SUBCOMPONENT = 'label subcomponent'
 export const ERROR_SUBCOMPONENT = 'error subcomponent'
+export const ERROR_LABEL = 'error label'
 
+//Events
 export const DEFAULT_EVENT = 'default'
 export const SELECTED_EVENT = 'selection'
 export const ERROR_EVENT = 'error'

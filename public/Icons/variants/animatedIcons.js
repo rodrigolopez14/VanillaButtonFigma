@@ -55,7 +55,8 @@ export const animatedIconFunction = function  (attributes)
                     
     svgElem.appendChild(lineargradient);
     svgElem.appendChild(path)
-
+    svgElem.style.display ="flex"
+    svgElem.style.alignItems = "center"
     return svgElem;
 }
 

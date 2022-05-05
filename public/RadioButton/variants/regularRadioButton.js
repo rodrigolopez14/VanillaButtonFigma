@@ -110,6 +110,7 @@ class regRButton extends HTMLElement {
         // Stating initial attributes for the component
 
         this[NORMAL_OPTION].forEach( (style)=>  style())
+        this.style.display = 'contents' 
     }
     }
     

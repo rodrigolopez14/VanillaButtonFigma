@@ -1,4 +1,20 @@
+// CONTAINER_SLOT_WRAPPER
+// I----------->INPUT_SLOT
+// I----------->LABEL_SLOT
 
+// WRAPPER_SUBCOMPONENT
+// I----------->CHECKBOX_SUBCOMPONENT
+// I                I----------->CHECK_SUBCOMPONENT
+// I                I                   I----------->CHECK_BCKGR_SUBCOMPONENT
+// I                I                                       I----------->ICON_CONTAINER_SUBCOMPONENT
+// I                I                                                               I----------->ICON_SUBCOMPONENT
+// I                I                                                                               I----------->SUCCESS_ICON_SUBCOMPONENT
+// I                I                                                                                       |
+// I                I                                                                                       |--->MINUS_ICON_SUBCOMPONENT
+// I                I----------->LABEL_SUBCOMPONENT                                                         
+// I
+// I----------->ERROR_SUBCOMPONENT
+//                  I----------->ERROR_LABEL
 
 import {CONTAINER_SLOT_WRAPPER,
         LABEL_SLOT,
@@ -6,14 +22,20 @@ import {CONTAINER_SLOT_WRAPPER,
         WRAPPER_SUBCOMPONENT,
         CHECKBOX_SUBCOMPONENT,
         CHECK_SUBCOMPONENT,
-        BACKGROUND_SVG_SUBCOMPONENT,
-        SUCCESS_SVG_SUBCOMPONENT,
+        CHECK_BCKGR_SUBCOMPONENT,
+        ICON_CONTAINER_SUBCOMPONENT,
+        ICON_SUBCOMPONENT,
+        SUCCESS_ICON_SUBCOMPONENT,
+        MINUS_ICON_SUBCOMPONENT,
         LABEL_SUBCOMPONENT,
         ERROR_SUBCOMPONENT,
+        ERROR_LABEL,
         ERROR_EVENT,
-        INDETERMINATED_EVENT} from "../constants.js"
-import {SVG_ATTRIBUTES, SVG_STYLES, SVG_TYPE} from "../constants.js"
-import {STATE_ATTRIBUTE, 
+        INDETERMINATED_EVENT,
+        ERROR_MESSAGE_ATTRIBUTE} from "../constants.js"
+
+import {STATE_SLOT_ATTRIBUTE,
+        STATE_ATTRIBUTE, 
         LABEL_ATTRIBUTE,
         ENABLE_ATTRIBUTE,
         TEMPORARY_ATTRIBUTE} from "../constants.js"
@@ -25,8 +47,12 @@ import {NORMAL_OPTION,
 import { DEFAULT_EVENT, SELECTED_EVENT } from "../constants.js"
 import {setStyle, processStyle} from "../styles/index.js"
 import {STYLE_KEY} from "../../commonMethodsAndConstants/Styles/commonConstants.js"
-
- 
+import {ICON_SELECTION_ATTRIBUTE as ICON_SELECTION_ATTRIBUTE_FOR_COMPONENT,
+        ICON_COLOR_ATTRIBUTE, 
+        ICON_HEIGHT_ATTRIBUTE,
+        ICON_WIDTH_ATTRIBUTE} from "../../Icons/constants.js"
+import {NAME_OF_COMPONENT as ICON} from "../../Icons/constants.js" 
+import {SUCCESS_ICON_ANIMATED_ICON_OPTION, MINUS_ICON_OPTION} from "../../Icons/constants.js"
 
 class regCheckbox extends HTMLElement {
     constructor()
@@ -74,20 +100,6 @@ class regCheckbox extends HTMLElement {
         this.pushingEvents(stylesProccessed)
         return subComponent;
     }
-    createSvgElement (svgSubComponent)  {
-        const svgType = this.styles[svgSubComponent][SVG_ATTRIBUTES][SVG_TYPE]
-        const svgAttributes = {...this.styles[svgSubComponent][SVG_ATTRIBUTES]}
-        delete svgAttributes[SVG_TYPE]
-        const keysAttributes = Object.keys(svgAttributes)
-        const xmlns = "http://www.w3.org/2000/svg";
-        const svgElem = document.createElementNS(xmlns, svgType);
-        keysAttributes.forEach(key=> {
-            svgElem.setAttributeNS(null, key, svgAttributes[key]);
-        })
-        const stylesSVG = processStyle(svgElem,this.styles[svgSubComponent][SVG_STYLES])
-        this.pushingEvents(stylesSVG)
-        return svgElem;
-    } 
     connectedCallback() {
         const thisComponent = this
         const attributes = JSON.parse(this.getAttribute(TEMPORARY_ATTRIBUTE))
@@ -101,19 +113,65 @@ class regCheckbox extends HTMLElement {
         const labelSlot = document.createElement('slot')
         labelSlot.setAttribute('name',LABEL_SLOT)
         const wrapper = this.creatingElement(WRAPPER_SUBCOMPONENT)
+        const checkbox = this.creatingElement(CHECKBOX_SUBCOMPONENT)
+        const check = this.creatingElement(CHECK_SUBCOMPONENT)
+        const checkBckgr = this.creatingElement(CHECK_BCKGR_SUBCOMPONENT)
+        const iconContainer = this.creatingElement(ICON_CONTAINER_SUBCOMPONENT)
+
+        const icon = document.createElement(ICON)
+        const stylesProccessedIcon= processStyle(icon,this.styles[ICON_SUBCOMPONENT])
+        this.pushingEvents(stylesProccessedIcon)
+
+        this[SELECTED_OPTION].push(()=> icon.setAttribute(ICON_SELECTION_ATTRIBUTE_FOR_COMPONENT, SUCCESS_ICON_ANIMATED_ICON_OPTION))
+        this[SELECTED_OPTION].push(()=> icon.setAttribute(ICON_COLOR_ATTRIBUTE, this.styles[SUCCESS_ICON_SUBCOMPONENT][ICON_COLOR_ATTRIBUTE]))
+        this[SELECTED_OPTION].push(()=> icon.setAttribute(ICON_HEIGHT_ATTRIBUTE, this.styles[SUCCESS_ICON_SUBCOMPONENT][ICON_HEIGHT_ATTRIBUTE]))
+        this[SELECTED_OPTION].push(()=> icon.setAttribute(ICON_WIDTH_ATTRIBUTE, this.styles[SUCCESS_ICON_SUBCOMPONENT][ICON_WIDTH_ATTRIBUTE]))
+
+
+        this[INDETERMINATED_OPTION].push(()=> icon.setAttribute(ICON_SELECTION_ATTRIBUTE_FOR_COMPONENT, MINUS_ICON_OPTION))
+        this[INDETERMINATED_OPTION].push(()=> icon.setAttribute(ICON_COLOR_ATTRIBUTE, this.styles[MINUS_ICON_SUBCOMPONENT][ICON_COLOR_ATTRIBUTE]))
+        this[INDETERMINATED_OPTION].push(()=> icon.setAttribute(ICON_HEIGHT_ATTRIBUTE, this.styles[MINUS_ICON_SUBCOMPONENT][ICON_HEIGHT_ATTRIBUTE]))
+        this[INDETERMINATED_OPTION].push(()=> icon.setAttribute(ICON_WIDTH_ATTRIBUTE, this.styles[MINUS_ICON_SUBCOMPONENT][ICON_WIDTH_ATTRIBUTE]))
+
+        
+        
+
         const label = this.creatingElement(LABEL_SUBCOMPONENT)
         const textNodeLabel = document.createTextNode(attributes[LABEL_ATTRIBUTE])
-
+        const error = this.creatingElement(ERROR_SUBCOMPONENT)
+        const errorLabel = this.creatingElement(ERROR_LABEL)
+        const errorNodeLabel = document.createTextNode(attributes[ERROR_MESSAGE_ATTRIBUTE])
         //Appending subcomponents with its respective parent
         this.shadow.appendChild(slotWrapper) 
             slotWrapper.appendChild(labelSlot)
             slotWrapper.appendChild(inputSlot) 
         this.shadow.appendChild(wrapper) 
-            wrapper.appendChild(label)
-                label.appendChild(textNodeLabel)
+            wrapper.appendChild(checkbox)
+                checkbox.appendChild(check)
+                        check.appendChild(checkBckgr)
+                            checkBckgr.appendChild(iconContainer)
+                                iconContainer.appendChild(icon)
+                checkbox.appendChild(label)
+                    label.appendChild(textNodeLabel)
+            wrapper.appendChild(error)
+                error.appendChild(errorLabel)
+                    errorLabel.appendChild(errorNodeLabel)
+                
         // Stating initial attributes for the component
 
+        if (attributes[ENABLE_ATTRIBUTE]=== ON_OPTION) document.addEventListener('click', function(event) {
+            const isClickInsideElement = thisComponent.contains(event.target);
+            if (isClickInsideElement) 
+            {
+                if (thisComponent.getAttribute(STATE_ATTRIBUTE) === SELECTED_OPTION) thisComponent.setAttribute(STATE_ATTRIBUTE, NORMAL_OPTION)
+                else thisComponent.setAttribute(STATE_ATTRIBUTE, SELECTED_OPTION)
+                 
+            }
+        });
+
         this[NORMAL_OPTION].forEach( (style)=>  style())
+
+        this.style.display = 'contents'
     }
     }
     
@@ -125,12 +183,9 @@ export const regularCheckboxComponent = function (attributes, parentElement)
     const contentToAppend = {}
     const labelElement = 'labelElement'
     const inputElement = 'inputElement'
-    if (parentElement.getElementsByTagName('label').length>0)  contentToAppend[labelElement] = parentElement.getElementsByTagName('label')[0].cloneNode(true)
-    if (parentElement.getElementsByTagName('input').length>0)  contentToAppend[inputElement] = parentElement.getElementsByTagName('input')[0].cloneNode(true)
-    while (parentElement.hasChildNodes()) 
-    {
-            parentElement.removeChild(parentElement.firstChild);
-    }
+    if (parentElement.getElementsByTagName('label').length>0)  contentToAppend[labelElement] = parentElement.getElementsByTagName('label')[0]
+    if (parentElement.getElementsByTagName('input').length>0)  contentToAppend[inputElement] = parentElement.getElementsByTagName('input')[0]
+    
     attributes[LABEL_ATTRIBUTE] = contentToAppend[labelElement].textContent
     const customCheckbox = document.createElement(regularCB)
     customCheckbox.setAttribute(TEMPORARY_ATTRIBUTE,JSON.stringify(attributes))
@@ -138,6 +193,33 @@ export const regularCheckboxComponent = function (attributes, parentElement)
     customCheckbox.appendChild(contentToAppend[inputElement])
     contentToAppend[labelElement].setAttribute('slot',LABEL_SLOT)
     customCheckbox.appendChild(contentToAppend[labelElement])
+    const mutationCallbackWebcomponent = (mutationsList) => {
+        
+        for (const mutation of mutationsList) 
+        {
+          if (mutation.type !== "attributes" || mutation.attributeName !== STATE_ATTRIBUTE) return
+          const state =  mutation.target.getAttribute(STATE_ATTRIBUTE)
+          if (state !== contentToAppend[inputElement].getAttribute(STATE_SLOT_ATTRIBUTE)) contentToAppend[inputElement].removeAttribute(STATE_SLOT_ATTRIBUTE)
+          if (state === SELECTED_OPTION) contentToAppend[inputElement].checked = true
+          else if (state !== SELECTED_OPTION) contentToAppend[inputElement].checked = false
+        }
+    }
+    const observerWebcomponent = new MutationObserver(mutationCallbackWebcomponent)
+    observerWebcomponent.observe(customCheckbox, { attributes: true })
+
+    const mutationCallbackCheckSlot = (mutationsList) => {
+        for (const mutation of mutationsList) 
+        {
+          if (mutation.type !== "attributes" || mutation.attributeName !== STATE_SLOT_ATTRIBUTE) return
+          const state =  mutation.target.getAttribute(STATE_SLOT_ATTRIBUTE)
+          if (state === SELECTED_OPTION) customCheckbox.setAttribute(STATE_ATTRIBUTE,SELECTED_OPTION)
+          else if (state === NORMAL_OPTION) customCheckbox.setAttribute(STATE_ATTRIBUTE,NORMAL_OPTION)
+          else if (state === ERROR_OPTION) customCheckbox.setAttribute(STATE_ATTRIBUTE,ERROR_OPTION)
+          else if (state === INDETERMINATED_OPTION) customCheckbox.setAttribute(STATE_ATTRIBUTE,INDETERMINATED_OPTION)
+        }
+    }
+    const observerInputSlot = new MutationObserver(mutationCallbackCheckSlot)
+    observerInputSlot.observe(contentToAppend[inputElement], { attributes: true })
 
     return customCheckbox;
 }

@@ -32,7 +32,7 @@ export const accordionIcons = function (attributes)
     g.appendChild(g1);
     g1.appendChild(polygon)
     svgElem.style.display ="flex"
-    svgElem.style.allignItems = "center"
+    svgElem.style.alignItems = "center"
     return svgElem;
 }
 
