@@ -101,8 +101,7 @@ class tiComponent extends HTMLElement {
         if (attributes[FORM_WIDTH_ATTRIBUTE]!== "") this.styles[CONTAINER_SUB_WRAPPER].width = attributes[FORM_WIDTH_ATTRIBUTE]
 
         //Component width dimensions and display
-        thisComponent.style.width = this.styles[CONTAINER_SUB_WRAPPER].width
-        thisComponent.style.display = 'block' 
+        this.style.display = 'contents' 
         
         //Creation of all Subcomponents
         const slotWrapper = this.creatingElement(CONTAINER_SLOT_WRAPPER)
