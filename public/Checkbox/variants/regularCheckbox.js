@@ -64,7 +64,6 @@ class regCheckbox extends HTMLElement {
         this[INDETERMINATED_OPTION] = []
         this.styles = null
         this.shadow = this.attachShadow({mode: 'open'});
-    
     }
     static get observedAttributes() { return [STATE_ATTRIBUTE]; }
     attributeChangedCallback() 
@@ -170,7 +169,8 @@ class regCheckbox extends HTMLElement {
         });
 
         this[NORMAL_OPTION].forEach( (style)=>  style())
-
+        thisComponent.setAttribute(STATE_ATTRIBUTE, attributes[STATE_ATTRIBUTE])
+        
         this.style.display = 'contents'
     }
     }
