@@ -4,7 +4,7 @@ import {ATTRIBUTES,
         SIZE_ATTRIBUTE,
         STATE_ATTRIBUTE,
         ENABLE_ATTRIBUTE} from './constants.js'
-import {setKeys} from './Styles/index.js'
+import {setKeys} from './styles/index.js'
 import {COMPONENTS} from './variants/index.js'
 import {COMPONENT_VARIANT_KEY,STYLE_KEY} from "../commonMethodsAndConstants/Styles/commonConstants.js"
 class seatCheckbox extends HTMLElement {

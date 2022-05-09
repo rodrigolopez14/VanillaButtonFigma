@@ -239,6 +239,11 @@ connectedCallback() {
             if (contentBoxSize.blockSize=== (parseInt(this.styles[CONTAINER_WRAPPER].height.slice(0, -2))-2)) wrapper.style.zIndex = "initial"
             else if (contentBoxSize.blockSize===(totalHeight - 2)) wrapper.style.zIndex = "1"
           }
+          else if (entry.contentRect) {
+            if (entry.contentRect.height=== (parseInt(this.styles[CONTAINER_WRAPPER].height.slice(0, -2))-2)) wrapper.style.zIndex = "initial"
+            else if (entry.contentRect.height===(totalHeight - 2)) wrapper.style.zIndex = "1"
+              
+          }
         }
       });
     resizeObserver.observe(wrapper);
