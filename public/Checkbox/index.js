@@ -29,7 +29,6 @@ class seatCheckbox extends HTMLElement {
         keysAttributes[COLOR_ATTRIBUTE] = attributes[COLOR_ATTRIBUTE]
         keysAttributes[SIZE_ATTRIBUTE] = attributes[SIZE_ATTRIBUTE]
         keysAttributes[ENABLE_ATTRIBUTE] = attributes[ENABLE_ATTRIBUTE]
-        keysAttributes[STATE_ATTRIBUTE] = attributes[STATE_ATTRIBUTE]
          
         if (this.getElementsByTagName('input').length>0)
         {

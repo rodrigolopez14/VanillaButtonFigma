@@ -216,7 +216,6 @@ const Style1Path = {}
 Style1Path[COLOR_ATTRIBUTE] = BLACK_OPTION
 Style1Path[SIZE_ATTRIBUTE] = LARGE_OPTION
 Style1Path[ENABLE_ATTRIBUTE] = ON_OPTION
-Style1Path[STATE_ATTRIBUTE] = NORMAL_OPTION
 
 const style1Wrapper = {}
 style1Wrapper[STYLE_OBJECT] = {...Style1}
@@ -239,7 +238,6 @@ const Style2Path = {}
 Style2Path[COLOR_ATTRIBUTE] = BLACK_OPTION
 Style2Path[SIZE_ATTRIBUTE] = LARGE_OPTION
 Style2Path[ENABLE_ATTRIBUTE] = OFF_OPTION
-Style2Path[STATE_ATTRIBUTE] = NORMAL_OPTION
 
 const style2Wrapper = {}
 style2Wrapper[STYLE_OBJECT] = {...Style2}
@@ -254,7 +252,6 @@ const Style3Path = {}
 Style3Path[COLOR_ATTRIBUTE] = BLACK_OPTION
 Style3Path[SIZE_ATTRIBUTE] = MEDIUM_OPTION
 Style3Path[ENABLE_ATTRIBUTE] = ON_OPTION
-Style3Path[STATE_ATTRIBUTE] = NORMAL_OPTION
 
 const style3Wrapper = {}
 style3Wrapper[STYLE_OBJECT] = {...Style3}
@@ -269,7 +266,6 @@ const Style4Path = {}
 Style4Path[COLOR_ATTRIBUTE] = BLACK_OPTION
 Style4Path[SIZE_ATTRIBUTE] = MEDIUM_OPTION
 Style4Path[ENABLE_ATTRIBUTE] = OFF_OPTION
-Style4Path[STATE_ATTRIBUTE] = NORMAL_OPTION
 
 const style4Wrapper = {}
 style4Wrapper[STYLE_OBJECT] = {...Style4}
@@ -294,7 +290,6 @@ const Style5Path = {}
 Style5Path[COLOR_ATTRIBUTE] = WHITE_OPTION
 Style5Path[SIZE_ATTRIBUTE] = LARGE_OPTION
 Style5Path[ENABLE_ATTRIBUTE] = ON_OPTION
-Style5Path[STATE_ATTRIBUTE] = NORMAL_OPTION
 
 const style5Wrapper = {}
 style5Wrapper[STYLE_OBJECT] = {...Style5}
@@ -318,7 +313,6 @@ const Style6Path = {}
 Style6Path[COLOR_ATTRIBUTE] = WHITE_OPTION
 Style6Path[SIZE_ATTRIBUTE] = LARGE_OPTION
 Style6Path[ENABLE_ATTRIBUTE] = OFF_OPTION
-Style6Path[STATE_ATTRIBUTE] = NORMAL_OPTION
 
 const style6Wrapper = {}
 style6Wrapper[STYLE_OBJECT] = {...Style6}
@@ -335,7 +329,6 @@ const Style7Path = {}
 Style7Path[COLOR_ATTRIBUTE] = WHITE_OPTION
 Style7Path[SIZE_ATTRIBUTE] = MEDIUM_OPTION
 Style7Path[ENABLE_ATTRIBUTE] = ON_OPTION
-Style7Path[STATE_ATTRIBUTE] = NORMAL_OPTION
 
 const style7Wrapper = {}
 style7Wrapper[STYLE_OBJECT] = {...Style7}
@@ -351,7 +344,6 @@ const Style8Path = {}
 Style8Path[COLOR_ATTRIBUTE] = WHITE_OPTION
 Style8Path[SIZE_ATTRIBUTE] = MEDIUM_OPTION
 Style8Path[ENABLE_ATTRIBUTE] = OFF_OPTION
-Style8Path[STATE_ATTRIBUTE] = NORMAL_OPTION
 
 const style8Wrapper = {}
 style8Wrapper[STYLE_OBJECT] = {...Style8}
