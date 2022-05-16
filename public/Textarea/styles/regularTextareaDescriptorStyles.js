@@ -44,28 +44,25 @@ Style1[CONTAINER_SUB_WRAPPER] = {
     transition: "0.2s all ease-in-out",
     margin: "0px",
     width: "260px",
-    height: "80px", 
+    minHeight: "104px", 
+    height: "fit-content",
     display: "flex",
     flexDirection: "column",
     alignItems: "flex-start",
     cursor: "default"
 
 }
-Style1[CONTAINER_SUB_WRAPPER][INPUT_EVENT] = {
-    height: "80px", 
-}
-Style1[CONTAINER_SUB_WRAPPER][VALIDATED_EVENT] = {
-    height: "80px", 
-}
+
 Style1[TEXT_INPUT_CONTAINER_SUBCOMPONENT] = {
-    transition: "0.2s all ease-in-out",
+    //transition: "0.2s all ease-in-out",
     width: "100%",
-    height: "60px", 
+    minHeight: "84px",
+    height: "fit-content", 
     backgroundColor: "transparent",
     border: "1px solid #7F7F72",
     boxSizing: "border-box",
     borderRadius: "2px",
-    padding: "20px 8px",
+    padding: "8px 8px 20px 8px",
     display: "flex",
     justifyContent: "flex-start"
 
@@ -81,15 +78,10 @@ Style1[TEXT_INPUT_CONTAINER_SUBCOMPONENT][VALIDATED_EVENT] = {
 Style1[TITLE_PLUS_TEXT_CONTAINER_SUBCOMPONENT] = {
     display: "flex",
     width: "100%",
-    height: "100%",
+    height: "fit-content",
     flexDirection: "column",
 }
-Style1[TITLE_PLUS_TEXT_CONTAINER_SUBCOMPONENT][VALIDATED_EVENT] = {
-    width: "calc(100% - 32px)",
-}
-Style1[TITLE_PLUS_TEXT_CONTAINER_SUBCOMPONENT][INPUT_EVENT] = {
-    width: "100%",
-}
+
 Style1[TITLE_SUBCOMPONENT] ={
     transition: "0.2s all ease-in-out",
     width: "100%",
@@ -100,7 +92,8 @@ Style1[TITLE_SUBCOMPONENT] ={
     fontSize: "16px",
     lineHeight: "20px",
     color: "#747468",
-    userSelect: "none"
+    userSelect: "none",
+    paddingTop: "12px",
 
 }
 Style1[TITLE_SUBCOMPONENT][INPUT_EVENT] ={
@@ -108,6 +101,7 @@ Style1[TITLE_SUBCOMPONENT][INPUT_EVENT] ={
     height: "16px",
     lineHeight: "16px",
     marginBottom: "4px",
+    paddingTop: "0px"
 }
 Style1[TEXT_SUBCOMPONENT] = {
     padding: "0px 0px 0px 2px",
@@ -124,11 +118,11 @@ Style1[TEXT_SUBCOMPONENT] = {
     fontFamily: 'SEATBCN',
     fontStyle: "normal",
     fontSize: "16px",
-    
+    resize: "none",
 }
 Style1[TEXT_SUBCOMPONENT][INPUT_EVENT] ={
-    height: "100%",
-    lineHeight:"100%",
+    height: "fit-content",
+    lineHeight:"20px",
 }
 
 Style1[DESCRIPTOR_SUBCOMPONENT] = {
@@ -164,7 +158,7 @@ const Style2 = JSON.parse(JSON.stringify(Style1))
 Style2[TITLE_SUBCOMPONENT].color = "#ECE9E1"
 Style2[DESCRIPTOR_SUBCOMPONENT].color = "#ECE9E1"
 Style2[TEXT_SUBCOMPONENT].color = "#FFFFFF"
-Style2[TEXT_INPUT_CONTAINER_SUBCOMPONENT].border = "1px solid #F9F8F6"
+Style2[TEXT_INPUT_CONTAINER_SUBCOMPONENT].border = "1px solid #7F7F72"
 Style2[TEXT_INPUT_CONTAINER_SUBCOMPONENT][INPUT_EVENT].borderColor = "#FFFFFF"
 const Style2Path = {}
 Style2Path[SIZE_ATTRIBUTE] = LARGE_OPTION;
@@ -178,10 +172,8 @@ style2Wrapper[PATH_STYLE] = Style2Path
 regularTextAreaDescriptorStyles.push(style2Wrapper)
 
 const Style3 = JSON.parse(JSON.stringify(Style1))
-Style3[CONTAINER_SUB_WRAPPER].height = "76px" 
-Style3[CONTAINER_SUB_WRAPPER][INPUT_EVENT].height = "76px"
-Style3[CONTAINER_SUB_WRAPPER][VALIDATED_EVENT].height = "76px"
-Style3[TEXT_INPUT_CONTAINER_SUBCOMPONENT].height = "56px"  
+Style3[CONTAINER_SUB_WRAPPER].minHeight = "96px" 
+Style3[TEXT_INPUT_CONTAINER_SUBCOMPONENT].minHeight = "76px"  
 
 Style3[TITLE_SUBCOMPONENT].fontSize = "14px"
 Style3[TITLE_SUBCOMPONENT].lineHeight = "16px"
@@ -204,7 +196,7 @@ const Style4 = JSON.parse(JSON.stringify(Style3))
 Style4[TITLE_SUBCOMPONENT].color = "#ECE9E1"
 Style4[DESCRIPTOR_SUBCOMPONENT].color = "#ECE9E1"
 Style4[TEXT_SUBCOMPONENT].color = "#FFFFFF"
-Style4[TEXT_INPUT_CONTAINER_SUBCOMPONENT].border = "1px solid #F9F8F6"
+Style4[TEXT_INPUT_CONTAINER_SUBCOMPONENT].border = "1px solid #7F7F72"
 Style4[TEXT_INPUT_CONTAINER_SUBCOMPONENT][INPUT_EVENT].borderColor = "#FFFFFF"
 const Style4Path = {}
 Style4Path[SIZE_ATTRIBUTE] = MEDIUM_OPTION;

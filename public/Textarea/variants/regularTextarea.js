@@ -88,18 +88,19 @@ class taComponent extends HTMLElement {
         const titleContainer = this.creatingElement(TITLE_SUBCOMPONENT)
         const titleTextNode = document.createTextNode(attributes[TITLE_ATTRIBUTE])
         
-        const inputContainer = document.createElement('input')
-        inputContainer.setAttribute("type","text")
+        const inputContainer = document.createElement('div')
+        inputContainer.setAttribute("contenteditable","true")
         inputContainer.onkeyup = ()=> {
-            thisComponent.setAttribute(FORM_VALUE_ATTRIBUTE,inputContainer.value)
-            inputSlot.assignedElements()[0].setAttribute('value',inputContainer.value)
+            thisComponent.setAttribute(FORM_VALUE_ATTRIBUTE,inputContainer.innerText)
+            inputSlot.assignedElements()[0].innerText = inputContainer.innerText
             }
         const stylesProccessedInputContainer = processStyle(inputContainer,this.styles[TEXT_SUBCOMPONENT])
         this.pushingEvents(stylesProccessedInputContainer)
         this[ACTIVE_OPTION].push(()=> inputContainer.focus())
+        
         //Appending subcomponents with its respective parent
         this.shadow.appendChild(slotWrapper)
-        slotWrapper.appendChild(inputSlot)
+            slotWrapper.appendChild(inputSlot)
         this.shadow.appendChild(wrapper)
             wrapper.appendChild(textInputContainer)
                 textInputContainer.appendChild(titleTextContainer)
@@ -119,7 +120,11 @@ class taComponent extends HTMLElement {
                 if (thisComponent.getAttribute(FORM_VALUE_ATTRIBUTE)=="" && thisComponent.getAttribute(STATE_ATTRIBUTE)!== NORMAL_OPTION) thisComponent.setAttribute(STATE_ATTRIBUTE,NORMAL_OPTION)
                 else 
                 {
-                    if (thisComponent.getAttribute(STATE_ATTRIBUTE)!== VALIDATED_OPTION && thisComponent.getAttribute(FORM_VALUE_ATTRIBUTE)!=="") thisComponent.setAttribute(STATE_ATTRIBUTE,FILLED_OPTION)
+                    if (thisComponent.getAttribute(STATE_ATTRIBUTE)!== VALIDATED_OPTION && thisComponent.getAttribute(FORM_VALUE_ATTRIBUTE)!=="") 
+                    {
+                        inputContainer.blur()
+                        thisComponent.setAttribute(STATE_ATTRIBUTE,FILLED_OPTION)
+                    }
                 }
             }
         });
@@ -137,12 +142,9 @@ export const regularTextareaSeat = function (attributes,parentElement)
 {
     const contentToAppend = {}
     const inputElement = 'inputElement'
-    if (parentElement.getElementsByTagName('input').length>0)  
+    if (parentElement.getElementsByTagName('textarea').length>0)  
     {
-        if (contentToAppend[inputElement] = parentElement.getElementsByTagName('input')[0].type === 'text')
-        {
-            contentToAppend[inputElement] = parentElement.getElementsByTagName('input')[0]
-        }
+            contentToAppend[inputElement] = parentElement.getElementsByTagName('textarea')[0]
     }
     
     const customTextarea = document.createElement(regularTextArea)
