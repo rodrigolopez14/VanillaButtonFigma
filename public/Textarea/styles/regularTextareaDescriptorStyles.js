@@ -11,7 +11,6 @@ import {LARGE_OPTION,
         DESCRIPTOR_ON_OPTION} from "../constants.js"
 import {REGULAR_TEXT_AREA_DESCRIPTOR_VARIANT} from "../constants.js"
 import {CONTAINER_SLOT_WRAPPER,
-        CONTAINER_WRAPPER, 
         CONTAINER_SUB_WRAPPER,
         TEXT_INPUT_CONTAINER_SUBCOMPONENT,
         TITLE_PLUS_TEXT_CONTAINER_SUBCOMPONENT,
@@ -21,6 +20,8 @@ import {CONTAINER_SLOT_WRAPPER,
         } from "../constants.js"
 import {INPUT_EVENT, 
         VALIDATED_EVENT} from "../constants.js"
+// CONTAINER_SLOT_WRAPPER
+// I----------->INPUT_SLOT
 // CONTAINER_SUB_WRAPPER
 // I----------->TEXT_INPUT_CONTAINER_SUBCOMPONENT
 // I                I----------->TITLE_PLUS_TEXT_CONTAINER_SUBCOMPONENT
@@ -34,12 +35,7 @@ const Style1 = {}
 Style1[CONTAINER_SLOT_WRAPPER] = {
     display: "none",
 }
-Style1[CONTAINER_WRAPPER] = {
-    margin: "0px",
-    width: "260px",
-    cursor: "default"
 
-}
 Style1[CONTAINER_SUB_WRAPPER] = {
     transition: "0.2s all ease-in-out",
     margin: "0px",

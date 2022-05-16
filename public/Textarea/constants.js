@@ -89,8 +89,8 @@ ATTRIBUTES.push({
 export {ATTRIBUTES};
 
 //Definining names of subcomponents of component. This is used to identify the style to assign that subcomponent
-//CONTAINER_WRAPPER
-// I
+// CONTAINER_SLOT_WRAPPER
+// I----------->INPUT_SLOT
 // CONTAINER_SUB_WRAPPER
 // I----------->TEXT_INPUT_CONTAINER_SUBCOMPONENT
 // I                I----------->TITLE_PLUS_TEXT_CONTAINER_SUBCOMPONENT
@@ -103,7 +103,6 @@ export {ATTRIBUTES};
 
 export const CONTAINER_SLOT_WRAPPER = 'slot wrapper'
 export const INPUT_SLOT = 'inputSlot'
-export const CONTAINER_WRAPPER = 'container wrapper'
 export const CONTAINER_SUB_WRAPPER = 'container sub wrapper'
 export const TEXT_INPUT_CONTAINER_SUBCOMPONENT = 'textInput container'
 export const TITLE_PLUS_TEXT_CONTAINER_SUBCOMPONENT = "title + text container"

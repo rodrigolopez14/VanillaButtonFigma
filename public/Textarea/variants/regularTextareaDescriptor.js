@@ -20,6 +20,8 @@ import {DEFAULT_EVENT,
         VALIDATED_EVENT} from "../constants.js"
 import {setStyle, processStyle} from "../styles/index.js"
 import {STYLE_KEY} from "../../commonMethodsAndConstants/Styles/commonConstants.js"
+// CONTAINER_SLOT_WRAPPER
+// I----------->INPUT_SLOT
 // CONTAINER_SUB_WRAPPER
 // I----------->TEXT_INPUT_CONTAINER_SUBCOMPONENT
 // I                I----------->TITLE_PLUS_TEXT_CONTAINER_SUBCOMPONENT
