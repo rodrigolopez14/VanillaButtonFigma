@@ -7,6 +7,8 @@ import {SEAT_DROPDOWN} from "./Dropdown/index.js"
 import {SEAT_RADIO_BUTTON} from "./RadioButton/index.js"
 import {SEAT_CHECKBOX} from "./Checkbox/index.js"
 import {SEAT_TEXT_AREA} from "./Textarea/index.js"
+import {SEAT_BUTTON_PILL} from "./ButtonPillForGroup/index.js";
+import {SEAT_BUTTON_GROUP} from "./ButtonGroup/index.js"
 const styleSheet = document.createElement("style")
 styleSheet.innerText = `${SEAT_ACCORDION}:not(:defined) { display:none }`
 document.head.appendChild(styleSheet)
