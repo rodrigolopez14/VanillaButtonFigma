@@ -9,45 +9,23 @@ import {LARGE_OPTION,
     BLACK_OPTION,
     WHITE_OPTION,  
     RIGHT_OPTION} from "../constants.js"
-import {REGULAR_BUTTON_PILL_VARIANT} from "../constants.js"
+import {REGULAR_BUTTON_PILL_VARIANT, TEXT_CONTAINER} from "../constants.js"
 import {CONTAINER_BUTTON_PILL} from "../constants.js"
 import {HOVER_EVENT, 
     ACTIVE_EVENT} from "../constants.js"
+import { SIZE_STYLES } from "./commonStyles.js"
 
 const rightButtonPill = []
 const Style1 = {}
 Style1[CONTAINER_BUTTON_PILL] = {
 //transition: "0.1s all ease-in-out",
-display: "flex",
-flexDirection: "row",
-justifyContent: "center",
-alignItems: "center",
-textAlign: "center",
-flexGrow: "1",
-flexBasis: "0",
-padding: "8px 16px",
+
 borderRadius: "0px 2px 2px 0px",
-fontFamily: 'SEATBCN',
-fontStyle: "normal",
-fontWeight: "400",
-fontSize: "14px",
-lineHeight: "16px",
-height: "32px",
-boxSizing: "border-box",
-color: "#190F14",
-background: "transparent",
-userSelect: "none",
-width: "57.6px",
-overflow: "hidden",
-whiteSpace: "nowrap",
+...SIZE_STYLES[LARGE_OPTION][REGULAR_BUTTON_PILL_VARIANT][CONTAINER_BUTTON_PILL],
 }
-Style1[CONTAINER_BUTTON_PILL][HOVER_EVENT] = {
-    fontWeight: "500",
-}
-Style1[CONTAINER_BUTTON_PILL][ACTIVE_EVENT] = {
-    fontWeight: "500",
-    background: "#190F14",
-    color: "#ECE9E1",
+
+Style1[TEXT_CONTAINER] = {
+    ...SIZE_STYLES[LARGE_OPTION][REGULAR_BUTTON_PILL_VARIANT][TEXT_CONTAINER],
 }
 
 const Style1Path = {}
@@ -64,7 +42,7 @@ style1Wrapper[PATH_STYLE] = Style1Path
 rightButtonPill.push(style1Wrapper)
 
 const Style2 = JSON.parse(JSON.stringify(Style1))
-Style2[CONTAINER_BUTTON_PILL].fontSize = "12px"
+Style2[TEXT_CONTAINER].fontSize = "12px"
 
 const Style2Path = {}
 Style2Path[SIZE_ATTRIBUTE] = MEDIUM_OPTION;
@@ -78,9 +56,10 @@ style2Wrapper[PATH_STYLE] = Style2Path
 rightButtonPill.push(style2Wrapper)
 
 const Style3 = JSON.parse(JSON.stringify(Style1))
-Style3[CONTAINER_BUTTON_PILL].color = "#ECE9E1"
+Style3[TEXT_CONTAINER].color = "#ECE9E1"
 Style3[CONTAINER_BUTTON_PILL][ACTIVE_EVENT].background = "#ECE9E1"
-Style3[CONTAINER_BUTTON_PILL][ACTIVE_EVENT].color = "#190F14"
+Style3[TEXT_CONTAINER][ACTIVE_EVENT].color = "#190F14"
+
 
 const Style3Path = {}
 Style3Path[SIZE_ATTRIBUTE] = LARGE_OPTION;
@@ -94,7 +73,7 @@ style3Wrapper[PATH_STYLE] = Style3Path
 rightButtonPill.push(style3Wrapper)
 
 const Style4 = JSON.parse(JSON.stringify(Style3))
-Style4[CONTAINER_BUTTON_PILL].fontSize = "12px"
+Style4[TEXT_CONTAINER].fontSize = "12px"
 
 const Style4Path = {}
 Style4Path[SIZE_ATTRIBUTE] = MEDIUM_OPTION;

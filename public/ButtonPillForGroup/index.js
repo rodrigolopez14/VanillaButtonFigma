@@ -1,4 +1,4 @@
-import {NAME_OF_COMPONENT} from './constants.js'
+import {NAME_OF_COMPONENT, STATE_ATTRIBUTE} from './constants.js'
 import {ATTRIBUTES} from './constants.js'
 import {COLOR_ATTRIBUTE,
         SIZE_ATTRIBUTE,
@@ -13,12 +13,13 @@ class SeatButtonPill extends HTMLElement {
         super();
         
     }
-    static get observedAttributes() { return [ TITLE_ATTRIBUTE]; }
-    attributeChangedCallback() 
+    static get observedAttributes() { return [ TITLE_ATTRIBUTE, STATE_ATTRIBUTE]; }
+    attributeChangedCallback(name,oldValue,newValue) 
     {
-        const title = this.getAttribute(TITLE_ATTRIBUTE)
-        this.children[0].setAttribute(TITLE_ATTRIBUTE,title)
+     
+        if (oldValue !== newValue) this.children[0].setAttribute(name,newValue)
     }
+    
     connectedCallback() {
         const WebComponent = this
         const attributes = {}

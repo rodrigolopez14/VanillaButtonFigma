@@ -8,6 +8,7 @@ export const COLOR_ATTRIBUTE = "data-color";
 export const STATE_ATTRIBUTE = "data-state";
 export const POSITION_ATTRIBUTE = "data-position";
 export const TITLE_ATTRIBUTE = "data-title";
+export const WIDTH_ATTRIBUTE = "data-width";
 
 export const TEMPORARY_ATTRIBUTE = 'data-temporary'
 //size options 
@@ -60,11 +61,18 @@ ATTRIBUTES.push({
     proccessValue: (value) => {return   value}
 
 })
+ATTRIBUTES.push({
+    attributeName: WIDTH_ATTRIBUTE,
+    defaultValue : "57.6px",
+    proccessValue: (value) => {return   value}
+
+})
 export {ATTRIBUTES};
 
 //Definining names of subcomponents of component. This is used to identify the style to assign that subcomponent
 
 export const CONTAINER_BUTTON_PILL = 'container button'
+export const TEXT_CONTAINER = 'text container'
 
 //  Defining constants for events 
 export const DEFAULT_EVENT = 'default'

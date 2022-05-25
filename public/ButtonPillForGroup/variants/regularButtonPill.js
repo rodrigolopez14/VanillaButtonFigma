@@ -1,4 +1,4 @@
-import {CONTAINER_BUTTON_PILL, HOVER_OPTION, TITLE_ATTRIBUTE,} from "../constants.js"
+import {CONTAINER_BUTTON_PILL, HOVER_OPTION, TITLE_ATTRIBUTE, TEXT_CONTAINER, WIDTH_ATTRIBUTE} from "../constants.js"
 import {STATE_ATTRIBUTE,
         TEMPORARY_ATTRIBUTE} from "../constants.js"
 import {NORMAL_OPTION,
@@ -20,26 +20,29 @@ class buttonPill extends HTMLElement {
         this.shadow = this.attachShadow({mode: 'open'});
 
     }
-    static get observedAttributes() { return [STATE_ATTRIBUTE, TITLE_ATTRIBUTE]; }
-    attributeChangedCallback() 
+    static get observedAttributes() { return [ TITLE_ATTRIBUTE, STATE_ATTRIBUTE]; }
+    attributeChangedCallback(name,oldValue,newValue) 
     {
+     
         const state = this.getAttribute(STATE_ATTRIBUTE)
-        const text = this.getAttribute(TITLE_ATTRIBUTE)
-        if (text !== this.shadow.children[0].innerText) this.shadow.children[0].innerText = text
-        if (state === NORMAL_OPTION)
+       
+        if (oldValue !== newValue && name === TITLE_ATTRIBUTE) this.shadow.children[0].children[0].innerText = newValue
+        if (name === STATE_ATTRIBUTE && oldValue!== newValue)
         {
-            this[NORMAL_OPTION].forEach( (style)=>  style())
-            this.shadow.children[0].onmouseover = () => this[HOVER_OPTION].forEach( (style)=>  style())
-            this.shadow.children[0].onmouseout = () => this[NORMAL_OPTION].forEach( (style)=>  style())
+            if (state === NORMAL_OPTION)
+            {
+                this[NORMAL_OPTION].forEach( (style)=>  style())
+                this.shadow.children[0].onmouseover = () => this[HOVER_OPTION].forEach( (style)=>  style())
+                this.shadow.children[0].onmouseout = () => this[NORMAL_OPTION].forEach( (style)=>  style())
 
+            }
+            else if (state === ACTIVE_OPTION)
+            {
+                this[ACTIVE_OPTION].forEach( (style)=>  style())
+                this.shadow.children[0].onmouseover = null
+                this.shadow.children[0].onmouseout = () => null
+            }
         }
-        else if (state === ACTIVE_OPTION)
-        {
-            this[ACTIVE_OPTION].forEach( (style)=>  style())
-            this.shadow.children[0].onmouseover = null
-            this.shadow.children[0].onmouseout = () => null
-        }
-        
     }
     pushingEvents (stylesProcessed) {
 
@@ -62,12 +65,15 @@ class buttonPill extends HTMLElement {
 
         //Component width dimensions and display
         this.style.display = 'contents' 
-        
+        this.styles[CONTAINER_BUTTON_PILL].width = attributes[WIDTH_ATTRIBUTE]
         //Creation of all Subcomponents
         const container = this.creatingElement(CONTAINER_BUTTON_PILL)
-        container.innerText = attributes[TITLE_ATTRIBUTE]
+        const textContainer = this.creatingElement(TEXT_CONTAINER)
+        textContainer.innerText = attributes[TITLE_ATTRIBUTE]
+        //container.innerText = attributes[TITLE_ATTRIBUTE]
         //Appending subcomponents with its respective parent
         this.shadow.appendChild(container)  
+            container.appendChild(textContainer)
            
 
         this[NORMAL_OPTION].forEach( (style)=>  style())

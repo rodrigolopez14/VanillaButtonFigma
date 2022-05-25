@@ -1,5 +1,4 @@
 import {MAX_WIDTH_MEDIUM_OPTION, MAX_WIDTH_SMALL_OPTION} from '../commonMethodsAndConstants/Styles/commonConstants.js'
-
 // attributeNames
 export const HIERARCHY_ATTRIBUTE = "data-hierarchy";
 export const SIZE_ATTRIBUTE = "data-size";
@@ -10,7 +9,7 @@ export const ICON_ATTRIBUTE = "data-icon";
 export const ICON_SELECTION_ATTRIBUTE = "data-icon-selection";
 export const PURCHASE_HIERARCHY_ATTRIBUTE = "data-purchase-hierarchy";
 export const CHILDREN_ATTRIBUTE = "data-children";
-export const ONCLICK_ATTRIBUTE = "data-onClick";
+export const WIDTH_ATTRIBUTE = "data-size-width"
 // hierarchy options
 export const PRIMARY_OPTION = "primary";
 export const SECONDARY_OPTION = "secondary";
@@ -37,10 +36,14 @@ export const OFF_OPTION = "off";
 export const PRIMARY_PURCHASE_HIERARCHY_OPTION = "primary";
 export const SECONDARY_PURCHASE_HIERARCHY_OPTION = "secondary";
 export const TERTIARY_PURCHASE_HIERARCHY_OPTION = "tertiary";
+//data-size-width options
+export const FULL_OPTION = "full"
+export const FIT_CONTENT_OPTION = "fit-content"
 // children default value
 export const CHILDREN_DEFAULT_OPTION = "Call to action";
 //icon selection default value
 export const ICON_DEFAULT = "nothing"
+
 
 const ATTRIBUTES = [];
 ATTRIBUTES.push({
@@ -111,7 +114,11 @@ ATTRIBUTES.push({
 
 })
 
-
+ATTRIBUTES.push({
+    attributeName: WIDTH_ATTRIBUTE,
+    defaultValue: FULL_OPTION,
+    proccessValue: (value) => {return   value}
+})
 export {ATTRIBUTES};
 
 //Definining names of subcomponents of component. This is used to identify the style to assign that subcomponent

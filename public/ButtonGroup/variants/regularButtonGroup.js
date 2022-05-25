@@ -11,7 +11,7 @@ import {
 import {DEFAULT_EVENT} from "../constants.js"
 import {setStyle, processStyle} from "../styles/index.js"
 import {STYLE_KEY} from "../../commonMethodsAndConstants/Styles/commonConstants.js"
-import { STATE_ATTRIBUTE,CENTER_OPTION, LEFT_OPTION, POSITION_ATTRIBUTE, RIGHT_OPTION,NORMAL_OPTION,ACTIVE_OPTION } from "../../ButtonPillForGroup/constants.js"
+import { STATE_ATTRIBUTE,CENTER_OPTION, LEFT_OPTION, POSITION_ATTRIBUTE,TITLE_ATTRIBUTE, RIGHT_OPTION,NORMAL_OPTION,ACTIVE_OPTION, WIDTH_ATTRIBUTE as WIDTH_PILL_ATTRIBUTE } from "../../ButtonPillForGroup/constants.js"
 
 // CONTAINER_SLOT_WRAPPER
 // I----------->BUTTON_SLOT[]
@@ -43,10 +43,12 @@ class buttonGroupComponent extends HTMLElement {
         this.removeAttribute(TEMPORARY_ATTRIBUTE)
 
         this.styles = JSON.parse(JSON.stringify(setStyle(attributes[STYLE_KEY])))
-        if (attributes[WIDTH_ATTRIBUTE]!== "") this.styles[CONTAINER_SUB_WRAPPER].width = attributes[WIDTH_ATTRIBUTE]
+        if (attributes[WIDTH_ATTRIBUTE]!== "") this.styles[BUTTON_CONTAINER_SUBCOMPONENT].width = attributes[WIDTH_ATTRIBUTE]
 
+        const realWidth = parseInt(this.styles[BUTTON_CONTAINER_SUBCOMPONENT].width.slice(0, -2))
+        const buttonPillWidth = (realWidth/attributes[NUMBER_OF_BUTTONS]).toString()+'px'
         //Component width dimensions and display
-        this.style.display = 'contents' 
+        this.style.display = 'none' 
         
         //Creation of all Subcomponents
         const slotWrapper = this.creatingElement(CONTAINER_SLOT_WRAPPER)
@@ -63,7 +65,8 @@ class buttonGroupComponent extends HTMLElement {
         const wrapper = this.creatingElement(CONTAINER_SUB_WRAPPER)
         const buttonsContainer = this.creatingElement(BUTTON_CONTAINER_SUBCOMPONENT)
         const buttonElement = []
-
+        const selected = {}
+        selected.option = 0
         const solvingClosure = () =>
         {
             const indexCopy = i
@@ -74,27 +77,32 @@ class buttonGroupComponent extends HTMLElement {
             const indexCopy = solvingClosure()()
             buttonElement.push(document.createElement(SEAT_BUTTON_PILL))
             buttonSlots[indexCopy].addEventListener('slotchange', function(e) {
-                buttonElement[indexCopy].setAttribute('data-title',buttonSlots[indexCopy].assignedElements()[0].innerText)
+                thisComponent.style.display = 'contents'
+                buttonElement[indexCopy].setAttribute(TITLE_ATTRIBUTE,buttonSlots[indexCopy].assignedElements()[0].innerText)
+                if (indexCopy === 0) 
+                {
+                    buttonElement[indexCopy].setAttribute(STATE_ATTRIBUTE,ACTIVE_OPTION)
+                }
+            
             })
             
-            //buttonElement[i].appendChild(document.createTextNode(buttonSlots[i].assignedElements()[0].innerText))
-            buttonElement[i].setAttribute(SIZE_ATTRIBUTE,attributes[SIZE_ATTRIBUTE])
-            buttonElement[i].setAttribute(COLOR_ATTRIBUTE,attributes[COLOR_ATTRIBUTE])
-            if (i === 0) 
+            buttonElement[indexCopy].setAttribute(SIZE_ATTRIBUTE,attributes[SIZE_ATTRIBUTE])
+            buttonElement[indexCopy].setAttribute(COLOR_ATTRIBUTE,attributes[COLOR_ATTRIBUTE])
+            buttonElement[indexCopy].setAttribute(WIDTH_PILL_ATTRIBUTE,buttonPillWidth)
+            if (indexCopy === 0) 
             {
-                buttonElement[i].setAttribute(POSITION_ATTRIBUTE,LEFT_OPTION)
-                buttonElement[i].setAttribute(STATE_ATTRIBUTE,ACTIVE_OPTION)
+                buttonElement[indexCopy].setAttribute(POSITION_ATTRIBUTE,LEFT_OPTION)
             }
-            else if (i === (attributes[NUMBER_OF_BUTTONS]-1)) 
+            else if (indexCopy === (attributes[NUMBER_OF_BUTTONS]-1)) 
             {
-                buttonElement[i].setAttribute(POSITION_ATTRIBUTE,RIGHT_OPTION)
-                buttonElement[i].setAttribute(STATE_ATTRIBUTE,NORMAL_OPTION)
+                buttonElement[indexCopy].setAttribute(POSITION_ATTRIBUTE,RIGHT_OPTION)
             }
             else 
             {
-                buttonElement[i].setAttribute(POSITION_ATTRIBUTE,CENTER_OPTION)
-                buttonElement[i].setAttribute(STATE_ATTRIBUTE,NORMAL_OPTION)
+                buttonElement[indexCopy].setAttribute(POSITION_ATTRIBUTE,CENTER_OPTION)
+    
             }
+            buttonElement[indexCopy].onclick = () => {selected.option = indexCopy}
         }
         
         
@@ -107,7 +115,17 @@ class buttonGroupComponent extends HTMLElement {
                 buttonElement.forEach(element => {buttonsContainer.appendChild(element)})
 
         //Adding some behaviour to the component
-        
+        document.addEventListener('click', function(event) {
+           
+            const isClickInsideElement = thisComponent.contains(event.target);
+            if (isClickInsideElement) 
+            {
+                buttonElement.forEach(element => {
+                    element.setAttribute(STATE_ATTRIBUTE,NORMAL_OPTION)})
+                buttonElement[selected.option].setAttribute(STATE_ATTRIBUTE,ACTIVE_OPTION)
+                buttonSlots[selected.option].assignedElements()[0].click()
+            }
+        })
 
         this[NORMAL_OPTION].forEach( (style)=>  style())
 

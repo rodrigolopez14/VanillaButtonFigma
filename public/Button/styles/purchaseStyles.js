@@ -5,7 +5,8 @@ import {HIERARCHY_ATTRIBUTE,
     STATE_ATTRIBUTE,
     ICON_ATTRIBUTE,
     ARROW_BUTTON_VARIANT,
-    ARROW_BUTTON_ICON_VARIANT} from "../constants.js"
+    ARROW_BUTTON_ICON_VARIANT,
+    WIDTH_ATTRIBUTE} from "../constants.js"
 import {PURCHASE_OPTION,
     PRIMARY_PURCHASE_HIERARCHY_OPTION,
     SECONDARY_PURCHASE_HIERARCHY_OPTION,
@@ -16,7 +17,9 @@ import {PURCHASE_OPTION,
     NORMAL_OPTION,
     DISABLED_OPTION,
     ON_OPTION,
-    OFF_OPTION,} from "../constants.js"
+    OFF_OPTION,
+    FULL_OPTION,
+    FIT_CONTENT_OPTION} from "../constants.js"
 import {BUTTON_SUBCOMPONENT,
     ICON_SUBCOMPONENT,
     ICON_CONTAINER_SUBCOMPONENT,
@@ -39,15 +42,7 @@ const Style1 = {}
 Style1 [BUTTON_SUBCOMPONENT] = {
 
 transition: "0.1s all ease-in-out",
-boxShadow: "inset 0 0 0 2px transparent",
-display: "flex",
-justifyContent: "center",
-alignItems: "center",
-height: "46px", 
 background: "#EA5D1A",
-border: "none",
-borderRadius: "2px",
-boxShadow: "none",
 opacity: "1.0",
 ...SIZE_STYLES[LARGE_OPTION][REGULAR_BUTTON_VARIANT][BUTTON_SUBCOMPONENT]
 
@@ -56,11 +51,6 @@ Style1[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
 opacity: "0.8"
 }
 Style1[TEXT_SUBCOMPONENT] = {
-position: "static",
-fontFamily: "SEATBCN",
-fontStyle: "normal",
-fontWeight: "bold",
-fontSize: "16px",
 color: "#ECE9E1",
 ...SIZE_STYLES[LARGE_OPTION][REGULAR_BUTTON_VARIANT][TEXT_SUBCOMPONENT]
 }
@@ -70,6 +60,7 @@ Style1Path[PURCHASE_HIERARCHY_ATTRIBUTE] = PRIMARY_PURCHASE_HIERARCHY_OPTION
 Style1Path[SIZE_ATTRIBUTE] = LARGE_OPTION
 Style1Path [STATE_ATTRIBUTE] = NORMAL_OPTION
 Style1Path[ICON_ATTRIBUTE] = OFF_OPTION 
+Style1Path[WIDTH_ATTRIBUTE] = FIT_CONTENT_OPTION 
 
 const styleWrapper1 = {}
 styleWrapper1[STYLE_OBJECT] = {...Style1}
@@ -85,15 +76,7 @@ const Style2 = {}
 Style2 [BUTTON_SUBCOMPONENT] = {
 
 transition: "0.1s all ease-in-out",
-boxShadow: "inset 0 0 0 2px transparent",
-display: "flex",
-justifyContent: "center",
-alignItems: "center",
-height: "46px", 
 background: "#EA5D1A",
-border: "none",
-borderRadius: "2px",
-boxShadow: "none",
 opacity: "1.0",
 ...SIZE_STYLES[LARGE_OPTION][REGULAR_BUTTON_ICON_VARIANT][BUTTON_SUBCOMPONENT]
 
@@ -102,21 +85,12 @@ Style2[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
 opacity: "0.8"
 }
 Style2[TEXT_SUBCOMPONENT] = {
-position: "static",
-fontFamily: "SEATBCN",
-fontStyle: "normal",
-fontWeight: "bold",
-fontSize: "16px",
 color: "#ECE9E1",
 ...SIZE_STYLES[LARGE_OPTION][REGULAR_BUTTON_ICON_VARIANT][TEXT_SUBCOMPONENT]
 }
 Style2[ICON_CONTAINER_SUBCOMPONENT] = {
 color: "#ECE9E1",
-width: "24px",
-height: "24px",
-display: "flex",
-justifyContent: "center",
-alignItems: "center",
+...SIZE_STYLES[LARGE_OPTION][REGULAR_BUTTON_ICON_VARIANT][ICON_CONTAINER_SUBCOMPONENT],
 }
 Style2[ICON_SUBCOMPONENT] = {
 color: "#ECE9E1",
@@ -129,6 +103,7 @@ Style2Path[PURCHASE_HIERARCHY_ATTRIBUTE] = PRIMARY_PURCHASE_HIERARCHY_OPTION
 Style2Path[SIZE_ATTRIBUTE] = LARGE_OPTION
 Style2Path [STATE_ATTRIBUTE] = NORMAL_OPTION
 Style2Path[ICON_ATTRIBUTE] = ON_OPTION
+Style2Path[WIDTH_ATTRIBUTE] = FIT_CONTENT_OPTION 
 
 const styleWrapper2 = {}
 styleWrapper2[STYLE_OBJECT] = {...Style2}
@@ -139,24 +114,11 @@ purchaseStyles.push(styleWrapper2)
 //* PRIMARY DESKTOP BLACK DISABLED OFFICON *//
 const Style3 = {}
 Style3 [BUTTON_SUBCOMPONENT] = {
-position: "relative",
-display: "flex",
-flexDirection: "row",
-justifyContent: "center",
-alignItems: "center",
-height: "48px", 
 background: "#EEA786",
-border: "none",
-borderRadius: "2px",
-boxShadow: "none",
-...SIZE_STYLES[LARGE_OPTION][REGULAR_BUTTON_VARIANT][BUTTON_SUBCOMPONENT]
+...SIZE_STYLES[LARGE_OPTION][REGULAR_BUTTON_VARIANT][BUTTON_SUBCOMPONENT],
+cursor: "default",
 }
 Style3[TEXT_SUBCOMPONENT] = {
-position: "static",
-fontFamily: "SEATBCN",
-fontStyle: "normal",
-fontWeight: "bold",
-fontSize: "16px",
 color: "#ECE9E1",
 ...SIZE_STYLES[LARGE_OPTION][REGULAR_BUTTON_VARIANT][TEXT_SUBCOMPONENT]
 }
@@ -166,6 +128,7 @@ Style3Path[PURCHASE_HIERARCHY_ATTRIBUTE] = PRIMARY_PURCHASE_HIERARCHY_OPTION
 Style3Path[SIZE_ATTRIBUTE] = LARGE_OPTION
 Style3Path [STATE_ATTRIBUTE] = DISABLED_OPTION
 Style3Path[ICON_ATTRIBUTE] = OFF_OPTION 
+Style3Path[WIDTH_ATTRIBUTE] = FIT_CONTENT_OPTION 
 
 const styleWrapper3 = {}
 styleWrapper3[STYLE_OBJECT] = {...Style3}
@@ -179,35 +142,18 @@ const Style4 = {}
 Style4 [BUTTON_SUBCOMPONENT] = {
 
 transition: "0.1s all ease-in-out",
-position: "relative",
-display: "flex",
-flexDirection: "row",
-justifyContent: "center",
-alignItems: "center",
-height: "48px", 
 background: "#EEA786",
-border: "none",
-borderRadius: "2px",
-boxShadow: "none",
-...SIZE_STYLES[LARGE_OPTION][REGULAR_BUTTON_ICON_VARIANT][BUTTON_SUBCOMPONENT]
+...SIZE_STYLES[LARGE_OPTION][REGULAR_BUTTON_ICON_VARIANT][BUTTON_SUBCOMPONENT],
+cursor: "default",
 
 }
 Style4[TEXT_SUBCOMPONENT] = {
-position: "static",
-fontFamily: "SEATBCN",
-fontStyle: "normal",
-fontWeight: "bold",
-fontSize: "16px",
 color: "#ECE9E1",
 ...SIZE_STYLES[LARGE_OPTION][REGULAR_BUTTON_ICON_VARIANT][TEXT_SUBCOMPONENT]
 }
 Style4[ICON_CONTAINER_SUBCOMPONENT] ={
 color: "#ECE9E1",
-width: "24px",
-height: "24px",
-display: "flex",
-justifyContent: "center",
-alignItems: "center",
+...SIZE_STYLES[LARGE_OPTION][REGULAR_BUTTON_ICON_VARIANT][ICON_CONTAINER_SUBCOMPONENT],
 }
 Style4[ICON_SUBCOMPONENT] = {
 color: "#ECE9E1",
@@ -220,6 +166,7 @@ Style4Path[PURCHASE_HIERARCHY_ATTRIBUTE] = PRIMARY_PURCHASE_HIERARCHY_OPTION
 Style4Path[SIZE_ATTRIBUTE] = LARGE_OPTION
 Style4Path [STATE_ATTRIBUTE] = DISABLED_OPTION
 Style4Path[ICON_ATTRIBUTE] = ON_OPTION 
+Style4Path[WIDTH_ATTRIBUTE] = FIT_CONTENT_OPTION 
 
 const styleWrapper4 = {}
 styleWrapper4[STYLE_OBJECT] = {...Style4}
@@ -233,15 +180,7 @@ const Style5 = {}
 Style5 [BUTTON_SUBCOMPONENT] = {
 
 transition: "0.1s all ease-in-out",
-boxShadow: "inset 0 0 0 2px transparent",
-display: "flex",
-justifyContent: "center",
-alignItems: "center",
-height: "38px", 
 background: "#EA5D1A",
-border: "none",
-borderRadius: "2px",
-boxShadow: "none",
 opacity: "1",
 ...SIZE_STYLES[MEDIUM_OPTION][REGULAR_BUTTON_VARIANT][BUTTON_SUBCOMPONENT]
 
@@ -250,11 +189,6 @@ Style5[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
 opacity: "0.8"
 }
 Style5[TEXT_SUBCOMPONENT] = {
-position: "static",
-fontFamily: "SEATBCN",
-fontStyle: "normal",
-fontWeight: "bold",
-fontSize: "14px",
 color: "#ECE9E1",
 ...SIZE_STYLES[MEDIUM_OPTION][REGULAR_BUTTON_VARIANT][TEXT_SUBCOMPONENT]
 }
@@ -264,6 +198,7 @@ Style5Path[PURCHASE_HIERARCHY_ATTRIBUTE] = PRIMARY_PURCHASE_HIERARCHY_OPTION
 Style5Path[SIZE_ATTRIBUTE] = MEDIUM_OPTION
 Style5Path [STATE_ATTRIBUTE] = NORMAL_OPTION
 Style5Path[ICON_ATTRIBUTE] = OFF_OPTION 
+Style5Path[WIDTH_ATTRIBUTE] = FIT_CONTENT_OPTION 
 
 const styleWrapper5 = {}
 styleWrapper5[STYLE_OBJECT] = {...Style5}
@@ -278,15 +213,7 @@ const Style6 = {}
 
 Style6 [BUTTON_SUBCOMPONENT] = {
 transition: "0.1s all ease-in-out",
-boxShadow: "inset 0 0 0 2px transparent",
-display: "flex",
-justifyContent: "center",
-alignItems: "center",
-height: "40px", 
 background: "#EA5D1A",
-border: "none",
-borderRadius: "2px",
-boxShadow: "none",
 opacity: "1",
 ...SIZE_STYLES[MEDIUM_OPTION][REGULAR_BUTTON_ICON_VARIANT][BUTTON_SUBCOMPONENT]
 }
@@ -294,22 +221,12 @@ Style6[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
 opacity: "0.8"
 }
 Style6[TEXT_SUBCOMPONENT] = {
-position: "static",
-fontFamily: "SEATBCN",
-fontStyle: "normal",
-fontWeight: "bold",
-fontSize: "14px",
 color: "#ECE9E1",
-
 ...SIZE_STYLES[MEDIUM_OPTION][REGULAR_BUTTON_ICON_VARIANT][TEXT_SUBCOMPONENT]
 }
 Style6[ICON_CONTAINER_SUBCOMPONENT] ={
 color: "#ECE9E1",
-width: "24px",
-height: "24px",
-display: "flex",
-justifyContent: "center",
-alignItems: "center",
+...SIZE_STYLES[MEDIUM_OPTION][REGULAR_BUTTON_ICON_VARIANT][ICON_CONTAINER_SUBCOMPONENT],
 }
 Style6[ICON_SUBCOMPONENT] = {
 color: "#ECE9E1",
@@ -322,6 +239,7 @@ Style6Path[PURCHASE_HIERARCHY_ATTRIBUTE] = PRIMARY_PURCHASE_HIERARCHY_OPTION
 Style6Path[SIZE_ATTRIBUTE] = MEDIUM_OPTION
 Style6Path [STATE_ATTRIBUTE] = NORMAL_OPTION
 Style6Path[ICON_ATTRIBUTE] = ON_OPTION 
+Style6Path[WIDTH_ATTRIBUTE] = FIT_CONTENT_OPTION 
 
 const styleWrapper6 = {}
 styleWrapper6[STYLE_OBJECT] = {...Style6}
@@ -333,17 +251,9 @@ purchaseStyles.push(styleWrapper6)
 const Style7 = {}
 Style7 [BUTTON_SUBCOMPONENT] = {
 transition: "0.1s all ease-in-out",
-position: "relative",
-display: "flex",
-flexDirection: "row",
-justifyContent: "center",
-alignItems: "center",
-height: "38px", 
 background: "#EEA786",
-border: "none",
-borderRadius: "2px",
-boxShadow: "none",
-...SIZE_STYLES[MEDIUM_OPTION][REGULAR_BUTTON_VARIANT][BUTTON_SUBCOMPONENT]
+...SIZE_STYLES[MEDIUM_OPTION][REGULAR_BUTTON_VARIANT][BUTTON_SUBCOMPONENT],
+cursor: "default",
 }
 Style7[TEXT_SUBCOMPONENT] = {
 position: "static",
@@ -360,6 +270,7 @@ Style7Path[PURCHASE_HIERARCHY_ATTRIBUTE] = PRIMARY_PURCHASE_HIERARCHY_OPTION
 Style7Path[SIZE_ATTRIBUTE] = MEDIUM_OPTION
 Style7Path [STATE_ATTRIBUTE] = DISABLED_OPTION
 Style7Path[ICON_ATTRIBUTE] = OFF_OPTION 
+Style7Path[WIDTH_ATTRIBUTE] = FIT_CONTENT_OPTION 
 
 const styleWrapper7 = {}
 styleWrapper7[STYLE_OBJECT] = {...Style7}
@@ -373,35 +284,18 @@ const Style8 = {}
 Style8 [BUTTON_SUBCOMPONENT] = {
 
 transition: "0.1s all ease-in-out",
-position: "relative",
-display: "flex",
-flexDirection: "row",
-justifyContent: "center",
-alignItems: "center",
-height: "40px", 
 background: "#EEA786",
-border: "none",
-borderRadius: "2px",
-boxShadow: "none",
-...SIZE_STYLES[MEDIUM_OPTION][REGULAR_BUTTON_ICON_VARIANT][BUTTON_SUBCOMPONENT]
+...SIZE_STYLES[MEDIUM_OPTION][REGULAR_BUTTON_ICON_VARIANT][BUTTON_SUBCOMPONENT],
+cursor: "default",
 
 }
 Style8[TEXT_SUBCOMPONENT] = {
-position: "static",
-fontFamily: "SEATBCN",
-fontStyle: "normal",
-fontWeight: "bold",
-fontSize: "14px",
 color: "#ECE9E1",
 ...SIZE_STYLES[MEDIUM_OPTION][REGULAR_BUTTON_ICON_VARIANT][TEXT_SUBCOMPONENT]
 }
 Style8[ICON_CONTAINER_SUBCOMPONENT] ={
 color: "#ECE9E1",
-width: "24px",
-height: "24px",
-display: "flex",
-justifyContent: "center",
-alignItems: "center",
+...SIZE_STYLES[MEDIUM_OPTION][REGULAR_BUTTON_ICON_VARIANT][ICON_CONTAINER_SUBCOMPONENT],
 }
 Style8[ICON_SUBCOMPONENT] = {
 color: "#ECE9E1",
@@ -414,6 +308,7 @@ Style8Path[PURCHASE_HIERARCHY_ATTRIBUTE] = PRIMARY_PURCHASE_HIERARCHY_OPTION
 Style8Path[SIZE_ATTRIBUTE] = MEDIUM_OPTION
 Style8Path [STATE_ATTRIBUTE] = DISABLED_OPTION
 Style8Path[ICON_ATTRIBUTE] = ON_OPTION 
+Style8Path[WIDTH_ATTRIBUTE] = FIT_CONTENT_OPTION 
 
 const styleWrapper8 = {}
 styleWrapper8[STYLE_OBJECT] = {...Style8}
@@ -427,17 +322,8 @@ purchaseStyles.push(styleWrapper8)
 //* SECONDARY SMALL BLACK NORMAL OFFICON *//
 const Style9 = {}
 Style9 [BUTTON_SUBCOMPONENT] = {
-
 transition: "0.1s all ease-in-out",
-boxShadow: "inset 0 0 0 2px transparent",
-display: "flex",
-justifyContent: "center",
-alignItems: "center",
-height: "30px", 
 background: "#EA5D1A",
-border: "none",
-borderRadius: "2px",
-boxShadow: "none",
 opacity: "1",
 ...SIZE_STYLES[SMALL_OPTION][REGULAR_BUTTON_VARIANT][BUTTON_SUBCOMPONENT]
 }
@@ -445,11 +331,6 @@ Style9[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
 opacity: "0.8"
 }
 Style9[TEXT_SUBCOMPONENT] = {
-position: "static",
-fontFamily: "SEATBCN",
-fontStyle: "normal",
-fontWeight: "bold",
-fontSize: "14px",
 color: "#ECE9E1",
 ...SIZE_STYLES[SMALL_OPTION][REGULAR_BUTTON_VARIANT][TEXT_SUBCOMPONENT]
 }
@@ -459,6 +340,7 @@ Style9Path[PURCHASE_HIERARCHY_ATTRIBUTE] = PRIMARY_PURCHASE_HIERARCHY_OPTION
 Style9Path[SIZE_ATTRIBUTE] = SMALL_OPTION
 Style9Path [STATE_ATTRIBUTE] = NORMAL_OPTION
 Style9Path[ICON_ATTRIBUTE] = OFF_OPTION 
+Style9Path[WIDTH_ATTRIBUTE] = FIT_CONTENT_OPTION 
 
 const styleWrapper9 = {}
 styleWrapper9[STYLE_OBJECT] = {...Style9}
@@ -473,15 +355,7 @@ const Style10 = {}
 
 Style10 [BUTTON_SUBCOMPONENT] = {
 transition: "0.1s all ease-in-out",
-boxShadow: "inset 0 0 0 2px transparent",
-display: "flex",
-justifyContent: "center",
-alignItems: "center",
-height: "32px", 
 background: "#EA5D1A",
-border: "none",
-borderRadius: "2px",
-boxShadow: "none",
 opacity: "1",
 ...SIZE_STYLES[SMALL_OPTION][REGULAR_BUTTON_ICON_VARIANT][BUTTON_SUBCOMPONENT]
 }
@@ -489,21 +363,12 @@ Style10[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
 opacity: "0.8"
 }
 Style10[TEXT_SUBCOMPONENT] = {
-position: "static",
-fontFamily: "SEATBCN",
-fontStyle: "normal",
-fontWeight: "bold",
-fontSize: "14px",
 color: "#ECE9E1",
 ...SIZE_STYLES[SMALL_OPTION][REGULAR_BUTTON_ICON_VARIANT][TEXT_SUBCOMPONENT]
 }
 Style10[ICON_CONTAINER_SUBCOMPONENT] ={
 color: "#ECE9E1",
-width: "20px",
-height: "20px",
-display: "flex",
-justifyContent: "center",
-alignItems: "center",
+...SIZE_STYLES[SMALL_OPTION][REGULAR_BUTTON_ICON_VARIANT][ICON_CONTAINER_SUBCOMPONENT],
 }
 Style10[ICON_SUBCOMPONENT] = {
 color: "#ECE9E1",
@@ -516,6 +381,7 @@ Style10Path[PURCHASE_HIERARCHY_ATTRIBUTE] = PRIMARY_PURCHASE_HIERARCHY_OPTION
 Style10Path[SIZE_ATTRIBUTE] = SMALL_OPTION
 Style10Path [STATE_ATTRIBUTE] = NORMAL_OPTION
 Style10Path[ICON_ATTRIBUTE] = ON_OPTION 
+Style10Path[WIDTH_ATTRIBUTE] = FIT_CONTENT_OPTION 
 
 const styleWrapper10 = {}
 styleWrapper10[STYLE_OBJECT] = {...Style10}
@@ -527,24 +393,11 @@ purchaseStyles.push(styleWrapper10)
 const Style11 = {}
 Style11 [BUTTON_SUBCOMPONENT] = {
 transition: "0.1s all ease-in-out",
-position: "relative",
-display: "flex",
-flexDirection: "row",
-justifyContent: "center",
-alignItems: "center",
-height: "30px", 
 background: "#EEA786",
-border: "none",
-borderRadius: "2px",
-boxShadow: "none",
-...SIZE_STYLES[SMALL_OPTION][REGULAR_BUTTON_VARIANT][BUTTON_SUBCOMPONENT]
+...SIZE_STYLES[SMALL_OPTION][REGULAR_BUTTON_VARIANT][BUTTON_SUBCOMPONENT],
+cursor: "default",
 }
 Style11[TEXT_SUBCOMPONENT] = {
-position: "static",
-fontFamily: "SEATBCN",
-fontStyle: "normal",
-fontWeight: "bold",
-fontSize: "14px",
 color: "#ECE9E1",
 ...SIZE_STYLES[SMALL_OPTION][REGULAR_BUTTON_VARIANT][TEXT_SUBCOMPONENT]
 }
@@ -554,6 +407,7 @@ Style11Path[PURCHASE_HIERARCHY_ATTRIBUTE] = PRIMARY_PURCHASE_HIERARCHY_OPTION
 Style11Path[SIZE_ATTRIBUTE] = SMALL_OPTION
 Style11Path [STATE_ATTRIBUTE] = DISABLED_OPTION
 Style11Path[ICON_ATTRIBUTE] = OFF_OPTION 
+Style11Path[WIDTH_ATTRIBUTE] = FIT_CONTENT_OPTION
 
 const styleWrapper11 = {}
 styleWrapper11[STYLE_OBJECT] = {...Style11}
@@ -567,35 +421,18 @@ const Style12 = {}
 Style12 [BUTTON_SUBCOMPONENT] = {
 
 transition: "0.1s all ease-in-out",
-position: "relative",
-display: "flex",
-flexDirection: "row",
-justifyContent: "center",
-alignItems: "center",
-height: "32px", 
 background: "#EEA786",
-border: "none",
-borderRadius: "2px",
-boxShadow: "none",
-...SIZE_STYLES[SMALL_OPTION][REGULAR_BUTTON_ICON_VARIANT][BUTTON_SUBCOMPONENT]
+...SIZE_STYLES[SMALL_OPTION][REGULAR_BUTTON_ICON_VARIANT][BUTTON_SUBCOMPONENT],
+cursor: "default",
 
 }
 Style12[TEXT_SUBCOMPONENT] = {
-position: "static",
-fontFamily: "SEATBCN",
-fontStyle: "normal",
-fontWeight: "bold",
-fontSize: "14px",
 color: "#ECE9E1",
 ...SIZE_STYLES[SMALL_OPTION][REGULAR_BUTTON_ICON_VARIANT][TEXT_SUBCOMPONENT]
 }
 Style12[ICON_CONTAINER_SUBCOMPONENT] ={
 color: "#ECE9E1",
-width: "20px",
-height: "20px",
-display: "flex",
-justifyContent: "center",
-alignItems: "center",
+...SIZE_STYLES[SMALL_OPTION][REGULAR_BUTTON_ICON_VARIANT][ICON_CONTAINER_SUBCOMPONENT],
 }
 Style12[ICON_SUBCOMPONENT] = {
 color: "#ECE9E1",
@@ -608,6 +445,7 @@ Style12Path[PURCHASE_HIERARCHY_ATTRIBUTE] = PRIMARY_PURCHASE_HIERARCHY_OPTION
 Style12Path[SIZE_ATTRIBUTE] = SMALL_OPTION
 Style12Path [STATE_ATTRIBUTE] = DISABLED_OPTION
 Style12Path[ICON_ATTRIBUTE] = ON_OPTION 
+Style12Path[WIDTH_ATTRIBUTE] = FIT_CONTENT_OPTION
 
 const styleWrapper12 = {}
 styleWrapper12[STYLE_OBJECT] = {...Style12}
@@ -621,30 +459,18 @@ const Style13 = {}
 Style13 [BUTTON_SUBCOMPONENT] = {
 
 transition: "0.1s all ease-in-out",
-boxShadow: "inset 0 0 0 2px transparent",
-display: "flex",
-justifyContent: "center",
-alignItems: "center",
-height: "46px", 
 background: "transparent",
-border: "1px solid #EA5D1A",
-borderRadius: "2px",
-boxShadow: "none",
 opacity: "1.0",
 ...SIZE_STYLES[LARGE_OPTION][REGULAR_BUTTON_VARIANT][BUTTON_SUBCOMPONENT],
-padding: "0px 17px",
+padding: "0px 15px",
+border: "1px solid #EA5D1A",
 
 }
 Style13[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
 border: "2px solid #EA5D1A",
-padding: "0px 16px",
+padding: "0px 14px",
 }
 Style13[TEXT_SUBCOMPONENT] = {
-position: "static",
-fontFamily: "SEATBCN",
-fontStyle: "normal",
-fontWeight: "bold",
-fontSize: "16px",
 color: "#EA5D1A",
 ...SIZE_STYLES[LARGE_OPTION][REGULAR_BUTTON_VARIANT][TEXT_SUBCOMPONENT]
 }
@@ -654,6 +480,7 @@ Style13Path[PURCHASE_HIERARCHY_ATTRIBUTE] = SECONDARY_PURCHASE_HIERARCHY_OPTION
 Style13Path[SIZE_ATTRIBUTE] = LARGE_OPTION
 Style13Path [STATE_ATTRIBUTE] = NORMAL_OPTION
 Style13Path[ICON_ATTRIBUTE] = OFF_OPTION 
+Style13Path[WIDTH_ATTRIBUTE] = FIT_CONTENT_OPTION
 
 const styleWrapper13 = {}
 styleWrapper13[STYLE_OBJECT] = {...Style13}
@@ -669,41 +496,24 @@ const Style14 = {}
 Style14 [BUTTON_SUBCOMPONENT] = {
 
 transition: "0.1s all ease-in-out",
-boxShadow: "inset 0 0 0 2px transparent",
-display: "flex",
-justifyContent: "center",
-alignItems: "center",
-height: "46px", 
 background: "transparent",
-border: "1px solid #EA5D1A",
-borderRadius: "2px",
-boxShadow: "none",
-boxSizing: "border-box",
 opacity: "1.0",
 ...SIZE_STYLES[LARGE_OPTION][REGULAR_BUTTON_ICON_VARIANT][BUTTON_SUBCOMPONENT],
-padding: "0px 17px",
+padding: "0px 15px",
+border: "1px solid #EA5D1A",
 
 }
 Style14[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
-padding: "0px 16px",
+padding: "0px 14px",
 border: "2px solid #EA5D1A",
 }
 Style14[TEXT_SUBCOMPONENT] = {
-position: "static",
-fontFamily: "SEATBCN",
-fontStyle: "normal",
-fontWeight: "bold",
-fontSize: "16px",
 color: "#EA5D1A",
 ...SIZE_STYLES[LARGE_OPTION][REGULAR_BUTTON_ICON_VARIANT][TEXT_SUBCOMPONENT]
 }
 Style14[ICON_CONTAINER_SUBCOMPONENT] = {
 color: "#EA5D1A",
-width: "24px",
-height: "24px",
-display: "flex",
-justifyContent: "center",
-alignItems: "center",
+...SIZE_STYLES[LARGE_OPTION][REGULAR_BUTTON_ICON_VARIANT][ICON_CONTAINER_SUBCOMPONENT],
 }
 Style14[ICON_SUBCOMPONENT] = {
 color: "#EA5D1A",
@@ -716,6 +526,7 @@ Style14Path[PURCHASE_HIERARCHY_ATTRIBUTE] = SECONDARY_PURCHASE_HIERARCHY_OPTION
 Style14Path[SIZE_ATTRIBUTE] = LARGE_OPTION
 Style14Path [STATE_ATTRIBUTE] = NORMAL_OPTION
 Style14Path[ICON_ATTRIBUTE] = ON_OPTION
+Style14Path[WIDTH_ATTRIBUTE] = FIT_CONTENT_OPTION
 
 const styleWrapper14 = {}
 styleWrapper14[STYLE_OBJECT] = {...Style14}
@@ -726,24 +537,13 @@ purchaseStyles.push(styleWrapper14)
 //* SECONDARY DESKTOP BLACK DISABLED OFFICON *//
 const Style15 = {}
 Style15 [BUTTON_SUBCOMPONENT] = {
-position: "relative",
-display: "flex",
-flexDirection: "row",
-justifyContent: "center",
-alignItems: "center",
-height: "48px", 
 background: "transparent",
+...SIZE_STYLES[LARGE_OPTION][REGULAR_BUTTON_VARIANT][BUTTON_SUBCOMPONENT],
+padding: "0px 15px",
 border: "1px solid #EEA786",
-borderRadius: "2px",
-boxShadow: "none",
-...SIZE_STYLES[LARGE_OPTION][REGULAR_BUTTON_VARIANT][BUTTON_SUBCOMPONENT]
+cursor: "default",
 }
 Style15[TEXT_SUBCOMPONENT] = {
-position: "static",
-fontFamily: "SEATBCN",
-fontStyle: "normal",
-fontWeight: "bold",
-fontSize: "16px",
 color: "#EEA786",
 ...SIZE_STYLES[LARGE_OPTION][REGULAR_BUTTON_VARIANT][TEXT_SUBCOMPONENT]
 }
@@ -753,6 +553,7 @@ Style15Path[PURCHASE_HIERARCHY_ATTRIBUTE] = SECONDARY_PURCHASE_HIERARCHY_OPTION
 Style15Path[SIZE_ATTRIBUTE] = LARGE_OPTION
 Style15Path [STATE_ATTRIBUTE] = DISABLED_OPTION
 Style15Path[ICON_ATTRIBUTE] = OFF_OPTION 
+Style15Path[WIDTH_ATTRIBUTE] = FIT_CONTENT_OPTION
 
 const styleWrapper15 = {}
 styleWrapper15[STYLE_OBJECT] = {...Style15}
@@ -766,35 +567,20 @@ const Style16 = {}
 Style16 [BUTTON_SUBCOMPONENT] = {
 
 transition: "0.1s all ease-in-out",
-position: "relative",
-display: "flex",
-flexDirection: "row",
-justifyContent: "center",
-alignItems: "center",
-height: "48px", 
 background: "transparent",
+...SIZE_STYLES[LARGE_OPTION][REGULAR_BUTTON_ICON_VARIANT][BUTTON_SUBCOMPONENT],
+padding: "0px 15px",
 border: "1px solid #EEA786",
-borderRadius: "2px",
-boxShadow: "none",
-...SIZE_STYLES[LARGE_OPTION][REGULAR_BUTTON_ICON_VARIANT][BUTTON_SUBCOMPONENT]
+cursor: "default",
 
 }
 Style16[TEXT_SUBCOMPONENT] = {
-position: "static",
-fontFamily: "SEATBCN",
-fontStyle: "normal",
-fontWeight: "bold",
-fontSize: "16px",
 color: "#EEA786",
 ...SIZE_STYLES[LARGE_OPTION][REGULAR_BUTTON_ICON_VARIANT][TEXT_SUBCOMPONENT]
 }
 Style16[ICON_CONTAINER_SUBCOMPONENT] ={
 color: "#EEA786",
-width: "24px",
-height: "24px",
-display: "flex",
-justifyContent: "center",
-alignItems: "center",
+...SIZE_STYLES[LARGE_OPTION][REGULAR_BUTTON_ICON_VARIANT][ICON_CONTAINER_SUBCOMPONENT],
 }
 Style16[ICON_SUBCOMPONENT] = {
 color: "#EEA786",
@@ -807,6 +593,7 @@ Style16Path[PURCHASE_HIERARCHY_ATTRIBUTE] = SECONDARY_PURCHASE_HIERARCHY_OPTION
 Style16Path[SIZE_ATTRIBUTE] = LARGE_OPTION
 Style16Path [STATE_ATTRIBUTE] = DISABLED_OPTION
 Style16Path[ICON_ATTRIBUTE] = ON_OPTION 
+Style16Path[WIDTH_ATTRIBUTE] = FIT_CONTENT_OPTION
 
 const styleWrapper16 = {}
 styleWrapper16[STYLE_OBJECT] = {...Style16}
@@ -820,24 +607,16 @@ const Style17 = {}
 Style17 [BUTTON_SUBCOMPONENT] = {
 
 transition: "0.1s all ease-in-out",
-boxShadow: "inset 0 0 0 2px transparent",
-display: "flex",
-justifyContent: "center",
-alignItems: "center",
-width: "230px",
-height: "38px", 
 background: "transparent",
-border: "1px solid #EA5D1A",
-borderRadius: "2px",
-boxShadow: "none",
 opacity: "1",
 ...SIZE_STYLES[MEDIUM_OPTION][REGULAR_BUTTON_VARIANT][BUTTON_SUBCOMPONENT],
-padding: "0px 17px",
+padding: "0px 15px",
+border: "1px solid #EA5D1A",
 
 }
 Style17[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
 border: "2px solid #EA5D1A",
-padding: "0px 16px",
+padding: "0px 14px",
 }
 Style17[TEXT_SUBCOMPONENT] = {
 position: "static",
@@ -854,6 +633,7 @@ Style17Path[PURCHASE_HIERARCHY_ATTRIBUTE] = SECONDARY_PURCHASE_HIERARCHY_OPTION
 Style17Path[SIZE_ATTRIBUTE] = MEDIUM_OPTION
 Style17Path [STATE_ATTRIBUTE] = NORMAL_OPTION
 Style17Path[ICON_ATTRIBUTE] = OFF_OPTION 
+Style17Path[WIDTH_ATTRIBUTE] = FIT_CONTENT_OPTION
 
 const styleWrapper17 = {}
 styleWrapper17[STYLE_OBJECT] = {...Style17}
@@ -868,39 +648,23 @@ const Style18 = {}
 
 Style18 [BUTTON_SUBCOMPONENT] = {
 transition: "0.1s all ease-in-out",
-boxShadow: "inset 0 0 0 2px transparent",
-display: "flex",
-justifyContent: "center",
-alignItems: "center",
-height: "40px", 
 background: "transparent",
-border: "1px solid #EA5D1A",
-borderRadius: "2px",
-boxShadow: "none",
 opacity: "1",
 ...SIZE_STYLES[MEDIUM_OPTION][REGULAR_BUTTON_ICON_VARIANT][BUTTON_SUBCOMPONENT],
-padding: "0px 17px",
+padding: "0px 15px",
+border: "1px solid #EA5D1A",
 }
 Style18[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
 border: "2px solid #EA5D1A",
-padding: "0px 16px",
+padding: "0px 14px",
 }
 Style18[TEXT_SUBCOMPONENT] = {
-position: "static",
-fontFamily: "SEATBCN",
-fontStyle: "normal",
-fontWeight: "bold",
-fontSize: "14px",
 color: "#EA5D1A",
 ...SIZE_STYLES[MEDIUM_OPTION][REGULAR_BUTTON_ICON_VARIANT][TEXT_SUBCOMPONENT]
 }
 Style18[ICON_CONTAINER_SUBCOMPONENT] ={
 color: "#EA5D1A",
-width: "24px",
-height: "24px",
-display: "flex",
-justifyContent: "center",
-alignItems: "center",
+...SIZE_STYLES[MEDIUM_OPTION][REGULAR_BUTTON_ICON_VARIANT][ICON_CONTAINER_SUBCOMPONENT],
 }
 Style18[ICON_SUBCOMPONENT] = {
 color: "#EA5D1A",
@@ -913,6 +677,7 @@ Style18Path[PURCHASE_HIERARCHY_ATTRIBUTE] = SECONDARY_PURCHASE_HIERARCHY_OPTION
 Style18Path[SIZE_ATTRIBUTE] = MEDIUM_OPTION
 Style18Path [STATE_ATTRIBUTE] = NORMAL_OPTION
 Style18Path[ICON_ATTRIBUTE] = ON_OPTION 
+Style18Path[WIDTH_ATTRIBUTE] = FIT_CONTENT_OPTION
 
 const styleWrapper18 = {}
 styleWrapper18[STYLE_OBJECT] = {...Style18}
@@ -924,17 +689,12 @@ purchaseStyles.push(styleWrapper18)
 const Style19 = {}
 Style19 [BUTTON_SUBCOMPONENT] = {
 transition: "0.1s all ease-in-out",
-position: "relative",
-display: "flex",
-flexDirection: "row",
-justifyContent: "center",
-alignItems: "center",
-height: "38px", 
 background: "transparent",
+
+...SIZE_STYLES[MEDIUM_OPTION][REGULAR_BUTTON_VARIANT][BUTTON_SUBCOMPONENT],
+padding: "0px 15px",
 border: "1px solid #EEA786",
-borderRadius: "2px",
-boxShadow: "none",
-...SIZE_STYLES[MEDIUM_OPTION][REGULAR_BUTTON_VARIANT][BUTTON_SUBCOMPONENT]
+cursor: "default",
 }
 Style19[TEXT_SUBCOMPONENT] = {
 position: "static",
@@ -951,6 +711,7 @@ Style19Path[PURCHASE_HIERARCHY_ATTRIBUTE] = SECONDARY_PURCHASE_HIERARCHY_OPTION
 Style19Path[SIZE_ATTRIBUTE] = MEDIUM_OPTION
 Style19Path [STATE_ATTRIBUTE] = DISABLED_OPTION
 Style19Path[ICON_ATTRIBUTE] = OFF_OPTION 
+Style19Path[WIDTH_ATTRIBUTE] = FIT_CONTENT_OPTION
 
 const styleWrapper19 = {}
 styleWrapper19[STYLE_OBJECT] = {...Style19}
@@ -964,37 +725,22 @@ const Style20 = {}
 Style20 [BUTTON_SUBCOMPONENT] = {
 
 transition: "0.1s all ease-in-out",
-position: "relative",
-display: "flex",
-flexDirection: "row",
-justifyContent: "center",
-alignItems: "center",
-height: "40px", 
 background: "transparent",
+...SIZE_STYLES[MEDIUM_OPTION][REGULAR_BUTTON_ICON_VARIANT][BUTTON_SUBCOMPONENT],
+padding: "0px 15px",
 border: "1px solid #EEA786",
-borderRadius: "2px",
-boxShadow: "none",
-...SIZE_STYLES[MEDIUM_OPTION][REGULAR_BUTTON_ICON_VARIANT][BUTTON_SUBCOMPONENT]
+cursor: "default",
 
 }
 Style20[TEXT_SUBCOMPONENT] = 
 {
-    position        : "static",
-    fontFamily      : "SEATBCN",
-    fontStyle       : "normal",
-    fontWeight      : "bold",
-    fontSize        : "14px",
     color           : "#EEA786",
     ...SIZE_STYLES[MEDIUM_OPTION][REGULAR_BUTTON_ICON_VARIANT][TEXT_SUBCOMPONENT]
 }
 Style20[ICON_CONTAINER_SUBCOMPONENT] = 
 {
     color           : "#EEA786",
-    width           : "24px",
-    height          : "24px",
-    display         : "flex",
-    justifyContent  : "center",
-    alignItems      : "center",
+    ...SIZE_STYLES[MEDIUM_OPTION][REGULAR_BUTTON_ICON_VARIANT][ICON_CONTAINER_SUBCOMPONENT],
 }
 Style20[ICON_SUBCOMPONENT] = 
 {
@@ -1008,6 +754,7 @@ Style20Path [PURCHASE_HIERARCHY_ATTRIBUTE]   = SECONDARY_PURCHASE_HIERARCHY_OPTI
 Style20Path [SIZE_ATTRIBUTE]                 = MEDIUM_OPTION
 Style20Path [STATE_ATTRIBUTE]                = DISABLED_OPTION
 Style20Path [ICON_ATTRIBUTE]                 = ON_OPTION 
+Style20Path [WIDTH_ATTRIBUTE]                = FIT_CONTENT_OPTION
 
 const styleWrapper20 = {}
 styleWrapper20[STYLE_OBJECT] = {...Style20}
@@ -1023,29 +770,17 @@ const Style21 = {}
 Style21 [BUTTON_SUBCOMPONENT] = {
 
 transition: "0.1s all ease-in-out",
-boxShadow: "inset 0 0 0 2px transparent",
-display: "flex",
-justifyContent: "center",
-alignItems: "center",
-height: "30px", 
 background: "transparent",
-border: "1px solid #EA5D1A",
-borderRadius: "2px",
-boxShadow: "none",
 opacity: "1",
 ...SIZE_STYLES[SMALL_OPTION][REGULAR_BUTTON_VARIANT][BUTTON_SUBCOMPONENT],
-padding: "0px 17px",
+padding: "0px 15px",
+border: "1px solid #EA5D1A",
 }
 Style21[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
 border: "2px solid #EA5D1A",
-padding: "0px 16px",
+padding: "0px 14px",
 }
 Style21[TEXT_SUBCOMPONENT] = {
-position: "static",
-fontFamily: "SEATBCN",
-fontStyle: "normal",
-fontWeight: "bold",
-fontSize: "14px",
 color: "#EA5D1A",
 ...SIZE_STYLES[SMALL_OPTION][REGULAR_BUTTON_VARIANT][TEXT_SUBCOMPONENT]
 }
@@ -1055,6 +790,7 @@ Style21Path[PURCHASE_HIERARCHY_ATTRIBUTE] = SECONDARY_PURCHASE_HIERARCHY_OPTION
 Style21Path[SIZE_ATTRIBUTE] = SMALL_OPTION
 Style21Path [STATE_ATTRIBUTE] = NORMAL_OPTION
 Style21Path[ICON_ATTRIBUTE] = OFF_OPTION 
+Style21Path [WIDTH_ATTRIBUTE] = FIT_CONTENT_OPTION
 
 const styleWrapper21 = {}
 styleWrapper21[STYLE_OBJECT] = {...Style21}
@@ -1069,39 +805,23 @@ const Style22 = {}
 
 Style22 [BUTTON_SUBCOMPONENT] = {
 transition: "0.1s all ease-in-out",
-boxShadow: "inset 0 0 0 2px transparent",
-display: "flex",
-justifyContent: "center",
-alignItems: "center",
-height: "32px", 
 background: "transparent",
-border: "1px solid #EA5D1A",
-borderRadius: "2px",
-boxShadow: "none",
 opacity: "1",
 ...SIZE_STYLES[SMALL_OPTION][REGULAR_BUTTON_ICON_VARIANT][BUTTON_SUBCOMPONENT],
-padding: "0px 17px",
+padding: "0px 15px",
+border: "1px solid #EA5D1A",
 }
 Style22[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
 border: "2px solid #EA5D1A",
-padding: "0px 16px",
+padding: "0px 14px",
 }
 Style22[TEXT_SUBCOMPONENT] = {
-position: "static",
-fontFamily: "SEATBCN",
-fontStyle: "normal",
-fontWeight: "bold",
-fontSize: "14px",
 color: "#EA5D1A",
 ...SIZE_STYLES[SMALL_OPTION][REGULAR_BUTTON_ICON_VARIANT][TEXT_SUBCOMPONENT]
 }
 Style22[ICON_CONTAINER_SUBCOMPONENT] ={
 color: "#EA5D1A",
-width: "20px",
-height: "20px",
-display: "flex",
-justifyContent: "center",
-alignItems: "center",
+...SIZE_STYLES[SMALL_OPTION][REGULAR_BUTTON_ICON_VARIANT][ICON_CONTAINER_SUBCOMPONENT],
 }
 Style22[ICON_SUBCOMPONENT] = {
 color: "#EA5D1A",
@@ -1114,6 +834,7 @@ Style22Path[PURCHASE_HIERARCHY_ATTRIBUTE] = SECONDARY_PURCHASE_HIERARCHY_OPTION
 Style22Path[SIZE_ATTRIBUTE] = SMALL_OPTION
 Style22Path [STATE_ATTRIBUTE] = NORMAL_OPTION
 Style22Path[ICON_ATTRIBUTE] = ON_OPTION 
+Style22Path [WIDTH_ATTRIBUTE] = FIT_CONTENT_OPTION
 
 const styleWrapper22 = {}
 styleWrapper22[STYLE_OBJECT] = {...Style22}
@@ -1125,24 +846,13 @@ purchaseStyles.push(styleWrapper22)
 const Style23 = {}
 Style23 [BUTTON_SUBCOMPONENT] = {
 transition: "0.1s all ease-in-out",
-position: "relative",
-display: "flex",
-flexDirection: "row",
-justifyContent: "center",
-alignItems: "center",
-height: "30px", 
 background: "transparent",
+...SIZE_STYLES[SMALL_OPTION][REGULAR_BUTTON_VARIANT][BUTTON_SUBCOMPONENT],
+padding: "0px 15px",
 border: "1px solid #EEA786",
-borderRadius: "2px",
-boxShadow: "none",
-...SIZE_STYLES[SMALL_OPTION][REGULAR_BUTTON_VARIANT][BUTTON_SUBCOMPONENT]
+cursor: "default",
 }
 Style23[TEXT_SUBCOMPONENT] = {
-position: "static",
-fontFamily: "SEATBCN",
-fontStyle: "normal",
-fontWeight: "bold",
-fontSize: "14px",
 color: "#EEA786",
 ...SIZE_STYLES[SMALL_OPTION][REGULAR_BUTTON_VARIANT][TEXT_SUBCOMPONENT]
 }
@@ -1152,6 +862,7 @@ Style23Path[PURCHASE_HIERARCHY_ATTRIBUTE] = SECONDARY_PURCHASE_HIERARCHY_OPTION
 Style23Path[SIZE_ATTRIBUTE] = SMALL_OPTION
 Style23Path [STATE_ATTRIBUTE] = DISABLED_OPTION
 Style23Path[ICON_ATTRIBUTE] = OFF_OPTION 
+Style23Path [WIDTH_ATTRIBUTE] = FIT_CONTENT_OPTION
 
 const styleWrapper23 = {}
 styleWrapper23[STYLE_OBJECT] = {...Style23}
@@ -1165,35 +876,20 @@ const Style24 = {}
 Style24 [BUTTON_SUBCOMPONENT] = {
 
 transition: "0.1s all ease-in-out",
-position: "relative",
-display: "flex",
-flexDirection: "row",
-justifyContent: "center",
-alignItems: "center",
-height: "32px", 
 background: "transparent",
+...SIZE_STYLES[SMALL_OPTION][REGULAR_BUTTON_ICON_VARIANT][BUTTON_SUBCOMPONENT],
+padding: "0px 15px",
 border: "1px solid #EEA786",
-borderRadius: "2px",
-boxShadow: "none",
-...SIZE_STYLES[SMALL_OPTION][REGULAR_BUTTON_ICON_VARIANT][BUTTON_SUBCOMPONENT]
+cursor: "default",
 
 }
 Style24[TEXT_SUBCOMPONENT] = {
-position: "static",
-fontFamily: "SEATBCN",
-fontStyle: "normal",
-fontWeight: "bold",
-fontSize: "14px",
 color: "#EEA786",
 ...SIZE_STYLES[SMALL_OPTION][REGULAR_BUTTON_ICON_VARIANT][TEXT_SUBCOMPONENT]
 }
 Style24[ICON_CONTAINER_SUBCOMPONENT] ={
 color: "#EEA786",
-width: "20px",
-height: "20px",
-display: "flex",
-justifyContent: "center",
-alignItems: "center",
+...SIZE_STYLES[SMALL_OPTION][REGULAR_BUTTON_ICON_VARIANT][ICON_CONTAINER_SUBCOMPONENT],
 }
 Style24[ICON_SUBCOMPONENT] = {
 color: "#EEA786",
@@ -1206,6 +902,7 @@ Style24Path[PURCHASE_HIERARCHY_ATTRIBUTE] = SECONDARY_PURCHASE_HIERARCHY_OPTION
 Style24Path[SIZE_ATTRIBUTE] = SMALL_OPTION
 Style24Path [STATE_ATTRIBUTE] = DISABLED_OPTION
 Style24Path[ICON_ATTRIBUTE] = ON_OPTION 
+Style24Path [WIDTH_ATTRIBUTE] = FIT_CONTENT_OPTION
 
 const styleWrapper24 = {}
 styleWrapper24[STYLE_OBJECT] = {...Style24}
@@ -1218,24 +915,9 @@ purchaseStyles.push(styleWrapper24)
 const Style25 = {}
 Style25 [BUTTON_SUBCOMPONENT] = {
 transition: "0.5s all ease-in-out",
-boxShadow: "inset 0 0 0 2px transparent",
-display: "flex",
-alignItems: "center",
-height: "20px", 
-background: "transparent",
-border: "none",
 ...SIZE_STYLES[LARGE_OPTION][ARROW_BUTTON_VARIANT][BUTTON_SUBCOMPONENT],
-paddingRight: "22px",
-}
-Style25[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
-paddingRight: "16px",
 }
 Style25[TEXT_SUBCOMPONENT] = {
-position: "static",
-fontFamily: "SEATBCN",
-fontStyle: "normal",
-fontWeight: "bold",
-fontSize: "16px",
 color: "#EA5D1A",
 ...SIZE_STYLES[LARGE_OPTION][ARROW_BUTTON_VARIANT][TEXT_SUBCOMPONENT]
 }
@@ -1247,12 +929,7 @@ color: '#EEA786',
 Style25[ICONARROW_CONTAINER_SUBCOMPONENT] = {
 transition:     "0.5s all ease-in-out",
 color:          "#EA5D1A",
-width:          "20px",
-height:         "20px",
-display:        "flex",
-justifyContent: "center",
-alignItems:     "center",
-margin:         "0px 0px 0px 2px",
+...SIZE_STYLES[LARGE_OPTION][ARROW_BUTTON_VARIANT][ICONARROW_CONTAINER_SUBCOMPONENT]
 
 }
 Style25[ICONARROW_CONTAINER_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
@@ -1274,6 +951,7 @@ Style25Path[PURCHASE_HIERARCHY_ATTRIBUTE] = TERTIARY_PURCHASE_HIERARCHY_OPTION
 Style25Path[SIZE_ATTRIBUTE] = LARGE_OPTION
 Style25Path [STATE_ATTRIBUTE] = NORMAL_OPTION
 Style25Path[ICON_ATTRIBUTE] = OFF_OPTION 
+Style25Path [WIDTH_ATTRIBUTE] = FIT_CONTENT_OPTION
 
 const styleWrapper25 = {}
 styleWrapper25[STYLE_OBJECT] = {...Style25}
@@ -1285,24 +963,9 @@ const Style26 = {}
 Style26 [BUTTON_SUBCOMPONENT] = {
 
 transition: "0.5s all ease-in-out",
-boxShadow: "inset 0 0 0 2px transparent",
-display: "flex",
-alignItems: "center",
-height: "20px", 
-background: "transparent",
-border: "none",
 ...SIZE_STYLES[LARGE_OPTION][ARROW_BUTTON_ICON_VARIANT][BUTTON_SUBCOMPONENT],
-paddingRight: "22px",
-}
-Style26[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
-paddingRight: "16px",
 }
 Style26[TEXT_SUBCOMPONENT] = {
-position: "static",
-fontFamily: "SEATBCN",
-fontStyle: "normal",
-fontWeight: "bold",
-fontSize: "16px",
 color: "#EA5D1A",
 ...SIZE_STYLES[LARGE_OPTION][ARROW_BUTTON_ICON_VARIANT][TEXT_SUBCOMPONENT],
 }
@@ -1310,14 +973,8 @@ Style26[TEXT_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
 color: '#EEA786',
 }
 Style26[ICON_CONTAINER_SUBCOMPONENT] ={
-transition: "0.5s all ease-in-out",
 color: "#EA5D1A",
-width: "20px",
-height: "20px",
-display: "flex",
-justifyContent: "center",
-alignItems: "center",
-margin: "0px 8px 0px 0px",
+...SIZE_STYLES[LARGE_OPTION][ARROW_BUTTON_ICON_VARIANT][ICON_CONTAINER_SUBCOMPONENT],
 }
 Style26[ICON_SUBCOMPONENT] = {
 color: "#EA5D1A",
@@ -1331,12 +988,7 @@ color: '#EEA786',
 Style26[ICONARROW_CONTAINER_SUBCOMPONENT] = {
 transition: "0.5s all ease-in-out",
 color: "#EA5D1A",
-width: "20px",
-height: "20px",
-display: "flex",
-justifyContent: "center",
-alignItems: "center",
-margin: "0px 0px 0px 2px",
+...SIZE_STYLES[LARGE_OPTION][ARROW_BUTTON_ICON_VARIANT][ICONARROW_CONTAINER_SUBCOMPONENT]
 }
 Style26[ICONARROW_CONTAINER_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
 margin: "0px 0px 0px 8px",
@@ -1355,6 +1007,7 @@ Style26Path[PURCHASE_HIERARCHY_ATTRIBUTE] = TERTIARY_PURCHASE_HIERARCHY_OPTION
 Style26Path[SIZE_ATTRIBUTE] = LARGE_OPTION
 Style26Path [STATE_ATTRIBUTE] = NORMAL_OPTION
 Style26Path[ICON_ATTRIBUTE] = ON_OPTION 
+Style26Path [WIDTH_ATTRIBUTE] = FIT_CONTENT_OPTION
 
 const styleWrapper26 = {}
 styleWrapper26[STYLE_OBJECT] = {...Style26}
@@ -1366,33 +1019,18 @@ const Style27 = {}
 Style27 [BUTTON_SUBCOMPONENT] = {
 
 transition: "0.5s all ease-in-out",
-boxShadow: "inset 0 0 0 2px transparent",
-display: "flex",
-alignItems: "center",
-height: "20px", 
-background: "transparent",
-border: "none",
 ...SIZE_STYLES[LARGE_OPTION][ARROW_BUTTON_VARIANT][BUTTON_SUBCOMPONENT],
+cursor: "default",
 }
 Style27[TEXT_SUBCOMPONENT] = {
 transition: "0.5s all ease-in-out",
-position: "static",
-fontFamily: "SEATBCN",
-fontStyle: "normal",
-fontWeight: "bold",
-fontSize: "16px",
 color: "#EEA786",
 ...SIZE_STYLES[LARGE_OPTION][ARROW_BUTTON_VARIANT][TEXT_SUBCOMPONENT],
 }
 Style27[ICONARROW_CONTAINER_SUBCOMPONENT] = {
 transition: "0.5s all ease-in-out",
 color: "#EEA786",
-width: "20px",
-height: "20px",
-display: "flex",
-justifyContent: "center",
-alignItems: "center",
-margin: "0px 0px 0px 2px",
+...SIZE_STYLES[LARGE_OPTION][ARROW_BUTTON_VARIANT][ICONARROW_CONTAINER_SUBCOMPONENT]
 
 }
 Style27[ICONARROW_SUBCOMPONENT] = {
@@ -1407,6 +1045,7 @@ Style27Path[PURCHASE_HIERARCHY_ATTRIBUTE] = TERTIARY_PURCHASE_HIERARCHY_OPTION
 Style27Path[SIZE_ATTRIBUTE] = LARGE_OPTION
 Style27Path [STATE_ATTRIBUTE] = DISABLED_OPTION
 Style27Path[ICON_ATTRIBUTE] = OFF_OPTION 
+Style27Path [WIDTH_ATTRIBUTE] = FIT_CONTENT_OPTION
 
 const styleWrapper27 = {}
 styleWrapper27[STYLE_OBJECT] = {...Style27}
@@ -1418,35 +1057,20 @@ const Style28 = {}
 Style28 [BUTTON_SUBCOMPONENT] = {
 
 transition: "0.5s all ease-in-out",
-boxShadow: "inset 0 0 0 2px transparent",
-display: "flex",
-alignItems: "center",
-height: "20px", 
-background: "transparent",
-border: "none",
 ...SIZE_STYLES[LARGE_OPTION][ARROW_BUTTON_ICON_VARIANT][BUTTON_SUBCOMPONENT],
+cursor: "default",
 }
 
 Style28[TEXT_SUBCOMPONENT] = {
 transition: "0.5s all ease-in-out",
-position: "static",
-fontFamily: "SEATBCN",
-fontStyle: "normal",
-fontWeight: "bold",
-fontSize: "16px",
 color: "#EEA786",
 ...SIZE_STYLES[LARGE_OPTION][ARROW_BUTTON_ICON_VARIANT][TEXT_SUBCOMPONENT],
 }
 
 Style28[ICON_CONTAINER_SUBCOMPONENT] ={
-transition: "0.5s all ease-in-out",
+
 color: "#EEA786",
-width: "20px",
-height: "20px",
-display: "flex",
-justifyContent: "center",
-alignItems: "center",
-margin: "0px 8px 0px 0px",
+...SIZE_STYLES[LARGE_OPTION][ARROW_BUTTON_ICON_VARIANT][ICON_CONTAINER_SUBCOMPONENT],
 }
 Style28[ICON_SUBCOMPONENT] = {
 color: "#EEA786",
@@ -1456,12 +1080,7 @@ height: "11.25px",
 Style28[ICONARROW_CONTAINER_SUBCOMPONENT] = {
 transition: "0.5s all ease-in-out",
 color: "#EEA786",
-width: "20px",
-height: "20px",
-display: "flex",
-justifyContent: "center",
-alignItems: "center",
-margin: "0px 0px 0px 8px",
+...SIZE_STYLES[LARGE_OPTION][ARROW_BUTTON_ICON_VARIANT][ICONARROW_CONTAINER_SUBCOMPONENT]
 }
 
 Style28[ICONARROW_SUBCOMPONENT] = {
@@ -1476,6 +1095,7 @@ Style28Path[PURCHASE_HIERARCHY_ATTRIBUTE] = TERTIARY_PURCHASE_HIERARCHY_OPTION
 Style28Path[SIZE_ATTRIBUTE] = LARGE_OPTION
 Style28Path [STATE_ATTRIBUTE] = DISABLED_OPTION
 Style28Path[ICON_ATTRIBUTE] = ON_OPTION 
+Style28Path [WIDTH_ATTRIBUTE] = FIT_CONTENT_OPTION
 
 const styleWrapper28 = {}
 styleWrapper28[STYLE_OBJECT] = {...Style28}
@@ -1488,24 +1108,10 @@ const Style29 = {}
 Style29 [BUTTON_SUBCOMPONENT] = {
 
 transition: "0.5s all ease-in-out",
-boxShadow: "inset 0 0 0 2px transparent",
-display: "flex",
-alignItems: "center",
-height: "20px", 
-background: "transparent",
-border: "none",
 ...SIZE_STYLES[MEDIUM_OPTION][ARROW_BUTTON_VARIANT][BUTTON_SUBCOMPONENT],
-paddingRight: "22px",
 }
-Style29[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
-paddingRight: "16px",
-}
+
 Style29[TEXT_SUBCOMPONENT] = {
-position: "static",
-fontFamily: "SEATBCN",
-fontStyle: "normal",
-fontWeight: "bold",
-fontSize: "14px",
 color: "#EA5D1A",
 ...SIZE_STYLES[MEDIUM_OPTION][ARROW_BUTTON_VARIANT][TEXT_SUBCOMPONENT]
 }
@@ -1515,13 +1121,7 @@ color: '#EEA786',
 Style29[ICONARROW_CONTAINER_SUBCOMPONENT] = {
 transition: "0.5s all ease-in-out",
 color: "#EA5D1A",
-width: "20px",
-height: "20px",
-display: "flex",
-justifyContent: "center",
-alignItems: "center",
-margin: "0px 0px 0px 2px",
-
+...SIZE_STYLES[MEDIUM_OPTION][ARROW_BUTTON_VARIANT][ICONARROW_CONTAINER_SUBCOMPONENT],
 }
 Style29[ICONARROW_CONTAINER_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
 margin: "0px 0px 0px 8px",
@@ -1541,6 +1141,7 @@ Style29Path[PURCHASE_HIERARCHY_ATTRIBUTE] = TERTIARY_PURCHASE_HIERARCHY_OPTION
 Style29Path[SIZE_ATTRIBUTE] = MEDIUM_OPTION
 Style29Path [STATE_ATTRIBUTE] = NORMAL_OPTION
 Style29Path[ICON_ATTRIBUTE] = OFF_OPTION 
+Style29Path [WIDTH_ATTRIBUTE] = FIT_CONTENT_OPTION
 
 const styleWrapper29 = {}
 styleWrapper29[STYLE_OBJECT] = {...Style29}
@@ -1552,24 +1153,9 @@ const Style30 = {}
 Style30 [BUTTON_SUBCOMPONENT] = {
 
 transition: "0.5s all ease-in-out",
-boxShadow: "inset 0 0 0 2px transparent",
-display: "flex",
-alignItems: "center",
-height: "20px", 
-background: "transparent",
-border: "none",
 ...SIZE_STYLES[MEDIUM_OPTION][ARROW_BUTTON_ICON_VARIANT][BUTTON_SUBCOMPONENT],
-paddingRight: "22px",
-}
-Style30[BUTTON_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
-paddingRight: "16px",
 }
 Style30[TEXT_SUBCOMPONENT] = {
-position: "static",
-fontFamily: "SEATBCN",
-fontStyle: "normal",
-fontWeight: "bold",
-fontSize: "14px",
 color: "#EA5D1A",
 ...SIZE_STYLES[MEDIUM_OPTION][ARROW_BUTTON_ICON_VARIANT][TEXT_SUBCOMPONENT]
 }
@@ -1579,12 +1165,7 @@ color: '#EEA786',
 Style30[ICON_CONTAINER_SUBCOMPONENT] ={
 transition: "0.5s all ease-in-out",
 color: "#EA5D1A",
-width: "20px",
-height: "20px",
-display: "flex",
-justifyContent: "center",
-alignItems: "center",
-margin: "0px 8px 0px 0px",
+...SIZE_STYLES[MEDIUM_OPTION][ARROW_BUTTON_ICON_VARIANT][ICON_CONTAINER_SUBCOMPONENT],
 }
 Style30[ICON_SUBCOMPONENT] = {
 color: "#EA5D1A",
@@ -1597,12 +1178,7 @@ color: '#EEA786',
 Style30[ICONARROW_CONTAINER_SUBCOMPONENT] = {
 transition: "0.5s all ease-in-out",
 color: "#EA5D1A",
-width: "20px",
-height: "20px",
-display: "flex",
-justifyContent: "center",
-alignItems: "center",
-margin: "0px 0px 0px 2px",
+...SIZE_STYLES[MEDIUM_OPTION][ARROW_BUTTON_ICON_VARIANT][ICONARROW_CONTAINER_SUBCOMPONENT],
 }
 Style30[ICONARROW_CONTAINER_SUBCOMPONENT][HOVER_BUTTON_EVENT] = {
 margin: "0px 0px 0px 8px",
@@ -1622,6 +1198,7 @@ Style30Path[PURCHASE_HIERARCHY_ATTRIBUTE] = TERTIARY_PURCHASE_HIERARCHY_OPTION
 Style30Path[SIZE_ATTRIBUTE] = MEDIUM_OPTION
 Style30Path [STATE_ATTRIBUTE] = NORMAL_OPTION
 Style30Path[ICON_ATTRIBUTE] = ON_OPTION 
+Style30Path [WIDTH_ATTRIBUTE] = FIT_CONTENT_OPTION
 
 const styleWrapper30 = {}
 styleWrapper30[STYLE_OBJECT] = {...Style30}
@@ -1633,34 +1210,18 @@ const Style31 = {}
 Style31 [BUTTON_SUBCOMPONENT] = {
 
 transition: "0.5s all ease-in-out",
-boxShadow: "inset 0 0 0 2px transparent",
-display: "flex",
-alignItems: "center",
-height: "20px", 
-background: "transparent",
-border: "none",
-...SIZE_STYLES[MEDIUM_OPTION][ARROW_BUTTON_VARIANT][BUTTON_SUBCOMPONENT]
+...SIZE_STYLES[MEDIUM_OPTION][ARROW_BUTTON_VARIANT][BUTTON_SUBCOMPONENT],
+cursor: "default",
 }
 Style31[TEXT_SUBCOMPONENT] = {
 transition: "0.5s all ease-in-out",
-position: "static",
-fontFamily: "SEATBCN",
-fontStyle: "normal",
-fontWeight: "bold",
-fontSize: "14px",
 color: "#EEA786",
 ...SIZE_STYLES[MEDIUM_OPTION][ARROW_BUTTON_VARIANT][TEXT_SUBCOMPONENT]
 }
 Style31[ICONARROW_CONTAINER_SUBCOMPONENT] = {
 transition: "0.5s all ease-in-out",
 color: "#EEA786",
-width: "20px",
-height: "20px",
-display: "flex",
-justifyContent: "center",
-alignItems: "center",
-margin: "0px 0px 0px 2px",
-
+...SIZE_STYLES[MEDIUM_OPTION][ARROW_BUTTON_VARIANT][ICONARROW_CONTAINER_SUBCOMPONENT],
 }
 Style31[ICONARROW_SUBCOMPONENT] = {
 color: "#EEA786",
@@ -1674,6 +1235,7 @@ Style31Path[PURCHASE_HIERARCHY_ATTRIBUTE] = TERTIARY_PURCHASE_HIERARCHY_OPTION
 Style31Path[SIZE_ATTRIBUTE] = MEDIUM_OPTION
 Style31Path [STATE_ATTRIBUTE] = DISABLED_OPTION
 Style31Path[ICON_ATTRIBUTE] = OFF_OPTION 
+Style31Path [WIDTH_ATTRIBUTE] = FIT_CONTENT_OPTION
 
 const styleWrapper31 = {}
 styleWrapper31[STYLE_OBJECT] = {...Style31}
@@ -1683,37 +1245,20 @@ purchaseStyles.push(styleWrapper31)
 
 const Style32 = {}
 Style32 [BUTTON_SUBCOMPONENT] = {
-
 transition: "0.5s all ease-in-out",
-boxShadow: "inset 0 0 0 2px transparent",
-display: "flex",
-alignItems: "center",
-height: "20px", 
-background: "transparent",
-border: "none",
-...SIZE_STYLES[MEDIUM_OPTION][ARROW_BUTTON_ICON_VARIANT][BUTTON_SUBCOMPONENT]
+...SIZE_STYLES[MEDIUM_OPTION][ARROW_BUTTON_ICON_VARIANT][BUTTON_SUBCOMPONENT],
+cursor: "default",
 }
 
 Style32[TEXT_SUBCOMPONENT] = {
 transition: "0.5s all ease-in-out",
-position: "static",
-fontFamily: "SEATBCN",
-fontStyle: "normal",
-fontWeight: "bold",
-fontSize: "14px",
 color: "#EEA786",
 ...SIZE_STYLES[MEDIUM_OPTION][ARROW_BUTTON_ICON_VARIANT][TEXT_SUBCOMPONENT]
 }
 
 Style32[ICON_CONTAINER_SUBCOMPONENT] ={
-transition: "0.5s all ease-in-out",
 color: "#EEA786",
-width: "20px",
-height: "20px",
-display: "flex",
-justifyContent: "center",
-alignItems: "center",
-margin: "0px 8px 0px 0px"
+...SIZE_STYLES[MEDIUM_OPTION][ARROW_BUTTON_ICON_VARIANT][ICON_CONTAINER_SUBCOMPONENT],
 }
 Style32[ICON_SUBCOMPONENT] = {
 color: "#EEA786",
@@ -1723,12 +1268,7 @@ height: "11.25px",
 Style32[ICONARROW_CONTAINER_SUBCOMPONENT] = {
 transition: "0.5s all ease-in-out",
 color: "#EEA786",
-width: "20px",
-height: "20px",
-display: "flex",
-justifyContent: "center",
-alignItems: "center",
-margin: "0px 0px 0px 2px",
+...SIZE_STYLES[MEDIUM_OPTION][ARROW_BUTTON_ICON_VARIANT][ICONARROW_CONTAINER_SUBCOMPONENT],
 }
 
 Style32[ICONARROW_SUBCOMPONENT] = {
@@ -1743,6 +1283,7 @@ Style32Path[PURCHASE_HIERARCHY_ATTRIBUTE] = TERTIARY_PURCHASE_HIERARCHY_OPTION
 Style32Path[SIZE_ATTRIBUTE] = MEDIUM_OPTION
 Style32Path [STATE_ATTRIBUTE] = DISABLED_OPTION
 Style32Path[ICON_ATTRIBUTE] = ON_OPTION 
+Style32Path [WIDTH_ATTRIBUTE] = FIT_CONTENT_OPTION
 
 const styleWrapper32 = {}
 styleWrapper32[STYLE_OBJECT] = {...Style32}
@@ -1756,7 +1297,8 @@ Style33Path[HIERARCHY_ATTRIBUTE] = PURCHASE_OPTION
 Style33Path[PURCHASE_HIERARCHY_ATTRIBUTE] = TERTIARY_PURCHASE_HIERARCHY_OPTION
 Style33Path[SIZE_ATTRIBUTE] = SMALL_OPTION
 Style33Path [STATE_ATTRIBUTE] = NORMAL_OPTION
-Style33Path[ICON_ATTRIBUTE] = OFF_OPTION 
+Style33Path[ICON_ATTRIBUTE] = OFF_OPTION
+Style33Path [WIDTH_ATTRIBUTE] = FIT_CONTENT_OPTION 
 
 const styleWrapper33 = {}
 styleWrapper33[STYLE_OBJECT] = {...Style29}
@@ -1770,6 +1312,7 @@ Style34Path[PURCHASE_HIERARCHY_ATTRIBUTE] = TERTIARY_PURCHASE_HIERARCHY_OPTION
 Style34Path[SIZE_ATTRIBUTE] = SMALL_OPTION
 Style34Path [STATE_ATTRIBUTE] = NORMAL_OPTION
 Style34Path[ICON_ATTRIBUTE] = ON_OPTION 
+Style34Path [WIDTH_ATTRIBUTE] = FIT_CONTENT_OPTION
 
 const styleWrapper34 = {}
 styleWrapper34[STYLE_OBJECT] = {...Style30}
@@ -1783,6 +1326,7 @@ Style35Path[PURCHASE_HIERARCHY_ATTRIBUTE] = TERTIARY_PURCHASE_HIERARCHY_OPTION
 Style35Path[SIZE_ATTRIBUTE] = SMALL_OPTION
 Style35Path [STATE_ATTRIBUTE] = DISABLED_OPTION
 Style35Path[ICON_ATTRIBUTE] = OFF_OPTION 
+Style35Path [WIDTH_ATTRIBUTE] = FIT_CONTENT_OPTION
 
 const styleWrapper35 = {}
 styleWrapper35[STYLE_OBJECT] = {...Style31}
@@ -1795,11 +1339,21 @@ Style36Path[HIERARCHY_ATTRIBUTE] = PURCHASE_OPTION
 Style36Path[PURCHASE_HIERARCHY_ATTRIBUTE] = TERTIARY_PURCHASE_HIERARCHY_OPTION
 Style36Path[SIZE_ATTRIBUTE] = SMALL_OPTION
 Style36Path [STATE_ATTRIBUTE] = DISABLED_OPTION
-Style36Path[ICON_ATTRIBUTE] = ON_OPTION 
+Style36Path[ICON_ATTRIBUTE] = ON_OPTION
+Style36Path [WIDTH_ATTRIBUTE] = FIT_CONTENT_OPTION 
 
 const styleWrapper36 = {}
 styleWrapper36[STYLE_OBJECT] = {...Style32}
 styleWrapper36[COMPONENT_VARIANT_KEY] = ARROW_BUTTON_ICON_VARIANT
 styleWrapper36[PATH_STYLE] = Style36Path
 purchaseStyles.push(styleWrapper36)
+
+const copyPurchaseStyles = []
+purchaseStyles.forEach((style,index) => {
+    copyPurchaseStyles.push(JSON.parse(JSON.stringify(style)))
+    if (copyPurchaseStyles[index][PATH_STYLE][PURCHASE_HIERARCHY_ATTRIBUTE] !== TERTIARY_PURCHASE_HIERARCHY_OPTION) copyPurchaseStyles[index][STYLE_OBJECT][BUTTON_SUBCOMPONENT].width = "100%"
+    copyPurchaseStyles[index][PATH_STYLE][WIDTH_ATTRIBUTE] = FULL_OPTION
+})
+purchaseStyles.push(...copyPurchaseStyles)
+
 export  {purchaseStyles};
