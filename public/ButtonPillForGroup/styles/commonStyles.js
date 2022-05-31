@@ -12,7 +12,7 @@ SIZE_STYLES[LARGE_OPTION] = {}
 SIZE_STYLES[LARGE_OPTION][REGULAR_BUTTON_PILL_VARIANT]= {}
 
 SIZE_STYLES[LARGE_OPTION][REGULAR_BUTTON_PILL_VARIANT][CONTAINER_BUTTON_PILL] = {
-    transition: "0.2s all ease-in-out",
+    transition: "0.1s all ease-in-out",
     cursor: "pointer",
     display: "flex",
     flexDirection: "row",
@@ -26,10 +26,12 @@ SIZE_STYLES[LARGE_OPTION][REGULAR_BUTTON_PILL_VARIANT][CONTAINER_BUTTON_PILL] = 
     background: "transparent",
     userSelect: "none",
     width: "57.6px",
+    border: "1px solid #7F7F72",
 }
 
 SIZE_STYLES[LARGE_OPTION][REGULAR_BUTTON_PILL_VARIANT][CONTAINER_BUTTON_PILL][ACTIVE_EVENT] = {
     background: "#190F14",
+    border:"none"
 }
 SIZE_STYLES[LARGE_OPTION][REGULAR_BUTTON_PILL_VARIANT][TEXT_CONTAINER] = {
     background: "transparent",
@@ -43,6 +45,10 @@ SIZE_STYLES[LARGE_OPTION][REGULAR_BUTTON_PILL_VARIANT][TEXT_CONTAINER] = {
     overflow: "hidden",
     whiteSpace: "nowrap",
     textAlign: "center",
+    
+    //width: "68px",
+    maxWidth: "100%"
+    //justifyContent: "center",
 } 
 SIZE_STYLES[LARGE_OPTION][REGULAR_BUTTON_PILL_VARIANT][TEXT_CONTAINER][HOVER_EVENT] = {
     fontWeight: "500",

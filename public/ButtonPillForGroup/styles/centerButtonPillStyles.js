@@ -22,11 +22,11 @@ Style1[CONTAINER_BUTTON_PILL] = {
 //transition: "0.1s all ease-in-out",
 borderRadius: "0px 0px 0px 0px",
 ...SIZE_STYLES[LARGE_OPTION][REGULAR_BUTTON_PILL_VARIANT][CONTAINER_BUTTON_PILL],
+borderRight: "none",
+borderLeft: "none"
 }
 
-Style1[CONTAINER_BUTTON_PILL][ACTIVE_EVENT] = {
-    background: "#190F14",
-}
+
 
 Style1[TEXT_CONTAINER] = {
    ...SIZE_STYLES[LARGE_OPTION][REGULAR_BUTTON_PILL_VARIANT][TEXT_CONTAINER]
@@ -61,6 +61,7 @@ centerButtonPill.push(style2Wrapper)
 
 const Style3 = JSON.parse(JSON.stringify(Style1))
 Style3[TEXT_CONTAINER].color = "#ECE9E1"
+Style3[CONTAINER_BUTTON_PILL].border = "1px solid #FFFFFF"
 Style3[CONTAINER_BUTTON_PILL][ACTIVE_EVENT].background = "#ECE9E1"
 Style3[TEXT_CONTAINER][ACTIVE_EVENT].color = "#190F14"
 

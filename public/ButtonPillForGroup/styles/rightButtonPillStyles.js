@@ -22,6 +22,7 @@ Style1[CONTAINER_BUTTON_PILL] = {
 
 borderRadius: "0px 2px 2px 0px",
 ...SIZE_STYLES[LARGE_OPTION][REGULAR_BUTTON_PILL_VARIANT][CONTAINER_BUTTON_PILL],
+borderLeft: "none"
 }
 
 Style1[TEXT_CONTAINER] = {
@@ -57,6 +58,7 @@ rightButtonPill.push(style2Wrapper)
 
 const Style3 = JSON.parse(JSON.stringify(Style1))
 Style3[TEXT_CONTAINER].color = "#ECE9E1"
+Style3[CONTAINER_BUTTON_PILL].border = "1px solid #FFFFFF"
 Style3[CONTAINER_BUTTON_PILL][ACTIVE_EVENT].background = "#ECE9E1"
 Style3[TEXT_CONTAINER][ACTIVE_EVENT].color = "#190F14"
 

@@ -20,7 +20,8 @@ Style1[CONTAINER_SLOT_WRAPPER] = {
 }
 
 Style1[CONTAINER_SUB_WRAPPER] = {
-        width: "fit-content",
+        display:"contents"
+        //width: "fit-content",
 
 }
 
@@ -29,11 +30,14 @@ Style1[BUTTON_CONTAINER_SUBCOMPONENT] = {
         display: "flex",
         width: "288px",
         height: "32px",
-        border: "1px solid #7F7F72",
+        //border: "1px solid #7F7F72",
+        borderTop: "none",
         borderRadius: "2px",
         boxSizing: "border-box",
         justifyContent: "center",
         alignItems: "center",
+        flexGrow: "1",
+        flexBasis: "0",
 }
 
 
@@ -51,7 +55,7 @@ style1Wrapper[PATH_STYLE] = Style1Path
 regularButtonGroupStyles.push(style1Wrapper)
 
 const Style2 = JSON.parse(JSON.stringify(Style1))
-Style2[BUTTON_CONTAINER_SUBCOMPONENT].border =  "1px solid #FFFFFF"
+//Style2[BUTTON_CONTAINER_SUBCOMPONENT].border =  "1px solid #FFFFFF"
 
 const Style2Path = {}
 Style2Path[SIZE_ATTRIBUTE] = LARGE_OPTION;
