@@ -138,7 +138,9 @@ Style1[TITLE_SUBCOMPONENT] ={
     fontSize: "16px",
     lineHeight: "20px",
     color: "#747468",
-    userSelect: "none"
+    userSelect: "none",
+    overflow: "hidden",
+    whiteSpace: "nowrap",
 
 }
 Style1[TITLE_SUBCOMPONENT][INPUT_EVENT] ={

@@ -21,6 +21,8 @@ export const regularIconFunction = function (attributes)
     const path = document.createElementNS(xmlns, "path");
     path.setAttributeNS(null, 'd', attributes[ICON_SELECTION_ATTRIBUTE][PARTICULAR_ICON_PATH_ATTRIBUTE]);
     path.setAttributeNS(null, 'fill',attributes[ICON_COLOR_ATTRIBUTE])
+    path.setAttributeNS(null, 'fillRule','evenodd')
+    path.setAttributeNS(null, 'clipRule','evenodd')
 
     svgElem.appendChild(g);
     g.appendChild(path);

@@ -155,6 +155,8 @@ Style1[TEXT_SUBCOMPONENT] = {
     fontFamily: 'SEATBCN',
     fontStyle: "normal",
     fontSize: "16px",
+    overflow: "hidden",
+    whiteSpace: "nowrap",
 }
 Style1[TEXT_SUBCOMPONENT][INPUT_EVENT] ={
     height: "100%",
