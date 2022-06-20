@@ -20,7 +20,6 @@ class vanillaButton extends HTMLElement {
         
     }
     construction() {
-        
         const buttonOrAnchor = []
         //CREATION OF A DEFAULT BUTTON IF NOTHING IS APPENDED 
         const buttonDefault = document.createElement('button')
@@ -51,7 +50,7 @@ class vanillaButton extends HTMLElement {
         
         const keysAttributes = {...attributes}
         delete keysAttributes[CHILDREN_ATTRIBUTE];
-        delete keysAttributes[ONCLICK_ATTRIBUTE];
+
         delete keysAttributes[ICON_SELECTION_ATTRIBUTE];
         if (attributes[ICON_SELECTION_ATTRIBUTE] === ICON_DEFAULT) keysAttributes[ICON_ATTRIBUTE] = OFF_OPTION
         else keysAttributes[ICON_ATTRIBUTE] = ON_OPTION
@@ -63,67 +62,22 @@ class vanillaButton extends HTMLElement {
         attributes[CHILDREN_ATTRIBUTE] = buttonOrAnchor[0].textContent
         const button = COMPONENTS[stylesKeys[COMPONENT_VARIANT_KEY]] (attributes)
         button.onclick = () => {buttonOrAnchor[0].click()}
-       
+        if (this.shadow.children.length === 0) {
         this.shadow.appendChild(slotContainer)
             slotContainer.appendChild(slotSubComponent)
         this.shadow.appendChild(button) 
+        }
         this.style.display = 'contents'
       }
       connectedCallback() {
+          
         const WebComponent = this
         WebComponent.style.display = 'none'
-        const construction = () => {
-        const buttonOrAnchor = []
-        //CREATION OF A DEFAULT BUTTON IF NOTHING IS APPENDED 
-        const buttonDefault = document.createElement('button')
-        const textNode = document.createTextNode('Call to action')
-        buttonDefault.appendChild(textNode)
-        buttonDefault.onclick = () => {alert('Call to action')}
-        buttonOrAnchor.push(buttonDefault)
-        if (WebComponent.getElementsByTagName('button').length>0) 
-        {
-            buttonOrAnchor.pop()
-            buttonOrAnchor.push(WebComponent.getElementsByTagName('button')[0])
-        }
-        else if (WebComponent.getElementsByTagName('a').length>0) 
-        {
-            buttonOrAnchor.pop()
-            buttonOrAnchor.push(WebComponent.getElementsByTagName('a')[0])
-        }
-        const slotContainer = document.createElement('div')
-        slotContainer.style.display = 'none'
-        const slotSubComponent = document.createElement('slot')
-      
-        const attributes = {}
-        ATTRIBUTES.forEach((ATTRIBUTE)=>{ 
-            if (WebComponent.getAttribute(ATTRIBUTE.attributeName)) attributes[ATTRIBUTE.attributeName] = ATTRIBUTE.proccessValue(WebComponent.getAttribute(ATTRIBUTE.attributeName))
-            else attributes[ATTRIBUTE.attributeName] = ATTRIBUTE.defaultValue
-                        })
-        if (!WebComponent.getAttribute(SIZE_ATTRIBUTE)) WebComponent.setAttribute(SIZE_ATTRIBUTE,attributes[SIZE_ATTRIBUTE])
         
-        const keysAttributes = {...attributes}
-        delete keysAttributes[CHILDREN_ATTRIBUTE];
-        delete keysAttributes[ICON_SELECTION_ATTRIBUTE];
-        if (attributes[ICON_SELECTION_ATTRIBUTE] === ICON_DEFAULT) keysAttributes[ICON_ATTRIBUTE] = OFF_OPTION
-        else keysAttributes[ICON_ATTRIBUTE] = ON_OPTION
-        
-        
-        const stylesKeys = setKeys(keysAttributes)
-        
-        attributes[STYLE_KEY] = stylesKeys[STYLE_KEY]
-        attributes[CHILDREN_ATTRIBUTE] = buttonOrAnchor[0].textContent
-        const button = COMPONENTS[stylesKeys[COMPONENT_VARIANT_KEY]] (attributes)
-        button.onclick = () => {buttonOrAnchor[0].click()}
-       
-        WebComponent.shadow.appendChild(slotContainer)
-            slotContainer.appendChild(slotSubComponent)
-        WebComponent.shadow.appendChild(button) 
-        WebComponent.style.display = 'contents'
-        }
         if (document.readyState === 'loading') {  // Loading hasn't finished yet
-          document.addEventListener('DOMContentLoaded', construction);
+          document.addEventListener('DOMContentLoaded', WebComponent.construction);
         } else {  // `DOMContentLoaded` has already fired
-          construction();
+            WebComponent.construction();
         }
       }
       
