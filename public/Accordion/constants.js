@@ -18,7 +18,8 @@ export const OPENED_OPTION = "isOpen";
 export const CLOSED_OPTION = "isClosed";
 // title default option
 export const TITLE_DEFAULT = "Title Accordion"
-
+//total height of content appended
+export const TOTAL_HEIGHT_ATTRIBUTE = 'data-total-height'
 const ATTRIBUTES = [];
 ATTRIBUTES.push({
     attributeName: COLOR_ATTRIBUTE,

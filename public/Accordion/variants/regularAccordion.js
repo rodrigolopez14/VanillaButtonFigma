@@ -1,6 +1,6 @@
 import {STYLE_KEY} from "../../commonMethodsAndConstants/Styles/commonConstants.js"
 import {setStyle, processStyle} from "../styles/index.js"
-import {OPENED_OPTION, CLOSED_OPTION, OPEN_ATTRIBUTE, TITLE_ATTRIBUTE} from "../constants.js"
+import {OPENED_OPTION, CLOSED_OPTION, OPEN_ATTRIBUTE, TITLE_ATTRIBUTE, TOTAL_HEIGHT_ATTRIBUTE} from "../constants.js"
 import { OPEN_ACCORDION_EVENT, DEFAULT_EVENT } from "../constants.js"
 import {CONTAINER_SUBCOMPONENT, TITLE_SUBCOMPONENT, TEXT_TITLE_SUBCOMPONENT, ICON_PARENT_TITLE_SUBCOMPONENT, ICON_CHILD_SUBCOMPONENT , CONTENT_SUBCOMPONENT} from "../constants.js"
 
@@ -16,18 +16,21 @@ class vanillaRegularAccordion extends HTMLElement {
         this.styles = null
         this.openStyles = []
         this.closeStyles = []
-        this.iconParent = document.createElement('div')
-        this.slotty = null        
+        this.iconParent = null
+        this.iconChild = null       
+        this.totalHeight = null
         this.shadow = this.attachShadow({mode: 'open'});
 
     }
-    static get observedAttributes() { return [OPEN_ATTRIBUTE]; }
-    attributeChangedCallback() 
+    static get observedAttributes() { return [OPEN_ATTRIBUTE, TOTAL_HEIGHT_ATTRIBUTE]; }
+    attributeChangedCallback(name,oldValue,newValue) 
     {
-        const state = this.getAttribute(OPEN_ATTRIBUTE)
-        if (state === OPENED_OPTION)
+        if (name === OPEN_ATTRIBUTE)
+        {
+            const state = this.getAttribute(OPEN_ATTRIBUTE)
+            if (state === OPENED_OPTION)
             {                
-                if (this.iconChild) this.iconParent.removeChild(this.iconChild)
+                if (this.iconChild !== null) this.iconParent.removeChild(this.iconChild)
                 this.iconChild = document.createElement(ICON)
                 this.iconChild.setAttribute(ICON_SELECTION_ATTRIBUTE, MINUS_ICON_OPTION)
                 this.iconChild.setAttribute(ICON_COLOR_ATTRIBUTE,this.styles[ICON_PARENT_TITLE_SUBCOMPONENT].color)
@@ -36,7 +39,7 @@ class vanillaRegularAccordion extends HTMLElement {
                 this.iconParent.appendChild(this.iconChild)
                 this.openStyles.forEach( (style)=>  style())
             }
-        else if (state !== OPENED_OPTION)
+            else if (state !== OPENED_OPTION)
             {                
                 if(this.iconChild) this.iconParent.removeChild(this.iconChild)
                 this.iconChild = document.createElement(ICON)
@@ -48,13 +51,24 @@ class vanillaRegularAccordion extends HTMLElement {
                 this.closeStyles.forEach( (style)=>  style())
                 return;
             }
+        }
+        if (name === TOTAL_HEIGHT_ATTRIBUTE)
+        {
+            if (oldValue!==newValue)
+            {
+                this.totalHeight = this.getAttribute(TOTAL_HEIGHT_ATTRIBUTE)
+                if (this.getAttribute(OPEN_ATTRIBUTE)=== OPENED_OPTION) this.content.style.height = this.totalHeight
+            }
+        }
 
     }
     connectedCallback() {
-      
+        const customClass = this
+        
         const attributes = JSON.parse(this.getAttribute(TEMPORARY_ATTRIBUTE))
         this.removeAttribute(TEMPORARY_ATTRIBUTE)
         this.styles = setStyle(attributes[STYLE_KEY])
+        this.totalHeight = this.styles[CONTENT_SUBCOMPONENT][OPEN_ACCORDION_EVENT].height
 
         const container = document.createElement('div')
         const stylesProccessedContainer = processStyle(container,this.styles[CONTAINER_SUBCOMPONENT])
@@ -66,9 +80,17 @@ class vanillaRegularAccordion extends HTMLElement {
         this.closeStyles.push(...stylesProccessedTitle[DEFAULT_EVENT])
         this.openStyles.push(...stylesProccessedTitle[OPEN_ACCORDION_EVENT])
 
-        const content = document.createElement('div')    
+        customClass.content = document.createElement('div')    
+        
+        const stylesProccessedContent = processStyle(customClass.content,customClass.styles[CONTENT_SUBCOMPONENT])
+        customClass.closeStyles.push(...stylesProccessedContent[DEFAULT_EVENT])
+        customClass.openStyles.push(...stylesProccessedContent[OPEN_ACCORDION_EVENT])
+        customClass.openStyles.push(()=> customClass.content.style.height = customClass.totalHeight)
+        
+            
+
         const contentToAppend = document.createElement('slot')
-        content.appendChild(contentToAppend)
+        customClass.content.appendChild(contentToAppend)
 
         const textTitleNode = document.createTextNode(attributes[TITLE_ATTRIBUTE])
         const textTitle= document.createElement('div')
@@ -78,7 +100,7 @@ class vanillaRegularAccordion extends HTMLElement {
         textTitle.appendChild(textTitleNode)
         title.appendChild(textTitle)
 
-        
+        this.iconParent = document.createElement('div')
         const stylesProccessedIconParent = processStyle (this.iconParent, this.styles[ICON_PARENT_TITLE_SUBCOMPONENT])
         this.closeStyles.push(...stylesProccessedIconParent[DEFAULT_EVENT])
         this.openStyles.push(...stylesProccessedIconParent[OPEN_ACCORDION_EVENT])
@@ -92,14 +114,12 @@ class vanillaRegularAccordion extends HTMLElement {
         this.iconParent.appendChild(this.iconChild)
       
         title.appendChild(this.iconParent)
-        this.slotty = contentToAppend
        
         
 
        
-        const customClass = this
+        
 
-        this.closeStyles.forEach((style) =>  style())
         const clickAccordion = (event) => {
             event.preventDefault()
             const state = customClass.getAttribute(OPEN_ATTRIBUTE)
@@ -116,31 +136,48 @@ class vanillaRegularAccordion extends HTMLElement {
             
         }
         title.addEventListener('click',clickAccordion)
-        contentToAppend.addEventListener('slotchange', function(e) {
-            contentToAppend.assignedElements()[0].style['padding']='1px'
-            contentToAppend.assignedElements()[0].style['margin']='0px'
-            contentToAppend.assignedElements()[0].style['border']='0px'
-            const copyStyleObject = JSON.parse(JSON.stringify(customClass.styles));
-            copyStyleObject[CONTENT_SUBCOMPONENT][OPEN_ACCORDION_EVENT].height = `${contentToAppend.assignedElements()[0].scrollHeight}px`
-            const stylesProccessedContent = processStyle(content,copyStyleObject[CONTENT_SUBCOMPONENT])
-            customClass.closeStyles.push(...stylesProccessedContent[DEFAULT_EVENT])
-            customClass.openStyles.push(...stylesProccessedContent[OPEN_ACCORDION_EVENT])
-            customClass.closeStyles.forEach((style) =>  style())
-            if (attributes[OPEN_ATTRIBUTE] === OPENED_OPTION) customClass.openStyles.forEach( (style)=>  style())
-        })
-     
+       
+
         container.appendChild(title)
-        container.appendChild(content)
+        container.appendChild(customClass.content)
         if (this.shadow.children.length === 0)  this.shadow.appendChild(container) 
+        customClass.closeStyles.forEach((style) =>  style())
         this.setAttribute(OPEN_ATTRIBUTE,attributes[OPEN_ATTRIBUTE])
+        
       }
 }
 
-const regularAccordionCustomComponent = 'regular-accordion'
+const regularAccordionCustomComponent = 'seat-regular-accordion'
 if (customElements.get(regularAccordionCustomComponent) === undefined) customElements.define(regularAccordionCustomComponent, class extends vanillaRegularAccordion {});
 
-export const createRegularAccordion =   (attributes) => {
+
+export const createRegularAccordion =   (attributes, parentElement) => {
     const regularAccordionElement = document.createElement(regularAccordionCustomComponent)
     regularAccordionElement.setAttribute(TEMPORARY_ATTRIBUTE,JSON.stringify(attributes))
+
+    const divWrapper = document.createElement('div')
+        const children = [...parentElement.children]
+        for (var i=0;i<children.length;i++)
+        {
+            divWrapper.appendChild(children[i])
+        }
+    divWrapper.style.padding = "1px"
+    regularAccordionElement.appendChild(divWrapper)
+    const resizeObserver = new ResizeObserver(entries => {
+        for (let entry of entries) {
+          if(entry.contentBoxSize) {
+            const contentBoxSize = Array.isArray(entry.contentBoxSize) ? entry.contentBoxSize[0] : entry.contentBoxSize;
+            
+            regularAccordionElement.setAttribute(TOTAL_HEIGHT_ATTRIBUTE, `${contentBoxSize.blockSize}px`)
+          }
+          else if (entry.contentRect) {
+            regularAccordionElement.setAttribute(TOTAL_HEIGHT_ATTRIBUTE, `${entry.contentRect.height}px`)
+
+              
+          }
+        }
+      });
+    resizeObserver.observe(divWrapper);
+
     return regularAccordionElement;
 }
